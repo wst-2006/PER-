@@ -1,0 +1,17 @@
+# 密钥与本地环境
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 数据一律不入库（Tushare 数据不得再分发；仓库是公开的）
+data/
+samples/
+*.parquet
+*.duckdb
+*.csv.gz
+*.zip
+
+# 运行产物
+logs/
