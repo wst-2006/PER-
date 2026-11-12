@@ -1,0 +1,1529 @@
+{
+  "status": "completed",
+  "today": "20261112",
+  "recent_trade_date": "20261111",
+  "groups": {
+    "main_sh": [
+      "600000.SH",
+      "600299.SH",
+      "600596.SH",
+      "600860.SH",
+      "601518.SH",
+      "603108.SH",
+      "603375.SH",
+      "603823.SH"
+    ],
+    "main_sz": [
+      "000001.SZ",
+      "000650.SZ",
+      "000949.SZ",
+      "002023.SZ",
+      "002223.SZ",
+      "002418.SZ",
+      "002629.SZ",
+      "002846.SZ"
+    ],
+    "chinext": [
+      "300001.SZ",
+      "300204.SZ",
+      "300409.SZ",
+      "300593.SZ",
+      "300777.SZ",
+      "300957.SZ",
+      "301152.SZ",
+      "301361.SZ"
+    ],
+    "star": [
+      "688001.SH",
+      "688092.SH",
+      "688181.SH",
+      "688275.SH",
+      "688362.SH",
+      "688501.SH",
+      "688597.SH",
+      "688699.SH"
+    ],
+    "bse": [
+      "920000.BJ",
+      "920126.BJ",
+      "920284.BJ",
+      "920656.BJ"
+    ],
+    "st": [
+      "000010.SZ",
+      "002569.SZ",
+      "300366.SZ",
+      "600730.SH"
+    ],
+    "delisted": [
+      "000004.SZ",
+      "002280.SZ",
+      "300309.SZ",
+      "600462.SH"
+    ]
+  },
+  "stock_count": 44,
+  "zip_file": "samples/perq_sample.zip",
+  "zip_mb": 20.3,
+  "zip_sha256": "f65f117135ce78c7c8456decfdfd973d4ab8a3ffcbf1e5c7ec5205ce7ec34b00",
+  "failure_count": 0,
+  "failures": [],
+  "files": [
+    {
+      "file": "stock_basic_all.parquet",
+      "rows": 5923,
+      "columns": [
+        "ts_code",
+        "name",
+        "area",
+        "industry",
+        "market",
+        "exchange",
+        "list_status",
+        "list_date",
+        "delist_date"
+      ],
+      "date_ranges": {
+        "list_date": {
+          "min": "19901201",
+          "max": "20261110"
+        },
+        "delist_date": {
+          "min": "19990712",
+          "max": "20261028"
+        }
+      },
+      "sha256": "bdf73e09ccd3d3f4ca2964875a10474b1168d436656ffde71e2253b5e3e70f5b"
+    },
+    {
+      "file": "trade_cal.parquet",
+      "rows": 4699,
+      "columns": [
+        "exchange",
+        "cal_date",
+        "is_open",
+        "pretrade_date"
+      ],
+      "date_ranges": {
+        "cal_date": {
+          "min": "20140101",
+          "max": "20261112"
+        },
+        "pretrade_date": {
+          "min": "20131231",
+          "max": "20261111"
+        }
+      },
+      "sha256": "6bf88213b163b9b0f4e222ffa8200397ab116279fc89d65479e8e69a121295d6"
+    },
+    {
+      "file": "stock_daily.parquet",
+      "rows": 75638,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20261111"
+        }
+      },
+      "sha256": "0ae5d45238fcf4814c1a00f946a15bb369937437b67ae3ba2c2446a7513db279"
+    },
+    {
+      "file": "stock_adj_factor.parquet",
+      "rows": 77992,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20261112"
+        }
+      },
+      "sha256": "26282c3c98a72583748124bd2d700b6676d847ca30c5dca9bec3dd79d1780873"
+    },
+    {
+      "file": "stock_daily_basic.parquet",
+      "rows": 75074,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20261111"
+        }
+      },
+      "sha256": "c6159ba5f024cc558059f562db4dd0496225ec24819556f7d7ce1b57c07f4e3f"
+    },
+    {
+      "file": "stock_stk_limit.parquet",
+      "rows": 75569,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20261112"
+        }
+      },
+      "sha256": "588d4a218ded244333b5580c9d0fca2ab0c53cba2122081b38c0ea1b89d419f5"
+    },
+    {
+      "file": "stock_moneyflow.parquet",
+      "rows": 72661,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "buy_sm_vol",
+        "buy_sm_amount",
+        "sell_sm_vol",
+        "sell_sm_amount",
+        "buy_md_vol",
+        "buy_md_amount",
+        "sell_md_vol",
+        "sell_md_amount",
+        "buy_lg_vol",
+        "buy_lg_amount",
+        "sell_lg_vol",
+        "sell_lg_amount",
+        "buy_elg_vol",
+        "buy_elg_amount",
+        "sell_elg_vol",
+        "sell_elg_amount",
+        "net_mf_vol",
+        "net_mf_amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20261111"
+        }
+      },
+      "sha256": "d6d452f3aa1743894593e3f96f306ba36c7aaab6710c8b001455574910ab6009"
+    },
+    {
+      "file": "stock_namechange.parquet",
+      "rows": 139,
+      "columns": [
+        "ts_code",
+        "name",
+        "start_date",
+        "end_date",
+        "ann_date",
+        "change_reason"
+      ],
+      "date_ranges": {
+        "start_date": {
+          "min": "19901201",
+          "max": "20260623"
+        },
+        "end_date": {
+          "min": "19990426",
+          "max": "20260622"
+        },
+        "ann_date": {
+          "min": "19901201",
+          "max": "20260615"
+        }
+      },
+      "sha256": "3b4abc5382e3f4648834527e03b3bc0c16c5a93d0eceeb4dfd5e1ae7e6afd376"
+    },
+    {
+      "file": "stock_income.parquet",
+      "rows": 3526,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "comp_type",
+        "end_type",
+        "basic_eps",
+        "diluted_eps",
+        "total_revenue",
+        "revenue",
+        "int_income",
+        "prem_earned",
+        "comm_income",
+        "n_commis_income",
+        "n_oth_income",
+        "n_oth_b_income",
+        "prem_income",
+        "out_prem",
+        "une_prem_reser",
+        "reins_income",
+        "n_sec_tb_income",
+        "n_sec_uw_income",
+        "n_asset_mg_income",
+        "oth_b_income",
+        "fv_value_chg_gain",
+        "invest_income",
+        "ass_invest_income",
+        "forex_gain",
+        "total_cogs",
+        "oper_cost",
+        "int_exp",
+        "comm_exp",
+        "biz_tax_surchg",
+        "sell_exp",
+        "admin_exp",
+        "fin_exp",
+        "assets_impair_loss",
+        "prem_refund",
+        "compens_payout",
+        "reser_insur_liab",
+        "div_payt",
+        "reins_exp",
+        "oper_exp",
+        "compens_payout_refu",
+        "insur_reser_refu",
+        "reins_cost_refund",
+        "other_bus_cost",
+        "operate_profit",
+        "non_oper_income",
+        "non_oper_exp",
+        "nca_disploss",
+        "total_profit",
+        "income_tax",
+        "n_income",
+        "n_income_attr_p",
+        "minority_gain",
+        "oth_compr_income",
+        "t_compr_income",
+        "compr_inc_attr_p",
+        "compr_inc_attr_m_s",
+        "ebit",
+        "ebitda",
+        "insurance_exp",
+        "undist_profit",
+        "distable_profit",
+        "rd_exp",
+        "fin_exp_int_exp",
+        "fin_exp_int_inc",
+        "transfer_surplus_rese",
+        "transfer_housing_imprest",
+        "transfer_oth",
+        "adj_lossgain",
+        "withdra_legal_surplus",
+        "withdra_legal_pubfund",
+        "withdra_biz_devfund",
+        "withdra_rese_fund",
+        "withdra_oth_ersu",
+        "workers_welfare",
+        "distr_profit_shrhder",
+        "prfshare_payable_dvd",
+        "comshare_payable_dvd",
+        "capit_comstock_div",
+        "continued_net_profit",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "19950310",
+          "max": "20261031"
+        },
+        "f_ann_date": {
+          "min": "19950310",
+          "max": "20261031"
+        },
+        "end_date": {
+          "min": "19921231",
+          "max": "20260930"
+        }
+      },
+      "sha256": "c38dd0db80ad9b2cadfd9440a0acdb1f97df43a677809e1fd31c9d6418b3772a"
+    },
+    {
+      "file": "stock_balancesheet.parquet",
+      "rows": 3201,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "comp_type",
+        "end_type",
+        "total_share",
+        "cap_rese",
+        "undistr_porfit",
+        "surplus_rese",
+        "special_rese",
+        "money_cap",
+        "trad_asset",
+        "notes_receiv",
+        "accounts_receiv",
+        "oth_receiv",
+        "prepayment",
+        "div_receiv",
+        "int_receiv",
+        "inventories",
+        "amor_exp",
+        "nca_within_1y",
+        "sett_rsrv",
+        "loanto_oth_bank_fi",
+        "premium_receiv",
+        "reinsur_receiv",
+        "reinsur_res_receiv",
+        "pur_resale_fa",
+        "oth_cur_assets",
+        "total_cur_assets",
+        "fa_avail_for_sale",
+        "htm_invest",
+        "lt_eqt_invest",
+        "invest_real_estate",
+        "time_deposits",
+        "oth_assets",
+        "lt_rec",
+        "fix_assets",
+        "cip",
+        "const_materials",
+        "fixed_assets_disp",
+        "produc_bio_assets",
+        "oil_and_gas_assets",
+        "intan_assets",
+        "r_and_d",
+        "goodwill",
+        "lt_amor_exp",
+        "defer_tax_assets",
+        "decr_in_disbur",
+        "oth_nca",
+        "total_nca",
+        "cash_reser_cb",
+        "depos_in_oth_bfi",
+        "prec_metals",
+        "deriv_assets",
+        "rr_reins_une_prem",
+        "rr_reins_outstd_cla",
+        "rr_reins_lins_liab",
+        "rr_reins_lthins_liab",
+        "refund_depos",
+        "ph_pledge_loans",
+        "refund_cap_depos",
+        "indep_acct_assets",
+        "client_depos",
+        "client_prov",
+        "transac_seat_fee",
+        "invest_as_receiv",
+        "total_assets",
+        "lt_borr",
+        "st_borr",
+        "cb_borr",
+        "depos_ib_deposits",
+        "loan_oth_bank",
+        "trading_fl",
+        "notes_payable",
+        "acct_payable",
+        "adv_receipts",
+        "sold_for_repur_fa",
+        "comm_payable",
+        "payroll_payable",
+        "taxes_payable",
+        "int_payable",
+        "div_payable",
+        "oth_payable",
+        "acc_exp",
+        "deferred_inc",
+        "st_bonds_payable",
+        "payable_to_reinsurer",
+        "rsrv_insur_cont",
+        "acting_trading_sec",
+        "acting_uw_sec",
+        "non_cur_liab_due_1y",
+        "oth_cur_liab",
+        "total_cur_liab",
+        "bond_payable",
+        "lt_payable",
+        "specific_payables",
+        "estimated_liab",
+        "defer_tax_liab",
+        "defer_inc_non_cur_liab",
+        "oth_ncl",
+        "total_ncl",
+        "depos_oth_bfi",
+        "deriv_liab",
+        "depos",
+        "agency_bus_liab",
+        "oth_liab",
+        "prem_receiv_adva",
+        "depos_received",
+        "ph_invest",
+        "reser_une_prem",
+        "reser_outstd_claims",
+        "reser_lins_liab",
+        "reser_lthins_liab",
+        "indept_acc_liab",
+        "pledge_borr",
+        "indem_payable",
+        "policy_div_payable",
+        "total_liab",
+        "treasury_share",
+        "ordin_risk_reser",
+        "forex_differ",
+        "invest_loss_unconf",
+        "minority_int",
+        "total_hldr_eqy_exc_min_int",
+        "total_hldr_eqy_inc_min_int",
+        "total_liab_hldr_eqy",
+        "lt_payroll_payable",
+        "oth_comp_income",
+        "oth_eqt_tools",
+        "oth_eqt_tools_p_shr",
+        "lending_funds",
+        "acc_receivable",
+        "st_fin_payable",
+        "payables",
+        "hfs_assets",
+        "hfs_sales",
+        "cost_fin_assets",
+        "fair_value_fin_assets",
+        "contract_assets",
+        "contract_liab",
+        "accounts_receiv_bill",
+        "accounts_pay",
+        "oth_rcv_total",
+        "fix_assets_total",
+        "cip_total",
+        "oth_pay_total",
+        "long_pay_total",
+        "debt_invest",
+        "oth_debt_invest",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20081024",
+          "max": "20261031"
+        },
+        "f_ann_date": {
+          "min": "20081024",
+          "max": "20261031"
+        },
+        "end_date": {
+          "min": "20071231",
+          "max": "20260930"
+        }
+      },
+      "sha256": "cae03c06def019ce8799cdbcd6bf9358d5dc06add9133d39ff01a65a2035e71b"
+    },
+    {
+      "file": "stock_cashflow.parquet",
+      "rows": 3115,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "comp_type",
+        "report_type",
+        "end_type",
+        "net_profit",
+        "finan_exp",
+        "c_fr_sale_sg",
+        "recp_tax_rends",
+        "n_depos_incr_fi",
+        "n_incr_loans_cb",
+        "n_inc_borr_oth_fi",
+        "prem_fr_orig_contr",
+        "n_incr_insured_dep",
+        "n_reinsur_prem",
+        "n_incr_disp_tfa",
+        "ifc_cash_incr",
+        "n_incr_disp_faas",
+        "n_incr_loans_oth_bank",
+        "n_cap_incr_repur",
+        "c_fr_oth_operate_a",
+        "c_inf_fr_operate_a",
+        "c_paid_goods_s",
+        "c_paid_to_for_empl",
+        "c_paid_for_taxes",
+        "n_incr_clt_loan_adv",
+        "n_incr_dep_cbob",
+        "c_pay_claims_orig_inco",
+        "pay_handling_chrg",
+        "pay_comm_insur_plcy",
+        "oth_cash_pay_oper_act",
+        "st_cash_out_act",
+        "n_cashflow_act",
+        "oth_recp_ral_inv_act",
+        "c_disp_withdrwl_invest",
+        "c_recp_return_invest",
+        "n_recp_disp_fiolta",
+        "n_recp_disp_sobu",
+        "stot_inflows_inv_act",
+        "c_pay_acq_const_fiolta",
+        "c_paid_invest",
+        "n_disp_subs_oth_biz",
+        "oth_pay_ral_inv_act",
+        "n_incr_pledge_loan",
+        "stot_out_inv_act",
+        "n_cashflow_inv_act",
+        "c_recp_borrow",
+        "proc_issue_bonds",
+        "oth_cash_recp_ral_fnc_act",
+        "stot_cash_in_fnc_act",
+        "free_cashflow",
+        "c_prepay_amt_borr",
+        "c_pay_dist_dpcp_int_exp",
+        "incl_dvd_profit_paid_sc_ms",
+        "oth_cashpay_ral_fnc_act",
+        "stot_cashout_fnc_act",
+        "n_cash_flows_fnc_act",
+        "eff_fx_flu_cash",
+        "n_incr_cash_cash_equ",
+        "c_cash_equ_beg_period",
+        "c_cash_equ_end_period",
+        "c_recp_cap_contrib",
+        "incl_cash_rec_saims",
+        "uncon_invest_loss",
+        "prov_depr_assets",
+        "depr_fa_coga_dpba",
+        "amort_intang_assets",
+        "lt_amort_deferred_exp",
+        "decr_deferred_exp",
+        "incr_acc_exp",
+        "loss_disp_fiolta",
+        "loss_scr_fa",
+        "loss_fv_chg",
+        "invest_loss",
+        "decr_def_inc_tax_assets",
+        "incr_def_inc_tax_liab",
+        "decr_inventories",
+        "decr_oper_payable",
+        "incr_oper_payable",
+        "others",
+        "im_net_cashflow_oper_act",
+        "conv_debt_into_cap",
+        "conv_copbonds_due_within_1y",
+        "fa_fnc_leases",
+        "im_n_incr_cash_equ",
+        "net_dism_capital_add",
+        "net_cash_rece_sec",
+        "credit_impa_loss",
+        "use_right_asset_dep",
+        "oth_loss_asset",
+        "end_bal_cash",
+        "beg_bal_cash",
+        "end_bal_cash_equ",
+        "beg_bal_cash_equ",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20060228",
+          "max": "20261031"
+        },
+        "f_ann_date": {
+          "min": "20060228",
+          "max": "20261031"
+        },
+        "end_date": {
+          "min": "20051231",
+          "max": "20260930"
+        }
+      },
+      "sha256": "ddef1a326cc15e4d8fb4021f1348c461be527e57819ee825fc65e360768670c3"
+    },
+    {
+      "file": "stock_fina_indicator.parquet",
+      "rows": 3527,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "eps",
+        "dt_eps",
+        "total_revenue_ps",
+        "revenue_ps",
+        "capital_rese_ps",
+        "surplus_rese_ps",
+        "undist_profit_ps",
+        "extra_item",
+        "profit_dedt",
+        "gross_margin",
+        "current_ratio",
+        "quick_ratio",
+        "cash_ratio",
+        "ar_turn",
+        "ca_turn",
+        "fa_turn",
+        "assets_turn",
+        "op_income",
+        "ebit",
+        "ebitda",
+        "fcff",
+        "fcfe",
+        "current_exint",
+        "noncurrent_exint",
+        "interestdebt",
+        "netdebt",
+        "tangible_asset",
+        "working_capital",
+        "networking_capital",
+        "invest_capital",
+        "retained_earnings",
+        "diluted2_eps",
+        "bps",
+        "ocfps",
+        "retainedps",
+        "cfps",
+        "ebit_ps",
+        "fcff_ps",
+        "fcfe_ps",
+        "netprofit_margin",
+        "grossprofit_margin",
+        "cogs_of_sales",
+        "expense_of_sales",
+        "profit_to_gr",
+        "saleexp_to_gr",
+        "adminexp_of_gr",
+        "finaexp_of_gr",
+        "impai_ttm",
+        "gc_of_gr",
+        "op_of_gr",
+        "ebit_of_gr",
+        "roe",
+        "roe_waa",
+        "roe_dt",
+        "roa",
+        "npta",
+        "roic",
+        "roe_yearly",
+        "roa2_yearly",
+        "debt_to_assets",
+        "assets_to_eqt",
+        "dp_assets_to_eqt",
+        "ca_to_assets",
+        "nca_to_assets",
+        "tbassets_to_totalassets",
+        "int_to_talcap",
+        "eqt_to_talcapital",
+        "currentdebt_to_debt",
+        "longdeb_to_debt",
+        "ocf_to_shortdebt",
+        "debt_to_eqt",
+        "eqt_to_debt",
+        "eqt_to_interestdebt",
+        "tangibleasset_to_debt",
+        "tangasset_to_intdebt",
+        "tangibleasset_to_netdebt",
+        "ocf_to_debt",
+        "turn_days",
+        "roa_yearly",
+        "roa_dp",
+        "fixed_assets",
+        "profit_to_op",
+        "q_saleexp_to_gr",
+        "q_gc_to_gr",
+        "q_roe",
+        "q_dt_roe",
+        "q_npta",
+        "q_ocf_to_sales",
+        "basic_eps_yoy",
+        "dt_eps_yoy",
+        "cfps_yoy",
+        "op_yoy",
+        "ebt_yoy",
+        "netprofit_yoy",
+        "dt_netprofit_yoy",
+        "ocf_yoy",
+        "roe_yoy",
+        "bps_yoy",
+        "assets_yoy",
+        "eqt_yoy",
+        "tr_yoy",
+        "or_yoy",
+        "q_sales_yoy",
+        "q_op_qoq",
+        "equity_yoy"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20110610",
+          "max": "20261031"
+        },
+        "end_date": {
+          "min": "20091231",
+          "max": "20260930"
+        }
+      },
+      "sha256": "3d6af966af47cd849b9c0bea04c040b8e5812c60ed7c9c62cd438aa937d30ae5"
+    },
+    {
+      "file": "stock_forecast.parquet",
+      "rows": 1178,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "type",
+        "p_change_min",
+        "p_change_max",
+        "net_profit_min",
+        "net_profit_max",
+        "last_parent_net",
+        "first_ann_date",
+        "summary",
+        "change_reason",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "19990114",
+          "max": "20261017"
+        },
+        "end_date": {
+          "min": "19981231",
+          "max": "20260930"
+        },
+        "first_ann_date": {
+          "min": "19990114",
+          "max": "20261017"
+        }
+      },
+      "sha256": "c4f97e8fdc9ae41030fc48d6d3e24d420841b26d21a9e22ca90375059e6da20d"
+    },
+    {
+      "file": "stock_express.parquet",
+      "rows": 271,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "revenue",
+        "operate_profit",
+        "total_profit",
+        "n_income",
+        "total_assets",
+        "total_hldr_eqy_exc_min_int",
+        "diluted_eps",
+        "diluted_roe",
+        "yoy_net_profit",
+        "bps",
+        "perf_summary",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20050108",
+          "max": "20260813"
+        },
+        "end_date": {
+          "min": "20041231",
+          "max": "20260630"
+        }
+      },
+      "sha256": "3617cf5f23d3af7599f846e4f0e1fe7bde599508a01f0b81a80716e105b7fb87"
+    },
+    {
+      "file": "stock_dividend.parquet",
+      "rows": 2064,
+      "columns": [
+        "ts_code",
+        "end_date",
+        "ann_date",
+        "div_proc",
+        "stk_div",
+        "stk_bo_rate",
+        "stk_co_rate",
+        "cash_div",
+        "cash_div_tax",
+        "record_date",
+        "ex_date",
+        "pay_date",
+        "div_listdate",
+        "imp_ann_date"
+      ],
+      "date_ranges": {
+        "end_date": {
+          "min": "19901231",
+          "max": "20260930"
+        },
+        "ann_date": {
+          "min": "19910303",
+          "max": "20261027"
+        },
+        "record_date": {
+          "min": "19910430",
+          "max": "20261112"
+        },
+        "ex_date": {
+          "min": "19910502",
+          "max": "20261113"
+        },
+        "pay_date": {
+          "min": "19930524",
+          "max": "20261113"
+        },
+        "imp_ann_date": {
+          "min": "19910303",
+          "max": "20261105"
+        }
+      },
+      "sha256": "ef8d073a15b386e3a2544f2e116f1d6b909df2c7d9c5479d11eee751c4bf6cc0"
+    },
+    {
+      "file": "stock_stk_holdernumber.parquet",
+      "rows": 4612,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "holder_num"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "19940504",
+          "max": "20261111"
+        },
+        "end_date": {
+          "min": "19940506",
+          "max": "20261110"
+        }
+      },
+      "sha256": "8b8863f60295d35e8a660e81fd35de4b6aec9eac0e5f1cacddb2b06971165ec5"
+    },
+    {
+      "file": "stock_suspend_d.parquet",
+      "rows": 516,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "suspend_timing",
+        "suspend_type"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20260623"
+        }
+      },
+      "sha256": "eda05ddfaa7f5f7ecac24e622148c9bd347cb0cc9eb20d185cff26143b06ae32"
+    },
+    {
+      "file": "xs_daily_20180209.parquet",
+      "rows": 3186,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180209",
+          "max": "20180209"
+        }
+      },
+      "sha256": "183c384623de6f1ad753b05e67dd9f9e1cd40cdf5bab9cc4f7f58a0d4a62eb33"
+    },
+    {
+      "file": "xs_stk_limit_20180209.parquet",
+      "rows": 3489,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180209",
+          "max": "20180209"
+        }
+      },
+      "sha256": "99d07ad2dad1d942806155397bab1fe37c25447c4e1c938982493730b775a314"
+    },
+    {
+      "file": "xs_daily_basic_20180209.parquet",
+      "rows": 3150,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180209",
+          "max": "20180209"
+        }
+      },
+      "sha256": "8e930737c59cb5cf4ad03470b3ad0b42492ca8aac2ef7ae4eff3e4618c9b4c86"
+    },
+    {
+      "file": "xs_adj_factor_20180209.parquet",
+      "rows": 3650,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180209",
+          "max": "20180209"
+        }
+      },
+      "sha256": "c0d98ee604faad1ac1126aeafb105a3ecf265923e82ca74f4640cfed7badd950"
+    },
+    {
+      "file": "xs_suspend_d_20180209.parquet",
+      "rows": 362,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "suspend_timing",
+        "suspend_type"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180209",
+          "max": "20180209"
+        }
+      },
+      "sha256": "a33a2a955bf5c4d3deffaa36f9f65ab2d738f0a8543e37b504125bd4a2bf5248"
+    },
+    {
+      "file": "xs_daily_20200203.parquet",
+      "rows": 3808,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200203",
+          "max": "20200203"
+        }
+      },
+      "sha256": "f1aa17901495aa10992f10ef02039ece31ae207c63fe9cecad844d44f710c2c0"
+    },
+    {
+      "file": "xs_stk_limit_20200203.parquet",
+      "rows": 3815,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200203",
+          "max": "20200203"
+        }
+      },
+      "sha256": "ededbf1fff9bfb771aafa27ae4281494dc87eff064e7e5caef2ce49d5e9e9672"
+    },
+    {
+      "file": "xs_daily_basic_20200203.parquet",
+      "rows": 3761,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200203",
+          "max": "20200203"
+        }
+      },
+      "sha256": "33a54c2c8587142ab1a60c52f5c2b2d8fbef1094702c679ec9c12c5d873a2585"
+    },
+    {
+      "file": "xs_adj_factor_20200203.parquet",
+      "rows": 3961,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200203",
+          "max": "20200203"
+        }
+      },
+      "sha256": "c09d73ce2a8e3aec6f3a3e6d0247d74b10375320499edaeb2c485b4acd82c39d"
+    },
+    {
+      "file": "xs_suspend_d_20200203.parquet",
+      "rows": 17,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "suspend_timing",
+        "suspend_type"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200203",
+          "max": "20200203"
+        }
+      },
+      "sha256": "d15b3dd55d6f40f44ec33fe9e7a3c8e93d56aa82d9e1f03b1eeff8d11b2f0a30"
+    },
+    {
+      "file": "xs_daily_20240205.parquet",
+      "rows": 5344,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20240205",
+          "max": "20240205"
+        }
+      },
+      "sha256": "b0b9940f7289ea2dd7e4e17139c4a6516101181c84329620141caacb0424c3ab"
+    },
+    {
+      "file": "xs_stk_limit_20240205.parquet",
+      "rows": 5391,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20240205",
+          "max": "20240205"
+        }
+      },
+      "sha256": "7c427327fae5b8e4f7fef131a871ec12047dee3b54517f5fd3a400aad0db4d1e"
+    },
+    {
+      "file": "xs_daily_basic_20240205.parquet",
+      "rows": 5344,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20240205",
+          "max": "20240205"
+        }
+      },
+      "sha256": "8815f0c5fd6ec9232271d3c2a94c39337b1732dea0cc01b291aae737e4945f2e"
+    },
+    {
+      "file": "xs_adj_factor_20240205.parquet",
+      "rows": 5372,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20240205",
+          "max": "20240205"
+        }
+      },
+      "sha256": "9b9ff2425f73c41bdb3bfd867b94e32fade0012f83cc6ad322ab9a42665752b1"
+    },
+    {
+      "file": "xs_suspend_d_20240205.parquet",
+      "rows": 10,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "suspend_timing",
+        "suspend_type"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20240205",
+          "max": "20240205"
+        }
+      },
+      "sha256": "765bdfd9d4b64d2e4c1e046f347f1136807907a22f5106114ea02c7bdc817239"
+    },
+    {
+      "file": "xs_daily_20240930.parquet",
+      "rows": 5345,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20240930",
+          "max": "20240930"
+        }
+      },
+      "sha256": "8f08ce44e6d13f30e78bb6e07d34e0e03e1dc283e94f75a2c3656c2c1805d0fd"
+    },
+    {
+      "file": "xs_stk_limit_20240930.parquet",
+      "rows": 5438,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20240930",
+          "max": "20240930"
+        }
+      },
+      "sha256": "f6bcb85fec4e592f52947c4f9810a7164417e4f1a5449a56d89a474b4fc07cd3"
+    },
+    {
+      "file": "xs_daily_basic_20240930.parquet",
+      "rows": 5345,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20240930",
+          "max": "20240930"
+        }
+      },
+      "sha256": "93c07439a488a00c6b11ace459c35645e48c76e6a855cdea563e9f45132676a3"
+    },
+    {
+      "file": "xs_adj_factor_20240930.parquet",
+      "rows": 5380,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20240930",
+          "max": "20240930"
+        }
+      },
+      "sha256": "9f166fea124ec06a5985ccbd628f39bba18d0cb5471ebac54eaa8e8c4a9756dd"
+    },
+    {
+      "file": "xs_suspend_d_20240930.parquet",
+      "rows": 13,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "suspend_timing",
+        "suspend_type"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20240930",
+          "max": "20240930"
+        }
+      },
+      "sha256": "1cd1bb09b616e7d7a5448f47178efd8d2d38fed7d145d8a8d67380f6559ca11d"
+    },
+    {
+      "file": "xs_daily_20261111.parquet",
+      "rows": 5574,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "sha256": "e07cc6ef857b6e00db8f00657738388191106db2fe89ce9f2efe0b931c8beba2"
+    },
+    {
+      "file": "xs_stk_limit_20261111.parquet",
+      "rows": 5657,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "sha256": "5878213ab718fe88cfc76c38b7d50fe881dc1b1931e44c5b6217d9888f4dc4c4"
+    },
+    {
+      "file": "xs_daily_basic_20261111.parquet",
+      "rows": 5574,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "sha256": "80d548fce91be3a2976009539cfef65546990de2737b50ec6266cd325d21da1c"
+    },
+    {
+      "file": "xs_adj_factor_20261111.parquet",
+      "rows": 5584,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "sha256": "fce09f95d80c733ad953a5057304404836115cfab2b2ebef463d5401e26a5db0"
+    },
+    {
+      "file": "xs_suspend_d_20261111.parquet",
+      "rows": 7,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "suspend_timing",
+        "suspend_type"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "sha256": "02264e0841c1d8b5b0c19a72c5aba9bd4c28f53d61cb1c9dd595001cd099e47a"
+    },
+    {
+      "file": "sw_classify.parquet",
+      "rows": 511,
+      "columns": [
+        "index_code",
+        "industry_name",
+        "level",
+        "industry_code",
+        "is_pub",
+        "parent_code",
+        "src"
+      ],
+      "date_ranges": {},
+      "sha256": "f5a1a852a824755a766ed76b59c090f1d9450c467fc8118abe49b9fa0f7642b0"
+    },
+    {
+      "file": "stock_sw_member.parquet",
+      "rows": 44,
+      "columns": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "date_ranges": {
+        "in_date": {
+          "min": "19910403",
+          "max": "20260605"
+        }
+      },
+      "sha256": "9bf7b457f59f2d0b242756c2d08655f3cbda6c9793a31b2b69fa5e6ed7e7ee85"
+    },
+    {
+      "file": "index_daily.parquet",
+      "rows": 15625,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "open",
+        "high",
+        "low",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20261111"
+        }
+      },
+      "sha256": "76d8cf8ceff3bf75440d9c5997b44368f5605532f00c00686d36bb13f8cee7b4"
+    }
+  ]
+}
