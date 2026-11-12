@@ -19,10 +19,14 @@
    .venv\Scripts\python.exe scripts/build_curated.py --task T007
    ```
    如果报内存不足，改用 `--memory 1500MB --threads 2` 重试。
+3. 生成标签：
+   ```powershell
+   .venv\Scripts\python.exe scripts/build_labels.py --task T007
+   ```
 
 ## 提交
 
-- `results/T007/` 下的 `backfill_summary.json`、`curated_summary.json`、`dq_report.json`、`run_meta.json`、`REPORT.md`
+- `results/T007/` 下的 `backfill_summary.json`、`curated_summary.json`、`dq_report.json`、`labels_summary.json`、`run_meta.json`、`REPORT.md`
 - 提交信息：`T007: 全量回填与数据质量报告`
 - 不提交任何数据文件。
 

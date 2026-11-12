@@ -14,6 +14,7 @@
    ```powershell
    .venv\Scripts\python.exe scripts/load_sample.py --out E:\perq_data\_sample
    .venv\Scripts\python.exe scripts/build_curated.py --data-dir E:\perq_data\_sample --sample --task T006
+   .venv\Scripts\python.exe scripts/build_labels.py --data-dir E:\perq_data\_sample --task T006 --suffix _sample
    ```
    路径里的 `E:\perq_data` 换成你实际的 `PERQ_DATA_DIR`。
 3. 采集试跑：每个数据集只拉最早和最近的 2 个分区，约 250 次调用：
@@ -23,7 +24,7 @@
 
 ## 提交
 
-- `results/T006/` 下的 `dq_report_sample.json`、`curated_summary_sample.json`、`backfill_summary_trial.json`、`run_meta.json`、`REPORT.md`
+- `results/T006/` 下的 `dq_report_sample.json`、`curated_summary_sample.json`、`labels_summary_sample.json`、`backfill_summary_trial.json`、`run_meta.json`、`REPORT.md`
 - 提交信息：`T006: 数据层试跑`
 - 不提交任何数据文件。
 

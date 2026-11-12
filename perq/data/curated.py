@@ -164,7 +164,7 @@ def build_bars(con: Any, store: RawStore, out: Path) -> dict[str, Any]:
             FROM j
             WINDOW win AS (PARTITION BY ts_code ORDER BY trade_date)
         )
-        SELECT w.* EXCLUDE (cal_idx, list_idx, amount),
+        SELECT w.* EXCLUDE (list_idx, amount),
                (up_limit IS NULL OR down_limit IS NULL) AS limit_missing,
                COALESCE(open >= up_limit - {e}, false) AS open_at_up,
                COALESCE(open <= down_limit + {e}, false) AS open_at_down,

@@ -75,24 +75,25 @@ class RawStore:
         import pandas as pd
 
         schema = self.schema(name)
-        out = df.copy()
+        columns: dict[str, Any] = {}
         changed = False
-        for column in out.columns:
-            series = out[column]
+        for column in df.columns:
+            series = df[column]
             known = schema.get(column)
             all_null = bool(series.isna().all())
             if known is None:
                 if all_null:
-                    out[column] = pd.Series([float("nan")] * len(out), index=out.index, dtype="float64")
+                    columns[column] = pd.Series([float("nan")] * len(df), index=df.index, dtype="float64")
                     continue
                 kind = "float64" if pd.api.types.is_numeric_dtype(series) and not pd.api.types.is_bool_dtype(series) else "string"
                 schema[column] = kind
                 known = kind
                 changed = True
             if known == "float64":
-                out[column] = pd.to_numeric(series, errors="coerce").astype("float64")
+                columns[column] = pd.to_numeric(series, errors="coerce").astype("float64")
             else:
-                out[column] = series.astype("string")
+                columns[column] = series.astype("string")
+        out = pd.DataFrame(columns, index=df.index)
         if changed:
             self.schema_dir.mkdir(parents=True, exist_ok=True)
             self._schema_path(name).write_text(json.dumps(schema, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -113,8 +114,7 @@ class RawStore:
             archive.mkdir(parents=True, exist_ok=True)
             shutil.move(str(target), str(archive / f"{key}.{fetched_at.replace(':', '')}.parquet"))
         if rows > 0:
-            out = self._coerce(name, df)
-            out[FETCHED_AT] = fetched_at
+            out = self._coerce(name, df).assign(**{FETCHED_AT: fetched_at})
             target.parent.mkdir(parents=True, exist_ok=True)
             tmp = target.with_suffix(".parquet.tmp")
             out.to_parquet(tmp, index=False)
