@@ -1,0 +1,7422 @@
+{
+  "status": "completed",
+  "probe_count": 150,
+  "first_date_with_data": {
+    "limit_list_d": "20200102",
+    "cyq_perf": "20180102",
+    "top_list": "20150105",
+    "top_inst": "20150105",
+    "margin_detail": "20150105",
+    "block_trade": "20150105",
+    "stk_factor_pro": "20150105",
+    "limit_step": null,
+    "hm_detail": "20230103",
+    "ths_daily": "20150105",
+    "stk_surv": "20220104",
+    "hk_hold": "20170103",
+    "moneyflow_ths": "20200102",
+    "moneyflow_dc": null
+  },
+  "probes": [
+    {
+      "group": "历史起点",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 107,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 107,
+        "by_exchange_suffix": {
+          "SZ": 68,
+          "SH": 39
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 153,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20210104",
+          "max": "20210104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 153,
+        "by_exchange_suffix": {
+          "SZ": 81,
+          "SH": 72
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 152,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20220104",
+          "max": "20220104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 152,
+        "by_exchange_suffix": {
+          "SZ": 84,
+          "SH": 68
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 108,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 108,
+        "by_exchange_suffix": {
+          "SZ": 67,
+          "SH": 41
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "cyq_perf",
+      "need": "useful",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "cyq_perf",
+      "need": "useful",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "cyq_perf",
+      "need": "useful",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "cyq_perf",
+      "need": "useful",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3042,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20180102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3042,
+        "by_exchange_suffix": {
+          "SZ": 1777,
+          "SH": 1265
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "cyq_perf",
+      "need": "useful",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3315,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3315,
+        "by_exchange_suffix": {
+          "SZ": 1941,
+          "SH": 1374
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "cyq_perf",
+      "need": "useful",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3512,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3512,
+        "by_exchange_suffix": {
+          "SZ": 2017,
+          "SH": 1495
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "cyq_perf",
+      "need": "useful",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3911,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20210104",
+          "max": "20210104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3911,
+        "by_exchange_suffix": {
+          "SZ": 2180,
+          "SH": 1731
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "cyq_perf",
+      "need": "useful",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 4543,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20220104",
+          "max": "20220104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 4543,
+        "by_exchange_suffix": {
+          "SZ": 2409,
+          "SH": 1980,
+          "BJ": 154
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "cyq_perf",
+      "need": "useful",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 5071,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5071,
+        "by_exchange_suffix": {
+          "SZ": 2610,
+          "SH": 2137,
+          "BJ": 324
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 42,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "pct_change",
+        "turnover_rate",
+        "amount",
+        "l_sell",
+        "l_buy",
+        "l_amount",
+        "net_amount",
+        "net_rate",
+        "amount_rate",
+        "float_values",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20150105",
+          "max": "20150105"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 41,
+        "by_exchange_suffix": {
+          "SZ": 36,
+          "SH": 6
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 45,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "pct_change",
+        "turnover_rate",
+        "amount",
+        "l_sell",
+        "l_buy",
+        "l_amount",
+        "net_amount",
+        "net_rate",
+        "amount_rate",
+        "float_values",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 41,
+        "by_exchange_suffix": {
+          "SZ": 33,
+          "SH": 12
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 58,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "pct_change",
+        "turnover_rate",
+        "amount",
+        "l_sell",
+        "l_buy",
+        "l_amount",
+        "net_amount",
+        "net_rate",
+        "amount_rate",
+        "float_values",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20170103",
+          "max": "20170103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 50,
+        "by_exchange_suffix": {
+          "SZ": 39,
+          "SH": 19
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 51,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "pct_change",
+        "turnover_rate",
+        "amount",
+        "l_sell",
+        "l_buy",
+        "l_amount",
+        "net_amount",
+        "net_rate",
+        "amount_rate",
+        "float_values",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20180102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 42,
+        "by_exchange_suffix": {
+          "SZ": 37,
+          "SH": 14
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 58,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "pct_change",
+        "turnover_rate",
+        "amount",
+        "l_sell",
+        "l_buy",
+        "l_amount",
+        "net_amount",
+        "net_rate",
+        "amount_rate",
+        "float_values",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 48,
+        "by_exchange_suffix": {
+          "SZ": 45,
+          "SH": 13
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 48,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "pct_change",
+        "turnover_rate",
+        "amount",
+        "l_sell",
+        "l_buy",
+        "l_amount",
+        "net_amount",
+        "net_rate",
+        "amount_rate",
+        "float_values",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 44,
+        "by_exchange_suffix": {
+          "SZ": 33,
+          "SH": 15
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 67,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "pct_change",
+        "turnover_rate",
+        "amount",
+        "l_sell",
+        "l_buy",
+        "l_amount",
+        "net_amount",
+        "net_rate",
+        "amount_rate",
+        "float_values",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20210104",
+          "max": "20210104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 65,
+        "by_exchange_suffix": {
+          "SZ": 45,
+          "SH": 22
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 79,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "pct_change",
+        "turnover_rate",
+        "amount",
+        "l_sell",
+        "l_buy",
+        "l_amount",
+        "net_amount",
+        "net_rate",
+        "amount_rate",
+        "float_values",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20220104",
+          "max": "20220104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 71,
+        "by_exchange_suffix": {
+          "SZ": 48,
+          "SH": 28,
+          "BJ": 3
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 50,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "pct_change",
+        "turnover_rate",
+        "amount",
+        "l_sell",
+        "l_buy",
+        "l_amount",
+        "net_amount",
+        "net_rate",
+        "amount_rate",
+        "float_values",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 47,
+        "by_exchange_suffix": {
+          "SZ": 30,
+          "SH": 19,
+          "BJ": 1
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_inst",
+      "need": "useful",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 403,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "exalter",
+        "buy",
+        "buy_rate",
+        "sell",
+        "sell_rate",
+        "net_buy",
+        "side",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20150105",
+          "max": "20150105"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 41,
+        "by_exchange_suffix": {
+          "SZ": 344,
+          "SH": 59
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_inst",
+      "need": "useful",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 422,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "exalter",
+        "buy",
+        "buy_rate",
+        "sell",
+        "sell_rate",
+        "net_buy",
+        "side",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 41,
+        "by_exchange_suffix": {
+          "SZ": 306,
+          "SH": 116
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_inst",
+      "need": "useful",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 534,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "exalter",
+        "buy",
+        "buy_rate",
+        "sell",
+        "sell_rate",
+        "net_buy",
+        "side",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20170103",
+          "max": "20170103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 50,
+        "by_exchange_suffix": {
+          "SZ": 367,
+          "SH": 167
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_inst",
+      "need": "useful",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 490,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "exalter",
+        "buy",
+        "buy_rate",
+        "sell",
+        "sell_rate",
+        "net_buy",
+        "side",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20180102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 42,
+        "by_exchange_suffix": {
+          "SZ": 362,
+          "SH": 128
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_inst",
+      "need": "useful",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 580,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "exalter",
+        "buy",
+        "buy_rate",
+        "sell",
+        "sell_rate",
+        "net_buy",
+        "side",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 48,
+        "by_exchange_suffix": {
+          "SZ": 450,
+          "SH": 130
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_inst",
+      "need": "useful",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 480,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "exalter",
+        "buy",
+        "buy_rate",
+        "sell",
+        "sell_rate",
+        "net_buy",
+        "side",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 44,
+        "by_exchange_suffix": {
+          "SZ": 330,
+          "SH": 150
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_inst",
+      "need": "useful",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 656,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "exalter",
+        "buy",
+        "buy_rate",
+        "sell",
+        "sell_rate",
+        "net_buy",
+        "side",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20210104",
+          "max": "20210104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 65,
+        "by_exchange_suffix": {
+          "SZ": 443,
+          "SH": 213
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_inst",
+      "need": "useful",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 786,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "exalter",
+        "buy",
+        "buy_rate",
+        "sell",
+        "sell_rate",
+        "net_buy",
+        "side",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20220104",
+          "max": "20220104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 71,
+        "by_exchange_suffix": {
+          "SZ": 480,
+          "SH": 276,
+          "BJ": 30
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "top_inst",
+      "need": "useful",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 500,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "exalter",
+        "buy",
+        "buy_rate",
+        "sell",
+        "sell_rate",
+        "net_buy",
+        "side",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 47,
+        "by_exchange_suffix": {
+          "SZ": 300,
+          "SH": 190,
+          "BJ": 10
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "margin_detail",
+      "need": "useful",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 897,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "rzye",
+        "rqye",
+        "rzmre",
+        "rqyl",
+        "rzche",
+        "rqchl",
+        "rqmcl",
+        "rzrqye"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20150105",
+          "max": "20150105"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 897,
+        "by_exchange_suffix": {
+          "SH": 499,
+          "SZ": 398
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "margin_detail",
+      "need": "useful",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 913,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "rzye",
+        "rqye",
+        "rzmre",
+        "rqyl",
+        "rzche",
+        "rqchl",
+        "rqmcl",
+        "rzrqye"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 913,
+        "by_exchange_suffix": {
+          "SH": 509,
+          "SZ": 404
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "margin_detail",
+      "need": "useful",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 970,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "rzye",
+        "rqye",
+        "rzmre",
+        "rqyl",
+        "rzche",
+        "rqchl",
+        "rqmcl",
+        "rzrqye"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20170103",
+          "max": "20170103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 970,
+        "by_exchange_suffix": {
+          "SH": 540,
+          "SZ": 430
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "margin_detail",
+      "need": "useful",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 970,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "rzye",
+        "rqye",
+        "rzmre",
+        "rqyl",
+        "rzche",
+        "rqchl",
+        "rqmcl",
+        "rzrqye"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20180102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 970,
+        "by_exchange_suffix": {
+          "SH": 538,
+          "SZ": 432
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "margin_detail",
+      "need": "useful",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 994,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "rzye",
+        "rqye",
+        "rzmre",
+        "rqyl",
+        "rzche",
+        "rqchl",
+        "rqmcl",
+        "rzrqye"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 994,
+        "by_exchange_suffix": {
+          "SH": 556,
+          "SZ": 438
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "margin_detail",
+      "need": "useful",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 1738,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "rzye",
+        "rqye",
+        "rzmre",
+        "rqyl",
+        "rzche",
+        "rqchl",
+        "rqmcl",
+        "rzrqye"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1738,
+        "by_exchange_suffix": {
+          "SH": 919,
+          "SZ": 819
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "margin_detail",
+      "need": "useful",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 1992,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "rzye",
+        "rqye",
+        "rzmre",
+        "rqyl",
+        "rzche",
+        "rqchl",
+        "rqmcl",
+        "rzrqye"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20210104",
+          "max": "20210104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1992,
+        "by_exchange_suffix": {
+          "SH": 1090,
+          "SZ": 902
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "margin_detail",
+      "need": "useful",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 2407,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "rzye",
+        "rqye",
+        "rzmre",
+        "rqyl",
+        "rzche",
+        "rqchl",
+        "rqmcl",
+        "rzrqye"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20220104",
+          "max": "20220104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2407,
+        "by_exchange_suffix": {
+          "SH": 1291,
+          "SZ": 1116
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "margin_detail",
+      "need": "useful",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3316,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "rzye",
+        "rqye",
+        "rzmre",
+        "rqyl",
+        "rzche",
+        "rqchl",
+        "rqmcl",
+        "rzrqye"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3316,
+        "by_exchange_suffix": {
+          "SZ": 1692,
+          "SH": 1624
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "block_trade",
+      "need": "optional",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 65,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "vol",
+        "amount",
+        "buyer",
+        "seller"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20150105",
+          "max": "20150105"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 42,
+        "by_exchange_suffix": {
+          "SH": 33,
+          "SZ": 32
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "block_trade",
+      "need": "optional",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 19,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "vol",
+        "amount",
+        "buyer",
+        "seller"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 18,
+        "by_exchange_suffix": {
+          "SZ": 14,
+          "SH": 5
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "block_trade",
+      "need": "optional",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 102,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "vol",
+        "amount",
+        "buyer",
+        "seller"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20170103",
+          "max": "20170103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 77,
+        "by_exchange_suffix": {
+          "SZ": 64,
+          "SH": 38
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "block_trade",
+      "need": "optional",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 85,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "vol",
+        "amount",
+        "buyer",
+        "seller"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20180102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 52,
+        "by_exchange_suffix": {
+          "SZ": 69,
+          "SH": 16
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "block_trade",
+      "need": "optional",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 103,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "vol",
+        "amount",
+        "buyer",
+        "seller"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 72,
+        "by_exchange_suffix": {
+          "SZ": 88,
+          "SH": 15
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "block_trade",
+      "need": "optional",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 291,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "vol",
+        "amount",
+        "buyer",
+        "seller"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 125,
+        "by_exchange_suffix": {
+          "SZ": 221,
+          "SH": 70
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "block_trade",
+      "need": "optional",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 292,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "vol",
+        "amount",
+        "buyer",
+        "seller"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20210104",
+          "max": "20210104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 137,
+        "by_exchange_suffix": {
+          "SZ": 211,
+          "SH": 80,
+          "BJ": 1
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "block_trade",
+      "need": "optional",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 306,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "vol",
+        "amount",
+        "buyer",
+        "seller"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20220104",
+          "max": "20220104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 156,
+        "by_exchange_suffix": {
+          "SZ": 239,
+          "SH": 63,
+          "BJ": 4
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "block_trade",
+      "need": "optional",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 190,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "vol",
+        "amount",
+        "buyer",
+        "seller"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 100,
+        "by_exchange_suffix": {
+          "SH": 112,
+          "SZ": 74,
+          "BJ": 4
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_factor_pro",
+      "need": "optional",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 2350,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "open_hfq",
+        "open_qfq",
+        "high",
+        "high_hfq",
+        "high_qfq",
+        "low",
+        "low_hfq",
+        "low_qfq",
+        "close",
+        "close_hfq",
+        "close_qfq",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv",
+        "adj_factor",
+        "asi_bfq",
+        "asi_hfq",
+        "asi_qfq",
+        "asit_bfq",
+        "asit_hfq",
+        "asit_qfq",
+        "atr_bfq",
+        "atr_hfq",
+        "atr_qfq",
+        "bbi_bfq",
+        "bbi_hfq",
+        "bbi_qfq",
+        "bias1_bfq",
+        "bias1_hfq",
+        "bias1_qfq",
+        "bias2_bfq",
+        "bias2_hfq",
+        "bias2_qfq",
+        "bias3_bfq",
+        "bias3_hfq",
+        "bias3_qfq",
+        "boll_lower_bfq",
+        "boll_lower_hfq",
+        "boll_lower_qfq",
+        "boll_mid_bfq",
+        "boll_mid_hfq",
+        "boll_mid_qfq",
+        "boll_upper_bfq",
+        "boll_upper_hfq",
+        "boll_upper_qfq",
+        "brar_ar_bfq",
+        "brar_ar_hfq",
+        "brar_ar_qfq",
+        "brar_br_bfq",
+        "brar_br_hfq",
+        "brar_br_qfq",
+        "cci_bfq",
+        "cci_hfq",
+        "cci_qfq",
+        "cr_bfq",
+        "cr_hfq",
+        "cr_qfq",
+        "dfma_dif_bfq",
+        "dfma_dif_hfq",
+        "dfma_dif_qfq",
+        "dfma_difma_bfq",
+        "dfma_difma_hfq",
+        "dfma_difma_qfq",
+        "dmi_adx_bfq",
+        "dmi_adx_hfq",
+        "dmi_adx_qfq",
+        "dmi_adxr_bfq",
+        "dmi_adxr_hfq",
+        "dmi_adxr_qfq",
+        "dmi_mdi_bfq",
+        "dmi_mdi_hfq",
+        "dmi_mdi_qfq",
+        "dmi_pdi_bfq",
+        "dmi_pdi_hfq",
+        "dmi_pdi_qfq",
+        "downdays",
+        "updays",
+        "dpo_bfq",
+        "dpo_hfq",
+        "dpo_qfq",
+        "madpo_bfq",
+        "madpo_hfq",
+        "madpo_qfq",
+        "ema_bfq_10",
+        "ema_bfq_20",
+        "ema_bfq_250",
+        "ema_bfq_30",
+        "ema_bfq_5",
+        "ema_bfq_60",
+        "ema_bfq_90",
+        "ema_hfq_10",
+        "ema_hfq_20",
+        "ema_hfq_250",
+        "ema_hfq_30",
+        "ema_hfq_5",
+        "ema_hfq_60",
+        "ema_hfq_90",
+        "ema_qfq_10",
+        "ema_qfq_20",
+        "ema_qfq_250",
+        "ema_qfq_30",
+        "ema_qfq_5",
+        "ema_qfq_60",
+        "ema_qfq_90",
+        "emv_bfq",
+        "emv_hfq",
+        "emv_qfq",
+        "maemv_bfq",
+        "maemv_hfq",
+        "maemv_qfq",
+        "expma_12_bfq",
+        "expma_12_hfq",
+        "expma_12_qfq",
+        "expma_50_bfq",
+        "expma_50_hfq",
+        "expma_50_qfq",
+        "kdj_bfq",
+        "kdj_hfq",
+        "kdj_qfq",
+        "kdj_d_bfq",
+        "kdj_d_hfq",
+        "kdj_d_qfq",
+        "kdj_k_bfq",
+        "kdj_k_hfq",
+        "kdj_k_qfq",
+        "ktn_down_bfq",
+        "ktn_down_hfq",
+        "ktn_down_qfq",
+        "ktn_mid_bfq",
+        "ktn_mid_hfq",
+        "ktn_mid_qfq",
+        "ktn_upper_bfq",
+        "ktn_upper_hfq",
+        "ktn_upper_qfq",
+        "lowdays",
+        "topdays",
+        "ma_bfq_10",
+        "ma_bfq_20",
+        "ma_bfq_250",
+        "ma_bfq_30",
+        "ma_bfq_5",
+        "ma_bfq_60",
+        "ma_bfq_90",
+        "ma_hfq_10",
+        "ma_hfq_20",
+        "ma_hfq_250",
+        "ma_hfq_30",
+        "ma_hfq_5",
+        "ma_hfq_60",
+        "ma_hfq_90",
+        "ma_qfq_10",
+        "ma_qfq_20",
+        "ma_qfq_250",
+        "ma_qfq_30",
+        "ma_qfq_5",
+        "ma_qfq_60",
+        "ma_qfq_90",
+        "macd_bfq",
+        "macd_hfq",
+        "macd_qfq",
+        "macd_dea_bfq",
+        "macd_dea_hfq",
+        "macd_dea_qfq",
+        "macd_dif_bfq",
+        "macd_dif_hfq",
+        "macd_dif_qfq",
+        "mass_bfq",
+        "mass_hfq",
+        "mass_qfq",
+        "ma_mass_bfq",
+        "ma_mass_hfq",
+        "ma_mass_qfq",
+        "mfi_bfq",
+        "mfi_hfq",
+        "mfi_qfq",
+        "mtm_bfq",
+        "mtm_hfq",
+        "mtm_qfq",
+        "mtmma_bfq",
+        "mtmma_hfq",
+        "mtmma_qfq",
+        "obv_bfq",
+        "obv_hfq",
+        "obv_qfq",
+        "psy_bfq",
+        "psy_hfq",
+        "psy_qfq",
+        "psyma_bfq",
+        "psyma_hfq",
+        "psyma_qfq",
+        "roc_bfq",
+        "roc_hfq",
+        "roc_qfq",
+        "maroc_bfq",
+        "maroc_hfq",
+        "maroc_qfq",
+        "rsi_bfq_12",
+        "rsi_bfq_24",
+        "rsi_bfq_6",
+        "rsi_hfq_12",
+        "rsi_hfq_24",
+        "rsi_hfq_6",
+        "rsi_qfq_12",
+        "rsi_qfq_24",
+        "rsi_qfq_6",
+        "taq_down_bfq",
+        "taq_down_hfq",
+        "taq_down_qfq",
+        "taq_mid_bfq",
+        "taq_mid_hfq",
+        "taq_mid_qfq",
+        "taq_up_bfq",
+        "taq_up_hfq",
+        "taq_up_qfq",
+        "trix_bfq",
+        "trix_hfq",
+        "trix_qfq",
+        "trma_bfq",
+        "trma_hfq",
+        "trma_qfq",
+        "vr_bfq",
+        "vr_hfq",
+        "vr_qfq",
+        "wr_bfq",
+        "wr_hfq",
+        "wr_qfq",
+        "wr1_bfq",
+        "wr1_hfq",
+        "wr1_qfq",
+        "xsii_td1_bfq",
+        "xsii_td1_hfq",
+        "xsii_td1_qfq",
+        "xsii_td2_bfq",
+        "xsii_td2_hfq",
+        "xsii_td2_qfq",
+        "xsii_td3_bfq",
+        "xsii_td3_hfq",
+        "xsii_td3_qfq",
+        "xsii_td4_bfq",
+        "xsii_td4_hfq",
+        "xsii_td4_qfq"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20150105",
+          "max": "20150105"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2350,
+        "by_exchange_suffix": {
+          "SZ": 1425,
+          "SH": 915,
+          "BJ": 10
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_factor_pro",
+      "need": "optional",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 2632,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "open_hfq",
+        "open_qfq",
+        "high",
+        "high_hfq",
+        "high_qfq",
+        "low",
+        "low_hfq",
+        "low_qfq",
+        "close",
+        "close_hfq",
+        "close_qfq",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv",
+        "adj_factor",
+        "asi_bfq",
+        "asi_hfq",
+        "asi_qfq",
+        "asit_bfq",
+        "asit_hfq",
+        "asit_qfq",
+        "atr_bfq",
+        "atr_hfq",
+        "atr_qfq",
+        "bbi_bfq",
+        "bbi_hfq",
+        "bbi_qfq",
+        "bias1_bfq",
+        "bias1_hfq",
+        "bias1_qfq",
+        "bias2_bfq",
+        "bias2_hfq",
+        "bias2_qfq",
+        "bias3_bfq",
+        "bias3_hfq",
+        "bias3_qfq",
+        "boll_lower_bfq",
+        "boll_lower_hfq",
+        "boll_lower_qfq",
+        "boll_mid_bfq",
+        "boll_mid_hfq",
+        "boll_mid_qfq",
+        "boll_upper_bfq",
+        "boll_upper_hfq",
+        "boll_upper_qfq",
+        "brar_ar_bfq",
+        "brar_ar_hfq",
+        "brar_ar_qfq",
+        "brar_br_bfq",
+        "brar_br_hfq",
+        "brar_br_qfq",
+        "cci_bfq",
+        "cci_hfq",
+        "cci_qfq",
+        "cr_bfq",
+        "cr_hfq",
+        "cr_qfq",
+        "dfma_dif_bfq",
+        "dfma_dif_hfq",
+        "dfma_dif_qfq",
+        "dfma_difma_bfq",
+        "dfma_difma_hfq",
+        "dfma_difma_qfq",
+        "dmi_adx_bfq",
+        "dmi_adx_hfq",
+        "dmi_adx_qfq",
+        "dmi_adxr_bfq",
+        "dmi_adxr_hfq",
+        "dmi_adxr_qfq",
+        "dmi_mdi_bfq",
+        "dmi_mdi_hfq",
+        "dmi_mdi_qfq",
+        "dmi_pdi_bfq",
+        "dmi_pdi_hfq",
+        "dmi_pdi_qfq",
+        "downdays",
+        "updays",
+        "dpo_bfq",
+        "dpo_hfq",
+        "dpo_qfq",
+        "madpo_bfq",
+        "madpo_hfq",
+        "madpo_qfq",
+        "ema_bfq_10",
+        "ema_bfq_20",
+        "ema_bfq_250",
+        "ema_bfq_30",
+        "ema_bfq_5",
+        "ema_bfq_60",
+        "ema_bfq_90",
+        "ema_hfq_10",
+        "ema_hfq_20",
+        "ema_hfq_250",
+        "ema_hfq_30",
+        "ema_hfq_5",
+        "ema_hfq_60",
+        "ema_hfq_90",
+        "ema_qfq_10",
+        "ema_qfq_20",
+        "ema_qfq_250",
+        "ema_qfq_30",
+        "ema_qfq_5",
+        "ema_qfq_60",
+        "ema_qfq_90",
+        "emv_bfq",
+        "emv_hfq",
+        "emv_qfq",
+        "maemv_bfq",
+        "maemv_hfq",
+        "maemv_qfq",
+        "expma_12_bfq",
+        "expma_12_hfq",
+        "expma_12_qfq",
+        "expma_50_bfq",
+        "expma_50_hfq",
+        "expma_50_qfq",
+        "kdj_bfq",
+        "kdj_hfq",
+        "kdj_qfq",
+        "kdj_d_bfq",
+        "kdj_d_hfq",
+        "kdj_d_qfq",
+        "kdj_k_bfq",
+        "kdj_k_hfq",
+        "kdj_k_qfq",
+        "ktn_down_bfq",
+        "ktn_down_hfq",
+        "ktn_down_qfq",
+        "ktn_mid_bfq",
+        "ktn_mid_hfq",
+        "ktn_mid_qfq",
+        "ktn_upper_bfq",
+        "ktn_upper_hfq",
+        "ktn_upper_qfq",
+        "lowdays",
+        "topdays",
+        "ma_bfq_10",
+        "ma_bfq_20",
+        "ma_bfq_250",
+        "ma_bfq_30",
+        "ma_bfq_5",
+        "ma_bfq_60",
+        "ma_bfq_90",
+        "ma_hfq_10",
+        "ma_hfq_20",
+        "ma_hfq_250",
+        "ma_hfq_30",
+        "ma_hfq_5",
+        "ma_hfq_60",
+        "ma_hfq_90",
+        "ma_qfq_10",
+        "ma_qfq_20",
+        "ma_qfq_250",
+        "ma_qfq_30",
+        "ma_qfq_5",
+        "ma_qfq_60",
+        "ma_qfq_90",
+        "macd_bfq",
+        "macd_hfq",
+        "macd_qfq",
+        "macd_dea_bfq",
+        "macd_dea_hfq",
+        "macd_dea_qfq",
+        "macd_dif_bfq",
+        "macd_dif_hfq",
+        "macd_dif_qfq",
+        "mass_bfq",
+        "mass_hfq",
+        "mass_qfq",
+        "ma_mass_bfq",
+        "ma_mass_hfq",
+        "ma_mass_qfq",
+        "mfi_bfq",
+        "mfi_hfq",
+        "mfi_qfq",
+        "mtm_bfq",
+        "mtm_hfq",
+        "mtm_qfq",
+        "mtmma_bfq",
+        "mtmma_hfq",
+        "mtmma_qfq",
+        "obv_bfq",
+        "obv_hfq",
+        "obv_qfq",
+        "psy_bfq",
+        "psy_hfq",
+        "psy_qfq",
+        "psyma_bfq",
+        "psyma_hfq",
+        "psyma_qfq",
+        "roc_bfq",
+        "roc_hfq",
+        "roc_qfq",
+        "maroc_bfq",
+        "maroc_hfq",
+        "maroc_qfq",
+        "rsi_bfq_12",
+        "rsi_bfq_24",
+        "rsi_bfq_6",
+        "rsi_hfq_12",
+        "rsi_hfq_24",
+        "rsi_hfq_6",
+        "rsi_qfq_12",
+        "rsi_qfq_24",
+        "rsi_qfq_6",
+        "taq_down_bfq",
+        "taq_down_hfq",
+        "taq_down_qfq",
+        "taq_mid_bfq",
+        "taq_mid_hfq",
+        "taq_mid_qfq",
+        "taq_up_bfq",
+        "taq_up_hfq",
+        "taq_up_qfq",
+        "trix_bfq",
+        "trix_hfq",
+        "trix_qfq",
+        "trma_bfq",
+        "trma_hfq",
+        "trma_qfq",
+        "vr_bfq",
+        "vr_hfq",
+        "vr_qfq",
+        "wr_bfq",
+        "wr_hfq",
+        "wr_qfq",
+        "wr1_bfq",
+        "wr1_hfq",
+        "wr1_qfq",
+        "xsii_td1_bfq",
+        "xsii_td1_hfq",
+        "xsii_td1_qfq",
+        "xsii_td2_bfq",
+        "xsii_td2_hfq",
+        "xsii_td2_qfq",
+        "xsii_td3_bfq",
+        "xsii_td3_hfq",
+        "xsii_td3_qfq",
+        "xsii_td4_bfq",
+        "xsii_td4_hfq",
+        "xsii_td4_qfq"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2632,
+        "by_exchange_suffix": {
+          "SZ": 1564,
+          "SH": 983,
+          "BJ": 85
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_factor_pro",
+      "need": "optional",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 2918,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "open_hfq",
+        "open_qfq",
+        "high",
+        "high_hfq",
+        "high_qfq",
+        "low",
+        "low_hfq",
+        "low_qfq",
+        "close",
+        "close_hfq",
+        "close_qfq",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv",
+        "adj_factor",
+        "asi_bfq",
+        "asi_hfq",
+        "asi_qfq",
+        "asit_bfq",
+        "asit_hfq",
+        "asit_qfq",
+        "atr_bfq",
+        "atr_hfq",
+        "atr_qfq",
+        "bbi_bfq",
+        "bbi_hfq",
+        "bbi_qfq",
+        "bias1_bfq",
+        "bias1_hfq",
+        "bias1_qfq",
+        "bias2_bfq",
+        "bias2_hfq",
+        "bias2_qfq",
+        "bias3_bfq",
+        "bias3_hfq",
+        "bias3_qfq",
+        "boll_lower_bfq",
+        "boll_lower_hfq",
+        "boll_lower_qfq",
+        "boll_mid_bfq",
+        "boll_mid_hfq",
+        "boll_mid_qfq",
+        "boll_upper_bfq",
+        "boll_upper_hfq",
+        "boll_upper_qfq",
+        "brar_ar_bfq",
+        "brar_ar_hfq",
+        "brar_ar_qfq",
+        "brar_br_bfq",
+        "brar_br_hfq",
+        "brar_br_qfq",
+        "cci_bfq",
+        "cci_hfq",
+        "cci_qfq",
+        "cr_bfq",
+        "cr_hfq",
+        "cr_qfq",
+        "dfma_dif_bfq",
+        "dfma_dif_hfq",
+        "dfma_dif_qfq",
+        "dfma_difma_bfq",
+        "dfma_difma_hfq",
+        "dfma_difma_qfq",
+        "dmi_adx_bfq",
+        "dmi_adx_hfq",
+        "dmi_adx_qfq",
+        "dmi_adxr_bfq",
+        "dmi_adxr_hfq",
+        "dmi_adxr_qfq",
+        "dmi_mdi_bfq",
+        "dmi_mdi_hfq",
+        "dmi_mdi_qfq",
+        "dmi_pdi_bfq",
+        "dmi_pdi_hfq",
+        "dmi_pdi_qfq",
+        "downdays",
+        "updays",
+        "dpo_bfq",
+        "dpo_hfq",
+        "dpo_qfq",
+        "madpo_bfq",
+        "madpo_hfq",
+        "madpo_qfq",
+        "ema_bfq_10",
+        "ema_bfq_20",
+        "ema_bfq_250",
+        "ema_bfq_30",
+        "ema_bfq_5",
+        "ema_bfq_60",
+        "ema_bfq_90",
+        "ema_hfq_10",
+        "ema_hfq_20",
+        "ema_hfq_250",
+        "ema_hfq_30",
+        "ema_hfq_5",
+        "ema_hfq_60",
+        "ema_hfq_90",
+        "ema_qfq_10",
+        "ema_qfq_20",
+        "ema_qfq_250",
+        "ema_qfq_30",
+        "ema_qfq_5",
+        "ema_qfq_60",
+        "ema_qfq_90",
+        "emv_bfq",
+        "emv_hfq",
+        "emv_qfq",
+        "maemv_bfq",
+        "maemv_hfq",
+        "maemv_qfq",
+        "expma_12_bfq",
+        "expma_12_hfq",
+        "expma_12_qfq",
+        "expma_50_bfq",
+        "expma_50_hfq",
+        "expma_50_qfq",
+        "kdj_bfq",
+        "kdj_hfq",
+        "kdj_qfq",
+        "kdj_d_bfq",
+        "kdj_d_hfq",
+        "kdj_d_qfq",
+        "kdj_k_bfq",
+        "kdj_k_hfq",
+        "kdj_k_qfq",
+        "ktn_down_bfq",
+        "ktn_down_hfq",
+        "ktn_down_qfq",
+        "ktn_mid_bfq",
+        "ktn_mid_hfq",
+        "ktn_mid_qfq",
+        "ktn_upper_bfq",
+        "ktn_upper_hfq",
+        "ktn_upper_qfq",
+        "lowdays",
+        "topdays",
+        "ma_bfq_10",
+        "ma_bfq_20",
+        "ma_bfq_250",
+        "ma_bfq_30",
+        "ma_bfq_5",
+        "ma_bfq_60",
+        "ma_bfq_90",
+        "ma_hfq_10",
+        "ma_hfq_20",
+        "ma_hfq_250",
+        "ma_hfq_30",
+        "ma_hfq_5",
+        "ma_hfq_60",
+        "ma_hfq_90",
+        "ma_qfq_10",
+        "ma_qfq_20",
+        "ma_qfq_250",
+        "ma_qfq_30",
+        "ma_qfq_5",
+        "ma_qfq_60",
+        "ma_qfq_90",
+        "macd_bfq",
+        "macd_hfq",
+        "macd_qfq",
+        "macd_dea_bfq",
+        "macd_dea_hfq",
+        "macd_dea_qfq",
+        "macd_dif_bfq",
+        "macd_dif_hfq",
+        "macd_dif_qfq",
+        "mass_bfq",
+        "mass_hfq",
+        "mass_qfq",
+        "ma_mass_bfq",
+        "ma_mass_hfq",
+        "ma_mass_qfq",
+        "mfi_bfq",
+        "mfi_hfq",
+        "mfi_qfq",
+        "mtm_bfq",
+        "mtm_hfq",
+        "mtm_qfq",
+        "mtmma_bfq",
+        "mtmma_hfq",
+        "mtmma_qfq",
+        "obv_bfq",
+        "obv_hfq",
+        "obv_qfq",
+        "psy_bfq",
+        "psy_hfq",
+        "psy_qfq",
+        "psyma_bfq",
+        "psyma_hfq",
+        "psyma_qfq",
+        "roc_bfq",
+        "roc_hfq",
+        "roc_qfq",
+        "maroc_bfq",
+        "maroc_hfq",
+        "maroc_qfq",
+        "rsi_bfq_12",
+        "rsi_bfq_24",
+        "rsi_bfq_6",
+        "rsi_hfq_12",
+        "rsi_hfq_24",
+        "rsi_hfq_6",
+        "rsi_qfq_12",
+        "rsi_qfq_24",
+        "rsi_qfq_6",
+        "taq_down_bfq",
+        "taq_down_hfq",
+        "taq_down_qfq",
+        "taq_mid_bfq",
+        "taq_mid_hfq",
+        "taq_mid_qfq",
+        "taq_up_bfq",
+        "taq_up_hfq",
+        "taq_up_qfq",
+        "trix_bfq",
+        "trix_hfq",
+        "trix_qfq",
+        "trma_bfq",
+        "trma_hfq",
+        "trma_qfq",
+        "vr_bfq",
+        "vr_hfq",
+        "vr_qfq",
+        "wr_bfq",
+        "wr_hfq",
+        "wr_qfq",
+        "wr1_bfq",
+        "wr1_hfq",
+        "wr1_qfq",
+        "xsii_td1_bfq",
+        "xsii_td1_hfq",
+        "xsii_td1_qfq",
+        "xsii_td2_bfq",
+        "xsii_td2_hfq",
+        "xsii_td2_qfq",
+        "xsii_td3_bfq",
+        "xsii_td3_hfq",
+        "xsii_td3_qfq",
+        "xsii_td4_bfq",
+        "xsii_td4_hfq",
+        "xsii_td4_qfq"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20170103",
+          "max": "20170103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2918,
+        "by_exchange_suffix": {
+          "SZ": 1724,
+          "SH": 1106,
+          "BJ": 88
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_factor_pro",
+      "need": "optional",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3309,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "open_hfq",
+        "open_qfq",
+        "high",
+        "high_hfq",
+        "high_qfq",
+        "low",
+        "low_hfq",
+        "low_qfq",
+        "close",
+        "close_hfq",
+        "close_qfq",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv",
+        "adj_factor",
+        "asi_bfq",
+        "asi_hfq",
+        "asi_qfq",
+        "asit_bfq",
+        "asit_hfq",
+        "asit_qfq",
+        "atr_bfq",
+        "atr_hfq",
+        "atr_qfq",
+        "bbi_bfq",
+        "bbi_hfq",
+        "bbi_qfq",
+        "bias1_bfq",
+        "bias1_hfq",
+        "bias1_qfq",
+        "bias2_bfq",
+        "bias2_hfq",
+        "bias2_qfq",
+        "bias3_bfq",
+        "bias3_hfq",
+        "bias3_qfq",
+        "boll_lower_bfq",
+        "boll_lower_hfq",
+        "boll_lower_qfq",
+        "boll_mid_bfq",
+        "boll_mid_hfq",
+        "boll_mid_qfq",
+        "boll_upper_bfq",
+        "boll_upper_hfq",
+        "boll_upper_qfq",
+        "brar_ar_bfq",
+        "brar_ar_hfq",
+        "brar_ar_qfq",
+        "brar_br_bfq",
+        "brar_br_hfq",
+        "brar_br_qfq",
+        "cci_bfq",
+        "cci_hfq",
+        "cci_qfq",
+        "cr_bfq",
+        "cr_hfq",
+        "cr_qfq",
+        "dfma_dif_bfq",
+        "dfma_dif_hfq",
+        "dfma_dif_qfq",
+        "dfma_difma_bfq",
+        "dfma_difma_hfq",
+        "dfma_difma_qfq",
+        "dmi_adx_bfq",
+        "dmi_adx_hfq",
+        "dmi_adx_qfq",
+        "dmi_adxr_bfq",
+        "dmi_adxr_hfq",
+        "dmi_adxr_qfq",
+        "dmi_mdi_bfq",
+        "dmi_mdi_hfq",
+        "dmi_mdi_qfq",
+        "dmi_pdi_bfq",
+        "dmi_pdi_hfq",
+        "dmi_pdi_qfq",
+        "downdays",
+        "updays",
+        "dpo_bfq",
+        "dpo_hfq",
+        "dpo_qfq",
+        "madpo_bfq",
+        "madpo_hfq",
+        "madpo_qfq",
+        "ema_bfq_10",
+        "ema_bfq_20",
+        "ema_bfq_250",
+        "ema_bfq_30",
+        "ema_bfq_5",
+        "ema_bfq_60",
+        "ema_bfq_90",
+        "ema_hfq_10",
+        "ema_hfq_20",
+        "ema_hfq_250",
+        "ema_hfq_30",
+        "ema_hfq_5",
+        "ema_hfq_60",
+        "ema_hfq_90",
+        "ema_qfq_10",
+        "ema_qfq_20",
+        "ema_qfq_250",
+        "ema_qfq_30",
+        "ema_qfq_5",
+        "ema_qfq_60",
+        "ema_qfq_90",
+        "emv_bfq",
+        "emv_hfq",
+        "emv_qfq",
+        "maemv_bfq",
+        "maemv_hfq",
+        "maemv_qfq",
+        "expma_12_bfq",
+        "expma_12_hfq",
+        "expma_12_qfq",
+        "expma_50_bfq",
+        "expma_50_hfq",
+        "expma_50_qfq",
+        "kdj_bfq",
+        "kdj_hfq",
+        "kdj_qfq",
+        "kdj_d_bfq",
+        "kdj_d_hfq",
+        "kdj_d_qfq",
+        "kdj_k_bfq",
+        "kdj_k_hfq",
+        "kdj_k_qfq",
+        "ktn_down_bfq",
+        "ktn_down_hfq",
+        "ktn_down_qfq",
+        "ktn_mid_bfq",
+        "ktn_mid_hfq",
+        "ktn_mid_qfq",
+        "ktn_upper_bfq",
+        "ktn_upper_hfq",
+        "ktn_upper_qfq",
+        "lowdays",
+        "topdays",
+        "ma_bfq_10",
+        "ma_bfq_20",
+        "ma_bfq_250",
+        "ma_bfq_30",
+        "ma_bfq_5",
+        "ma_bfq_60",
+        "ma_bfq_90",
+        "ma_hfq_10",
+        "ma_hfq_20",
+        "ma_hfq_250",
+        "ma_hfq_30",
+        "ma_hfq_5",
+        "ma_hfq_60",
+        "ma_hfq_90",
+        "ma_qfq_10",
+        "ma_qfq_20",
+        "ma_qfq_250",
+        "ma_qfq_30",
+        "ma_qfq_5",
+        "ma_qfq_60",
+        "ma_qfq_90",
+        "macd_bfq",
+        "macd_hfq",
+        "macd_qfq",
+        "macd_dea_bfq",
+        "macd_dea_hfq",
+        "macd_dea_qfq",
+        "macd_dif_bfq",
+        "macd_dif_hfq",
+        "macd_dif_qfq",
+        "mass_bfq",
+        "mass_hfq",
+        "mass_qfq",
+        "ma_mass_bfq",
+        "ma_mass_hfq",
+        "ma_mass_qfq",
+        "mfi_bfq",
+        "mfi_hfq",
+        "mfi_qfq",
+        "mtm_bfq",
+        "mtm_hfq",
+        "mtm_qfq",
+        "mtmma_bfq",
+        "mtmma_hfq",
+        "mtmma_qfq",
+        "obv_bfq",
+        "obv_hfq",
+        "obv_qfq",
+        "psy_bfq",
+        "psy_hfq",
+        "psy_qfq",
+        "psyma_bfq",
+        "psyma_hfq",
+        "psyma_qfq",
+        "roc_bfq",
+        "roc_hfq",
+        "roc_qfq",
+        "maroc_bfq",
+        "maroc_hfq",
+        "maroc_qfq",
+        "rsi_bfq_12",
+        "rsi_bfq_24",
+        "rsi_bfq_6",
+        "rsi_hfq_12",
+        "rsi_hfq_24",
+        "rsi_hfq_6",
+        "rsi_qfq_12",
+        "rsi_qfq_24",
+        "rsi_qfq_6",
+        "taq_down_bfq",
+        "taq_down_hfq",
+        "taq_down_qfq",
+        "taq_mid_bfq",
+        "taq_mid_hfq",
+        "taq_mid_qfq",
+        "taq_up_bfq",
+        "taq_up_hfq",
+        "taq_up_qfq",
+        "trix_bfq",
+        "trix_hfq",
+        "trix_qfq",
+        "trma_bfq",
+        "trma_hfq",
+        "trma_qfq",
+        "vr_bfq",
+        "vr_hfq",
+        "vr_qfq",
+        "wr_bfq",
+        "wr_hfq",
+        "wr_qfq",
+        "wr1_bfq",
+        "wr1_hfq",
+        "wr1_qfq",
+        "xsii_td1_bfq",
+        "xsii_td1_hfq",
+        "xsii_td1_qfq",
+        "xsii_td2_bfq",
+        "xsii_td2_hfq",
+        "xsii_td2_qfq",
+        "xsii_td3_bfq",
+        "xsii_td3_hfq",
+        "xsii_td3_qfq",
+        "xsii_td4_bfq",
+        "xsii_td4_hfq",
+        "xsii_td4_qfq"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20180102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3309,
+        "by_exchange_suffix": {
+          "SZ": 1927,
+          "SH": 1324,
+          "BJ": 58
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_factor_pro",
+      "need": "optional",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3600,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "open_hfq",
+        "open_qfq",
+        "high",
+        "high_hfq",
+        "high_qfq",
+        "low",
+        "low_hfq",
+        "low_qfq",
+        "close",
+        "close_hfq",
+        "close_qfq",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv",
+        "adj_factor",
+        "asi_bfq",
+        "asi_hfq",
+        "asi_qfq",
+        "asit_bfq",
+        "asit_hfq",
+        "asit_qfq",
+        "atr_bfq",
+        "atr_hfq",
+        "atr_qfq",
+        "bbi_bfq",
+        "bbi_hfq",
+        "bbi_qfq",
+        "bias1_bfq",
+        "bias1_hfq",
+        "bias1_qfq",
+        "bias2_bfq",
+        "bias2_hfq",
+        "bias2_qfq",
+        "bias3_bfq",
+        "bias3_hfq",
+        "bias3_qfq",
+        "boll_lower_bfq",
+        "boll_lower_hfq",
+        "boll_lower_qfq",
+        "boll_mid_bfq",
+        "boll_mid_hfq",
+        "boll_mid_qfq",
+        "boll_upper_bfq",
+        "boll_upper_hfq",
+        "boll_upper_qfq",
+        "brar_ar_bfq",
+        "brar_ar_hfq",
+        "brar_ar_qfq",
+        "brar_br_bfq",
+        "brar_br_hfq",
+        "brar_br_qfq",
+        "cci_bfq",
+        "cci_hfq",
+        "cci_qfq",
+        "cr_bfq",
+        "cr_hfq",
+        "cr_qfq",
+        "dfma_dif_bfq",
+        "dfma_dif_hfq",
+        "dfma_dif_qfq",
+        "dfma_difma_bfq",
+        "dfma_difma_hfq",
+        "dfma_difma_qfq",
+        "dmi_adx_bfq",
+        "dmi_adx_hfq",
+        "dmi_adx_qfq",
+        "dmi_adxr_bfq",
+        "dmi_adxr_hfq",
+        "dmi_adxr_qfq",
+        "dmi_mdi_bfq",
+        "dmi_mdi_hfq",
+        "dmi_mdi_qfq",
+        "dmi_pdi_bfq",
+        "dmi_pdi_hfq",
+        "dmi_pdi_qfq",
+        "downdays",
+        "updays",
+        "dpo_bfq",
+        "dpo_hfq",
+        "dpo_qfq",
+        "madpo_bfq",
+        "madpo_hfq",
+        "madpo_qfq",
+        "ema_bfq_10",
+        "ema_bfq_20",
+        "ema_bfq_250",
+        "ema_bfq_30",
+        "ema_bfq_5",
+        "ema_bfq_60",
+        "ema_bfq_90",
+        "ema_hfq_10",
+        "ema_hfq_20",
+        "ema_hfq_250",
+        "ema_hfq_30",
+        "ema_hfq_5",
+        "ema_hfq_60",
+        "ema_hfq_90",
+        "ema_qfq_10",
+        "ema_qfq_20",
+        "ema_qfq_250",
+        "ema_qfq_30",
+        "ema_qfq_5",
+        "ema_qfq_60",
+        "ema_qfq_90",
+        "emv_bfq",
+        "emv_hfq",
+        "emv_qfq",
+        "maemv_bfq",
+        "maemv_hfq",
+        "maemv_qfq",
+        "expma_12_bfq",
+        "expma_12_hfq",
+        "expma_12_qfq",
+        "expma_50_bfq",
+        "expma_50_hfq",
+        "expma_50_qfq",
+        "kdj_bfq",
+        "kdj_hfq",
+        "kdj_qfq",
+        "kdj_d_bfq",
+        "kdj_d_hfq",
+        "kdj_d_qfq",
+        "kdj_k_bfq",
+        "kdj_k_hfq",
+        "kdj_k_qfq",
+        "ktn_down_bfq",
+        "ktn_down_hfq",
+        "ktn_down_qfq",
+        "ktn_mid_bfq",
+        "ktn_mid_hfq",
+        "ktn_mid_qfq",
+        "ktn_upper_bfq",
+        "ktn_upper_hfq",
+        "ktn_upper_qfq",
+        "lowdays",
+        "topdays",
+        "ma_bfq_10",
+        "ma_bfq_20",
+        "ma_bfq_250",
+        "ma_bfq_30",
+        "ma_bfq_5",
+        "ma_bfq_60",
+        "ma_bfq_90",
+        "ma_hfq_10",
+        "ma_hfq_20",
+        "ma_hfq_250",
+        "ma_hfq_30",
+        "ma_hfq_5",
+        "ma_hfq_60",
+        "ma_hfq_90",
+        "ma_qfq_10",
+        "ma_qfq_20",
+        "ma_qfq_250",
+        "ma_qfq_30",
+        "ma_qfq_5",
+        "ma_qfq_60",
+        "ma_qfq_90",
+        "macd_bfq",
+        "macd_hfq",
+        "macd_qfq",
+        "macd_dea_bfq",
+        "macd_dea_hfq",
+        "macd_dea_qfq",
+        "macd_dif_bfq",
+        "macd_dif_hfq",
+        "macd_dif_qfq",
+        "mass_bfq",
+        "mass_hfq",
+        "mass_qfq",
+        "ma_mass_bfq",
+        "ma_mass_hfq",
+        "ma_mass_qfq",
+        "mfi_bfq",
+        "mfi_hfq",
+        "mfi_qfq",
+        "mtm_bfq",
+        "mtm_hfq",
+        "mtm_qfq",
+        "mtmma_bfq",
+        "mtmma_hfq",
+        "mtmma_qfq",
+        "obv_bfq",
+        "obv_hfq",
+        "obv_qfq",
+        "psy_bfq",
+        "psy_hfq",
+        "psy_qfq",
+        "psyma_bfq",
+        "psyma_hfq",
+        "psyma_qfq",
+        "roc_bfq",
+        "roc_hfq",
+        "roc_qfq",
+        "maroc_bfq",
+        "maroc_hfq",
+        "maroc_qfq",
+        "rsi_bfq_12",
+        "rsi_bfq_24",
+        "rsi_bfq_6",
+        "rsi_hfq_12",
+        "rsi_hfq_24",
+        "rsi_hfq_6",
+        "rsi_qfq_12",
+        "rsi_qfq_24",
+        "rsi_qfq_6",
+        "taq_down_bfq",
+        "taq_down_hfq",
+        "taq_down_qfq",
+        "taq_mid_bfq",
+        "taq_mid_hfq",
+        "taq_mid_qfq",
+        "taq_up_bfq",
+        "taq_up_hfq",
+        "taq_up_qfq",
+        "trix_bfq",
+        "trix_hfq",
+        "trix_qfq",
+        "trma_bfq",
+        "trma_hfq",
+        "trma_qfq",
+        "vr_bfq",
+        "vr_hfq",
+        "vr_qfq",
+        "wr_bfq",
+        "wr_hfq",
+        "wr_qfq",
+        "wr1_bfq",
+        "wr1_hfq",
+        "wr1_qfq",
+        "xsii_td1_bfq",
+        "xsii_td1_hfq",
+        "xsii_td1_qfq",
+        "xsii_td2_bfq",
+        "xsii_td2_hfq",
+        "xsii_td2_qfq",
+        "xsii_td3_bfq",
+        "xsii_td3_hfq",
+        "xsii_td3_qfq",
+        "xsii_td4_bfq",
+        "xsii_td4_hfq",
+        "xsii_td4_qfq"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3600,
+        "by_exchange_suffix": {
+          "SZ": 2116,
+          "SH": 1438,
+          "BJ": 46
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_factor_pro",
+      "need": "optional",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3850,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "open_hfq",
+        "open_qfq",
+        "high",
+        "high_hfq",
+        "high_qfq",
+        "low",
+        "low_hfq",
+        "low_qfq",
+        "close",
+        "close_hfq",
+        "close_qfq",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv",
+        "adj_factor",
+        "asi_bfq",
+        "asi_hfq",
+        "asi_qfq",
+        "asit_bfq",
+        "asit_hfq",
+        "asit_qfq",
+        "atr_bfq",
+        "atr_hfq",
+        "atr_qfq",
+        "bbi_bfq",
+        "bbi_hfq",
+        "bbi_qfq",
+        "bias1_bfq",
+        "bias1_hfq",
+        "bias1_qfq",
+        "bias2_bfq",
+        "bias2_hfq",
+        "bias2_qfq",
+        "bias3_bfq",
+        "bias3_hfq",
+        "bias3_qfq",
+        "boll_lower_bfq",
+        "boll_lower_hfq",
+        "boll_lower_qfq",
+        "boll_mid_bfq",
+        "boll_mid_hfq",
+        "boll_mid_qfq",
+        "boll_upper_bfq",
+        "boll_upper_hfq",
+        "boll_upper_qfq",
+        "brar_ar_bfq",
+        "brar_ar_hfq",
+        "brar_ar_qfq",
+        "brar_br_bfq",
+        "brar_br_hfq",
+        "brar_br_qfq",
+        "cci_bfq",
+        "cci_hfq",
+        "cci_qfq",
+        "cr_bfq",
+        "cr_hfq",
+        "cr_qfq",
+        "dfma_dif_bfq",
+        "dfma_dif_hfq",
+        "dfma_dif_qfq",
+        "dfma_difma_bfq",
+        "dfma_difma_hfq",
+        "dfma_difma_qfq",
+        "dmi_adx_bfq",
+        "dmi_adx_hfq",
+        "dmi_adx_qfq",
+        "dmi_adxr_bfq",
+        "dmi_adxr_hfq",
+        "dmi_adxr_qfq",
+        "dmi_mdi_bfq",
+        "dmi_mdi_hfq",
+        "dmi_mdi_qfq",
+        "dmi_pdi_bfq",
+        "dmi_pdi_hfq",
+        "dmi_pdi_qfq",
+        "downdays",
+        "updays",
+        "dpo_bfq",
+        "dpo_hfq",
+        "dpo_qfq",
+        "madpo_bfq",
+        "madpo_hfq",
+        "madpo_qfq",
+        "ema_bfq_10",
+        "ema_bfq_20",
+        "ema_bfq_250",
+        "ema_bfq_30",
+        "ema_bfq_5",
+        "ema_bfq_60",
+        "ema_bfq_90",
+        "ema_hfq_10",
+        "ema_hfq_20",
+        "ema_hfq_250",
+        "ema_hfq_30",
+        "ema_hfq_5",
+        "ema_hfq_60",
+        "ema_hfq_90",
+        "ema_qfq_10",
+        "ema_qfq_20",
+        "ema_qfq_250",
+        "ema_qfq_30",
+        "ema_qfq_5",
+        "ema_qfq_60",
+        "ema_qfq_90",
+        "emv_bfq",
+        "emv_hfq",
+        "emv_qfq",
+        "maemv_bfq",
+        "maemv_hfq",
+        "maemv_qfq",
+        "expma_12_bfq",
+        "expma_12_hfq",
+        "expma_12_qfq",
+        "expma_50_bfq",
+        "expma_50_hfq",
+        "expma_50_qfq",
+        "kdj_bfq",
+        "kdj_hfq",
+        "kdj_qfq",
+        "kdj_d_bfq",
+        "kdj_d_hfq",
+        "kdj_d_qfq",
+        "kdj_k_bfq",
+        "kdj_k_hfq",
+        "kdj_k_qfq",
+        "ktn_down_bfq",
+        "ktn_down_hfq",
+        "ktn_down_qfq",
+        "ktn_mid_bfq",
+        "ktn_mid_hfq",
+        "ktn_mid_qfq",
+        "ktn_upper_bfq",
+        "ktn_upper_hfq",
+        "ktn_upper_qfq",
+        "lowdays",
+        "topdays",
+        "ma_bfq_10",
+        "ma_bfq_20",
+        "ma_bfq_250",
+        "ma_bfq_30",
+        "ma_bfq_5",
+        "ma_bfq_60",
+        "ma_bfq_90",
+        "ma_hfq_10",
+        "ma_hfq_20",
+        "ma_hfq_250",
+        "ma_hfq_30",
+        "ma_hfq_5",
+        "ma_hfq_60",
+        "ma_hfq_90",
+        "ma_qfq_10",
+        "ma_qfq_20",
+        "ma_qfq_250",
+        "ma_qfq_30",
+        "ma_qfq_5",
+        "ma_qfq_60",
+        "ma_qfq_90",
+        "macd_bfq",
+        "macd_hfq",
+        "macd_qfq",
+        "macd_dea_bfq",
+        "macd_dea_hfq",
+        "macd_dea_qfq",
+        "macd_dif_bfq",
+        "macd_dif_hfq",
+        "macd_dif_qfq",
+        "mass_bfq",
+        "mass_hfq",
+        "mass_qfq",
+        "ma_mass_bfq",
+        "ma_mass_hfq",
+        "ma_mass_qfq",
+        "mfi_bfq",
+        "mfi_hfq",
+        "mfi_qfq",
+        "mtm_bfq",
+        "mtm_hfq",
+        "mtm_qfq",
+        "mtmma_bfq",
+        "mtmma_hfq",
+        "mtmma_qfq",
+        "obv_bfq",
+        "obv_hfq",
+        "obv_qfq",
+        "psy_bfq",
+        "psy_hfq",
+        "psy_qfq",
+        "psyma_bfq",
+        "psyma_hfq",
+        "psyma_qfq",
+        "roc_bfq",
+        "roc_hfq",
+        "roc_qfq",
+        "maroc_bfq",
+        "maroc_hfq",
+        "maroc_qfq",
+        "rsi_bfq_12",
+        "rsi_bfq_24",
+        "rsi_bfq_6",
+        "rsi_hfq_12",
+        "rsi_hfq_24",
+        "rsi_hfq_6",
+        "rsi_qfq_12",
+        "rsi_qfq_24",
+        "rsi_qfq_6",
+        "taq_down_bfq",
+        "taq_down_hfq",
+        "taq_down_qfq",
+        "taq_mid_bfq",
+        "taq_mid_hfq",
+        "taq_mid_qfq",
+        "taq_up_bfq",
+        "taq_up_hfq",
+        "taq_up_qfq",
+        "trix_bfq",
+        "trix_hfq",
+        "trix_qfq",
+        "trma_bfq",
+        "trma_hfq",
+        "trma_qfq",
+        "vr_bfq",
+        "vr_hfq",
+        "vr_qfq",
+        "wr_bfq",
+        "wr_hfq",
+        "wr_qfq",
+        "wr1_bfq",
+        "wr1_hfq",
+        "wr1_qfq",
+        "xsii_td1_bfq",
+        "xsii_td1_hfq",
+        "xsii_td1_qfq",
+        "xsii_td2_bfq",
+        "xsii_td2_hfq",
+        "xsii_td2_qfq",
+        "xsii_td3_bfq",
+        "xsii_td3_hfq",
+        "xsii_td3_qfq",
+        "xsii_td4_bfq",
+        "xsii_td4_hfq",
+        "xsii_td4_qfq"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3850,
+        "by_exchange_suffix": {
+          "SZ": 2183,
+          "SH": 1558,
+          "BJ": 109
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_factor_pro",
+      "need": "optional",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 4292,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "open_hfq",
+        "open_qfq",
+        "high",
+        "high_hfq",
+        "high_qfq",
+        "low",
+        "low_hfq",
+        "low_qfq",
+        "close",
+        "close_hfq",
+        "close_qfq",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv",
+        "adj_factor",
+        "asi_bfq",
+        "asi_hfq",
+        "asi_qfq",
+        "asit_bfq",
+        "asit_hfq",
+        "asit_qfq",
+        "atr_bfq",
+        "atr_hfq",
+        "atr_qfq",
+        "bbi_bfq",
+        "bbi_hfq",
+        "bbi_qfq",
+        "bias1_bfq",
+        "bias1_hfq",
+        "bias1_qfq",
+        "bias2_bfq",
+        "bias2_hfq",
+        "bias2_qfq",
+        "bias3_bfq",
+        "bias3_hfq",
+        "bias3_qfq",
+        "boll_lower_bfq",
+        "boll_lower_hfq",
+        "boll_lower_qfq",
+        "boll_mid_bfq",
+        "boll_mid_hfq",
+        "boll_mid_qfq",
+        "boll_upper_bfq",
+        "boll_upper_hfq",
+        "boll_upper_qfq",
+        "brar_ar_bfq",
+        "brar_ar_hfq",
+        "brar_ar_qfq",
+        "brar_br_bfq",
+        "brar_br_hfq",
+        "brar_br_qfq",
+        "cci_bfq",
+        "cci_hfq",
+        "cci_qfq",
+        "cr_bfq",
+        "cr_hfq",
+        "cr_qfq",
+        "dfma_dif_bfq",
+        "dfma_dif_hfq",
+        "dfma_dif_qfq",
+        "dfma_difma_bfq",
+        "dfma_difma_hfq",
+        "dfma_difma_qfq",
+        "dmi_adx_bfq",
+        "dmi_adx_hfq",
+        "dmi_adx_qfq",
+        "dmi_adxr_bfq",
+        "dmi_adxr_hfq",
+        "dmi_adxr_qfq",
+        "dmi_mdi_bfq",
+        "dmi_mdi_hfq",
+        "dmi_mdi_qfq",
+        "dmi_pdi_bfq",
+        "dmi_pdi_hfq",
+        "dmi_pdi_qfq",
+        "downdays",
+        "updays",
+        "dpo_bfq",
+        "dpo_hfq",
+        "dpo_qfq",
+        "madpo_bfq",
+        "madpo_hfq",
+        "madpo_qfq",
+        "ema_bfq_10",
+        "ema_bfq_20",
+        "ema_bfq_250",
+        "ema_bfq_30",
+        "ema_bfq_5",
+        "ema_bfq_60",
+        "ema_bfq_90",
+        "ema_hfq_10",
+        "ema_hfq_20",
+        "ema_hfq_250",
+        "ema_hfq_30",
+        "ema_hfq_5",
+        "ema_hfq_60",
+        "ema_hfq_90",
+        "ema_qfq_10",
+        "ema_qfq_20",
+        "ema_qfq_250",
+        "ema_qfq_30",
+        "ema_qfq_5",
+        "ema_qfq_60",
+        "ema_qfq_90",
+        "emv_bfq",
+        "emv_hfq",
+        "emv_qfq",
+        "maemv_bfq",
+        "maemv_hfq",
+        "maemv_qfq",
+        "expma_12_bfq",
+        "expma_12_hfq",
+        "expma_12_qfq",
+        "expma_50_bfq",
+        "expma_50_hfq",
+        "expma_50_qfq",
+        "kdj_bfq",
+        "kdj_hfq",
+        "kdj_qfq",
+        "kdj_d_bfq",
+        "kdj_d_hfq",
+        "kdj_d_qfq",
+        "kdj_k_bfq",
+        "kdj_k_hfq",
+        "kdj_k_qfq",
+        "ktn_down_bfq",
+        "ktn_down_hfq",
+        "ktn_down_qfq",
+        "ktn_mid_bfq",
+        "ktn_mid_hfq",
+        "ktn_mid_qfq",
+        "ktn_upper_bfq",
+        "ktn_upper_hfq",
+        "ktn_upper_qfq",
+        "lowdays",
+        "topdays",
+        "ma_bfq_10",
+        "ma_bfq_20",
+        "ma_bfq_250",
+        "ma_bfq_30",
+        "ma_bfq_5",
+        "ma_bfq_60",
+        "ma_bfq_90",
+        "ma_hfq_10",
+        "ma_hfq_20",
+        "ma_hfq_250",
+        "ma_hfq_30",
+        "ma_hfq_5",
+        "ma_hfq_60",
+        "ma_hfq_90",
+        "ma_qfq_10",
+        "ma_qfq_20",
+        "ma_qfq_250",
+        "ma_qfq_30",
+        "ma_qfq_5",
+        "ma_qfq_60",
+        "ma_qfq_90",
+        "macd_bfq",
+        "macd_hfq",
+        "macd_qfq",
+        "macd_dea_bfq",
+        "macd_dea_hfq",
+        "macd_dea_qfq",
+        "macd_dif_bfq",
+        "macd_dif_hfq",
+        "macd_dif_qfq",
+        "mass_bfq",
+        "mass_hfq",
+        "mass_qfq",
+        "ma_mass_bfq",
+        "ma_mass_hfq",
+        "ma_mass_qfq",
+        "mfi_bfq",
+        "mfi_hfq",
+        "mfi_qfq",
+        "mtm_bfq",
+        "mtm_hfq",
+        "mtm_qfq",
+        "mtmma_bfq",
+        "mtmma_hfq",
+        "mtmma_qfq",
+        "obv_bfq",
+        "obv_hfq",
+        "obv_qfq",
+        "psy_bfq",
+        "psy_hfq",
+        "psy_qfq",
+        "psyma_bfq",
+        "psyma_hfq",
+        "psyma_qfq",
+        "roc_bfq",
+        "roc_hfq",
+        "roc_qfq",
+        "maroc_bfq",
+        "maroc_hfq",
+        "maroc_qfq",
+        "rsi_bfq_12",
+        "rsi_bfq_24",
+        "rsi_bfq_6",
+        "rsi_hfq_12",
+        "rsi_hfq_24",
+        "rsi_hfq_6",
+        "rsi_qfq_12",
+        "rsi_qfq_24",
+        "rsi_qfq_6",
+        "taq_down_bfq",
+        "taq_down_hfq",
+        "taq_down_qfq",
+        "taq_mid_bfq",
+        "taq_mid_hfq",
+        "taq_mid_qfq",
+        "taq_up_bfq",
+        "taq_up_hfq",
+        "taq_up_qfq",
+        "trix_bfq",
+        "trix_hfq",
+        "trix_qfq",
+        "trma_bfq",
+        "trma_hfq",
+        "trma_qfq",
+        "vr_bfq",
+        "vr_hfq",
+        "vr_qfq",
+        "wr_bfq",
+        "wr_hfq",
+        "wr_qfq",
+        "wr1_bfq",
+        "wr1_hfq",
+        "wr1_qfq",
+        "xsii_td1_bfq",
+        "xsii_td1_hfq",
+        "xsii_td1_qfq",
+        "xsii_td2_bfq",
+        "xsii_td2_hfq",
+        "xsii_td2_qfq",
+        "xsii_td3_bfq",
+        "xsii_td3_hfq",
+        "xsii_td3_qfq",
+        "xsii_td4_bfq",
+        "xsii_td4_hfq",
+        "xsii_td4_qfq"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20210104",
+          "max": "20210104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 4292,
+        "by_exchange_suffix": {
+          "SZ": 2336,
+          "SH": 1785,
+          "BJ": 171
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_factor_pro",
+      "need": "optional",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 4880,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "open_hfq",
+        "open_qfq",
+        "high",
+        "high_hfq",
+        "high_qfq",
+        "low",
+        "low_hfq",
+        "low_qfq",
+        "close",
+        "close_hfq",
+        "close_qfq",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv",
+        "adj_factor",
+        "asi_bfq",
+        "asi_hfq",
+        "asi_qfq",
+        "asit_bfq",
+        "asit_hfq",
+        "asit_qfq",
+        "atr_bfq",
+        "atr_hfq",
+        "atr_qfq",
+        "bbi_bfq",
+        "bbi_hfq",
+        "bbi_qfq",
+        "bias1_bfq",
+        "bias1_hfq",
+        "bias1_qfq",
+        "bias2_bfq",
+        "bias2_hfq",
+        "bias2_qfq",
+        "bias3_bfq",
+        "bias3_hfq",
+        "bias3_qfq",
+        "boll_lower_bfq",
+        "boll_lower_hfq",
+        "boll_lower_qfq",
+        "boll_mid_bfq",
+        "boll_mid_hfq",
+        "boll_mid_qfq",
+        "boll_upper_bfq",
+        "boll_upper_hfq",
+        "boll_upper_qfq",
+        "brar_ar_bfq",
+        "brar_ar_hfq",
+        "brar_ar_qfq",
+        "brar_br_bfq",
+        "brar_br_hfq",
+        "brar_br_qfq",
+        "cci_bfq",
+        "cci_hfq",
+        "cci_qfq",
+        "cr_bfq",
+        "cr_hfq",
+        "cr_qfq",
+        "dfma_dif_bfq",
+        "dfma_dif_hfq",
+        "dfma_dif_qfq",
+        "dfma_difma_bfq",
+        "dfma_difma_hfq",
+        "dfma_difma_qfq",
+        "dmi_adx_bfq",
+        "dmi_adx_hfq",
+        "dmi_adx_qfq",
+        "dmi_adxr_bfq",
+        "dmi_adxr_hfq",
+        "dmi_adxr_qfq",
+        "dmi_mdi_bfq",
+        "dmi_mdi_hfq",
+        "dmi_mdi_qfq",
+        "dmi_pdi_bfq",
+        "dmi_pdi_hfq",
+        "dmi_pdi_qfq",
+        "downdays",
+        "updays",
+        "dpo_bfq",
+        "dpo_hfq",
+        "dpo_qfq",
+        "madpo_bfq",
+        "madpo_hfq",
+        "madpo_qfq",
+        "ema_bfq_10",
+        "ema_bfq_20",
+        "ema_bfq_250",
+        "ema_bfq_30",
+        "ema_bfq_5",
+        "ema_bfq_60",
+        "ema_bfq_90",
+        "ema_hfq_10",
+        "ema_hfq_20",
+        "ema_hfq_250",
+        "ema_hfq_30",
+        "ema_hfq_5",
+        "ema_hfq_60",
+        "ema_hfq_90",
+        "ema_qfq_10",
+        "ema_qfq_20",
+        "ema_qfq_250",
+        "ema_qfq_30",
+        "ema_qfq_5",
+        "ema_qfq_60",
+        "ema_qfq_90",
+        "emv_bfq",
+        "emv_hfq",
+        "emv_qfq",
+        "maemv_bfq",
+        "maemv_hfq",
+        "maemv_qfq",
+        "expma_12_bfq",
+        "expma_12_hfq",
+        "expma_12_qfq",
+        "expma_50_bfq",
+        "expma_50_hfq",
+        "expma_50_qfq",
+        "kdj_bfq",
+        "kdj_hfq",
+        "kdj_qfq",
+        "kdj_d_bfq",
+        "kdj_d_hfq",
+        "kdj_d_qfq",
+        "kdj_k_bfq",
+        "kdj_k_hfq",
+        "kdj_k_qfq",
+        "ktn_down_bfq",
+        "ktn_down_hfq",
+        "ktn_down_qfq",
+        "ktn_mid_bfq",
+        "ktn_mid_hfq",
+        "ktn_mid_qfq",
+        "ktn_upper_bfq",
+        "ktn_upper_hfq",
+        "ktn_upper_qfq",
+        "lowdays",
+        "topdays",
+        "ma_bfq_10",
+        "ma_bfq_20",
+        "ma_bfq_250",
+        "ma_bfq_30",
+        "ma_bfq_5",
+        "ma_bfq_60",
+        "ma_bfq_90",
+        "ma_hfq_10",
+        "ma_hfq_20",
+        "ma_hfq_250",
+        "ma_hfq_30",
+        "ma_hfq_5",
+        "ma_hfq_60",
+        "ma_hfq_90",
+        "ma_qfq_10",
+        "ma_qfq_20",
+        "ma_qfq_250",
+        "ma_qfq_30",
+        "ma_qfq_5",
+        "ma_qfq_60",
+        "ma_qfq_90",
+        "macd_bfq",
+        "macd_hfq",
+        "macd_qfq",
+        "macd_dea_bfq",
+        "macd_dea_hfq",
+        "macd_dea_qfq",
+        "macd_dif_bfq",
+        "macd_dif_hfq",
+        "macd_dif_qfq",
+        "mass_bfq",
+        "mass_hfq",
+        "mass_qfq",
+        "ma_mass_bfq",
+        "ma_mass_hfq",
+        "ma_mass_qfq",
+        "mfi_bfq",
+        "mfi_hfq",
+        "mfi_qfq",
+        "mtm_bfq",
+        "mtm_hfq",
+        "mtm_qfq",
+        "mtmma_bfq",
+        "mtmma_hfq",
+        "mtmma_qfq",
+        "obv_bfq",
+        "obv_hfq",
+        "obv_qfq",
+        "psy_bfq",
+        "psy_hfq",
+        "psy_qfq",
+        "psyma_bfq",
+        "psyma_hfq",
+        "psyma_qfq",
+        "roc_bfq",
+        "roc_hfq",
+        "roc_qfq",
+        "maroc_bfq",
+        "maroc_hfq",
+        "maroc_qfq",
+        "rsi_bfq_12",
+        "rsi_bfq_24",
+        "rsi_bfq_6",
+        "rsi_hfq_12",
+        "rsi_hfq_24",
+        "rsi_hfq_6",
+        "rsi_qfq_12",
+        "rsi_qfq_24",
+        "rsi_qfq_6",
+        "taq_down_bfq",
+        "taq_down_hfq",
+        "taq_down_qfq",
+        "taq_mid_bfq",
+        "taq_mid_hfq",
+        "taq_mid_qfq",
+        "taq_up_bfq",
+        "taq_up_hfq",
+        "taq_up_qfq",
+        "trix_bfq",
+        "trix_hfq",
+        "trix_qfq",
+        "trma_bfq",
+        "trma_hfq",
+        "trma_qfq",
+        "vr_bfq",
+        "vr_hfq",
+        "vr_qfq",
+        "wr_bfq",
+        "wr_hfq",
+        "wr_qfq",
+        "wr1_bfq",
+        "wr1_hfq",
+        "wr1_qfq",
+        "xsii_td1_bfq",
+        "xsii_td1_hfq",
+        "xsii_td1_qfq",
+        "xsii_td2_bfq",
+        "xsii_td2_hfq",
+        "xsii_td2_qfq",
+        "xsii_td3_bfq",
+        "xsii_td3_hfq",
+        "xsii_td3_qfq",
+        "xsii_td4_bfq",
+        "xsii_td4_hfq",
+        "xsii_td4_qfq"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20220104",
+          "max": "20220104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 4880,
+        "by_exchange_suffix": {
+          "SZ": 2564,
+          "SH": 2029,
+          "BJ": 287
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_factor_pro",
+      "need": "optional",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 5223,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "open_hfq",
+        "open_qfq",
+        "high",
+        "high_hfq",
+        "high_qfq",
+        "low",
+        "low_hfq",
+        "low_qfq",
+        "close",
+        "close_hfq",
+        "close_qfq",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv",
+        "adj_factor",
+        "asi_bfq",
+        "asi_hfq",
+        "asi_qfq",
+        "asit_bfq",
+        "asit_hfq",
+        "asit_qfq",
+        "atr_bfq",
+        "atr_hfq",
+        "atr_qfq",
+        "bbi_bfq",
+        "bbi_hfq",
+        "bbi_qfq",
+        "bias1_bfq",
+        "bias1_hfq",
+        "bias1_qfq",
+        "bias2_bfq",
+        "bias2_hfq",
+        "bias2_qfq",
+        "bias3_bfq",
+        "bias3_hfq",
+        "bias3_qfq",
+        "boll_lower_bfq",
+        "boll_lower_hfq",
+        "boll_lower_qfq",
+        "boll_mid_bfq",
+        "boll_mid_hfq",
+        "boll_mid_qfq",
+        "boll_upper_bfq",
+        "boll_upper_hfq",
+        "boll_upper_qfq",
+        "brar_ar_bfq",
+        "brar_ar_hfq",
+        "brar_ar_qfq",
+        "brar_br_bfq",
+        "brar_br_hfq",
+        "brar_br_qfq",
+        "cci_bfq",
+        "cci_hfq",
+        "cci_qfq",
+        "cr_bfq",
+        "cr_hfq",
+        "cr_qfq",
+        "dfma_dif_bfq",
+        "dfma_dif_hfq",
+        "dfma_dif_qfq",
+        "dfma_difma_bfq",
+        "dfma_difma_hfq",
+        "dfma_difma_qfq",
+        "dmi_adx_bfq",
+        "dmi_adx_hfq",
+        "dmi_adx_qfq",
+        "dmi_adxr_bfq",
+        "dmi_adxr_hfq",
+        "dmi_adxr_qfq",
+        "dmi_mdi_bfq",
+        "dmi_mdi_hfq",
+        "dmi_mdi_qfq",
+        "dmi_pdi_bfq",
+        "dmi_pdi_hfq",
+        "dmi_pdi_qfq",
+        "downdays",
+        "updays",
+        "dpo_bfq",
+        "dpo_hfq",
+        "dpo_qfq",
+        "madpo_bfq",
+        "madpo_hfq",
+        "madpo_qfq",
+        "ema_bfq_10",
+        "ema_bfq_20",
+        "ema_bfq_250",
+        "ema_bfq_30",
+        "ema_bfq_5",
+        "ema_bfq_60",
+        "ema_bfq_90",
+        "ema_hfq_10",
+        "ema_hfq_20",
+        "ema_hfq_250",
+        "ema_hfq_30",
+        "ema_hfq_5",
+        "ema_hfq_60",
+        "ema_hfq_90",
+        "ema_qfq_10",
+        "ema_qfq_20",
+        "ema_qfq_250",
+        "ema_qfq_30",
+        "ema_qfq_5",
+        "ema_qfq_60",
+        "ema_qfq_90",
+        "emv_bfq",
+        "emv_hfq",
+        "emv_qfq",
+        "maemv_bfq",
+        "maemv_hfq",
+        "maemv_qfq",
+        "expma_12_bfq",
+        "expma_12_hfq",
+        "expma_12_qfq",
+        "expma_50_bfq",
+        "expma_50_hfq",
+        "expma_50_qfq",
+        "kdj_bfq",
+        "kdj_hfq",
+        "kdj_qfq",
+        "kdj_d_bfq",
+        "kdj_d_hfq",
+        "kdj_d_qfq",
+        "kdj_k_bfq",
+        "kdj_k_hfq",
+        "kdj_k_qfq",
+        "ktn_down_bfq",
+        "ktn_down_hfq",
+        "ktn_down_qfq",
+        "ktn_mid_bfq",
+        "ktn_mid_hfq",
+        "ktn_mid_qfq",
+        "ktn_upper_bfq",
+        "ktn_upper_hfq",
+        "ktn_upper_qfq",
+        "lowdays",
+        "topdays",
+        "ma_bfq_10",
+        "ma_bfq_20",
+        "ma_bfq_250",
+        "ma_bfq_30",
+        "ma_bfq_5",
+        "ma_bfq_60",
+        "ma_bfq_90",
+        "ma_hfq_10",
+        "ma_hfq_20",
+        "ma_hfq_250",
+        "ma_hfq_30",
+        "ma_hfq_5",
+        "ma_hfq_60",
+        "ma_hfq_90",
+        "ma_qfq_10",
+        "ma_qfq_20",
+        "ma_qfq_250",
+        "ma_qfq_30",
+        "ma_qfq_5",
+        "ma_qfq_60",
+        "ma_qfq_90",
+        "macd_bfq",
+        "macd_hfq",
+        "macd_qfq",
+        "macd_dea_bfq",
+        "macd_dea_hfq",
+        "macd_dea_qfq",
+        "macd_dif_bfq",
+        "macd_dif_hfq",
+        "macd_dif_qfq",
+        "mass_bfq",
+        "mass_hfq",
+        "mass_qfq",
+        "ma_mass_bfq",
+        "ma_mass_hfq",
+        "ma_mass_qfq",
+        "mfi_bfq",
+        "mfi_hfq",
+        "mfi_qfq",
+        "mtm_bfq",
+        "mtm_hfq",
+        "mtm_qfq",
+        "mtmma_bfq",
+        "mtmma_hfq",
+        "mtmma_qfq",
+        "obv_bfq",
+        "obv_hfq",
+        "obv_qfq",
+        "psy_bfq",
+        "psy_hfq",
+        "psy_qfq",
+        "psyma_bfq",
+        "psyma_hfq",
+        "psyma_qfq",
+        "roc_bfq",
+        "roc_hfq",
+        "roc_qfq",
+        "maroc_bfq",
+        "maroc_hfq",
+        "maroc_qfq",
+        "rsi_bfq_12",
+        "rsi_bfq_24",
+        "rsi_bfq_6",
+        "rsi_hfq_12",
+        "rsi_hfq_24",
+        "rsi_hfq_6",
+        "rsi_qfq_12",
+        "rsi_qfq_24",
+        "rsi_qfq_6",
+        "taq_down_bfq",
+        "taq_down_hfq",
+        "taq_down_qfq",
+        "taq_mid_bfq",
+        "taq_mid_hfq",
+        "taq_mid_qfq",
+        "taq_up_bfq",
+        "taq_up_hfq",
+        "taq_up_qfq",
+        "trix_bfq",
+        "trix_hfq",
+        "trix_qfq",
+        "trma_bfq",
+        "trma_hfq",
+        "trma_qfq",
+        "vr_bfq",
+        "vr_hfq",
+        "vr_qfq",
+        "wr_bfq",
+        "wr_hfq",
+        "wr_qfq",
+        "wr1_bfq",
+        "wr1_hfq",
+        "wr1_qfq",
+        "xsii_td1_bfq",
+        "xsii_td1_hfq",
+        "xsii_td1_qfq",
+        "xsii_td2_bfq",
+        "xsii_td2_hfq",
+        "xsii_td2_qfq",
+        "xsii_td3_bfq",
+        "xsii_td3_hfq",
+        "xsii_td3_qfq",
+        "xsii_td4_bfq",
+        "xsii_td4_hfq",
+        "xsii_td4_qfq"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5223,
+        "by_exchange_suffix": {
+          "SZ": 2732,
+          "SH": 2168,
+          "BJ": 323
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_step",
+      "need": "optional",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "nums"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_step",
+      "need": "optional",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "nums"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_step",
+      "need": "optional",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "nums"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_step",
+      "need": "optional",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "nums"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_step",
+      "need": "optional",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "nums"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_step",
+      "need": "optional",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "nums"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_step",
+      "need": "optional",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "nums"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_step",
+      "need": "optional",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "nums"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "limit_step",
+      "need": "optional",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "nums"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hm_detail",
+      "need": "optional",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "ts_name",
+        "buy_amount",
+        "sell_amount",
+        "net_amount",
+        "hm_name",
+        "hm_orgs"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hm_detail",
+      "need": "optional",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "ts_name",
+        "buy_amount",
+        "sell_amount",
+        "net_amount",
+        "hm_name",
+        "hm_orgs"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hm_detail",
+      "need": "optional",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "ts_name",
+        "buy_amount",
+        "sell_amount",
+        "net_amount",
+        "hm_name",
+        "hm_orgs"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hm_detail",
+      "need": "optional",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "ts_name",
+        "buy_amount",
+        "sell_amount",
+        "net_amount",
+        "hm_name",
+        "hm_orgs"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hm_detail",
+      "need": "optional",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "ts_name",
+        "buy_amount",
+        "sell_amount",
+        "net_amount",
+        "hm_name",
+        "hm_orgs"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hm_detail",
+      "need": "optional",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "ts_name",
+        "buy_amount",
+        "sell_amount",
+        "net_amount",
+        "hm_name",
+        "hm_orgs"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hm_detail",
+      "need": "optional",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "ts_name",
+        "buy_amount",
+        "sell_amount",
+        "net_amount",
+        "hm_name",
+        "hm_orgs"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hm_detail",
+      "need": "optional",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "ts_name",
+        "buy_amount",
+        "sell_amount",
+        "net_amount",
+        "hm_name",
+        "hm_orgs"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hm_detail",
+      "need": "optional",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 153,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "ts_name",
+        "buy_amount",
+        "sell_amount",
+        "net_amount",
+        "hm_name",
+        "hm_orgs"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 45,
+        "by_exchange_suffix": {
+          "SZ": 88,
+          "SH": 64,
+          "BJ": 1
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "ths_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 197,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "avg_price",
+        "change",
+        "pct_change",
+        "vol",
+        "turnover_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20150105",
+          "max": "20150105"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 197,
+        "by_exchange_suffix": {
+          "TI": 197
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "ths_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 227,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "avg_price",
+        "change",
+        "pct_change",
+        "vol",
+        "turnover_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 227,
+        "by_exchange_suffix": {
+          "TI": 227
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "ths_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 324,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "avg_price",
+        "change",
+        "pct_change",
+        "vol",
+        "turnover_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20170103",
+          "max": "20170103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 324,
+        "by_exchange_suffix": {
+          "TI": 324
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "ths_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 345,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "avg_price",
+        "change",
+        "pct_change",
+        "vol",
+        "turnover_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20180102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 345,
+        "by_exchange_suffix": {
+          "TI": 345
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "ths_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 613,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "avg_price",
+        "change",
+        "pct_change",
+        "vol",
+        "turnover_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 613,
+        "by_exchange_suffix": {
+          "TI": 613
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "ths_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 1053,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "avg_price",
+        "change",
+        "pct_change",
+        "vol",
+        "turnover_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1053,
+        "by_exchange_suffix": {
+          "TI": 1053
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "ths_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 1151,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "avg_price",
+        "change",
+        "pct_change",
+        "vol",
+        "turnover_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20210104",
+          "max": "20210104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1151,
+        "by_exchange_suffix": {
+          "TI": 1151
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "ths_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 1202,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "avg_price",
+        "change",
+        "pct_change",
+        "vol",
+        "turnover_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20220104",
+          "max": "20220104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1202,
+        "by_exchange_suffix": {
+          "TI": 1202
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "ths_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 1547,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "avg_price",
+        "change",
+        "pct_change",
+        "vol",
+        "turnover_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1547,
+        "by_exchange_suffix": {
+          "TI": 1547
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_surv",
+      "need": "useful",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "surv_date",
+        "fund_visitors",
+        "rece_place",
+        "rece_mode",
+        "rece_org",
+        "org_type",
+        "comp_rece"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_surv",
+      "need": "useful",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "surv_date",
+        "fund_visitors",
+        "rece_place",
+        "rece_mode",
+        "rece_org",
+        "org_type",
+        "comp_rece"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_surv",
+      "need": "useful",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "surv_date",
+        "fund_visitors",
+        "rece_place",
+        "rece_mode",
+        "rece_org",
+        "org_type",
+        "comp_rece"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_surv",
+      "need": "useful",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "surv_date",
+        "fund_visitors",
+        "rece_place",
+        "rece_mode",
+        "rece_org",
+        "org_type",
+        "comp_rece"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_surv",
+      "need": "useful",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "surv_date",
+        "fund_visitors",
+        "rece_place",
+        "rece_mode",
+        "rece_org",
+        "org_type",
+        "comp_rece"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_surv",
+      "need": "useful",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "surv_date",
+        "fund_visitors",
+        "rece_place",
+        "rece_mode",
+        "rece_org",
+        "org_type",
+        "comp_rece"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_surv",
+      "need": "useful",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "surv_date",
+        "fund_visitors",
+        "rece_place",
+        "rece_mode",
+        "rece_org",
+        "org_type",
+        "comp_rece"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_surv",
+      "need": "useful",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 170,
+      "columns": [
+        "ts_code",
+        "name",
+        "surv_date",
+        "fund_visitors",
+        "rece_place",
+        "rece_mode",
+        "rece_org",
+        "org_type",
+        "comp_rece"
+      ],
+      "date_ranges": {
+        "surv_date": {
+          "min": "20220104",
+          "max": "20220104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 10,
+        "by_exchange_suffix": {
+          "SZ": 170
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_surv",
+      "need": "useful",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 91,
+      "columns": [
+        "ts_code",
+        "name",
+        "surv_date",
+        "fund_visitors",
+        "rece_place",
+        "rece_mode",
+        "rece_org",
+        "org_type",
+        "comp_rece"
+      ],
+      "date_ranges": {
+        "surv_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 7,
+        "by_exchange_suffix": {
+          "SZ": 91
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 1509,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20170103",
+          "max": "20170103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1509,
+        "by_exchange_suffix": {
+          "SZ": 811,
+          "SH": 698
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 2285,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20180102",
+          "max": "20180102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2285,
+        "by_exchange_suffix": {
+          "SZ": 1005,
+          "SH": 776,
+          "HK": 504
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 2535,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2535,
+        "by_exchange_suffix": {
+          "SZ": 1127,
+          "SH": 844,
+          "HK": 564
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 2668,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2668,
+        "by_exchange_suffix": {
+          "SZ": 1165,
+          "SH": 903,
+          "HK": 600
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 2859,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20210104",
+          "max": "20210104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2859,
+        "by_exchange_suffix": {
+          "SZ": 1272,
+          "SH": 944,
+          "HK": 643
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3048,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20220104",
+          "max": "20220104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3048,
+        "by_exchange_suffix": {
+          "SZ": 1349,
+          "SH": 1011,
+          "HK": 688
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3178,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20230103",
+          "max": "20230103"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3178,
+        "by_exchange_suffix": {
+          "SZ": 1390,
+          "SH": 1057,
+          "HK": 731
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "latest",
+        "net_amount",
+        "net_d5_amount",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "latest",
+        "net_amount",
+        "net_d5_amount",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "latest",
+        "net_amount",
+        "net_d5_amount",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "latest",
+        "net_amount",
+        "net_d5_amount",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "latest",
+        "net_amount",
+        "net_d5_amount",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 1,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "latest",
+        "net_amount",
+        "net_d5_amount",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 1
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "latest",
+        "net_amount",
+        "net_d5_amount",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "latest",
+        "net_amount",
+        "net_d5_amount",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "latest",
+        "net_amount",
+        "net_d5_amount",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_dc",
+      "need": "optional",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "close",
+        "net_amount",
+        "net_amount_rate",
+        "buy_elg_amount",
+        "buy_elg_amount_rate",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_dc",
+      "need": "optional",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "close",
+        "net_amount",
+        "net_amount_rate",
+        "buy_elg_amount",
+        "buy_elg_amount_rate",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_dc",
+      "need": "optional",
+      "params": {
+        "trade_date": "20170103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "close",
+        "net_amount",
+        "net_amount_rate",
+        "buy_elg_amount",
+        "buy_elg_amount_rate",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_dc",
+      "need": "optional",
+      "params": {
+        "trade_date": "20180102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "close",
+        "net_amount",
+        "net_amount_rate",
+        "buy_elg_amount",
+        "buy_elg_amount_rate",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_dc",
+      "need": "optional",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "close",
+        "net_amount",
+        "net_amount_rate",
+        "buy_elg_amount",
+        "buy_elg_amount_rate",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_dc",
+      "need": "optional",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "close",
+        "net_amount",
+        "net_amount_rate",
+        "buy_elg_amount",
+        "buy_elg_amount_rate",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_dc",
+      "need": "optional",
+      "params": {
+        "trade_date": "20210104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "close",
+        "net_amount",
+        "net_amount_rate",
+        "buy_elg_amount",
+        "buy_elg_amount_rate",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_dc",
+      "need": "optional",
+      "params": {
+        "trade_date": "20220104"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "close",
+        "net_amount",
+        "net_amount_rate",
+        "buy_elg_amount",
+        "buy_elg_amount_rate",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "moneyflow_dc",
+      "need": "optional",
+      "params": {
+        "trade_date": "20230103"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "close",
+        "net_amount",
+        "net_amount_rate",
+        "buy_elg_amount",
+        "buy_elg_amount_rate",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "fut_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20150105",
+        "exchange": "CFFEX"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 16,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "pre_close",
+        "pre_settle",
+        "open",
+        "high",
+        "low",
+        "close",
+        "settle",
+        "change1",
+        "change2",
+        "vol",
+        "amount",
+        "oi",
+        "oi_chg"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20150105",
+          "max": "20150105"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 16,
+        "by_exchange_suffix": {
+          "FX": 16
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "opt_daily",
+      "need": "optional",
+      "params": {
+        "trade_date": "20160104",
+        "exchange": "SSE"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 100,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "exchange",
+        "pre_settle",
+        "pre_close",
+        "open",
+        "high",
+        "low",
+        "close",
+        "settle",
+        "vol",
+        "amount",
+        "oi"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 100,
+        "by_exchange_suffix": {
+          "SH": 100
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "shibor",
+      "need": "useful",
+      "params": {
+        "start_date": "20150101",
+        "end_date": "20150131"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 21,
+      "columns": [
+        "date",
+        "on",
+        "1w",
+        "2w",
+        "1m",
+        "3m",
+        "6m",
+        "9m",
+        "1y"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "report_rc",
+      "need": "useful",
+      "params": {
+        "report_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 224,
+      "columns": [
+        "ts_code",
+        "name",
+        "report_date",
+        "report_title",
+        "report_type",
+        "classify",
+        "org_name",
+        "author_name",
+        "quarter",
+        "op_rt",
+        "op_pr",
+        "tp",
+        "np",
+        "eps",
+        "pe",
+        "rd",
+        "roe",
+        "ev_ebitda",
+        "rating",
+        "max_price",
+        "min_price"
+      ],
+      "date_ranges": {
+        "report_date": {
+          "min": "20150105",
+          "max": "20150105"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 149,
+        "by_exchange_suffix": {
+          "SZ": 125,
+          "SH": 99
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "broker_recommend",
+      "need": "useful",
+      "params": {
+        "month": "202001"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "month",
+        "broker",
+        "ts_code",
+        "name"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_holdernumber",
+      "need": "useful",
+      "params": {
+        "ts_code": "000001.SZ",
+        "start_date": "20100101",
+        "end_date": "20151231"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 28,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "holder_num"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20100312",
+          "max": "20151023"
+        },
+        "end_date": {
+          "min": "20091231",
+          "max": "20150930"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 28
+        },
+        "max_versions_per_period": 1
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "stk_holdertrade",
+      "need": "useful",
+      "params": {
+        "ann_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 24,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "holder_name",
+        "holder_type",
+        "in_de",
+        "change_vol",
+        "change_ratio",
+        "after_share",
+        "after_ratio",
+        "avg_price",
+        "total_share"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20150105",
+          "max": "20150105"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 19,
+        "by_exchange_suffix": {
+          "SZ": 19,
+          "SH": 4,
+          "BJ": 1
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "repurchase",
+      "need": "useful",
+      "params": {
+        "ann_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "proc",
+        "exp_date",
+        "vol",
+        "amount",
+        "high_limit",
+        "low_limit"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "share_float",
+      "need": "useful",
+      "params": {
+        "ann_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 17,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "float_date",
+        "float_share",
+        "float_ratio",
+        "holder_name",
+        "share_type"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20150105",
+          "max": "20150105"
+        },
+        "float_date": {
+          "min": "20160111",
+          "max": "20180108"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 2,
+        "by_exchange_suffix": {
+          "SZ": 17
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "sw_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20150105"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 590,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "name",
+        "open",
+        "low",
+        "high",
+        "close",
+        "change",
+        "pct_change",
+        "vol",
+        "amount",
+        "pe",
+        "pb",
+        "float_mv",
+        "total_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20150105",
+          "max": "20150105"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 590,
+        "by_exchange_suffix": {
+          "SI": 590
+        }
+      }
+    },
+    {
+      "group": "历史起点",
+      "api": "index_weight",
+      "need": "useful",
+      "params": {
+        "index_code": "000852.SH",
+        "start_date": "20261001",
+        "end_date": "20261031"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 1000,
+      "columns": [
+        "index_code",
+        "con_code",
+        "trade_date",
+        "weight"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261030",
+          "max": "20261030"
+        }
+      },
+      "extras": {}
+    },
+    {
+      "group": "历史起点",
+      "api": "index_weight",
+      "need": "useful",
+      "params": {
+        "index_code": "000905.SH",
+        "start_date": "20150101",
+        "end_date": "20150131"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 500,
+      "columns": [
+        "index_code",
+        "con_code",
+        "trade_date",
+        "weight"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20150130",
+          "max": "20150130"
+        }
+      },
+      "extras": {}
+    },
+    {
+      "group": "历史行业",
+      "api": "index_member_all",
+      "need": "core",
+      "params": {
+        "ts_code": "000001.SZ",
+        "is_new": "N"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史行业",
+      "api": "index_member_all",
+      "need": "core",
+      "params": {
+        "ts_code": "000004.SZ",
+        "is_new": "N"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3,
+      "columns": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "date_ranges": {
+        "in_date": {
+          "min": "19891223",
+          "max": "20210611"
+        },
+        "out_date": {
+          "min": "20081230",
+          "max": "20210729"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 3
+        },
+        "out_date_non_null": 3
+      }
+    },
+    {
+      "group": "历史行业",
+      "api": "index_member_all",
+      "need": "core",
+      "params": {
+        "l1_code": "801780.SI",
+        "is_new": "N"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史行业",
+      "api": "index_member_all",
+      "need": "core",
+      "params": {
+        "l1_code": "801780.SI",
+        "is_new": "Y"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 42,
+      "columns": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "date_ranges": {
+        "in_date": {
+          "min": "19910403",
+          "max": "20211210"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 42,
+        "by_exchange_suffix": {
+          "SH": 33,
+          "SZ": 9
+        },
+        "out_date_non_null": 0
+      }
+    },
+    {
+      "group": "历史行业",
+      "api": "index_classify",
+      "need": "core",
+      "params": {
+        "src": "SW2014"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 359,
+      "columns": [
+        "index_code",
+        "industry_name",
+        "level",
+        "industry_code",
+        "is_pub",
+        "parent_code",
+        "src"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "历史行业",
+      "api": "index_member",
+      "need": "optional",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 50,
+      "columns": [
+        "index_code",
+        "con_code",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "date_ranges": {
+        "in_date": {
+          "min": "19910403",
+          "max": "20240701"
+        },
+        "out_date": {
+          "min": "20000331",
+          "max": "20251231"
+        }
+      },
+      "extras": {
+        "out_date_non_null": 41
+      }
+    },
+    {
+      "group": "ST历史",
+      "api": "namechange",
+      "need": "core",
+      "params": {
+        "start_date": "20150101",
+        "end_date": "20150331"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 125,
+      "columns": [
+        "ts_code",
+        "name",
+        "start_date",
+        "end_date",
+        "ann_date",
+        "change_reason"
+      ],
+      "date_ranges": {
+        "start_date": {
+          "min": "20150105",
+          "max": "20150703"
+        },
+        "end_date": {
+          "min": "20150611",
+          "max": "20260907"
+        },
+        "ann_date": {
+          "min": "20150105",
+          "max": "20150331"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 125,
+        "by_exchange_suffix": {
+          "SZ": 65,
+          "SH": 60
+        },
+        "max_versions_per_period": 1
+      }
+    },
+    {
+      "group": "ST历史",
+      "api": "stock_st",
+      "need": "optional",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 138,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "type",
+        "type_name"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20200102",
+          "max": "20200102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 138,
+        "by_exchange_suffix": {
+          "SZ": 72,
+          "SH": 66
+        }
+      }
+    },
+    {
+      "group": "ST历史",
+      "api": "bak_basic",
+      "need": "optional",
+      "params": {
+        "trade_date": "20200102"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "industry",
+        "area",
+        "pe",
+        "float_share",
+        "total_share",
+        "total_assets",
+        "liquid_assets",
+        "fixed_assets",
+        "reserved",
+        "reserved_pershare",
+        "eps",
+        "bvps",
+        "pb",
+        "list_date",
+        "undp",
+        "per_undp",
+        "rev_yoy",
+        "profit_yoy",
+        "gpr",
+        "npr",
+        "holder_num"
+      ],
+      "date_ranges": {},
+      "extras": {}
+    },
+    {
+      "group": "概念",
+      "api": "ths_member",
+      "need": "useful",
+      "params": {
+        "ts_code": "885800.TI"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 519,
+      "columns": [
+        "ts_code",
+        "con_code",
+        "con_name"
+      ],
+      "date_ranges": {},
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "TI": 519
+        }
+      }
+    },
+    {
+      "group": "概念",
+      "api": "dc_member",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 8000,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "con_code",
+        "name"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 64,
+        "by_exchange_suffix": {
+          "DC": 8000
+        }
+      }
+    },
+    {
+      "group": "概念",
+      "api": "kpl_concept_cons",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "rate_limited_times": 0,
+      "rows": 3000,
+      "columns": [
+        "ts_code",
+        "name",
+        "con_name",
+        "con_code",
+        "trade_date",
+        "desc",
+        "hot_num"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 53,
+        "by_exchange_suffix": {
+          "KP": 3000
+        }
+      }
+    }
+  ],
+  "baostock": {
+    "installed": true,
+    "queries": [
+      {
+        "code": "sh.600000",
+        "day": "2015-01-05",
+        "freq": "5",
+        "rows": 0,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sh.600000",
+        "day": "2015-01-05",
+        "freq": "30",
+        "rows": 0,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sh.600000",
+        "day": "2019-01-02",
+        "freq": "5",
+        "rows": 0,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sh.600000",
+        "day": "2019-01-02",
+        "freq": "30",
+        "rows": 0,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sh.600000",
+        "day": "2023-01-03",
+        "freq": "5",
+        "rows": 48,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sh.600000",
+        "day": "2023-01-03",
+        "freq": "30",
+        "rows": 8,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sh.600000",
+        "day": "2026-11-10",
+        "freq": "5",
+        "rows": 48,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sh.600000",
+        "day": "2026-11-10",
+        "freq": "30",
+        "rows": 8,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sz.300750",
+        "day": "2015-01-05",
+        "freq": "5",
+        "rows": 0,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sz.300750",
+        "day": "2015-01-05",
+        "freq": "30",
+        "rows": 0,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sz.300750",
+        "day": "2019-01-02",
+        "freq": "5",
+        "rows": 0,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sz.300750",
+        "day": "2019-01-02",
+        "freq": "30",
+        "rows": 0,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sz.300750",
+        "day": "2023-01-03",
+        "freq": "5",
+        "rows": 48,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sz.300750",
+        "day": "2023-01-03",
+        "freq": "30",
+        "rows": 8,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sz.300750",
+        "day": "2026-11-10",
+        "freq": "5",
+        "rows": 48,
+        "error_code": "0",
+        "error_msg": "success"
+      },
+      {
+        "code": "sz.300750",
+        "day": "2026-11-10",
+        "freq": "30",
+        "rows": 8,
+        "error_code": "0",
+        "error_msg": "success"
+      }
+    ],
+    "login": {
+      "error_code": "0",
+      "error_msg": "success"
+    }
+  }
+}
