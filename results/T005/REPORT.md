@@ -304,3 +304,22 @@ T002 里 `stk_mins` 撞过一次 1 次/分钟的限制，本次没有调用 `stk
 ```
 
 受保护文件从 22 个增加到 36 个、测试从 15 个增加到 36 个，是 M1 提交新增了 `scripts/backfill.py`、`scripts/build_curated.py`、`scripts/load_sample.py`、`perq/data/*`、`tests/test_data_layer.py`、`tests/test_sample_real.py` 等文件所致，不是我的改动。
+
+### 8.3 第二次变基后的复核（最终基线 `6d959b0`，已推送）
+
+推送到 `1d34577` 的过程中远端又前进了（M2 提交 `6d959b0`），再次被拒。再变基一次后复核并推送：
+
+`python tools/verify_integrity.py`：
+
+```
+通过：45 个受保护文件与清单一致。
+```
+
+`python -m pytest -q --basetemp=logs/pytest_tmp2`：
+
+```
+...................................................                      [100%]
+51 passed in 362.24s (0:06:02)
+```
+
+三个基线三次数字（22/15 → 36/36 → 45/51）全部是设计方连续提交 M1、M2 造成的，我的 `results/T005/` 三个文件在三次变基中内容未变。最终推送的提交为 `20b31a7`。
