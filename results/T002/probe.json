@@ -1,0 +1,6691 @@
+{
+  "status": "completed",
+  "today": "20261112",
+  "recent_trade_date": "20261111",
+  "previous_trade_date": "20261110",
+  "summary": {
+    "core": {
+      "usable": [
+        "adj_factor",
+        "balancesheet",
+        "balancesheet_vip",
+        "cashflow",
+        "cashflow_vip",
+        "daily",
+        "daily_basic",
+        "fina_indicator",
+        "fina_indicator_vip",
+        "income",
+        "income_vip",
+        "index_classify",
+        "index_daily",
+        "index_member_all",
+        "namechange",
+        "stk_limit",
+        "stock_basic",
+        "suspend_d",
+        "trade_cal"
+      ],
+      "not_usable": []
+    },
+    "useful": {
+      "usable": [
+        "broker_recommend",
+        "cyq_chips",
+        "cyq_perf",
+        "disclosure_date",
+        "dividend",
+        "express_vip",
+        "forecast_vip",
+        "fut_daily",
+        "index_weight",
+        "limit_cpt_list",
+        "limit_list_d",
+        "limit_step",
+        "margin",
+        "margin_detail",
+        "moneyflow",
+        "pledge_stat",
+        "report_rc",
+        "repurchase",
+        "share_float",
+        "shibor",
+        "stk_holdernumber",
+        "stk_holdertrade",
+        "stk_surv",
+        "sw_daily",
+        "ths_daily",
+        "ths_index",
+        "ths_member",
+        "top10_floatholders",
+        "top10_holders",
+        "top_inst",
+        "top_list"
+      ],
+      "not_usable": []
+    },
+    "optional": {
+      "usable": [
+        "bak_basic",
+        "block_trade",
+        "cn_m",
+        "cn_pmi",
+        "cyq_perf",
+        "dc_hot",
+        "dc_index",
+        "fina_audit",
+        "fina_mainbz_vip",
+        "fund_share",
+        "hk_hold",
+        "hm_detail",
+        "hm_list",
+        "hsgt_top10",
+        "index_dailybasic",
+        "kpl_concept",
+        "kpl_list",
+        "major_news",
+        "moneyflow_dc",
+        "moneyflow_hsgt",
+        "moneyflow_ind_ths",
+        "moneyflow_ths",
+        "opt_daily",
+        "report_rc",
+        "sf_month",
+        "stk_factor_pro",
+        "stk_mins",
+        "ths_hot"
+      ],
+      "not_usable": [
+        "fund_portfolio",
+        "news",
+        "stk_auction",
+        "stk_auction_o",
+        "yc_cb"
+      ]
+    },
+    "uncertain": {
+      "usable": [
+        "stock_st"
+      ],
+      "not_usable": [
+        "anns_d",
+        "irm_qa_sh",
+        "irm_qa_sz",
+        "research_report"
+      ]
+    }
+  },
+  "probe_count": 129,
+  "probes": [
+    {
+      "group": "基础",
+      "api": "stock_basic",
+      "need": "core",
+      "params": {
+        "exchange": "",
+        "list_status": "L",
+        "fields": "ts_code,name,area,industry,market,exchange,list_status,list_date,delist_date"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.203,
+      "rate_limited_times": 0,
+      "rows": 5580,
+      "columns": [
+        "ts_code",
+        "name",
+        "area",
+        "industry",
+        "market",
+        "exchange",
+        "list_status",
+        "list_date",
+        "delist_date"
+      ],
+      "date_ranges": {
+        "list_date": {
+          "min": "19901219",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5580,
+        "by_exchange_suffix": {
+          "SZ": 2906,
+          "SH": 2319,
+          "BJ": 355
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "基础",
+      "api": "stock_basic",
+      "need": "core",
+      "params": {
+        "exchange": "",
+        "list_status": "D",
+        "fields": "ts_code,name,area,industry,market,exchange,list_status,list_date,delist_date"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.078,
+      "rate_limited_times": 0,
+      "rows": 343,
+      "columns": [
+        "ts_code",
+        "name",
+        "area",
+        "industry",
+        "market",
+        "exchange",
+        "list_status",
+        "list_date",
+        "delist_date"
+      ],
+      "date_ranges": {
+        "list_date": {
+          "min": "19901201",
+          "max": "20230201"
+        },
+        "delist_date": {
+          "min": "19990712",
+          "max": "20261028"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 343,
+        "by_exchange_suffix": {
+          "SZ": 189,
+          "SH": 149,
+          "BJ": 5
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "基础",
+      "api": "stock_basic",
+      "need": "core",
+      "params": {
+        "exchange": "",
+        "list_status": "P",
+        "fields": "ts_code,name,area,industry,market,exchange,list_status,list_date,delist_date"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "name",
+        "area",
+        "industry",
+        "market",
+        "exchange",
+        "list_status",
+        "list_date",
+        "delist_date"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": true
+    },
+    {
+      "group": "基础",
+      "api": "trade_cal",
+      "need": "core",
+      "params": {
+        "exchange": "SSE",
+        "start_date": "20140101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.172,
+      "rate_limited_times": 0,
+      "rows": 4698,
+      "columns": [
+        "exchange",
+        "cal_date",
+        "is_open",
+        "pretrade_date"
+      ],
+      "date_ranges": {
+        "cal_date": {
+          "min": "20140101",
+          "max": "20261111"
+        },
+        "pretrade_date": {
+          "min": "20131231",
+          "max": "20261110"
+        }
+      },
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "基础",
+      "api": "namechange",
+      "need": "core",
+      "params": {
+        "ts_code": "000004.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 17,
+      "columns": [
+        "ts_code",
+        "name",
+        "start_date",
+        "end_date",
+        "ann_date",
+        "change_reason"
+      ],
+      "date_ranges": {
+        "start_date": {
+          "min": "19901201",
+          "max": "20260623"
+        },
+        "end_date": {
+          "min": "19990426",
+          "max": "20260622"
+        },
+        "ann_date": {
+          "min": "19901201",
+          "max": "20260613"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 17
+        },
+        "max_versions_per_period": 1
+      },
+      "empty": false
+    },
+    {
+      "group": "基础",
+      "api": "suspend_d",
+      "need": "core",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 7,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "suspend_timing",
+        "suspend_type"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 7,
+        "by_exchange_suffix": {
+          "SH": 4,
+          "SZ": 3
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "基础",
+      "api": "suspend_d",
+      "need": "core",
+      "params": {
+        "trade_date": "20150708"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.078,
+      "rate_limited_times": 0,
+      "rows": 1348,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "suspend_timing",
+        "suspend_type"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20150708",
+          "max": "20150708"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1348,
+        "by_exchange_suffix": {
+          "SZ": 984,
+          "SH": 364
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "基础",
+      "api": "stock_st",
+      "need": "uncertain",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.078,
+      "rate_limited_times": 0,
+      "rows": 196,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "type",
+        "type_name"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 196,
+        "by_exchange_suffix": {
+          "SZ": 113,
+          "SH": 80,
+          "BJ": 3
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "基础",
+      "api": "bak_basic",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.375,
+      "rate_limited_times": 0,
+      "rows": 5580,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "industry",
+        "area",
+        "pe",
+        "float_share",
+        "total_share",
+        "total_assets",
+        "liquid_assets",
+        "fixed_assets",
+        "reserved",
+        "reserved_pershare",
+        "eps",
+        "bvps",
+        "pb",
+        "list_date",
+        "undp",
+        "per_undp",
+        "rev_yoy",
+        "profit_yoy",
+        "gpr",
+        "npr",
+        "holder_num"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        },
+        "list_date": {
+          "min": "0",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5580,
+        "by_exchange_suffix": {
+          "SZ": 2905,
+          "SH": 2319,
+          "BJ": 356
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "daily",
+      "need": "core",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.235,
+      "rate_limited_times": 0,
+      "rows": 5574,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5574,
+        "by_exchange_suffix": {
+          "SZ": 2903,
+          "SH": 2316,
+          "BJ": 355
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "daily",
+      "need": "core",
+      "params": {
+        "trade_date": "20140102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.141,
+      "rate_limited_times": 0,
+      "rows": 2354,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20140102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2354,
+        "by_exchange_suffix": {
+          "SZ": 1442,
+          "SH": 912
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "daily",
+      "need": "core",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.219,
+      "rate_limited_times": 0,
+      "rows": 2592,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2592,
+        "by_exchange_suffix": {
+          "SZ": 1566,
+          "SH": 983,
+          "BJ": 43
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "daily",
+      "need": "core",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.187,
+      "rate_limited_times": 0,
+      "rows": 3579,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3579,
+        "by_exchange_suffix": {
+          "SZ": 2117,
+          "SH": 1438,
+          "BJ": 24
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "adj_factor",
+      "need": "core",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.125,
+      "rate_limited_times": 0,
+      "rows": 5584,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5584,
+        "by_exchange_suffix": {
+          "SZ": 2908,
+          "SH": 2321,
+          "BJ": 355
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "adj_factor",
+      "need": "core",
+      "params": {
+        "trade_date": "20140102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.109,
+      "rate_limited_times": 0,
+      "rows": 2475,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20140102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2475,
+        "by_exchange_suffix": {
+          "SZ": 1527,
+          "SH": 944,
+          "BJ": 4
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "adj_factor",
+      "need": "core",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.187,
+      "rate_limited_times": 0,
+      "rows": 2881,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2881,
+        "by_exchange_suffix": {
+          "SZ": 1738,
+          "SH": 1073,
+          "BJ": 70
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "adj_factor",
+      "need": "core",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.109,
+      "rate_limited_times": 0,
+      "rows": 3743,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "adj_factor"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3743,
+        "by_exchange_suffix": {
+          "SZ": 2126,
+          "SH": 1443,
+          "BJ": 174
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "daily_basic",
+      "need": "core",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.297,
+      "rate_limited_times": 0,
+      "rows": 5574,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5574,
+        "by_exchange_suffix": {
+          "SZ": 2903,
+          "SH": 2316,
+          "BJ": 355
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "daily_basic",
+      "need": "core",
+      "params": {
+        "trade_date": "20140102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.204,
+      "rate_limited_times": 0,
+      "rows": 2354,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20140102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2354,
+        "by_exchange_suffix": {
+          "SZ": 1442,
+          "SH": 912
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "daily_basic",
+      "need": "core",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.203,
+      "rate_limited_times": 0,
+      "rows": 2549,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2549,
+        "by_exchange_suffix": {
+          "SZ": 1566,
+          "SH": 983
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "daily_basic",
+      "need": "core",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.344,
+      "rate_limited_times": 0,
+      "rows": 3555,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3555,
+        "by_exchange_suffix": {
+          "SZ": 2117,
+          "SH": 1438
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "stk_limit",
+      "need": "core",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.141,
+      "rate_limited_times": 0,
+      "rows": 5657,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5657,
+        "by_exchange_suffix": {
+          "SZ": 2942,
+          "SH": 2319,
+          "BJ": 396
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "stk_limit",
+      "need": "core",
+      "params": {
+        "trade_date": "20140102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.187,
+      "rate_limited_times": 0,
+      "rows": 2466,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20140102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2466,
+        "by_exchange_suffix": {
+          "SZ": 1524,
+          "SH": 942
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "stk_limit",
+      "need": "core",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.109,
+      "rate_limited_times": 0,
+      "rows": 2809,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2809,
+        "by_exchange_suffix": {
+          "SZ": 1736,
+          "SH": 1073
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "stk_limit",
+      "need": "core",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.125,
+      "rate_limited_times": 0,
+      "rows": 3566,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3566,
+        "by_exchange_suffix": {
+          "SZ": 2123,
+          "SH": 1443
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "moneyflow",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.328,
+      "rate_limited_times": 0,
+      "rows": 5580,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "buy_sm_vol",
+        "buy_sm_amount",
+        "sell_sm_vol",
+        "sell_sm_amount",
+        "buy_md_vol",
+        "buy_md_amount",
+        "sell_md_vol",
+        "sell_md_amount",
+        "buy_lg_vol",
+        "buy_lg_amount",
+        "sell_lg_vol",
+        "sell_lg_amount",
+        "buy_elg_vol",
+        "buy_elg_amount",
+        "sell_elg_vol",
+        "sell_elg_amount",
+        "net_mf_vol",
+        "net_mf_amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5580,
+        "by_exchange_suffix": {
+          "SZ": 2906,
+          "SH": 2319,
+          "BJ": 355
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "moneyflow",
+      "need": "useful",
+      "params": {
+        "trade_date": "20140102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.218,
+      "rate_limited_times": 0,
+      "rows": 2351,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "buy_sm_vol",
+        "buy_sm_amount",
+        "sell_sm_vol",
+        "sell_sm_amount",
+        "buy_md_vol",
+        "buy_md_amount",
+        "sell_md_vol",
+        "sell_md_amount",
+        "buy_lg_vol",
+        "buy_lg_amount",
+        "sell_lg_vol",
+        "sell_lg_amount",
+        "buy_elg_vol",
+        "buy_elg_amount",
+        "sell_elg_vol",
+        "sell_elg_amount",
+        "net_mf_vol",
+        "net_mf_amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20140102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2351,
+        "by_exchange_suffix": {
+          "SZ": 1439,
+          "SH": 912
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "moneyflow",
+      "need": "useful",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.187,
+      "rate_limited_times": 0,
+      "rows": 2546,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "buy_sm_vol",
+        "buy_sm_amount",
+        "sell_sm_vol",
+        "sell_sm_amount",
+        "buy_md_vol",
+        "buy_md_amount",
+        "sell_md_vol",
+        "sell_md_amount",
+        "buy_lg_vol",
+        "buy_lg_amount",
+        "sell_lg_vol",
+        "sell_lg_amount",
+        "buy_elg_vol",
+        "buy_elg_amount",
+        "sell_elg_vol",
+        "sell_elg_amount",
+        "net_mf_vol",
+        "net_mf_amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2546,
+        "by_exchange_suffix": {
+          "SZ": 1563,
+          "SH": 983
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行情",
+      "api": "moneyflow",
+      "need": "useful",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.234,
+      "rate_limited_times": 0,
+      "rows": 3554,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "buy_sm_vol",
+        "buy_sm_amount",
+        "sell_sm_vol",
+        "sell_sm_amount",
+        "buy_md_vol",
+        "buy_md_amount",
+        "sell_md_vol",
+        "sell_md_amount",
+        "buy_lg_vol",
+        "buy_lg_amount",
+        "sell_lg_vol",
+        "sell_lg_amount",
+        "buy_elg_vol",
+        "buy_elg_amount",
+        "sell_elg_vol",
+        "sell_elg_amount",
+        "net_mf_vol",
+        "net_mf_amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3554,
+        "by_exchange_suffix": {
+          "SZ": 2116,
+          "SH": 1438
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "分钟",
+      "api": "stk_mins",
+      "need": "optional",
+      "params": {
+        "ts_code": "000001.SZ",
+        "freq": "1min",
+        "start_date": "2026-11-11 09:00:00",
+        "end_date": "2026-11-11 15:30:00"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.094,
+      "rate_limited_times": 0,
+      "rows": 241,
+      "columns": [
+        "ts_code",
+        "trade_time",
+        "close",
+        "open",
+        "high",
+        "low",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_time": {
+          "min": "2026-11-11 09:30:00",
+          "max": "2026-11-11 15:00:00"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 241
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "分钟",
+      "api": "stk_mins",
+      "need": "optional",
+      "params": {
+        "ts_code": "000001.SZ",
+        "freq": "1min",
+        "start_date": "2019-01-02 09:00:00",
+        "end_date": "2019-01-02 15:30:00"
+      },
+      "ok": false,
+      "error": "Exception: 抱歉，您访问接口(stk_mins)频率超限(1次/分钟)，具体频次详情：https://tushare.pro/document/1?doc_id=108。",
+      "elapsed_seconds": 0.078,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "交易行为",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.079,
+      "rate_limited_times": 0,
+      "rows": 104,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 104,
+        "by_exchange_suffix": {
+          "SZ": 56,
+          "SH": 47,
+          "BJ": 1
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "交易行为",
+      "api": "limit_list_d",
+      "need": "useful",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "name",
+        "close",
+        "pct_chg",
+        "amount",
+        "limit_amount",
+        "float_mv",
+        "total_mv",
+        "turnover_ratio",
+        "fd_amount",
+        "first_time",
+        "last_time",
+        "open_times",
+        "up_stat",
+        "limit_times",
+        "limit"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": true
+    },
+    {
+      "group": "交易行为",
+      "api": "top_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.094,
+      "rate_limited_times": 0,
+      "rows": 58,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "pct_change",
+        "turnover_rate",
+        "amount",
+        "l_sell",
+        "l_buy",
+        "l_amount",
+        "net_amount",
+        "net_rate",
+        "amount_rate",
+        "float_values",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 51,
+        "by_exchange_suffix": {
+          "SZ": 27,
+          "SH": 26,
+          "BJ": 5
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "交易行为",
+      "api": "top_inst",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.094,
+      "rate_limited_times": 0,
+      "rows": 580,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "exalter",
+        "buy",
+        "buy_rate",
+        "sell",
+        "sell_rate",
+        "net_buy",
+        "side",
+        "reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 51,
+        "by_exchange_suffix": {
+          "SZ": 270,
+          "SH": 260,
+          "BJ": 50
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "交易行为",
+      "api": "margin_detail",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.516,
+      "rate_limited_times": 0,
+      "rows": 4489,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "rzye",
+        "rqye",
+        "rzmre",
+        "rqyl",
+        "rzche",
+        "rqchl",
+        "rqmcl",
+        "rzrqye"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 4489,
+        "by_exchange_suffix": {
+          "SZ": 2119,
+          "SH": 2018,
+          "BJ": 352
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "交易行为",
+      "api": "block_trade",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 90,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "vol",
+        "amount",
+        "buyer",
+        "seller"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 56,
+        "by_exchange_suffix": {
+          "SH": 51,
+          "SZ": 38,
+          "BJ": 1
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "交易行为",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.094,
+      "rate_limited_times": 0,
+      "rows": 1015,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1015,
+        "by_exchange_suffix": {
+          "HK": 1015
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "交易行为",
+      "api": "moneyflow_hsgt",
+      "need": "optional",
+      "params": {
+        "start_date": "20261101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 8,
+      "columns": [
+        "trade_date",
+        "ggt_ss",
+        "ggt_sz",
+        "hgt",
+        "sgt",
+        "north_money",
+        "south_money"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261102",
+          "max": "20261111"
+        }
+      },
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "交易行为",
+      "api": "cyq_perf",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.25,
+      "rate_limited_times": 0,
+      "rows": 5573,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5573,
+        "by_exchange_suffix": {
+          "SZ": 2903,
+          "SH": 2315,
+          "BJ": 355
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "交易行为",
+      "api": "stk_factor_pro",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 3.11,
+      "rate_limited_times": 0,
+      "rows": 5573,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "open_hfq",
+        "open_qfq",
+        "high",
+        "high_hfq",
+        "high_qfq",
+        "low",
+        "low_hfq",
+        "low_qfq",
+        "close",
+        "close_hfq",
+        "close_qfq",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv",
+        "adj_factor",
+        "asi_bfq",
+        "asi_hfq",
+        "asi_qfq",
+        "asit_bfq",
+        "asit_hfq",
+        "asit_qfq",
+        "atr_bfq",
+        "atr_hfq",
+        "atr_qfq",
+        "bbi_bfq",
+        "bbi_hfq",
+        "bbi_qfq",
+        "bias1_bfq",
+        "bias1_hfq",
+        "bias1_qfq",
+        "bias2_bfq",
+        "bias2_hfq",
+        "bias2_qfq",
+        "bias3_bfq",
+        "bias3_hfq",
+        "bias3_qfq",
+        "boll_lower_bfq",
+        "boll_lower_hfq",
+        "boll_lower_qfq",
+        "boll_mid_bfq",
+        "boll_mid_hfq",
+        "boll_mid_qfq",
+        "boll_upper_bfq",
+        "boll_upper_hfq",
+        "boll_upper_qfq",
+        "brar_ar_bfq",
+        "brar_ar_hfq",
+        "brar_ar_qfq",
+        "brar_br_bfq",
+        "brar_br_hfq",
+        "brar_br_qfq",
+        "cci_bfq",
+        "cci_hfq",
+        "cci_qfq",
+        "cr_bfq",
+        "cr_hfq",
+        "cr_qfq",
+        "dfma_dif_bfq",
+        "dfma_dif_hfq",
+        "dfma_dif_qfq",
+        "dfma_difma_bfq",
+        "dfma_difma_hfq",
+        "dfma_difma_qfq",
+        "dmi_adx_bfq",
+        "dmi_adx_hfq",
+        "dmi_adx_qfq",
+        "dmi_adxr_bfq",
+        "dmi_adxr_hfq",
+        "dmi_adxr_qfq",
+        "dmi_mdi_bfq",
+        "dmi_mdi_hfq",
+        "dmi_mdi_qfq",
+        "dmi_pdi_bfq",
+        "dmi_pdi_hfq",
+        "dmi_pdi_qfq",
+        "downdays",
+        "updays",
+        "dpo_bfq",
+        "dpo_hfq",
+        "dpo_qfq",
+        "madpo_bfq",
+        "madpo_hfq",
+        "madpo_qfq",
+        "ema_bfq_10",
+        "ema_bfq_20",
+        "ema_bfq_250",
+        "ema_bfq_30",
+        "ema_bfq_5",
+        "ema_bfq_60",
+        "ema_bfq_90",
+        "ema_hfq_10",
+        "ema_hfq_20",
+        "ema_hfq_250",
+        "ema_hfq_30",
+        "ema_hfq_5",
+        "ema_hfq_60",
+        "ema_hfq_90",
+        "ema_qfq_10",
+        "ema_qfq_20",
+        "ema_qfq_250",
+        "ema_qfq_30",
+        "ema_qfq_5",
+        "ema_qfq_60",
+        "ema_qfq_90",
+        "emv_bfq",
+        "emv_hfq",
+        "emv_qfq",
+        "maemv_bfq",
+        "maemv_hfq",
+        "maemv_qfq",
+        "expma_12_bfq",
+        "expma_12_hfq",
+        "expma_12_qfq",
+        "expma_50_bfq",
+        "expma_50_hfq",
+        "expma_50_qfq",
+        "kdj_bfq",
+        "kdj_hfq",
+        "kdj_qfq",
+        "kdj_d_bfq",
+        "kdj_d_hfq",
+        "kdj_d_qfq",
+        "kdj_k_bfq",
+        "kdj_k_hfq",
+        "kdj_k_qfq",
+        "ktn_down_bfq",
+        "ktn_down_hfq",
+        "ktn_down_qfq",
+        "ktn_mid_bfq",
+        "ktn_mid_hfq",
+        "ktn_mid_qfq",
+        "ktn_upper_bfq",
+        "ktn_upper_hfq",
+        "ktn_upper_qfq",
+        "lowdays",
+        "topdays",
+        "ma_bfq_10",
+        "ma_bfq_20",
+        "ma_bfq_250",
+        "ma_bfq_30",
+        "ma_bfq_5",
+        "ma_bfq_60",
+        "ma_bfq_90",
+        "ma_hfq_10",
+        "ma_hfq_20",
+        "ma_hfq_250",
+        "ma_hfq_30",
+        "ma_hfq_5",
+        "ma_hfq_60",
+        "ma_hfq_90",
+        "ma_qfq_10",
+        "ma_qfq_20",
+        "ma_qfq_250",
+        "ma_qfq_30",
+        "ma_qfq_5",
+        "ma_qfq_60",
+        "ma_qfq_90",
+        "macd_bfq",
+        "macd_hfq",
+        "macd_qfq",
+        "macd_dea_bfq",
+        "macd_dea_hfq",
+        "macd_dea_qfq",
+        "macd_dif_bfq",
+        "macd_dif_hfq",
+        "macd_dif_qfq",
+        "mass_bfq",
+        "mass_hfq",
+        "mass_qfq",
+        "ma_mass_bfq",
+        "ma_mass_hfq",
+        "ma_mass_qfq",
+        "mfi_bfq",
+        "mfi_hfq",
+        "mfi_qfq",
+        "mtm_bfq",
+        "mtm_hfq",
+        "mtm_qfq",
+        "mtmma_bfq",
+        "mtmma_hfq",
+        "mtmma_qfq",
+        "obv_bfq",
+        "obv_hfq",
+        "obv_qfq",
+        "psy_bfq",
+        "psy_hfq",
+        "psy_qfq",
+        "psyma_bfq",
+        "psyma_hfq",
+        "psyma_qfq",
+        "roc_bfq",
+        "roc_hfq",
+        "roc_qfq",
+        "maroc_bfq",
+        "maroc_hfq",
+        "maroc_qfq",
+        "rsi_bfq_12",
+        "rsi_bfq_24",
+        "rsi_bfq_6",
+        "rsi_hfq_12",
+        "rsi_hfq_24",
+        "rsi_hfq_6",
+        "rsi_qfq_12",
+        "rsi_qfq_24",
+        "rsi_qfq_6",
+        "taq_down_bfq",
+        "taq_down_hfq",
+        "taq_down_qfq",
+        "taq_mid_bfq",
+        "taq_mid_hfq",
+        "taq_mid_qfq",
+        "taq_up_bfq",
+        "taq_up_hfq",
+        "taq_up_qfq",
+        "trix_bfq",
+        "trix_hfq",
+        "trix_qfq",
+        "trma_bfq",
+        "trma_hfq",
+        "trma_qfq",
+        "vr_bfq",
+        "vr_hfq",
+        "vr_qfq",
+        "wr_bfq",
+        "wr_hfq",
+        "wr_qfq",
+        "wr1_bfq",
+        "wr1_hfq",
+        "wr1_qfq",
+        "xsii_td1_bfq",
+        "xsii_td1_hfq",
+        "xsii_td1_qfq",
+        "xsii_td2_bfq",
+        "xsii_td2_hfq",
+        "xsii_td2_qfq",
+        "xsii_td3_bfq",
+        "xsii_td3_hfq",
+        "xsii_td3_qfq",
+        "xsii_td4_bfq",
+        "xsii_td4_hfq",
+        "xsii_td4_qfq"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5573,
+        "by_exchange_suffix": {
+          "SZ": 2903,
+          "SH": 2315,
+          "BJ": 355
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "income_vip",
+      "need": "core",
+      "params": {
+        "period": "20141231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 1.156,
+      "rate_limited_times": 0,
+      "rows": 5030,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "comp_type",
+        "end_type",
+        "basic_eps",
+        "diluted_eps",
+        "total_revenue",
+        "revenue",
+        "int_income",
+        "prem_earned",
+        "comm_income",
+        "n_commis_income",
+        "n_oth_income",
+        "n_oth_b_income",
+        "prem_income",
+        "out_prem",
+        "une_prem_reser",
+        "reins_income",
+        "n_sec_tb_income",
+        "n_sec_uw_income",
+        "n_asset_mg_income",
+        "oth_b_income",
+        "fv_value_chg_gain",
+        "invest_income",
+        "ass_invest_income",
+        "forex_gain",
+        "total_cogs",
+        "oper_cost",
+        "int_exp",
+        "comm_exp",
+        "biz_tax_surchg",
+        "sell_exp",
+        "admin_exp",
+        "fin_exp",
+        "assets_impair_loss",
+        "prem_refund",
+        "compens_payout",
+        "reser_insur_liab",
+        "div_payt",
+        "reins_exp",
+        "oper_exp",
+        "compens_payout_refu",
+        "insur_reser_refu",
+        "reins_cost_refund",
+        "other_bus_cost",
+        "operate_profit",
+        "non_oper_income",
+        "non_oper_exp",
+        "nca_disploss",
+        "total_profit",
+        "income_tax",
+        "n_income",
+        "n_income_attr_p",
+        "minority_gain",
+        "oth_compr_income",
+        "t_compr_income",
+        "compr_inc_attr_p",
+        "compr_inc_attr_m_s",
+        "ebit",
+        "ebitda",
+        "insurance_exp",
+        "undist_profit",
+        "distable_profit",
+        "rd_exp",
+        "fin_exp_int_exp",
+        "fin_exp_int_inc",
+        "transfer_surplus_rese",
+        "transfer_housing_imprest",
+        "transfer_oth",
+        "adj_lossgain",
+        "withdra_legal_surplus",
+        "withdra_legal_pubfund",
+        "withdra_biz_devfund",
+        "withdra_rese_fund",
+        "withdra_oth_ersu",
+        "workers_welfare",
+        "distr_profit_shrhder",
+        "prfshare_payable_dvd",
+        "comshare_payable_dvd",
+        "capit_comstock_div",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20150115",
+          "max": "20180425"
+        },
+        "f_ann_date": {
+          "min": "20150115",
+          "max": "20260314"
+        },
+        "end_date": {
+          "min": "20141231",
+          "max": "20141231"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "0": 4376,
+          "1": 654
+        },
+        "f_ann_date_non_null_ratio": 1.0,
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 4499,
+        "by_exchange_suffix": {
+          "SZ": 2770,
+          "SH": 2006,
+          "BJ": 254
+        },
+        "max_versions_per_period": 3
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "income_vip",
+      "need": "core",
+      "params": {
+        "period": "20251231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 1.453,
+      "rate_limited_times": 0,
+      "rows": 7236,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "comp_type",
+        "end_type",
+        "basic_eps",
+        "diluted_eps",
+        "total_revenue",
+        "revenue",
+        "int_income",
+        "prem_earned",
+        "comm_income",
+        "n_commis_income",
+        "n_oth_income",
+        "n_oth_b_income",
+        "prem_income",
+        "out_prem",
+        "une_prem_reser",
+        "reins_income",
+        "n_sec_tb_income",
+        "n_sec_uw_income",
+        "n_asset_mg_income",
+        "oth_b_income",
+        "fv_value_chg_gain",
+        "invest_income",
+        "ass_invest_income",
+        "forex_gain",
+        "total_cogs",
+        "oper_cost",
+        "int_exp",
+        "comm_exp",
+        "biz_tax_surchg",
+        "sell_exp",
+        "admin_exp",
+        "fin_exp",
+        "assets_impair_loss",
+        "prem_refund",
+        "compens_payout",
+        "reser_insur_liab",
+        "div_payt",
+        "reins_exp",
+        "oper_exp",
+        "compens_payout_refu",
+        "insur_reser_refu",
+        "reins_cost_refund",
+        "other_bus_cost",
+        "operate_profit",
+        "non_oper_income",
+        "non_oper_exp",
+        "nca_disploss",
+        "total_profit",
+        "income_tax",
+        "n_income",
+        "n_income_attr_p",
+        "minority_gain",
+        "oth_compr_income",
+        "t_compr_income",
+        "compr_inc_attr_p",
+        "compr_inc_attr_m_s",
+        "ebit",
+        "ebitda",
+        "insurance_exp",
+        "undist_profit",
+        "distable_profit",
+        "rd_exp",
+        "fin_exp_int_exp",
+        "fin_exp_int_inc",
+        "transfer_surplus_rese",
+        "transfer_housing_imprest",
+        "transfer_oth",
+        "adj_lossgain",
+        "withdra_legal_surplus",
+        "withdra_legal_pubfund",
+        "withdra_biz_devfund",
+        "withdra_rese_fund",
+        "withdra_oth_ersu",
+        "workers_welfare",
+        "distr_profit_shrhder",
+        "prfshare_payable_dvd",
+        "comshare_payable_dvd",
+        "capit_comstock_div",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20260107",
+          "max": "20261013"
+        },
+        "f_ann_date": {
+          "min": "20260108",
+          "max": "20261109"
+        },
+        "end_date": {
+          "min": "20251231",
+          "max": "20251231"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "1": 5883,
+          "0": 1353
+        },
+        "f_ann_date_non_null_ratio": 1.0,
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 6287,
+        "by_exchange_suffix": {
+          "SZ": 3255,
+          "SH": 2770,
+          "BJ": 1211
+        },
+        "max_versions_per_period": 4
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "balancesheet_vip",
+      "need": "core",
+      "params": {
+        "period": "20141231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 1.25,
+      "rate_limited_times": 0,
+      "rows": 7000,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "comp_type",
+        "end_type",
+        "total_share",
+        "cap_rese",
+        "undistr_porfit",
+        "surplus_rese",
+        "special_rese",
+        "money_cap",
+        "trad_asset",
+        "notes_receiv",
+        "accounts_receiv",
+        "oth_receiv",
+        "prepayment",
+        "div_receiv",
+        "int_receiv",
+        "inventories",
+        "amor_exp",
+        "nca_within_1y",
+        "sett_rsrv",
+        "loanto_oth_bank_fi",
+        "premium_receiv",
+        "reinsur_receiv",
+        "reinsur_res_receiv",
+        "pur_resale_fa",
+        "oth_cur_assets",
+        "total_cur_assets",
+        "fa_avail_for_sale",
+        "htm_invest",
+        "lt_eqt_invest",
+        "invest_real_estate",
+        "time_deposits",
+        "oth_assets",
+        "lt_rec",
+        "fix_assets",
+        "cip",
+        "const_materials",
+        "fixed_assets_disp",
+        "produc_bio_assets",
+        "oil_and_gas_assets",
+        "intan_assets",
+        "r_and_d",
+        "goodwill",
+        "lt_amor_exp",
+        "defer_tax_assets",
+        "decr_in_disbur",
+        "oth_nca",
+        "total_nca",
+        "cash_reser_cb",
+        "depos_in_oth_bfi",
+        "prec_metals",
+        "deriv_assets",
+        "rr_reins_une_prem",
+        "rr_reins_outstd_cla",
+        "rr_reins_lins_liab",
+        "rr_reins_lthins_liab",
+        "refund_depos",
+        "ph_pledge_loans",
+        "refund_cap_depos",
+        "indep_acct_assets",
+        "client_depos",
+        "client_prov",
+        "transac_seat_fee",
+        "invest_as_receiv",
+        "total_assets",
+        "lt_borr",
+        "st_borr",
+        "cb_borr",
+        "depos_ib_deposits",
+        "loan_oth_bank",
+        "trading_fl",
+        "notes_payable",
+        "acct_payable",
+        "adv_receipts",
+        "sold_for_repur_fa",
+        "comm_payable",
+        "payroll_payable",
+        "taxes_payable",
+        "int_payable",
+        "div_payable",
+        "oth_payable",
+        "acc_exp",
+        "deferred_inc",
+        "st_bonds_payable",
+        "payable_to_reinsurer",
+        "rsrv_insur_cont",
+        "acting_trading_sec",
+        "acting_uw_sec",
+        "non_cur_liab_due_1y",
+        "oth_cur_liab",
+        "total_cur_liab",
+        "bond_payable",
+        "lt_payable",
+        "specific_payables",
+        "estimated_liab",
+        "defer_tax_liab",
+        "defer_inc_non_cur_liab",
+        "oth_ncl",
+        "total_ncl",
+        "depos_oth_bfi",
+        "deriv_liab",
+        "depos",
+        "agency_bus_liab",
+        "oth_liab",
+        "prem_receiv_adva",
+        "depos_received",
+        "ph_invest",
+        "reser_une_prem",
+        "reser_outstd_claims",
+        "reser_lins_liab",
+        "reser_lthins_liab",
+        "indept_acc_liab",
+        "pledge_borr",
+        "indem_payable",
+        "policy_div_payable",
+        "total_liab",
+        "treasury_share",
+        "ordin_risk_reser",
+        "forex_differ",
+        "invest_loss_unconf",
+        "minority_int",
+        "total_hldr_eqy_exc_min_int",
+        "total_hldr_eqy_inc_min_int",
+        "total_liab_hldr_eqy",
+        "lt_payroll_payable",
+        "oth_comp_income",
+        "oth_eqt_tools",
+        "oth_eqt_tools_p_shr",
+        "lending_funds",
+        "acc_receivable",
+        "st_fin_payable",
+        "payables",
+        "hfs_assets",
+        "hfs_sales",
+        "cost_fin_assets",
+        "fair_value_fin_assets",
+        "contract_assets",
+        "contract_liab",
+        "accounts_receiv_bill",
+        "accounts_pay",
+        "oth_rcv_total",
+        "fix_assets_total",
+        "cip_total",
+        "oth_pay_total",
+        "long_pay_total",
+        "debt_invest",
+        "oth_debt_invest",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20150115",
+          "max": "20180425"
+        },
+        "f_ann_date": {
+          "min": "20150115",
+          "max": "20221119"
+        },
+        "end_date": {
+          "min": "20141231",
+          "max": "20141231"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "0": 3791,
+          "1": 3209
+        },
+        "f_ann_date_non_null_ratio": 1.0,
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 4363,
+        "by_exchange_suffix": {
+          "SZ": 4695,
+          "SH": 2192,
+          "BJ": 113
+        },
+        "max_versions_per_period": 2
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "balancesheet_vip",
+      "need": "core",
+      "params": {
+        "period": "20251231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 1.344,
+      "rate_limited_times": 0,
+      "rows": 6616,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "comp_type",
+        "end_type",
+        "total_share",
+        "cap_rese",
+        "undistr_porfit",
+        "surplus_rese",
+        "special_rese",
+        "money_cap",
+        "trad_asset",
+        "notes_receiv",
+        "accounts_receiv",
+        "oth_receiv",
+        "prepayment",
+        "div_receiv",
+        "int_receiv",
+        "inventories",
+        "amor_exp",
+        "nca_within_1y",
+        "sett_rsrv",
+        "loanto_oth_bank_fi",
+        "premium_receiv",
+        "reinsur_receiv",
+        "reinsur_res_receiv",
+        "pur_resale_fa",
+        "oth_cur_assets",
+        "total_cur_assets",
+        "fa_avail_for_sale",
+        "htm_invest",
+        "lt_eqt_invest",
+        "invest_real_estate",
+        "time_deposits",
+        "oth_assets",
+        "lt_rec",
+        "fix_assets",
+        "cip",
+        "const_materials",
+        "fixed_assets_disp",
+        "produc_bio_assets",
+        "oil_and_gas_assets",
+        "intan_assets",
+        "r_and_d",
+        "goodwill",
+        "lt_amor_exp",
+        "defer_tax_assets",
+        "decr_in_disbur",
+        "oth_nca",
+        "total_nca",
+        "cash_reser_cb",
+        "depos_in_oth_bfi",
+        "prec_metals",
+        "deriv_assets",
+        "rr_reins_une_prem",
+        "rr_reins_outstd_cla",
+        "rr_reins_lins_liab",
+        "rr_reins_lthins_liab",
+        "refund_depos",
+        "ph_pledge_loans",
+        "refund_cap_depos",
+        "indep_acct_assets",
+        "client_depos",
+        "client_prov",
+        "transac_seat_fee",
+        "invest_as_receiv",
+        "total_assets",
+        "lt_borr",
+        "st_borr",
+        "cb_borr",
+        "depos_ib_deposits",
+        "loan_oth_bank",
+        "trading_fl",
+        "notes_payable",
+        "acct_payable",
+        "adv_receipts",
+        "sold_for_repur_fa",
+        "comm_payable",
+        "payroll_payable",
+        "taxes_payable",
+        "int_payable",
+        "div_payable",
+        "oth_payable",
+        "acc_exp",
+        "deferred_inc",
+        "st_bonds_payable",
+        "payable_to_reinsurer",
+        "rsrv_insur_cont",
+        "acting_trading_sec",
+        "acting_uw_sec",
+        "non_cur_liab_due_1y",
+        "oth_cur_liab",
+        "total_cur_liab",
+        "bond_payable",
+        "lt_payable",
+        "specific_payables",
+        "estimated_liab",
+        "defer_tax_liab",
+        "defer_inc_non_cur_liab",
+        "oth_ncl",
+        "total_ncl",
+        "depos_oth_bfi",
+        "deriv_liab",
+        "depos",
+        "agency_bus_liab",
+        "oth_liab",
+        "prem_receiv_adva",
+        "depos_received",
+        "ph_invest",
+        "reser_une_prem",
+        "reser_outstd_claims",
+        "reser_lins_liab",
+        "reser_lthins_liab",
+        "indept_acc_liab",
+        "pledge_borr",
+        "indem_payable",
+        "policy_div_payable",
+        "total_liab",
+        "treasury_share",
+        "ordin_risk_reser",
+        "forex_differ",
+        "invest_loss_unconf",
+        "minority_int",
+        "total_hldr_eqy_exc_min_int",
+        "total_hldr_eqy_inc_min_int",
+        "total_liab_hldr_eqy",
+        "lt_payroll_payable",
+        "oth_comp_income",
+        "oth_eqt_tools",
+        "oth_eqt_tools_p_shr",
+        "lending_funds",
+        "acc_receivable",
+        "st_fin_payable",
+        "payables",
+        "hfs_assets",
+        "hfs_sales",
+        "cost_fin_assets",
+        "fair_value_fin_assets",
+        "contract_assets",
+        "contract_liab",
+        "accounts_receiv_bill",
+        "accounts_pay",
+        "oth_rcv_total",
+        "fix_assets_total",
+        "cip_total",
+        "oth_pay_total",
+        "long_pay_total",
+        "debt_invest",
+        "oth_debt_invest",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20260107",
+          "max": "20261013"
+        },
+        "f_ann_date": {
+          "min": "20260108",
+          "max": "20261109"
+        },
+        "end_date": {
+          "min": "20251231",
+          "max": "20251231"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "0": 6070,
+          "1": 546
+        },
+        "f_ann_date_non_null_ratio": 1.0,
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 6289,
+        "by_exchange_suffix": {
+          "SZ": 3063,
+          "SH": 2464,
+          "BJ": 1089
+        },
+        "max_versions_per_period": 4
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "cashflow_vip",
+      "need": "core",
+      "params": {
+        "period": "20141231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 1.187,
+      "rate_limited_times": 0,
+      "rows": 4560,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "comp_type",
+        "report_type",
+        "end_type",
+        "net_profit",
+        "finan_exp",
+        "c_fr_sale_sg",
+        "recp_tax_rends",
+        "n_depos_incr_fi",
+        "n_incr_loans_cb",
+        "n_inc_borr_oth_fi",
+        "prem_fr_orig_contr",
+        "n_incr_insured_dep",
+        "n_reinsur_prem",
+        "n_incr_disp_tfa",
+        "ifc_cash_incr",
+        "n_incr_disp_faas",
+        "n_incr_loans_oth_bank",
+        "n_cap_incr_repur",
+        "c_fr_oth_operate_a",
+        "c_inf_fr_operate_a",
+        "c_paid_goods_s",
+        "c_paid_to_for_empl",
+        "c_paid_for_taxes",
+        "n_incr_clt_loan_adv",
+        "n_incr_dep_cbob",
+        "c_pay_claims_orig_inco",
+        "pay_handling_chrg",
+        "pay_comm_insur_plcy",
+        "oth_cash_pay_oper_act",
+        "st_cash_out_act",
+        "n_cashflow_act",
+        "oth_recp_ral_inv_act",
+        "c_disp_withdrwl_invest",
+        "c_recp_return_invest",
+        "n_recp_disp_fiolta",
+        "n_recp_disp_sobu",
+        "stot_inflows_inv_act",
+        "c_pay_acq_const_fiolta",
+        "c_paid_invest",
+        "n_disp_subs_oth_biz",
+        "oth_pay_ral_inv_act",
+        "n_incr_pledge_loan",
+        "stot_out_inv_act",
+        "n_cashflow_inv_act",
+        "c_recp_borrow",
+        "proc_issue_bonds",
+        "oth_cash_recp_ral_fnc_act",
+        "stot_cash_in_fnc_act",
+        "free_cashflow",
+        "c_prepay_amt_borr",
+        "c_pay_dist_dpcp_int_exp",
+        "incl_dvd_profit_paid_sc_ms",
+        "oth_cashpay_ral_fnc_act",
+        "stot_cashout_fnc_act",
+        "n_cash_flows_fnc_act",
+        "eff_fx_flu_cash",
+        "n_incr_cash_cash_equ",
+        "c_cash_equ_beg_period",
+        "c_cash_equ_end_period",
+        "c_recp_cap_contrib",
+        "incl_cash_rec_saims",
+        "uncon_invest_loss",
+        "prov_depr_assets",
+        "depr_fa_coga_dpba",
+        "amort_intang_assets",
+        "lt_amort_deferred_exp",
+        "decr_deferred_exp",
+        "incr_acc_exp",
+        "loss_disp_fiolta",
+        "loss_scr_fa",
+        "loss_fv_chg",
+        "invest_loss",
+        "decr_def_inc_tax_assets",
+        "incr_def_inc_tax_liab",
+        "decr_inventories",
+        "decr_oper_payable",
+        "incr_oper_payable",
+        "others",
+        "im_net_cashflow_oper_act",
+        "conv_debt_into_cap",
+        "conv_copbonds_due_within_1y",
+        "fa_fnc_leases",
+        "im_n_incr_cash_equ",
+        "net_dism_capital_add",
+        "net_cash_rece_sec",
+        "credit_impa_loss",
+        "use_right_asset_dep",
+        "oth_loss_asset",
+        "end_bal_cash",
+        "beg_bal_cash",
+        "end_bal_cash_equ",
+        "beg_bal_cash_equ",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20150115",
+          "max": "20180425"
+        },
+        "f_ann_date": {
+          "min": "20150115",
+          "max": "20221119"
+        },
+        "end_date": {
+          "min": "20141231",
+          "max": "20141231"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "0": 3847,
+          "1": 713
+        },
+        "f_ann_date_non_null_ratio": 1.0,
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 4374,
+        "by_exchange_suffix": {
+          "SZ": 2539,
+          "SH": 1775,
+          "BJ": 246
+        },
+        "max_versions_per_period": 3
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "cashflow_vip",
+      "need": "core",
+      "params": {
+        "period": "20251231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 1.578,
+      "rate_limited_times": 0,
+      "rows": 6400,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "comp_type",
+        "report_type",
+        "end_type",
+        "net_profit",
+        "finan_exp",
+        "c_fr_sale_sg",
+        "recp_tax_rends",
+        "n_depos_incr_fi",
+        "n_incr_loans_cb",
+        "n_inc_borr_oth_fi",
+        "prem_fr_orig_contr",
+        "n_incr_insured_dep",
+        "n_reinsur_prem",
+        "n_incr_disp_tfa",
+        "ifc_cash_incr",
+        "n_incr_disp_faas",
+        "n_incr_loans_oth_bank",
+        "n_cap_incr_repur",
+        "c_fr_oth_operate_a",
+        "c_inf_fr_operate_a",
+        "c_paid_goods_s",
+        "c_paid_to_for_empl",
+        "c_paid_for_taxes",
+        "n_incr_clt_loan_adv",
+        "n_incr_dep_cbob",
+        "c_pay_claims_orig_inco",
+        "pay_handling_chrg",
+        "pay_comm_insur_plcy",
+        "oth_cash_pay_oper_act",
+        "st_cash_out_act",
+        "n_cashflow_act",
+        "oth_recp_ral_inv_act",
+        "c_disp_withdrwl_invest",
+        "c_recp_return_invest",
+        "n_recp_disp_fiolta",
+        "n_recp_disp_sobu",
+        "stot_inflows_inv_act",
+        "c_pay_acq_const_fiolta",
+        "c_paid_invest",
+        "n_disp_subs_oth_biz",
+        "oth_pay_ral_inv_act",
+        "n_incr_pledge_loan",
+        "stot_out_inv_act",
+        "n_cashflow_inv_act",
+        "c_recp_borrow",
+        "proc_issue_bonds",
+        "oth_cash_recp_ral_fnc_act",
+        "stot_cash_in_fnc_act",
+        "free_cashflow",
+        "c_prepay_amt_borr",
+        "c_pay_dist_dpcp_int_exp",
+        "incl_dvd_profit_paid_sc_ms",
+        "oth_cashpay_ral_fnc_act",
+        "stot_cashout_fnc_act",
+        "n_cash_flows_fnc_act",
+        "eff_fx_flu_cash",
+        "n_incr_cash_cash_equ",
+        "c_cash_equ_beg_period",
+        "c_cash_equ_end_period",
+        "c_recp_cap_contrib",
+        "incl_cash_rec_saims",
+        "uncon_invest_loss",
+        "prov_depr_assets",
+        "depr_fa_coga_dpba",
+        "amort_intang_assets",
+        "lt_amort_deferred_exp",
+        "decr_deferred_exp",
+        "incr_acc_exp",
+        "loss_disp_fiolta",
+        "loss_scr_fa",
+        "loss_fv_chg",
+        "invest_loss",
+        "decr_def_inc_tax_assets",
+        "incr_def_inc_tax_liab",
+        "decr_inventories",
+        "decr_oper_payable",
+        "incr_oper_payable",
+        "others",
+        "im_net_cashflow_oper_act",
+        "conv_debt_into_cap",
+        "conv_copbonds_due_within_1y",
+        "fa_fnc_leases",
+        "im_n_incr_cash_equ",
+        "net_dism_capital_add",
+        "net_cash_rece_sec",
+        "credit_impa_loss",
+        "use_right_asset_dep",
+        "oth_loss_asset",
+        "end_bal_cash",
+        "beg_bal_cash",
+        "end_bal_cash_equ",
+        "beg_bal_cash_equ",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20260108",
+          "max": "20260428"
+        },
+        "f_ann_date": {
+          "min": "20260108",
+          "max": "20261031"
+        },
+        "end_date": {
+          "min": "20251231",
+          "max": "20251231"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "1": 3585,
+          "0": 2815
+        },
+        "f_ann_date_non_null_ratio": 1.0,
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 4403,
+        "by_exchange_suffix": {
+          "SZ": 3068,
+          "SH": 2535,
+          "BJ": 797
+        },
+        "max_versions_per_period": 4
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "fina_indicator_vip",
+      "need": "core",
+      "params": {
+        "period": "20141231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 2.485,
+      "rate_limited_times": 0,
+      "rows": 9788,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "eps",
+        "dt_eps",
+        "total_revenue_ps",
+        "revenue_ps",
+        "capital_rese_ps",
+        "surplus_rese_ps",
+        "undist_profit_ps",
+        "extra_item",
+        "profit_dedt",
+        "gross_margin",
+        "current_ratio",
+        "quick_ratio",
+        "cash_ratio",
+        "ar_turn",
+        "ca_turn",
+        "fa_turn",
+        "assets_turn",
+        "op_income",
+        "ebit",
+        "ebitda",
+        "fcff",
+        "fcfe",
+        "current_exint",
+        "noncurrent_exint",
+        "interestdebt",
+        "netdebt",
+        "tangible_asset",
+        "working_capital",
+        "networking_capital",
+        "invest_capital",
+        "retained_earnings",
+        "diluted2_eps",
+        "bps",
+        "ocfps",
+        "retainedps",
+        "cfps",
+        "ebit_ps",
+        "fcff_ps",
+        "fcfe_ps",
+        "netprofit_margin",
+        "grossprofit_margin",
+        "cogs_of_sales",
+        "expense_of_sales",
+        "profit_to_gr",
+        "saleexp_to_gr",
+        "adminexp_of_gr",
+        "finaexp_of_gr",
+        "impai_ttm",
+        "gc_of_gr",
+        "op_of_gr",
+        "ebit_of_gr",
+        "roe",
+        "roe_waa",
+        "roe_dt",
+        "roa",
+        "npta",
+        "roic",
+        "roe_yearly",
+        "roa2_yearly",
+        "debt_to_assets",
+        "assets_to_eqt",
+        "dp_assets_to_eqt",
+        "ca_to_assets",
+        "nca_to_assets",
+        "tbassets_to_totalassets",
+        "int_to_talcap",
+        "eqt_to_talcapital",
+        "currentdebt_to_debt",
+        "longdeb_to_debt",
+        "ocf_to_shortdebt",
+        "debt_to_eqt",
+        "eqt_to_debt",
+        "eqt_to_interestdebt",
+        "tangibleasset_to_debt",
+        "tangasset_to_intdebt",
+        "tangibleasset_to_netdebt",
+        "ocf_to_debt",
+        "turn_days",
+        "roa_yearly",
+        "roa_dp",
+        "fixed_assets",
+        "profit_to_op",
+        "q_saleexp_to_gr",
+        "q_gc_to_gr",
+        "q_roe",
+        "q_dt_roe",
+        "q_npta",
+        "q_ocf_to_sales",
+        "basic_eps_yoy",
+        "dt_eps_yoy",
+        "cfps_yoy",
+        "op_yoy",
+        "ebt_yoy",
+        "netprofit_yoy",
+        "dt_netprofit_yoy",
+        "ocf_yoy",
+        "roe_yoy",
+        "bps_yoy",
+        "assets_yoy",
+        "eqt_yoy",
+        "tr_yoy",
+        "or_yoy",
+        "q_sales_yoy",
+        "q_op_qoq",
+        "equity_yoy",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20150115",
+          "max": "20180425"
+        },
+        "end_date": {
+          "min": "20141231",
+          "max": "20141231"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "1": 5149,
+          "0": 4639
+        },
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 5188,
+        "by_exchange_suffix": {
+          "SZ": 5087,
+          "SH": 3601,
+          "BJ": 1100
+        },
+        "max_versions_per_period": 2
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "fina_indicator_vip",
+      "need": "core",
+      "params": {
+        "period": "20251231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 1.719,
+      "rate_limited_times": 0,
+      "rows": 6848,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "eps",
+        "dt_eps",
+        "total_revenue_ps",
+        "revenue_ps",
+        "capital_rese_ps",
+        "surplus_rese_ps",
+        "undist_profit_ps",
+        "extra_item",
+        "profit_dedt",
+        "gross_margin",
+        "current_ratio",
+        "quick_ratio",
+        "cash_ratio",
+        "ar_turn",
+        "ca_turn",
+        "fa_turn",
+        "assets_turn",
+        "op_income",
+        "ebit",
+        "ebitda",
+        "fcff",
+        "fcfe",
+        "current_exint",
+        "noncurrent_exint",
+        "interestdebt",
+        "netdebt",
+        "tangible_asset",
+        "working_capital",
+        "networking_capital",
+        "invest_capital",
+        "retained_earnings",
+        "diluted2_eps",
+        "bps",
+        "ocfps",
+        "retainedps",
+        "cfps",
+        "ebit_ps",
+        "fcff_ps",
+        "fcfe_ps",
+        "netprofit_margin",
+        "grossprofit_margin",
+        "cogs_of_sales",
+        "expense_of_sales",
+        "profit_to_gr",
+        "saleexp_to_gr",
+        "adminexp_of_gr",
+        "finaexp_of_gr",
+        "impai_ttm",
+        "gc_of_gr",
+        "op_of_gr",
+        "ebit_of_gr",
+        "roe",
+        "roe_waa",
+        "roe_dt",
+        "roa",
+        "npta",
+        "roic",
+        "roe_yearly",
+        "roa2_yearly",
+        "debt_to_assets",
+        "assets_to_eqt",
+        "dp_assets_to_eqt",
+        "ca_to_assets",
+        "nca_to_assets",
+        "tbassets_to_totalassets",
+        "int_to_talcap",
+        "eqt_to_talcapital",
+        "currentdebt_to_debt",
+        "longdeb_to_debt",
+        "ocf_to_shortdebt",
+        "debt_to_eqt",
+        "eqt_to_debt",
+        "eqt_to_interestdebt",
+        "tangibleasset_to_debt",
+        "tangasset_to_intdebt",
+        "tangibleasset_to_netdebt",
+        "ocf_to_debt",
+        "turn_days",
+        "roa_yearly",
+        "roa_dp",
+        "fixed_assets",
+        "profit_to_op",
+        "q_saleexp_to_gr",
+        "q_gc_to_gr",
+        "q_roe",
+        "q_dt_roe",
+        "q_npta",
+        "q_ocf_to_sales",
+        "basic_eps_yoy",
+        "dt_eps_yoy",
+        "cfps_yoy",
+        "op_yoy",
+        "ebt_yoy",
+        "netprofit_yoy",
+        "dt_netprofit_yoy",
+        "ocf_yoy",
+        "roe_yoy",
+        "bps_yoy",
+        "assets_yoy",
+        "eqt_yoy",
+        "tr_yoy",
+        "or_yoy",
+        "q_sales_yoy",
+        "q_op_qoq",
+        "equity_yoy",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20260117",
+          "max": "20261109"
+        },
+        "end_date": {
+          "min": "20251231",
+          "max": "20251231"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "1": 5631,
+          "0": 1217
+        },
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 6276,
+        "by_exchange_suffix": {
+          "SZ": 3153,
+          "SH": 2620,
+          "BJ": 1075
+        },
+        "max_versions_per_period": 2
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "income",
+      "need": "core",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.109,
+      "rate_limited_times": 0,
+      "rows": 178,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "comp_type",
+        "end_type",
+        "basic_eps",
+        "diluted_eps",
+        "total_revenue",
+        "revenue",
+        "int_income",
+        "prem_earned",
+        "comm_income",
+        "n_commis_income",
+        "n_oth_income",
+        "n_oth_b_income",
+        "prem_income",
+        "out_prem",
+        "une_prem_reser",
+        "reins_income",
+        "n_sec_tb_income",
+        "n_sec_uw_income",
+        "n_asset_mg_income",
+        "oth_b_income",
+        "fv_value_chg_gain",
+        "invest_income",
+        "ass_invest_income",
+        "forex_gain",
+        "total_cogs",
+        "oper_cost",
+        "int_exp",
+        "comm_exp",
+        "biz_tax_surchg",
+        "sell_exp",
+        "admin_exp",
+        "fin_exp",
+        "assets_impair_loss",
+        "prem_refund",
+        "compens_payout",
+        "reser_insur_liab",
+        "div_payt",
+        "reins_exp",
+        "oper_exp",
+        "compens_payout_refu",
+        "insur_reser_refu",
+        "reins_cost_refund",
+        "other_bus_cost",
+        "operate_profit",
+        "non_oper_income",
+        "non_oper_exp",
+        "nca_disploss",
+        "total_profit",
+        "income_tax",
+        "n_income",
+        "n_income_attr_p",
+        "minority_gain",
+        "oth_compr_income",
+        "t_compr_income",
+        "compr_inc_attr_p",
+        "compr_inc_attr_m_s",
+        "ebit",
+        "ebitda",
+        "insurance_exp",
+        "undist_profit",
+        "distable_profit",
+        "rd_exp",
+        "fin_exp_int_exp",
+        "fin_exp_int_inc",
+        "transfer_surplus_rese",
+        "transfer_housing_imprest",
+        "transfer_oth",
+        "adj_lossgain",
+        "withdra_legal_surplus",
+        "withdra_legal_pubfund",
+        "withdra_biz_devfund",
+        "withdra_rese_fund",
+        "withdra_oth_ersu",
+        "workers_welfare",
+        "distr_profit_shrhder",
+        "prfshare_payable_dvd",
+        "comshare_payable_dvd",
+        "capit_comstock_div",
+        "continued_net_profit",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "19950310",
+          "max": "20261024"
+        },
+        "f_ann_date": {
+          "min": "19950310",
+          "max": "20261024"
+        },
+        "end_date": {
+          "min": "19941231",
+          "max": "20260930"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "0": 98,
+          "1": 80
+        },
+        "f_ann_date_non_null_ratio": 1.0,
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 178
+        },
+        "max_versions_per_period": 2
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "balancesheet",
+      "need": "core",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.094,
+      "rate_limited_times": 0,
+      "rows": 100,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "comp_type",
+        "end_type",
+        "total_share",
+        "cap_rese",
+        "undistr_porfit",
+        "surplus_rese",
+        "special_rese",
+        "money_cap",
+        "trad_asset",
+        "notes_receiv",
+        "accounts_receiv",
+        "oth_receiv",
+        "prepayment",
+        "div_receiv",
+        "int_receiv",
+        "inventories",
+        "amor_exp",
+        "nca_within_1y",
+        "sett_rsrv",
+        "loanto_oth_bank_fi",
+        "premium_receiv",
+        "reinsur_receiv",
+        "reinsur_res_receiv",
+        "pur_resale_fa",
+        "oth_cur_assets",
+        "total_cur_assets",
+        "fa_avail_for_sale",
+        "htm_invest",
+        "lt_eqt_invest",
+        "invest_real_estate",
+        "time_deposits",
+        "oth_assets",
+        "lt_rec",
+        "fix_assets",
+        "cip",
+        "const_materials",
+        "fixed_assets_disp",
+        "produc_bio_assets",
+        "oil_and_gas_assets",
+        "intan_assets",
+        "r_and_d",
+        "goodwill",
+        "lt_amor_exp",
+        "defer_tax_assets",
+        "decr_in_disbur",
+        "oth_nca",
+        "total_nca",
+        "cash_reser_cb",
+        "depos_in_oth_bfi",
+        "prec_metals",
+        "deriv_assets",
+        "rr_reins_une_prem",
+        "rr_reins_outstd_cla",
+        "rr_reins_lins_liab",
+        "rr_reins_lthins_liab",
+        "refund_depos",
+        "ph_pledge_loans",
+        "refund_cap_depos",
+        "indep_acct_assets",
+        "client_depos",
+        "client_prov",
+        "transac_seat_fee",
+        "invest_as_receiv",
+        "total_assets",
+        "lt_borr",
+        "st_borr",
+        "cb_borr",
+        "depos_ib_deposits",
+        "loan_oth_bank",
+        "trading_fl",
+        "notes_payable",
+        "acct_payable",
+        "adv_receipts",
+        "sold_for_repur_fa",
+        "comm_payable",
+        "payroll_payable",
+        "taxes_payable",
+        "int_payable",
+        "div_payable",
+        "oth_payable",
+        "acc_exp",
+        "deferred_inc",
+        "st_bonds_payable",
+        "payable_to_reinsurer",
+        "rsrv_insur_cont",
+        "acting_trading_sec",
+        "acting_uw_sec",
+        "non_cur_liab_due_1y",
+        "oth_cur_liab",
+        "total_cur_liab",
+        "bond_payable",
+        "lt_payable",
+        "specific_payables",
+        "estimated_liab",
+        "defer_tax_liab",
+        "defer_inc_non_cur_liab",
+        "oth_ncl",
+        "total_ncl",
+        "depos_oth_bfi",
+        "deriv_liab",
+        "depos",
+        "agency_bus_liab",
+        "oth_liab",
+        "prem_receiv_adva",
+        "depos_received",
+        "ph_invest",
+        "reser_une_prem",
+        "reser_outstd_claims",
+        "reser_lins_liab",
+        "reser_lthins_liab",
+        "indept_acc_liab",
+        "pledge_borr",
+        "indem_payable",
+        "policy_div_payable",
+        "total_liab",
+        "treasury_share",
+        "ordin_risk_reser",
+        "forex_differ",
+        "invest_loss_unconf",
+        "minority_int",
+        "total_hldr_eqy_exc_min_int",
+        "total_hldr_eqy_inc_min_int",
+        "total_liab_hldr_eqy",
+        "lt_payroll_payable",
+        "oth_comp_income",
+        "oth_eqt_tools",
+        "oth_eqt_tools_p_shr",
+        "lending_funds",
+        "acc_receivable",
+        "st_fin_payable",
+        "payables",
+        "hfs_assets",
+        "hfs_sales",
+        "cost_fin_assets",
+        "fair_value_fin_assets",
+        "contract_assets",
+        "contract_liab",
+        "accounts_receiv_bill",
+        "accounts_pay",
+        "oth_rcv_total",
+        "fix_assets_total",
+        "cip_total",
+        "oth_pay_total",
+        "long_pay_total",
+        "debt_invest",
+        "oth_debt_invest",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20100825",
+          "max": "20261024"
+        },
+        "f_ann_date": {
+          "min": "20100825",
+          "max": "20261024"
+        },
+        "end_date": {
+          "min": "20100630",
+          "max": "20260930"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "0": 53,
+          "1": 47
+        },
+        "f_ann_date_non_null_ratio": 1.0,
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 100
+        },
+        "max_versions_per_period": 2
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "cashflow",
+      "need": "core",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.109,
+      "rate_limited_times": 0,
+      "rows": 100,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "comp_type",
+        "report_type",
+        "end_type",
+        "net_profit",
+        "finan_exp",
+        "c_fr_sale_sg",
+        "recp_tax_rends",
+        "n_depos_incr_fi",
+        "n_incr_loans_cb",
+        "n_inc_borr_oth_fi",
+        "prem_fr_orig_contr",
+        "n_incr_insured_dep",
+        "n_reinsur_prem",
+        "n_incr_disp_tfa",
+        "ifc_cash_incr",
+        "n_incr_disp_faas",
+        "n_incr_loans_oth_bank",
+        "n_cap_incr_repur",
+        "c_fr_oth_operate_a",
+        "c_inf_fr_operate_a",
+        "c_paid_goods_s",
+        "c_paid_to_for_empl",
+        "c_paid_for_taxes",
+        "n_incr_clt_loan_adv",
+        "n_incr_dep_cbob",
+        "c_pay_claims_orig_inco",
+        "pay_handling_chrg",
+        "pay_comm_insur_plcy",
+        "oth_cash_pay_oper_act",
+        "st_cash_out_act",
+        "n_cashflow_act",
+        "oth_recp_ral_inv_act",
+        "c_disp_withdrwl_invest",
+        "c_recp_return_invest",
+        "n_recp_disp_fiolta",
+        "n_recp_disp_sobu",
+        "stot_inflows_inv_act",
+        "c_pay_acq_const_fiolta",
+        "c_paid_invest",
+        "n_disp_subs_oth_biz",
+        "oth_pay_ral_inv_act",
+        "n_incr_pledge_loan",
+        "stot_out_inv_act",
+        "n_cashflow_inv_act",
+        "c_recp_borrow",
+        "proc_issue_bonds",
+        "oth_cash_recp_ral_fnc_act",
+        "stot_cash_in_fnc_act",
+        "free_cashflow",
+        "c_prepay_amt_borr",
+        "c_pay_dist_dpcp_int_exp",
+        "incl_dvd_profit_paid_sc_ms",
+        "oth_cashpay_ral_fnc_act",
+        "stot_cashout_fnc_act",
+        "n_cash_flows_fnc_act",
+        "eff_fx_flu_cash",
+        "n_incr_cash_cash_equ",
+        "c_cash_equ_beg_period",
+        "c_cash_equ_end_period",
+        "c_recp_cap_contrib",
+        "incl_cash_rec_saims",
+        "uncon_invest_loss",
+        "prov_depr_assets",
+        "depr_fa_coga_dpba",
+        "amort_intang_assets",
+        "lt_amort_deferred_exp",
+        "decr_deferred_exp",
+        "incr_acc_exp",
+        "loss_disp_fiolta",
+        "loss_scr_fa",
+        "loss_fv_chg",
+        "invest_loss",
+        "decr_def_inc_tax_assets",
+        "incr_def_inc_tax_liab",
+        "decr_inventories",
+        "decr_oper_payable",
+        "incr_oper_payable",
+        "others",
+        "im_net_cashflow_oper_act",
+        "conv_debt_into_cap",
+        "conv_copbonds_due_within_1y",
+        "fa_fnc_leases",
+        "im_n_incr_cash_equ",
+        "net_dism_capital_add",
+        "net_cash_rece_sec",
+        "credit_impa_loss",
+        "use_right_asset_dep",
+        "oth_loss_asset",
+        "end_bal_cash",
+        "beg_bal_cash",
+        "end_bal_cash_equ",
+        "beg_bal_cash_equ",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20090320",
+          "max": "20261024"
+        },
+        "f_ann_date": {
+          "min": "20090320",
+          "max": "20261024"
+        },
+        "end_date": {
+          "min": "20081231",
+          "max": "20260930"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "0": 66,
+          "1": 34
+        },
+        "f_ann_date_non_null_ratio": 1.0,
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 100
+        },
+        "max_versions_per_period": 2
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "fina_indicator",
+      "need": "core",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.109,
+      "rate_limited_times": 0,
+      "rows": 100,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "eps",
+        "dt_eps",
+        "total_revenue_ps",
+        "revenue_ps",
+        "capital_rese_ps",
+        "surplus_rese_ps",
+        "undist_profit_ps",
+        "extra_item",
+        "profit_dedt",
+        "gross_margin",
+        "current_ratio",
+        "quick_ratio",
+        "cash_ratio",
+        "ar_turn",
+        "ca_turn",
+        "fa_turn",
+        "assets_turn",
+        "op_income",
+        "ebit",
+        "ebitda",
+        "fcff",
+        "fcfe",
+        "current_exint",
+        "noncurrent_exint",
+        "interestdebt",
+        "netdebt",
+        "tangible_asset",
+        "working_capital",
+        "networking_capital",
+        "invest_capital",
+        "retained_earnings",
+        "diluted2_eps",
+        "bps",
+        "ocfps",
+        "retainedps",
+        "cfps",
+        "ebit_ps",
+        "fcff_ps",
+        "fcfe_ps",
+        "netprofit_margin",
+        "grossprofit_margin",
+        "cogs_of_sales",
+        "expense_of_sales",
+        "profit_to_gr",
+        "saleexp_to_gr",
+        "adminexp_of_gr",
+        "finaexp_of_gr",
+        "impai_ttm",
+        "gc_of_gr",
+        "op_of_gr",
+        "ebit_of_gr",
+        "roe",
+        "roe_waa",
+        "roe_dt",
+        "roa",
+        "npta",
+        "roic",
+        "roe_yearly",
+        "roa2_yearly",
+        "debt_to_assets",
+        "assets_to_eqt",
+        "dp_assets_to_eqt",
+        "ca_to_assets",
+        "nca_to_assets",
+        "tbassets_to_totalassets",
+        "int_to_talcap",
+        "eqt_to_talcapital",
+        "currentdebt_to_debt",
+        "longdeb_to_debt",
+        "ocf_to_shortdebt",
+        "debt_to_eqt",
+        "eqt_to_debt",
+        "eqt_to_interestdebt",
+        "tangibleasset_to_debt",
+        "tangasset_to_intdebt",
+        "tangibleasset_to_netdebt",
+        "ocf_to_debt",
+        "turn_days",
+        "roa_yearly",
+        "roa_dp",
+        "fixed_assets",
+        "profit_to_op",
+        "q_saleexp_to_gr",
+        "q_gc_to_gr",
+        "q_roe",
+        "q_dt_roe",
+        "q_npta",
+        "q_ocf_to_sales",
+        "basic_eps_yoy",
+        "dt_eps_yoy",
+        "cfps_yoy",
+        "op_yoy",
+        "ebt_yoy",
+        "netprofit_yoy",
+        "dt_netprofit_yoy",
+        "ocf_yoy",
+        "roe_yoy",
+        "bps_yoy",
+        "assets_yoy",
+        "eqt_yoy",
+        "tr_yoy",
+        "or_yoy",
+        "q_sales_yoy",
+        "q_op_qoq",
+        "equity_yoy"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20130308",
+          "max": "20261024"
+        },
+        "end_date": {
+          "min": "20121231",
+          "max": "20260930"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 100
+        },
+        "max_versions_per_period": 2
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "forecast_vip",
+      "need": "useful",
+      "params": {
+        "period": "20251231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.422,
+      "rate_limited_times": 0,
+      "rows": 3178,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "type",
+        "p_change_min",
+        "p_change_max",
+        "net_profit_min",
+        "net_profit_max",
+        "last_parent_net",
+        "first_ann_date",
+        "summary",
+        "change_reason",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20240808",
+          "max": "20260429"
+        },
+        "end_date": {
+          "min": "20251231",
+          "max": "20251231"
+        },
+        "first_ann_date": {
+          "min": "20240808",
+          "max": "20260420"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "0": 3176,
+          "1": 2
+        },
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 2997,
+        "by_exchange_suffix": {
+          "SZ": 1778,
+          "SH": 1270,
+          "BJ": 130
+        },
+        "max_versions_per_period": 3
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "express_vip",
+      "need": "useful",
+      "params": {
+        "period": "20251231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.125,
+      "rate_limited_times": 0,
+      "rows": 1149,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "revenue",
+        "operate_profit",
+        "total_profit",
+        "n_income",
+        "total_assets",
+        "total_hldr_eqy_exc_min_int",
+        "diluted_eps",
+        "diluted_roe",
+        "yoy_net_profit",
+        "bps",
+        "open_net_assets",
+        "open_bps",
+        "perf_summary",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20260105",
+          "max": "20260424"
+        },
+        "end_date": {
+          "min": "20251231",
+          "max": "20251231"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "0": 1149
+        },
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1149,
+        "by_exchange_suffix": {
+          "SH": 700,
+          "BJ": 295,
+          "SZ": 154
+        },
+        "max_versions_per_period": 1
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "forecast_vip",
+      "need": "useful",
+      "params": {
+        "period": "20141231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.172,
+      "rate_limited_times": 0,
+      "rows": 2262,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "type",
+        "p_change_min",
+        "p_change_max",
+        "net_profit_min",
+        "net_profit_max",
+        "last_parent_net",
+        "first_ann_date",
+        "summary",
+        "change_reason",
+        "update_flag"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20131217",
+          "max": "20150429"
+        },
+        "end_date": {
+          "min": "20141231",
+          "max": "20141231"
+        },
+        "first_ann_date": {
+          "min": "20131217",
+          "max": "20150429"
+        }
+      },
+      "extras": {
+        "update_flag_counts": {
+          "1": 2010,
+          "0": 252
+        },
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1874,
+        "by_exchange_suffix": {
+          "SZ": 1651,
+          "SH": 608,
+          "BJ": 3
+        },
+        "max_versions_per_period": 4
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "dividend",
+      "need": "useful",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 98,
+      "columns": [
+        "ts_code",
+        "end_date",
+        "ann_date",
+        "div_proc",
+        "stk_div",
+        "stk_bo_rate",
+        "stk_co_rate",
+        "cash_div",
+        "cash_div_tax",
+        "record_date",
+        "ex_date",
+        "pay_date",
+        "div_listdate",
+        "imp_ann_date"
+      ],
+      "date_ranges": {
+        "end_date": {
+          "min": "19901231",
+          "max": "20260630"
+        },
+        "ann_date": {
+          "min": "19910303",
+          "max": "20260815"
+        },
+        "record_date": {
+          "min": "19910430",
+          "max": "20260923"
+        },
+        "ex_date": {
+          "min": "19910502",
+          "max": "20260924"
+        },
+        "pay_date": {
+          "min": "19930524",
+          "max": "20260924"
+        },
+        "imp_ann_date": {
+          "min": "19910303",
+          "max": "20260917"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 98
+        },
+        "max_versions_per_period": 3
+      },
+      "empty": false
+    },
+    {
+      "group": "财务",
+      "api": "disclosure_date",
+      "need": "useful",
+      "params": {
+        "end_date": "20251231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.14,
+      "rate_limited_times": 0,
+      "rows": 5508,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "pre_date",
+        "actual_date"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20251225",
+          "max": "20260429"
+        },
+        "end_date": {
+          "min": "20251231",
+          "max": "20251231"
+        },
+        "pre_date": {
+          "min": "20260120",
+          "max": "20260430"
+        },
+        "actual_date": {
+          "min": "20260120",
+          "max": "20260430"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 5508,
+        "by_exchange_suffix": {
+          "SZ": 2896,
+          "SH": 2310,
+          "BJ": 302
+        },
+        "max_versions_per_period": 1
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_classify",
+      "need": "core",
+      "params": {
+        "src": "SW2021"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.078,
+      "rate_limited_times": 0,
+      "rows": 511,
+      "columns": [
+        "index_code",
+        "industry_name",
+        "level",
+        "industry_code",
+        "is_pub",
+        "parent_code",
+        "src"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_member_all",
+      "need": "core",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.078,
+      "rate_limited_times": 0,
+      "rows": 1,
+      "columns": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "date_ranges": {
+        "in_date": {
+          "min": "19910403",
+          "max": "19910403"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 1
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_member_all",
+      "need": "core",
+      "params": {
+        "l1_code": "801780.SI"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.078,
+      "rate_limited_times": 0,
+      "rows": 42,
+      "columns": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "date_ranges": {
+        "in_date": {
+          "min": "19910403",
+          "max": "20211210"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 42,
+        "by_exchange_suffix": {
+          "SH": 33,
+          "SZ": 9
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "sw_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.11,
+      "rate_limited_times": 0,
+      "rows": 439,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "name",
+        "open",
+        "low",
+        "high",
+        "close",
+        "change",
+        "pct_change",
+        "vol",
+        "amount",
+        "pe",
+        "pb",
+        "float_mv",
+        "total_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 439,
+        "by_exchange_suffix": {
+          "SI": 439
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "sw_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20160104"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.11,
+      "rate_limited_times": 0,
+      "rows": 590,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "name",
+        "open",
+        "low",
+        "high",
+        "close",
+        "change",
+        "pct_change",
+        "vol",
+        "amount",
+        "pe",
+        "pb",
+        "float_mv",
+        "total_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160104",
+          "max": "20160104"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 590,
+        "by_exchange_suffix": {
+          "SI": 590
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_daily",
+      "need": "core",
+      "params": {
+        "ts_code": "000001.SH",
+        "start_date": "20140101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.203,
+      "rate_limited_times": 0,
+      "rows": 3125,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "open",
+        "high",
+        "low",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SH": 3125
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_daily",
+      "need": "core",
+      "params": {
+        "ts_code": "000300.SH",
+        "start_date": "20140101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.187,
+      "rate_limited_times": 0,
+      "rows": 3125,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "open",
+        "high",
+        "low",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SH": 3125
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_daily",
+      "need": "core",
+      "params": {
+        "ts_code": "000905.SH",
+        "start_date": "20140101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.203,
+      "rate_limited_times": 0,
+      "rows": 3125,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "open",
+        "high",
+        "low",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SH": 3125
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_daily",
+      "need": "core",
+      "params": {
+        "ts_code": "000852.SH",
+        "start_date": "20140101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.187,
+      "rate_limited_times": 0,
+      "rows": 3125,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "open",
+        "high",
+        "low",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SH": 3125
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_daily",
+      "need": "core",
+      "params": {
+        "ts_code": "932000.CSI",
+        "start_date": "20140101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.172,
+      "rate_limited_times": 0,
+      "rows": 3125,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "open",
+        "high",
+        "low",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SI": 3125
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_daily",
+      "need": "core",
+      "params": {
+        "ts_code": "399006.SZ",
+        "start_date": "20140101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.218,
+      "rate_limited_times": 0,
+      "rows": 3125,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "open",
+        "high",
+        "low",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20140102",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 3125
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_daily",
+      "need": "core",
+      "params": {
+        "ts_code": "000688.SH",
+        "start_date": "20140101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.172,
+      "rate_limited_times": 0,
+      "rows": 1662,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "open",
+        "high",
+        "low",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20191231",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SH": 1662
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_daily",
+      "need": "core",
+      "params": {
+        "ts_code": "899050.BJ",
+        "start_date": "20140101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.11,
+      "rate_limited_times": 0,
+      "rows": 1099,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "open",
+        "high",
+        "low",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20220429",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "BJ": 1099
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_weight",
+      "need": "useful",
+      "params": {
+        "index_code": "000852.SH",
+        "start_date": "20261101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "index_code",
+        "con_code",
+        "trade_date",
+        "weight"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": true
+    },
+    {
+      "group": "行业指数",
+      "api": "index_weight",
+      "need": "useful",
+      "params": {
+        "index_code": "000852.SH",
+        "start_date": "20160101",
+        "end_date": "20160131"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 1000,
+      "columns": [
+        "index_code",
+        "con_code",
+        "trade_date",
+        "weight"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20160129",
+          "max": "20160129"
+        }
+      },
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "行业指数",
+      "api": "index_dailybasic",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 15,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "total_mv",
+        "float_mv",
+        "total_share",
+        "float_share",
+        "free_share",
+        "turnover_rate",
+        "turnover_rate_f",
+        "pe",
+        "pe_ttm",
+        "pb"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261111",
+          "max": "20261111"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 15,
+        "by_exchange_suffix": {
+          "SH": 8,
+          "SZ": 7
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "股东事件",
+      "api": "stk_holdernumber",
+      "need": "useful",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 150,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "holder_num"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "19960314",
+          "max": "20261024"
+        },
+        "end_date": {
+          "min": "19951231",
+          "max": "20260930"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 150
+        },
+        "max_versions_per_period": 2
+      },
+      "empty": false
+    },
+    {
+      "group": "股东事件",
+      "api": "stk_holdertrade",
+      "need": "useful",
+      "params": {
+        "ann_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 46,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "holder_name",
+        "holder_type",
+        "in_de",
+        "change_vol",
+        "change_ratio",
+        "after_share",
+        "after_ratio",
+        "avg_price",
+        "total_share"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 30,
+        "by_exchange_suffix": {
+          "SH": 21,
+          "SZ": 20,
+          "BJ": 5
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "股东事件",
+      "api": "repurchase",
+      "need": "useful",
+      "params": {
+        "ann_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 33,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "proc",
+        "exp_date",
+        "vol",
+        "amount",
+        "high_limit",
+        "low_limit"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20261110",
+          "max": "20261110"
+        },
+        "end_date": {
+          "min": "20261109",
+          "max": "20261112"
+        },
+        "exp_date": {
+          "min": "20270207",
+          "max": "20271110"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 32,
+        "by_exchange_suffix": {
+          "SZ": 18,
+          "SH": 15
+        },
+        "max_versions_per_period": 1
+      },
+      "empty": false
+    },
+    {
+      "group": "股东事件",
+      "api": "share_float",
+      "need": "useful",
+      "params": {
+        "ann_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.079,
+      "rate_limited_times": 0,
+      "rows": 209,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "float_date",
+        "float_share",
+        "float_ratio",
+        "holder_name",
+        "share_type"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20261110",
+          "max": "20261110"
+        },
+        "float_date": {
+          "min": "20261111",
+          "max": "20291016"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 16,
+        "by_exchange_suffix": {
+          "SH": 136,
+          "SZ": 65,
+          "BJ": 8
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "股东事件",
+      "api": "report_rc",
+      "need": "optional",
+      "params": {
+        "report_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.125,
+      "rate_limited_times": 0,
+      "rows": 773,
+      "columns": [
+        "ts_code",
+        "name",
+        "report_date",
+        "report_title",
+        "report_type",
+        "classify",
+        "org_name",
+        "author_name",
+        "quarter",
+        "op_rt",
+        "op_pr",
+        "tp",
+        "np",
+        "eps",
+        "pe",
+        "rd",
+        "roe",
+        "ev_ebitda",
+        "rating",
+        "max_price",
+        "min_price"
+      ],
+      "date_ranges": {
+        "report_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 264,
+        "by_exchange_suffix": {
+          "SH": 394,
+          "SZ": 344,
+          "BJ": 35
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "股东事件",
+      "api": "anns_d",
+      "need": "uncertain",
+      "params": {
+        "ann_date": "20261110"
+      },
+      "ok": false,
+      "error": "Exception: 抱歉，您没有接口(anns_d)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。",
+      "elapsed_seconds": 0.094,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "历史深度",
+      "api": "daily",
+      "need": "core",
+      "params": {
+        "ts_code": "000001.SZ",
+        "start_date": "19900101",
+        "end_date": "20051231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.187,
+      "rate_limited_times": 0,
+      "rows": 3541,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "19910403",
+          "max": "20051230"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 3541
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "历史深度",
+      "api": "daily_basic",
+      "need": "core",
+      "params": {
+        "ts_code": "000001.SZ",
+        "start_date": "19900101",
+        "end_date": "20101231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.282,
+      "rate_limited_times": 0,
+      "rows": 5613,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "close",
+        "turnover_rate",
+        "turnover_rate_f",
+        "volume_ratio",
+        "pe",
+        "pe_ttm",
+        "pb",
+        "ps",
+        "ps_ttm",
+        "dv_ratio",
+        "dv_ttm",
+        "total_share",
+        "float_share",
+        "free_share",
+        "total_mv",
+        "circ_mv"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "19910404",
+          "max": "20101231"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 5613
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "历史深度",
+      "api": "moneyflow",
+      "need": "useful",
+      "params": {
+        "ts_code": "000001.SZ",
+        "start_date": "20050101",
+        "end_date": "20141231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.188,
+      "rate_limited_times": 0,
+      "rows": 1140,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "buy_sm_vol",
+        "buy_sm_amount",
+        "sell_sm_vol",
+        "sell_sm_amount",
+        "buy_md_vol",
+        "buy_md_amount",
+        "sell_md_vol",
+        "sell_md_amount",
+        "buy_lg_vol",
+        "buy_lg_amount",
+        "sell_lg_vol",
+        "sell_lg_amount",
+        "buy_elg_vol",
+        "buy_elg_amount",
+        "sell_elg_vol",
+        "sell_elg_amount",
+        "net_mf_vol",
+        "net_mf_amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20100105",
+          "max": "20141231"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 1140
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "历史深度",
+      "api": "stk_limit",
+      "need": "core",
+      "params": {
+        "ts_code": "000001.SZ",
+        "start_date": "20050101",
+        "end_date": "20141231"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.11,
+      "rate_limited_times": 0,
+      "rows": 1944,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "up_limit",
+        "down_limit"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20070104",
+          "max": "20141231"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 1944
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "微观结构",
+      "api": "stk_auction_o",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": false,
+      "error": "Exception: 抱歉，您没有接口(stk_auction_o)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。",
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "微观结构",
+      "api": "stk_auction",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": false,
+      "error": "Exception: 抱歉，您没有接口(stk_auction)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。",
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "筹码",
+      "api": "cyq_chips",
+      "need": "useful",
+      "params": {
+        "ts_code": "000001.SZ",
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.078,
+      "rate_limited_times": 0,
+      "rows": 103,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "price",
+        "percent"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 103
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "筹码",
+      "api": "cyq_perf",
+      "need": "useful",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.204,
+      "rate_limited_times": 0,
+      "rows": 3315,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "his_low",
+        "his_high",
+        "cost_5pct",
+        "cost_15pct",
+        "cost_50pct",
+        "cost_85pct",
+        "cost_95pct",
+        "weight_avg",
+        "winner_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 3315,
+        "by_exchange_suffix": {
+          "SZ": 1941,
+          "SH": 1374
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "涨停生态",
+      "api": "limit_step",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 20,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "nums"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 20,
+        "by_exchange_suffix": {
+          "SH": 11,
+          "SZ": 9
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "涨停生态",
+      "api": "limit_cpt_list",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.109,
+      "rate_limited_times": 0,
+      "rows": 20,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "days",
+        "up_stat",
+        "cons_nums",
+        "up_nums",
+        "pct_chg",
+        "rank"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 20,
+        "by_exchange_suffix": {
+          "TI": 20
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "涨停生态",
+      "api": "kpl_list",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110",
+        "tag": "涨停"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.406,
+      "rate_limited_times": 0,
+      "rows": 95,
+      "columns": [
+        "ts_code",
+        "name",
+        "trade_date",
+        "lu_time",
+        "ld_time",
+        "open_time",
+        "last_time",
+        "lu_desc",
+        "tag",
+        "theme",
+        "net_change",
+        "bid_amount",
+        "status",
+        "bid_change",
+        "bid_turnover",
+        "lu_bid_vol",
+        "pct_chg",
+        "bid_pct_chg",
+        "rt_pct_chg",
+        "limit_order",
+        "amount",
+        "turnover_rate",
+        "free_float",
+        "lu_limit_order"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 95,
+        "by_exchange_suffix": {
+          "SZ": 52,
+          "SH": 43
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "涨停生态",
+      "api": "kpl_concept",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.125,
+      "rate_limited_times": 0,
+      "rows": 251,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "z_t_num",
+        "up_num"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 251,
+        "by_exchange_suffix": {
+          "KP": 251
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "涨停生态",
+      "api": "hm_list",
+      "need": "optional",
+      "params": {},
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.125,
+      "rate_limited_times": 0,
+      "rows": 121,
+      "columns": [
+        "name",
+        "desc",
+        "orgs"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "涨停生态",
+      "api": "hm_detail",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.156,
+      "rate_limited_times": 0,
+      "rows": 211,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "ts_name",
+        "buy_amount",
+        "sell_amount",
+        "net_amount",
+        "hm_name",
+        "hm_orgs"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 50,
+        "by_exchange_suffix": {
+          "SH": 98,
+          "SZ": 93,
+          "BJ": 20
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "涨停生态",
+      "api": "ths_hot",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110",
+        "market": "热股"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.093,
+      "rate_limited_times": 0,
+      "rows": 100,
+      "columns": [
+        "trade_date",
+        "data_type",
+        "ts_code",
+        "ts_name",
+        "rank",
+        "pct_change",
+        "current_price",
+        "hot",
+        "concept",
+        "rank_time",
+        "rank_reason"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 100,
+        "by_exchange_suffix": {
+          "SZ": 60,
+          "SH": 40
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "涨停生态",
+      "api": "dc_hot",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110",
+        "market": "A股市场"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.094,
+      "rate_limited_times": 0,
+      "rows": 200,
+      "columns": [
+        "trade_date",
+        "data_type",
+        "ts_code",
+        "ts_name",
+        "rank",
+        "pct_change",
+        "current_price",
+        "hot",
+        "concept",
+        "rank_time"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 192,
+        "by_exchange_suffix": {
+          "SZ": 117,
+          "SH": 77,
+          "BJ": 6
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "关系网络",
+      "api": "ths_index",
+      "need": "useful",
+      "params": {
+        "exchange": "A",
+        "type": "N"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 395,
+      "columns": [
+        "ts_code",
+        "name",
+        "count",
+        "exchange",
+        "list_date",
+        "type"
+      ],
+      "date_ranges": {
+        "list_date": {
+          "min": "20070808",
+          "max": "20260731"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 395,
+        "by_exchange_suffix": {
+          "TI": 395
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "关系网络",
+      "api": "ths_member",
+      "need": "useful",
+      "params": {
+        "ts_code": "885800.TI"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 519,
+      "columns": [
+        "ts_code",
+        "con_code",
+        "con_name"
+      ],
+      "date_ranges": {},
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "TI": 519
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "关系网络",
+      "api": "ths_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.172,
+      "rate_limited_times": 0,
+      "rows": 1874,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "avg_price",
+        "change",
+        "pct_change",
+        "vol",
+        "turnover_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1874,
+        "by_exchange_suffix": {
+          "TI": 1874
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "关系网络",
+      "api": "dc_index",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.125,
+      "rate_limited_times": 0,
+      "rows": 1058,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "name",
+        "leading",
+        "leading_code",
+        "pct_change",
+        "leading_pct",
+        "total_mv",
+        "turnover_rate",
+        "up_num",
+        "down_num",
+        "idx_type",
+        "level"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1058,
+        "by_exchange_suffix": {
+          "DC": 1058
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "关系网络",
+      "api": "moneyflow_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.266,
+      "rate_limited_times": 0,
+      "rows": 5218,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "latest",
+        "net_amount",
+        "net_d5_amount",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 5218,
+        "by_exchange_suffix": {
+          "SZ": 2903,
+          "SH": 2315
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "关系网络",
+      "api": "moneyflow_dc",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.297,
+      "rate_limited_times": 0,
+      "rows": 6032,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "pct_change",
+        "close",
+        "net_amount",
+        "net_amount_rate",
+        "buy_elg_amount",
+        "buy_elg_amount_rate",
+        "buy_lg_amount",
+        "buy_lg_amount_rate",
+        "buy_md_amount",
+        "buy_md_amount_rate",
+        "buy_sm_amount",
+        "buy_sm_amount_rate"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 6032,
+        "by_exchange_suffix": {
+          "SZ": 3154,
+          "SH": 2523,
+          "BJ": 355
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "关系网络",
+      "api": "moneyflow_ind_ths",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 90,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "industry",
+        "lead_stock",
+        "close",
+        "pct_change",
+        "company_num",
+        "pct_change_stock",
+        "close_price",
+        "net_buy_amount",
+        "net_sell_amount",
+        "net_amount"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 90,
+        "by_exchange_suffix": {
+          "TI": 90
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "预期与机构",
+      "api": "report_rc",
+      "need": "useful",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.297,
+      "rate_limited_times": 0,
+      "rows": 5000,
+      "columns": [
+        "ts_code",
+        "name",
+        "report_date",
+        "report_title",
+        "report_type",
+        "classify",
+        "org_name",
+        "author_name",
+        "quarter",
+        "op_rt",
+        "op_pr",
+        "tp",
+        "np",
+        "eps",
+        "pe",
+        "rd",
+        "roe",
+        "ev_ebitda",
+        "rating",
+        "max_price",
+        "min_price"
+      ],
+      "date_ranges": {
+        "report_date": {
+          "min": "20100329",
+          "max": "20261105"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 5000
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "预期与机构",
+      "api": "broker_recommend",
+      "need": "useful",
+      "params": {
+        "month": "202611"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 265,
+      "columns": [
+        "month",
+        "broker",
+        "ts_code",
+        "name"
+      ],
+      "date_ranges": {},
+      "extras": {
+        "distinct_ts_code": 200,
+        "by_exchange_suffix": {
+          "SH": 154,
+          "SZ": 111
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "预期与机构",
+      "api": "stk_surv",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.109,
+      "rate_limited_times": 0,
+      "rows": 400,
+      "columns": [
+        "ts_code",
+        "name",
+        "surv_date",
+        "fund_visitors",
+        "rece_place",
+        "rece_mode",
+        "rece_org",
+        "org_type",
+        "comp_rece"
+      ],
+      "date_ranges": {
+        "surv_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 100,
+        "by_exchange_suffix": {
+          "SZ": 329,
+          "SH": 67,
+          "BJ": 4
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "预期与机构",
+      "api": "top10_holders",
+      "need": "useful",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.093,
+      "rate_limited_times": 0,
+      "rows": 1192,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "holder_name",
+        "hold_amount",
+        "hold_ratio",
+        "hold_float_ratio",
+        "hold_change",
+        "holder_type"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "19920811",
+          "max": "20261024"
+        },
+        "end_date": {
+          "min": "19920630",
+          "max": "20260930"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 1192
+        },
+        "max_versions_per_period": 17
+      },
+      "empty": false
+    },
+    {
+      "group": "预期与机构",
+      "api": "top10_floatholders",
+      "need": "useful",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.14,
+      "rate_limited_times": 0,
+      "rows": 1076,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "holder_name",
+        "hold_amount",
+        "hold_ratio",
+        "hold_float_ratio",
+        "hold_change",
+        "holder_type"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20040415",
+          "max": "20261024"
+        },
+        "end_date": {
+          "min": "20031231",
+          "max": "20260930"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 1076
+        },
+        "max_versions_per_period": 18
+      },
+      "empty": false
+    },
+    {
+      "group": "预期与机构",
+      "api": "fund_portfolio",
+      "need": "optional",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "symbol",
+        "mkv",
+        "amount",
+        "stk_mkv_ratio",
+        "stk_float_ratio"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": true
+    },
+    {
+      "group": "预期与机构",
+      "api": "hsgt_top10",
+      "need": "optional",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.109,
+      "rate_limited_times": 0,
+      "rows": 20,
+      "columns": [
+        "trade_date",
+        "ts_code",
+        "name",
+        "close",
+        "change",
+        "rank",
+        "market_type",
+        "amount",
+        "net_amount",
+        "buy",
+        "sell"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 20,
+        "by_exchange_suffix": {
+          "SZ": 10,
+          "SH": 10
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "预期与机构",
+      "api": "hk_hold",
+      "need": "optional",
+      "params": {
+        "trade_date": "20190102"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.125,
+      "rate_limited_times": 0,
+      "rows": 2535,
+      "columns": [
+        "code",
+        "trade_date",
+        "ts_code",
+        "name",
+        "vol",
+        "ratio",
+        "exchange"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20190102",
+          "max": "20190102"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 2535,
+        "by_exchange_suffix": {
+          "SZ": 1127,
+          "SH": 844,
+          "HK": 564
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "预期与机构",
+      "api": "fund_share",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.11,
+      "rate_limited_times": 0,
+      "rows": 1719,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "fd_share",
+        "fund_type",
+        "market"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1719,
+        "by_exchange_suffix": {
+          "SH": 947,
+          "SZ": 772
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "公司事件",
+      "api": "pledge_stat",
+      "need": "useful",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.093,
+      "rate_limited_times": 0,
+      "rows": 652,
+      "columns": [
+        "ts_code",
+        "end_date",
+        "pledge_count",
+        "unrest_pledge",
+        "rest_pledge",
+        "total_share",
+        "pledge_ratio"
+      ],
+      "date_ranges": {
+        "end_date": {
+          "min": "20140307",
+          "max": "20261106"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 652
+        },
+        "max_versions_per_period": 1
+      },
+      "empty": false
+    },
+    {
+      "group": "公司事件",
+      "api": "fina_mainbz_vip",
+      "need": "optional",
+      "params": {
+        "period": "20251231",
+        "type": "P"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.609,
+      "rate_limited_times": 0,
+      "rows": 10000,
+      "columns": [
+        "ts_code",
+        "end_date",
+        "bz_item",
+        "bz_code",
+        "bz_sales",
+        "bz_profit",
+        "bz_cost",
+        "curr_type"
+      ],
+      "date_ranges": {
+        "end_date": {
+          "min": "20251231",
+          "max": "20251231"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 1309,
+        "by_exchange_suffix": {
+          "SH": 5120,
+          "SZ": 4188,
+          "BJ": 692
+        },
+        "max_versions_per_period": 68
+      },
+      "empty": false
+    },
+    {
+      "group": "公司事件",
+      "api": "fina_audit",
+      "need": "optional",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.078,
+      "rate_limited_times": 0,
+      "rows": 39,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "audit_result",
+        "audit_fees",
+        "audit_agency",
+        "audit_sign"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20000419",
+          "max": "20260321"
+        },
+        "end_date": {
+          "min": "19991231",
+          "max": "20251231"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 39
+        },
+        "max_versions_per_period": 1
+      },
+      "empty": false
+    },
+    {
+      "group": "公司事件",
+      "api": "stk_holdertrade",
+      "need": "useful",
+      "params": {
+        "ts_code": "000001.SZ"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 105,
+      "columns": [
+        "ts_code",
+        "ann_date",
+        "holder_name",
+        "holder_type",
+        "in_de",
+        "change_vol",
+        "change_ratio",
+        "after_share",
+        "after_ratio",
+        "avg_price",
+        "total_share"
+      ],
+      "date_ranges": {
+        "ann_date": {
+          "min": "20041231",
+          "max": "20260709"
+        }
+      },
+      "extras": {
+        "ann_date_non_null_ratio": 1.0,
+        "distinct_ts_code": 1,
+        "by_exchange_suffix": {
+          "SZ": 105
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "宏观衍生品",
+      "api": "shibor",
+      "need": "useful",
+      "params": {
+        "start_date": "20261101",
+        "end_date": "20261111"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 8,
+      "columns": [
+        "date",
+        "on",
+        "1w",
+        "2w",
+        "1m",
+        "3m",
+        "6m",
+        "9m",
+        "1y"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "宏观衍生品",
+      "api": "yc_cb",
+      "need": "optional",
+      "params": {
+        "ts_code": "1001.CB",
+        "curve_type": "0",
+        "trade_date": "20261110"
+      },
+      "ok": false,
+      "error": "Exception: 抱歉，您没有接口(yc_cb)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。",
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "宏观衍生品",
+      "api": "cn_pmi",
+      "need": "optional",
+      "params": {
+        "start_m": "202401",
+        "end_m": "202611"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 34,
+      "columns": [
+        "month",
+        "pmi010000",
+        "pmi010100",
+        "pmi010200",
+        "pmi010300",
+        "pmi010400",
+        "pmi010401",
+        "pmi010402",
+        "pmi010403",
+        "pmi010500",
+        "pmi010501",
+        "pmi010502",
+        "pmi010503",
+        "pmi010600",
+        "pmi010601",
+        "pmi010602",
+        "pmi010603",
+        "pmi010700",
+        "pmi010701",
+        "pmi010702",
+        "pmi010703",
+        "pmi010800",
+        "pmi010801",
+        "pmi010802",
+        "pmi010803",
+        "pmi010900",
+        "pmi011000",
+        "pmi011100",
+        "pmi011200",
+        "pmi011300",
+        "pmi011400",
+        "pmi011500",
+        "pmi011600",
+        "pmi011700",
+        "pmi011800",
+        "pmi011900",
+        "pmi020100",
+        "pmi020101",
+        "pmi020102",
+        "pmi020200",
+        "pmi020201",
+        "pmi020202",
+        "pmi020300",
+        "pmi020301",
+        "pmi020302",
+        "pmi020400",
+        "pmi020401",
+        "pmi020402",
+        "pmi020500",
+        "pmi020501",
+        "pmi020502",
+        "pmi020600",
+        "pmi020601",
+        "pmi020602",
+        "pmi020700",
+        "pmi020800",
+        "pmi020900",
+        "pmi021000",
+        "pmi030000"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "宏观衍生品",
+      "api": "cn_m",
+      "need": "optional",
+      "params": {
+        "start_m": "202401",
+        "end_m": "202611"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 33,
+      "columns": [
+        "month",
+        "m0",
+        "m0_yoy",
+        "m0_mom",
+        "m1",
+        "m1_yoy",
+        "m1_mom",
+        "m2",
+        "m2_yoy",
+        "m2_mom"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "宏观衍生品",
+      "api": "sf_month",
+      "need": "optional",
+      "params": {
+        "start_m": "202401",
+        "end_m": "202611"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 33,
+      "columns": [
+        "month",
+        "inc_month",
+        "inc_cumval",
+        "stk_endval"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "宏观衍生品",
+      "api": "fut_daily",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261110",
+        "exchange": "CFFEX"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.094,
+      "rate_limited_times": 0,
+      "rows": 64,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "pre_close",
+        "pre_settle",
+        "open",
+        "high",
+        "low",
+        "close",
+        "settle",
+        "change1",
+        "change2",
+        "vol",
+        "amount",
+        "oi",
+        "oi_chg"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 64,
+        "by_exchange_suffix": {
+          "FX": 64
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "宏观衍生品",
+      "api": "opt_daily",
+      "need": "optional",
+      "params": {
+        "trade_date": "20261110",
+        "exchange": "SSE"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.109,
+      "rate_limited_times": 0,
+      "rows": 704,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "exchange",
+        "pre_settle",
+        "pre_close",
+        "open",
+        "high",
+        "low",
+        "close",
+        "settle",
+        "vol",
+        "amount",
+        "oi"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {
+        "distinct_ts_code": 704,
+        "by_exchange_suffix": {
+          "SH": 704
+        }
+      },
+      "empty": false
+    },
+    {
+      "group": "宏观衍生品",
+      "api": "margin",
+      "need": "useful",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 3,
+      "columns": [
+        "trade_date",
+        "exchange_id",
+        "rzye",
+        "rzmre",
+        "rzche",
+        "rqye",
+        "rqmcl",
+        "rzrqye",
+        "rqyl"
+      ],
+      "date_ranges": {
+        "trade_date": {
+          "min": "20261110",
+          "max": "20261110"
+        }
+      },
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "文本",
+      "api": "news",
+      "need": "optional",
+      "params": {
+        "src": "sina",
+        "start_date": "2026-11-10 09:00:00",
+        "end_date": "2026-11-10 18:00:00"
+      },
+      "ok": false,
+      "error": "Exception: 抱歉，您没有接口(news)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。",
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "文本",
+      "api": "major_news",
+      "need": "optional",
+      "params": {
+        "start_date": "2026-11-10 09:00:00",
+        "end_date": "2026-11-10 18:00:00"
+      },
+      "ok": true,
+      "error": null,
+      "elapsed_seconds": 0.125,
+      "rate_limited_times": 0,
+      "rows": 800,
+      "columns": [
+        "title",
+        "pub_time",
+        "src",
+        "url"
+      ],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "文本",
+      "api": "irm_qa_sz",
+      "need": "uncertain",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": false,
+      "error": "Exception: 抱歉，您没有接口(irm_qa_sz)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。",
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "文本",
+      "api": "irm_qa_sh",
+      "need": "uncertain",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": false,
+      "error": "Exception: 抱歉，您没有接口(irm_qa_sh)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。",
+      "elapsed_seconds": 0.062,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    },
+    {
+      "group": "文本",
+      "api": "research_report",
+      "need": "uncertain",
+      "params": {
+        "trade_date": "20261110"
+      },
+      "ok": false,
+      "error": "Exception: 抱歉，您没有接口(research_report)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。",
+      "elapsed_seconds": 0.063,
+      "rate_limited_times": 0,
+      "rows": 0,
+      "columns": [],
+      "date_ranges": {},
+      "extras": {},
+      "empty": false
+    }
+  ],
+  "tushare_version": "1.4.29"
+}
