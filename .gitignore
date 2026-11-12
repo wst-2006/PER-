@@ -6,8 +6,8 @@ __pycache__/
 .pytest_cache/
 
 # 数据一律不入库（Tushare 数据不得再分发；仓库是公开的）
-data/
-samples/
+/data/
+/samples/
 *.parquet
 *.duckdb
 *.csv.gz

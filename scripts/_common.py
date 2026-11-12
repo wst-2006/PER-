@@ -18,12 +18,12 @@ from pathlib import Path
 from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-MIN_INTERVAL_SECONDS = 0.35          # 两次调用的最小间隔
-RATE_LIMIT_WAIT_SECONDS = 61         # 被限流后的等待
-RATE_LIMIT_MARKERS = ("每分钟最多访问", "每小时最多访问", "每天最多访问", "访问频率", "频率超限")
-MAX_ERROR_CHARS = 300
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
-_last_call = 0.0
+from perq.data.client import (  # noqa: E402,F401
+    MAX_ERROR_CHARS, MIN_INTERVAL_SECONDS, RATE_LIMIT_MARKERS, RATE_LIMIT_WAIT_SECONDS, call, scrub,
+)
 
 
 def load_env() -> None:
@@ -39,15 +39,6 @@ def load_env() -> None:
         os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 
-def scrub(text: str) -> str:
-    """从文本中抹掉密钥取值，防止报错信息把 token 带进结果文件。"""
-    for key in ("TUSHARE_TOKEN", "LEGACY_DB_PASSWORD"):
-        secret = os.environ.get(key)
-        if secret and len(secret) >= 6:
-            text = text.replace(secret, "****")
-    return text
-
-
 def get_pro() -> Any:
     load_env()
     token = os.environ.get("TUSHARE_TOKEN", "").strip()
@@ -56,31 +47,6 @@ def get_pro() -> Any:
     import tushare as ts
 
     return ts.pro_api(token)
-
-
-def call(pro: Any, api: str, *, sleep=time.sleep, max_rate_retries: int = 2, **params: Any) -> dict[str, Any]:
-    """调用一个 Tushare 接口，返回 {ok, df, error, elapsed, rate_limited_times}。永不抛异常。"""
-    global _last_call
-    rate_hits = 0
-    while True:
-        wait = MIN_INTERVAL_SECONDS - (time.monotonic() - _last_call)
-        if wait > 0:
-            sleep(wait)
-        started = time.monotonic()
-        try:
-            df = pro.query(api, **params)
-            _last_call = time.monotonic()
-            return {"ok": True, "df": df, "error": None,
-                    "elapsed": round(_last_call - started, 3), "rate_limited_times": rate_hits}
-        except Exception as exc:  # noqa: BLE001 — 探测脚本需要记录一切失败
-            _last_call = time.monotonic()
-            message = scrub(str(exc))[:MAX_ERROR_CHARS]
-            if any(marker in message for marker in RATE_LIMIT_MARKERS) and rate_hits < max_rate_retries:
-                rate_hits += 1
-                sleep(RATE_LIMIT_WAIT_SECONDS)
-                continue
-            return {"ok": False, "df": None, "error": f"{type(exc).__name__}: {message}",
-                    "elapsed": round(_last_call - started, 3), "rate_limited_times": rate_hits}
 
 
 def git_commit() -> str | None:
@@ -132,3 +98,14 @@ def date_range_of(df: Any) -> dict[str, dict[str, str]]:
             if len(values):
                 out[column] = {"min": values.min(), "max": values.max()}
     return out
+
+
+def data_root(override: str | None = None) -> Path:
+    """数据根目录：命令行参数优先，其次 .env 里的 PERQ_DATA_DIR。"""
+    load_env()
+    raw = (override or os.environ.get("PERQ_DATA_DIR", "")).strip()
+    if not raw:
+        raise SystemExit("没有指定数据目录：请在 .env 中填写 PERQ_DATA_DIR，或使用 --data-dir。")
+    root = Path(raw)
+    root.mkdir(parents=True, exist_ok=True)
+    return root
