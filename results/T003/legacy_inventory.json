@@ -1,0 +1,4744 @@
+{
+  "database": {
+    "status": "completed",
+    "server_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+    "database_bytes": 31256647359,
+    "table_count": 69,
+    "tables": [
+      {
+        "table": "alembic_version",
+        "columns": [
+          {
+            "name": "version_num",
+            "type": "character varying"
+          }
+        ],
+        "bytes": 24576,
+        "rows": 1,
+        "date_ranges": {}
+      },
+      {
+        "table": "app_ai_analysis_log",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "request_payload",
+            "type": "jsonb"
+          },
+          {
+            "name": "prompt_text",
+            "type": "text"
+          },
+          {
+            "name": "response_text",
+            "type": "text"
+          },
+          {
+            "name": "parsed_action",
+            "type": "character varying"
+          },
+          {
+            "name": "model_name",
+            "type": "character varying"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 16384,
+        "rows": 0,
+        "date_ranges": {
+          "trade_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "app_task_run_log",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint"
+          },
+          {
+            "name": "task_name",
+            "type": "character varying"
+          },
+          {
+            "name": "task_type",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "started_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "finished_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "message",
+            "type": "text"
+          },
+          {
+            "name": "extra",
+            "type": "jsonb"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 81920,
+        "rows": 67,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "backtest_daily_result",
+        "columns": [
+          {
+            "name": "strategy_version",
+            "type": "character varying"
+          },
+          {
+            "name": "signal_date",
+            "type": "date"
+          },
+          {
+            "name": "holding_days",
+            "type": "integer"
+          },
+          {
+            "name": "top_n",
+            "type": "integer"
+          },
+          {
+            "name": "trade_count",
+            "type": "integer"
+          },
+          {
+            "name": "win_rate_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "avg_return_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "max_drawdown_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "hit_take_profit_rate_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "hit_stop_loss_rate_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 8192,
+        "rows": 0,
+        "date_ranges": {
+          "signal_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "backtest_runs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "strategy_type",
+            "type": "character varying"
+          },
+          {
+            "name": "start_date",
+            "type": "character varying"
+          },
+          {
+            "name": "end_date",
+            "type": "character varying"
+          },
+          {
+            "name": "initial_capital",
+            "type": "double precision"
+          },
+          {
+            "name": "final_value",
+            "type": "double precision"
+          },
+          {
+            "name": "total_return",
+            "type": "double precision"
+          },
+          {
+            "name": "max_drawdown",
+            "type": "double precision"
+          },
+          {
+            "name": "sharpe_ratio",
+            "type": "double precision"
+          },
+          {
+            "name": "metadata_json",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 40960,
+        "rows": 0,
+        "date_ranges": {
+          "end_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "backtest_summary",
+        "columns": [
+          {
+            "name": "strategy_version",
+            "type": "character varying"
+          },
+          {
+            "name": "start_date",
+            "type": "date"
+          },
+          {
+            "name": "end_date",
+            "type": "date"
+          },
+          {
+            "name": "holding_days",
+            "type": "integer"
+          },
+          {
+            "name": "top_n",
+            "type": "integer"
+          },
+          {
+            "name": "total_return_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "annualized_return_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "max_drawdown_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "sharpe_ratio",
+            "type": "numeric"
+          },
+          {
+            "name": "win_rate_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "profit_loss_ratio",
+            "type": "numeric"
+          },
+          {
+            "name": "avg_return_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "avg_win_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "avg_loss_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "trade_count",
+            "type": "integer"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 8192,
+        "rows": 0,
+        "date_ranges": {
+          "end_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "backtest_trade",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint"
+          },
+          {
+            "name": "strategy_version",
+            "type": "character varying"
+          },
+          {
+            "name": "signal_date",
+            "type": "date"
+          },
+          {
+            "name": "buy_date",
+            "type": "date"
+          },
+          {
+            "name": "sell_date",
+            "type": "date"
+          },
+          {
+            "name": "holding_days",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "rank_at_signal",
+            "type": "integer"
+          },
+          {
+            "name": "score_at_signal",
+            "type": "numeric"
+          },
+          {
+            "name": "buy_price",
+            "type": "numeric"
+          },
+          {
+            "name": "buy_price_source",
+            "type": "character varying"
+          },
+          {
+            "name": "sell_price",
+            "type": "numeric"
+          },
+          {
+            "name": "sell_reason",
+            "type": "character varying"
+          },
+          {
+            "name": "gross_return_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "net_return_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "max_drawdown_during_holding_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "max_profit_during_holding_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "hit_take_profit",
+            "type": "boolean"
+          },
+          {
+            "name": "hit_stop_loss_stat",
+            "type": "boolean"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 8192,
+        "rows": 0,
+        "date_ranges": {
+          "signal_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "candidate_outcomes",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "research_candidate_id",
+            "type": "integer"
+          },
+          {
+            "name": "horizon",
+            "type": "integer"
+          },
+          {
+            "name": "settlement_date",
+            "type": "character varying"
+          },
+          {
+            "name": "fixed_tradable",
+            "type": "boolean"
+          },
+          {
+            "name": "net_return",
+            "type": "double precision"
+          },
+          {
+            "name": "mfe_close",
+            "type": "double precision"
+          },
+          {
+            "name": "mae_close",
+            "type": "double precision"
+          },
+          {
+            "name": "hit_5pct",
+            "type": "boolean"
+          },
+          {
+            "name": "hit_8pct",
+            "type": "boolean"
+          },
+          {
+            "name": "hit_12pct",
+            "type": "boolean"
+          },
+          {
+            "name": "details",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 172032,
+        "rows": 35,
+        "date_ranges": {}
+      },
+      {
+        "table": "core_valid_stock_universe",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "board_group",
+            "type": "character varying"
+          },
+          {
+            "name": "is_valid",
+            "type": "boolean"
+          },
+          {
+            "name": "excluded_flag",
+            "type": "boolean"
+          },
+          {
+            "name": "excluded_reason",
+            "type": "character varying"
+          },
+          {
+            "name": "listed_days",
+            "type": "integer"
+          },
+          {
+            "name": "is_st",
+            "type": "boolean"
+          },
+          {
+            "name": "is_suspended",
+            "type": "boolean"
+          },
+          {
+            "name": "data_quality_flags",
+            "type": "jsonb"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 16384,
+        "rows": 0,
+        "date_ranges": {
+          "trade_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "daily_basic",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "close",
+            "type": "double precision"
+          },
+          {
+            "name": "turnover_rate",
+            "type": "double precision"
+          },
+          {
+            "name": "volume_ratio",
+            "type": "double precision"
+          },
+          {
+            "name": "pe",
+            "type": "double precision"
+          },
+          {
+            "name": "pe_ttm",
+            "type": "double precision"
+          },
+          {
+            "name": "pb",
+            "type": "double precision"
+          },
+          {
+            "name": "total_mv",
+            "type": "double precision"
+          },
+          {
+            "name": "circ_mv",
+            "type": "double precision"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "turnover_rate_f",
+            "type": "double precision"
+          },
+          {
+            "name": "ps",
+            "type": "double precision"
+          },
+          {
+            "name": "ps_ttm",
+            "type": "double precision"
+          },
+          {
+            "name": "dv_ratio",
+            "type": "double precision"
+          },
+          {
+            "name": "dv_ttm",
+            "type": "double precision"
+          },
+          {
+            "name": "total_share",
+            "type": "double precision"
+          },
+          {
+            "name": "float_share",
+            "type": "double precision"
+          },
+          {
+            "name": "free_share",
+            "type": "double precision"
+          }
+        ],
+        "bytes": 811433984,
+        "rows": 3311408,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20240102",
+            "max": "20260716",
+            "distinct": 613
+          }
+        },
+        "per_year": [
+          {
+            "year": "2024",
+            "rows": 1293893,
+            "trade_dates": 242,
+            "stocks": 5433
+          },
+          {
+            "year": "2025",
+            "rows": 1313898,
+            "trade_dates": 243,
+            "stocks": 5500
+          },
+          {
+            "year": "2026",
+            "rows": 703617,
+            "trade_dates": 128,
+            "stocks": 5625
+          }
+        ]
+      },
+      {
+        "table": "daily_quotes",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "open",
+            "type": "double precision"
+          },
+          {
+            "name": "high",
+            "type": "double precision"
+          },
+          {
+            "name": "low",
+            "type": "double precision"
+          },
+          {
+            "name": "close",
+            "type": "double precision"
+          },
+          {
+            "name": "pre_close",
+            "type": "double precision"
+          },
+          {
+            "name": "change",
+            "type": "double precision"
+          },
+          {
+            "name": "pct_chg",
+            "type": "double precision"
+          },
+          {
+            "name": "vol",
+            "type": "double precision"
+          },
+          {
+            "name": "amount",
+            "type": "double precision"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 817799168,
+        "rows": 3310316,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20240102",
+            "max": "20260716",
+            "distinct": 613
+          }
+        },
+        "per_year": [
+          {
+            "year": "2024",
+            "rows": 1293893,
+            "trade_dates": 242,
+            "stocks": 5433
+          },
+          {
+            "year": "2025",
+            "rows": 1313898,
+            "trade_dates": 243,
+            "stocks": 5500
+          },
+          {
+            "year": "2026",
+            "rows": 702525,
+            "trade_dates": 128,
+            "stocks": 5547
+          }
+        ]
+      },
+      {
+        "table": "data_sync_runs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "task_type",
+            "type": "character varying"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "start_date",
+            "type": "character varying"
+          },
+          {
+            "name": "end_date",
+            "type": "character varying"
+          },
+          {
+            "name": "affected_rows",
+            "type": "integer"
+          },
+          {
+            "name": "message",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 507904,
+        "rows": 1626,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20240102",
+            "max": "20260716",
+            "distinct": 613
+          },
+          "end_date": {
+            "min": "20241231",
+            "max": "20260716",
+            "distinct": 16
+          }
+        }
+      },
+      {
+        "table": "factor_candidate_pool_items",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "pool_run_id",
+            "type": "integer"
+          },
+          {
+            "name": "factor_name",
+            "type": "character varying"
+          },
+          {
+            "name": "horizon",
+            "type": "integer"
+          },
+          {
+            "name": "verdict",
+            "type": "character varying"
+          },
+          {
+            "name": "usable_windows",
+            "type": "integer"
+          },
+          {
+            "name": "observe_windows",
+            "type": "integer"
+          },
+          {
+            "name": "failed_windows",
+            "type": "text"
+          },
+          {
+            "name": "rank_ic_mean",
+            "type": "double precision"
+          },
+          {
+            "name": "rank_ic_ir",
+            "type": "double precision"
+          },
+          {
+            "name": "top50_return",
+            "type": "double precision"
+          },
+          {
+            "name": "score_v1_candidate",
+            "type": "boolean"
+          },
+          {
+            "name": "needs_more_tracking",
+            "type": "boolean"
+          },
+          {
+            "name": "details",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 237568,
+        "rows": 51,
+        "date_ranges": {}
+      },
+      {
+        "table": "factor_candidate_pool_runs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "factor_set",
+            "type": "character varying"
+          },
+          {
+            "name": "pool_version",
+            "type": "character varying"
+          },
+          {
+            "name": "source",
+            "type": "character varying"
+          },
+          {
+            "name": "summary",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 65536,
+        "rows": 2,
+        "date_ranges": {}
+      },
+      {
+        "table": "factor_evaluation_runs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "factor_set",
+            "type": "character varying"
+          },
+          {
+            "name": "factor_name",
+            "type": "character varying"
+          },
+          {
+            "name": "start_date",
+            "type": "character varying"
+          },
+          {
+            "name": "end_date",
+            "type": "character varying"
+          },
+          {
+            "name": "horizon",
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "summary",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 1318912,
+        "rows": 200,
+        "date_ranges": {
+          "end_date": {
+            "min": "20250731",
+            "max": "20260520",
+            "distinct": 4
+          }
+        }
+      },
+      {
+        "table": "factor_forward_returns",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "horizon",
+            "type": "integer"
+          },
+          {
+            "name": "forward_return",
+            "type": "double precision"
+          },
+          {
+            "name": "net_forward_return",
+            "type": "double precision"
+          },
+          {
+            "name": "entry_date",
+            "type": "character varying"
+          },
+          {
+            "name": "exit_date",
+            "type": "character varying"
+          },
+          {
+            "name": "tradable",
+            "type": "boolean"
+          },
+          {
+            "name": "constraints",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 853319680,
+        "rows": 3567235,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20250603",
+            "max": "20260520",
+            "distinct": 131
+          }
+        }
+      },
+      {
+        "table": "factor_scores",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "strategy_type",
+            "type": "character varying"
+          },
+          {
+            "name": "total_score",
+            "type": "double precision"
+          },
+          {
+            "name": "technical_score",
+            "type": "double precision"
+          },
+          {
+            "name": "capital_score",
+            "type": "double precision"
+          },
+          {
+            "name": "sector_strength",
+            "type": "double precision"
+          },
+          {
+            "name": "market_fit",
+            "type": "double precision"
+          },
+          {
+            "name": "valuation_score",
+            "type": "double precision"
+          },
+          {
+            "name": "growth_score",
+            "type": "double precision"
+          },
+          {
+            "name": "quality_score",
+            "type": "double precision"
+          },
+          {
+            "name": "details",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 49152,
+        "rows": 0,
+        "date_ranges": {
+          "trade_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "factor_snapshots",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "factor_set",
+            "type": "character varying"
+          },
+          {
+            "name": "industry",
+            "type": "character varying"
+          },
+          {
+            "name": "market_regime",
+            "type": "character varying"
+          },
+          {
+            "name": "market_cap_bucket",
+            "type": "character varying"
+          },
+          {
+            "name": "raw_factors",
+            "type": "json"
+          },
+          {
+            "name": "normalized_factors",
+            "type": "json"
+          },
+          {
+            "name": "data_quality",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 23145971712,
+        "rows": 6125855,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20240102",
+            "max": "20260716",
+            "distinct": 613
+          }
+        }
+      },
+      {
+        "table": "factor_walk_forward_folds",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "run_id",
+            "type": "integer"
+          },
+          {
+            "name": "fold_index",
+            "type": "integer"
+          },
+          {
+            "name": "train_start_date",
+            "type": "character varying"
+          },
+          {
+            "name": "train_end_date",
+            "type": "character varying"
+          },
+          {
+            "name": "validation_start_date",
+            "type": "character varying"
+          },
+          {
+            "name": "validation_end_date",
+            "type": "character varying"
+          },
+          {
+            "name": "summary",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 368640,
+        "rows": 26,
+        "date_ranges": {}
+      },
+      {
+        "table": "factor_walk_forward_runs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "factor_set",
+            "type": "character varying"
+          },
+          {
+            "name": "strategy_name",
+            "type": "character varying"
+          },
+          {
+            "name": "start_date",
+            "type": "character varying"
+          },
+          {
+            "name": "end_date",
+            "type": "character varying"
+          },
+          {
+            "name": "train_window",
+            "type": "integer"
+          },
+          {
+            "name": "validation_window",
+            "type": "integer"
+          },
+          {
+            "name": "step_window",
+            "type": "integer"
+          },
+          {
+            "name": "summary",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 98304,
+        "rows": 2,
+        "date_ranges": {
+          "end_date": {
+            "min": "20260618",
+            "max": "20260618",
+            "distinct": 1
+          }
+        }
+      },
+      {
+        "table": "feature_snapshot",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "version",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "board_group",
+            "type": "character varying"
+          },
+          {
+            "name": "industry_sw_l1_code",
+            "type": "character varying"
+          },
+          {
+            "name": "industry_sw_l1_name",
+            "type": "character varying"
+          },
+          {
+            "name": "ma5",
+            "type": "numeric"
+          },
+          {
+            "name": "ma10",
+            "type": "numeric"
+          },
+          {
+            "name": "ma20",
+            "type": "numeric"
+          },
+          {
+            "name": "ma60",
+            "type": "numeric"
+          },
+          {
+            "name": "ma_alignment_level",
+            "type": "integer"
+          },
+          {
+            "name": "macd_dif",
+            "type": "numeric"
+          },
+          {
+            "name": "macd_dea",
+            "type": "numeric"
+          },
+          {
+            "name": "macd_hist",
+            "type": "numeric"
+          },
+          {
+            "name": "macd_cross_signal",
+            "type": "integer"
+          },
+          {
+            "name": "macd_hist_delta",
+            "type": "numeric"
+          },
+          {
+            "name": "rsi_14",
+            "type": "numeric"
+          },
+          {
+            "name": "boll_upper",
+            "type": "numeric"
+          },
+          {
+            "name": "boll_mid",
+            "type": "numeric"
+          },
+          {
+            "name": "boll_lower",
+            "type": "numeric"
+          },
+          {
+            "name": "boll_position",
+            "type": "numeric"
+          },
+          {
+            "name": "bias_5",
+            "type": "numeric"
+          },
+          {
+            "name": "bias_10",
+            "type": "numeric"
+          },
+          {
+            "name": "kdj_j",
+            "type": "numeric"
+          },
+          {
+            "name": "net_mf_ratio_1d",
+            "type": "numeric"
+          },
+          {
+            "name": "net_mf_ratio_3d",
+            "type": "numeric"
+          },
+          {
+            "name": "net_mf_ratio_5d",
+            "type": "numeric"
+          },
+          {
+            "name": "large_order_net_ratio_1d",
+            "type": "numeric"
+          },
+          {
+            "name": "extra_large_order_net_ratio_1d",
+            "type": "numeric"
+          },
+          {
+            "name": "top_list_net_rate",
+            "type": "numeric"
+          },
+          {
+            "name": "is_top_list",
+            "type": "boolean"
+          },
+          {
+            "name": "top_list_reasons",
+            "type": "jsonb"
+          },
+          {
+            "name": "auction_premium",
+            "type": "numeric"
+          },
+          {
+            "name": "auction_volume_ratio",
+            "type": "numeric"
+          },
+          {
+            "name": "auction_vwap_estimated",
+            "type": "boolean"
+          },
+          {
+            "name": "pe_ttm",
+            "type": "numeric"
+          },
+          {
+            "name": "pe_percentile_3y",
+            "type": "numeric"
+          },
+          {
+            "name": "pe_negative_flag",
+            "type": "boolean"
+          },
+          {
+            "name": "pe_percentile_3y_missing",
+            "type": "boolean"
+          },
+          {
+            "name": "roe_latest",
+            "type": "numeric"
+          },
+          {
+            "name": "roe_ttm",
+            "type": "numeric"
+          },
+          {
+            "name": "roe_ttm_fallback",
+            "type": "boolean"
+          },
+          {
+            "name": "netprofit_yoy",
+            "type": "numeric"
+          },
+          {
+            "name": "netprofit_qoq",
+            "type": "numeric"
+          },
+          {
+            "name": "revenue_yoy",
+            "type": "numeric"
+          },
+          {
+            "name": "revenue_qoq_proxy",
+            "type": "numeric"
+          },
+          {
+            "name": "dividend_yield_ttm",
+            "type": "numeric"
+          },
+          {
+            "name": "turnover_rate_f",
+            "type": "numeric"
+          },
+          {
+            "name": "turnover_rate_f_5d_avg",
+            "type": "numeric"
+          },
+          {
+            "name": "turnover_rate_f_percentile_120d",
+            "type": "numeric"
+          },
+          {
+            "name": "volume_ratio",
+            "type": "numeric"
+          },
+          {
+            "name": "is_limit_up",
+            "type": "boolean"
+          },
+          {
+            "name": "is_limit_down",
+            "type": "boolean"
+          },
+          {
+            "name": "is_broken_limit_up",
+            "type": "boolean"
+          },
+          {
+            "name": "amplitude",
+            "type": "numeric"
+          },
+          {
+            "name": "open_times",
+            "type": "integer"
+          },
+          {
+            "name": "limit_times",
+            "type": "integer"
+          },
+          {
+            "name": "sw_industry_pct_chg_1d",
+            "type": "numeric"
+          },
+          {
+            "name": "sw_industry_pct_chg_5d",
+            "type": "numeric"
+          },
+          {
+            "name": "sw_industry_up_ratio",
+            "type": "numeric"
+          },
+          {
+            "name": "sw_industry_money_strength",
+            "type": "numeric"
+          },
+          {
+            "name": "ths_hot_score",
+            "type": "numeric"
+          },
+          {
+            "name": "ths_hot_board_code",
+            "type": "character varying"
+          },
+          {
+            "name": "ths_hot_board_name",
+            "type": "character varying"
+          },
+          {
+            "name": "sector_relative_strength",
+            "type": "numeric"
+          },
+          {
+            "name": "one_word_board_risk",
+            "type": "boolean"
+          },
+          {
+            "name": "long_upper_shadow_risk",
+            "type": "boolean"
+          },
+          {
+            "name": "gap_open_risk",
+            "type": "boolean"
+          },
+          {
+            "name": "liquidity_risk",
+            "type": "boolean"
+          },
+          {
+            "name": "overheat_risk",
+            "type": "boolean"
+          },
+          {
+            "name": "missing_flags",
+            "type": "jsonb"
+          },
+          {
+            "name": "source_flags",
+            "type": "jsonb"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 16384,
+        "rows": 0,
+        "date_ranges": {
+          "trade_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "index_daily",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "open",
+            "type": "double precision"
+          },
+          {
+            "name": "high",
+            "type": "double precision"
+          },
+          {
+            "name": "low",
+            "type": "double precision"
+          },
+          {
+            "name": "close",
+            "type": "double precision"
+          },
+          {
+            "name": "pre_close",
+            "type": "double precision"
+          },
+          {
+            "name": "change",
+            "type": "double precision"
+          },
+          {
+            "name": "pct_chg",
+            "type": "double precision"
+          },
+          {
+            "name": "vol",
+            "type": "double precision"
+          },
+          {
+            "name": "amount",
+            "type": "double precision"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 219774976,
+        "rows": 956669,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20240401",
+            "max": "20260716",
+            "distinct": 598
+          }
+        }
+      },
+      {
+        "table": "manual_selections",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "research_candidate_id",
+            "type": "integer"
+          },
+          {
+            "name": "selected",
+            "type": "boolean"
+          },
+          {
+            "name": "reason",
+            "type": "character varying"
+          },
+          {
+            "name": "notes",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 40960,
+        "rows": 0,
+        "date_ranges": {}
+      },
+      {
+        "table": "ml_backtest_runs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "model_version",
+            "type": "character varying"
+          },
+          {
+            "name": "start_date",
+            "type": "character varying"
+          },
+          {
+            "name": "end_date",
+            "type": "character varying"
+          },
+          {
+            "name": "portfolio_rule",
+            "type": "character varying"
+          },
+          {
+            "name": "periods",
+            "type": "integer"
+          },
+          {
+            "name": "trades",
+            "type": "integer"
+          },
+          {
+            "name": "total_profit",
+            "type": "double precision"
+          },
+          {
+            "name": "total_return_on_cost",
+            "type": "double precision"
+          },
+          {
+            "name": "win_rate",
+            "type": "double precision"
+          },
+          {
+            "name": "summary",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 98304,
+        "rows": 3,
+        "date_ranges": {
+          "end_date": {
+            "min": "20260415",
+            "max": "20260713",
+            "distinct": 3
+          }
+        }
+      },
+      {
+        "table": "ml_dual_scores",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "model_version",
+            "type": "character varying"
+          },
+          {
+            "name": "stable_score",
+            "type": "double precision"
+          },
+          {
+            "name": "aggressive_score",
+            "type": "double precision"
+          },
+          {
+            "name": "stable_rank",
+            "type": "integer"
+          },
+          {
+            "name": "aggressive_rank",
+            "type": "integer"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 331718656,
+        "rows": 1332344,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20250603",
+            "max": "20260710",
+            "distinct": 245
+          }
+        }
+      },
+      {
+        "table": "ml_experiment_artifacts",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "experiment_run_id",
+            "type": "integer"
+          },
+          {
+            "name": "artifact_type",
+            "type": "character varying"
+          },
+          {
+            "name": "artifact_path",
+            "type": "text"
+          },
+          {
+            "name": "summary",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 278528,
+        "rows": 257,
+        "date_ranges": {}
+      },
+      {
+        "table": "ml_experiment_runs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "model_version",
+            "type": "character varying"
+          },
+          {
+            "name": "experiment_type",
+            "type": "character varying"
+          },
+          {
+            "name": "start_date",
+            "type": "character varying"
+          },
+          {
+            "name": "end_date",
+            "type": "character varying"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "summary",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 303104,
+        "rows": 457,
+        "date_ranges": {
+          "end_date": {
+            "min": "20240101",
+            "max": "20260713",
+            "distinct": 16
+          }
+        }
+      },
+      {
+        "table": "ml_top_candidates",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "list_type",
+            "type": "character varying"
+          },
+          {
+            "name": "model_version",
+            "type": "character varying"
+          },
+          {
+            "name": "rank",
+            "type": "integer"
+          },
+          {
+            "name": "stable_score",
+            "type": "double precision"
+          },
+          {
+            "name": "aggressive_score",
+            "type": "double precision"
+          },
+          {
+            "name": "contribution_factors",
+            "type": "json"
+          },
+          {
+            "name": "risk_tags",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 4472832,
+        "rows": 4900,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20250603",
+            "max": "20260710",
+            "distinct": 245
+          }
+        }
+      },
+      {
+        "table": "ml_v8_candidate_outcomes",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "signal_id",
+            "type": "integer"
+          },
+          {
+            "name": "horizon",
+            "type": "integer"
+          },
+          {
+            "name": "settlement_date",
+            "type": "character varying"
+          },
+          {
+            "name": "fixed_tradable",
+            "type": "boolean"
+          },
+          {
+            "name": "net_return",
+            "type": "double precision"
+          },
+          {
+            "name": "mfe_close",
+            "type": "double precision"
+          },
+          {
+            "name": "mae_close",
+            "type": "double precision"
+          },
+          {
+            "name": "hit_5pct",
+            "type": "boolean"
+          },
+          {
+            "name": "hit_8pct",
+            "type": "boolean"
+          },
+          {
+            "name": "hit_12pct",
+            "type": "boolean"
+          },
+          {
+            "name": "details",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 163840,
+        "rows": 35,
+        "date_ranges": {}
+      },
+      {
+        "table": "ml_v8_candidate_signals",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "signal_date",
+            "type": "character varying"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "industry",
+            "type": "character varying"
+          },
+          {
+            "name": "model_version",
+            "type": "character varying"
+          },
+          {
+            "name": "rank",
+            "type": "integer"
+          },
+          {
+            "name": "decision",
+            "type": "character varying"
+          },
+          {
+            "name": "overall_score",
+            "type": "double precision"
+          },
+          {
+            "name": "p_hit_5pct_10d",
+            "type": "double precision"
+          },
+          {
+            "name": "expected_net_return_5d",
+            "type": "double precision"
+          },
+          {
+            "name": "expected_mfe_10d",
+            "type": "double precision"
+          },
+          {
+            "name": "expected_mae_10d",
+            "type": "double precision"
+          },
+          {
+            "name": "model_disagreement",
+            "type": "double precision"
+          },
+          {
+            "name": "evidence",
+            "type": "json"
+          },
+          {
+            "name": "risk_tags",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 262144,
+        "rows": 30,
+        "date_ranges": {
+          "signal_date": {
+            "min": "20260710",
+            "max": "20260716",
+            "distinct": 3
+          }
+        }
+      },
+      {
+        "table": "ml_v8_manual_reviews",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "signal_id",
+            "type": "integer"
+          },
+          {
+            "name": "selected",
+            "type": "boolean"
+          },
+          {
+            "name": "reason",
+            "type": "character varying"
+          },
+          {
+            "name": "notes",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 32768,
+        "rows": 0,
+        "date_ranges": {}
+      },
+      {
+        "table": "moneyflow_daily",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "buy_lg_amount",
+            "type": "double precision"
+          },
+          {
+            "name": "sell_lg_amount",
+            "type": "double precision"
+          },
+          {
+            "name": "buy_elg_amount",
+            "type": "double precision"
+          },
+          {
+            "name": "sell_elg_amount",
+            "type": "double precision"
+          },
+          {
+            "name": "net_mf_amount",
+            "type": "double precision"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "buy_sm_amount",
+            "type": "double precision"
+          },
+          {
+            "name": "sell_sm_amount",
+            "type": "double precision"
+          },
+          {
+            "name": "buy_md_amount",
+            "type": "double precision"
+          },
+          {
+            "name": "sell_md_amount",
+            "type": "double precision"
+          }
+        ],
+        "bytes": 705839104,
+        "rows": 3144752,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20240102",
+            "max": "20260716",
+            "distinct": 613
+          }
+        },
+        "per_year": [
+          {
+            "year": "2024",
+            "rows": 1233188,
+            "trade_dates": 242,
+            "stocks": 5170
+          },
+          {
+            "year": "2025",
+            "rows": 1248108,
+            "trade_dates": 243,
+            "stocks": 5212
+          },
+          {
+            "year": "2026",
+            "rows": 663456,
+            "trade_dates": 128,
+            "stocks": 5219
+          }
+        ]
+      },
+      {
+        "table": "positions",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "strategy_type",
+            "type": "character varying"
+          },
+          {
+            "name": "buy_date",
+            "type": "date"
+          },
+          {
+            "name": "buy_price",
+            "type": "double precision"
+          },
+          {
+            "name": "quantity",
+            "type": "integer"
+          },
+          {
+            "name": "current_price",
+            "type": "double precision"
+          },
+          {
+            "name": "highest_price",
+            "type": "double precision"
+          },
+          {
+            "name": "lowest_price",
+            "type": "double precision"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "notes",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 40960,
+        "rows": 0,
+        "date_ranges": {}
+      },
+      {
+        "table": "raw_balancesheet",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "ann_date",
+            "type": "date"
+          },
+          {
+            "name": "end_date",
+            "type": "date"
+          },
+          {
+            "name": "report_type",
+            "type": "character varying"
+          },
+          {
+            "name": "total_hldr_eqy_exc_min_int",
+            "type": "numeric"
+          },
+          {
+            "name": "total_share",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 13697024,
+        "rows": 98188,
+        "date_ranges": {
+          "ann_date": {
+            "min": "2022-01-01",
+            "max": "2026-05-21",
+            "distinct": 1039
+          },
+          "end_date": {
+            "min": "2018-12-31",
+            "max": "2026-03-31",
+            "distinct": 24
+          }
+        }
+      },
+      {
+        "table": "raw_cashflow",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "ann_date",
+            "type": "date"
+          },
+          {
+            "name": "end_date",
+            "type": "date"
+          },
+          {
+            "name": "report_type",
+            "type": "character varying"
+          },
+          {
+            "name": "n_cashflow_act",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 12075008,
+        "rows": 98697,
+        "date_ranges": {
+          "ann_date": {
+            "min": "2022-01-01",
+            "max": "2026-05-21",
+            "distinct": 1010
+          },
+          "end_date": {
+            "min": "2018-12-31",
+            "max": "2026-03-31",
+            "distinct": 25
+          }
+        }
+      },
+      {
+        "table": "raw_daily_basic",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "close",
+            "type": "numeric"
+          },
+          {
+            "name": "turnover_rate",
+            "type": "numeric"
+          },
+          {
+            "name": "turnover_rate_f",
+            "type": "numeric"
+          },
+          {
+            "name": "volume_ratio",
+            "type": "numeric"
+          },
+          {
+            "name": "pe",
+            "type": "numeric"
+          },
+          {
+            "name": "pe_ttm",
+            "type": "numeric"
+          },
+          {
+            "name": "pb",
+            "type": "numeric"
+          },
+          {
+            "name": "dv_ratio",
+            "type": "numeric"
+          },
+          {
+            "name": "dv_ttm",
+            "type": "numeric"
+          },
+          {
+            "name": "total_share",
+            "type": "numeric"
+          },
+          {
+            "name": "float_share",
+            "type": "numeric"
+          },
+          {
+            "name": "free_share",
+            "type": "numeric"
+          },
+          {
+            "name": "total_mv",
+            "type": "numeric"
+          },
+          {
+            "name": "circ_mv",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 2342912,
+        "rows": 11008,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "raw_daily_quote",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "open",
+            "type": "numeric"
+          },
+          {
+            "name": "high",
+            "type": "numeric"
+          },
+          {
+            "name": "low",
+            "type": "numeric"
+          },
+          {
+            "name": "close",
+            "type": "numeric"
+          },
+          {
+            "name": "pre_close",
+            "type": "numeric"
+          },
+          {
+            "name": "change",
+            "type": "numeric"
+          },
+          {
+            "name": "pct_chg",
+            "type": "numeric"
+          },
+          {
+            "name": "vol",
+            "type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 1843200,
+        "rows": 11008,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "raw_dividend",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "ann_date",
+            "type": "date"
+          },
+          {
+            "name": "end_date",
+            "type": "date"
+          },
+          {
+            "name": "div_proc",
+            "type": "character varying"
+          },
+          {
+            "name": "cash_div",
+            "type": "numeric"
+          },
+          {
+            "name": "cash_div_tax",
+            "type": "numeric"
+          },
+          {
+            "name": "record_date",
+            "type": "date"
+          },
+          {
+            "name": "ex_date",
+            "type": "date"
+          },
+          {
+            "name": "pay_date",
+            "type": "date"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 13787136,
+        "rows": 99053,
+        "date_ranges": {
+          "ann_date": {
+            "min": "1991-03-17",
+            "max": "2026-06-01",
+            "distinct": 3941
+          },
+          "end_date": {
+            "min": "1990-12-31",
+            "max": "2026-06-30",
+            "distinct": 463
+          }
+        }
+      },
+      {
+        "table": "raw_fina_indicator",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "ann_date",
+            "type": "date"
+          },
+          {
+            "name": "end_date",
+            "type": "date"
+          },
+          {
+            "name": "roe",
+            "type": "numeric"
+          },
+          {
+            "name": "roe_waa",
+            "type": "numeric"
+          },
+          {
+            "name": "roe_dt",
+            "type": "numeric"
+          },
+          {
+            "name": "netprofit_yoy",
+            "type": "numeric"
+          },
+          {
+            "name": "dt_netprofit_yoy",
+            "type": "numeric"
+          },
+          {
+            "name": "or_yoy",
+            "type": "numeric"
+          },
+          {
+            "name": "q_sales_yoy",
+            "type": "numeric"
+          },
+          {
+            "name": "q_profit_yoy",
+            "type": "numeric"
+          },
+          {
+            "name": "q_op_qoq",
+            "type": "numeric"
+          },
+          {
+            "name": "q_profit_qoq",
+            "type": "numeric"
+          },
+          {
+            "name": "grossprofit_margin",
+            "type": "numeric"
+          },
+          {
+            "name": "netprofit_margin",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 6021120,
+        "rows": 27583,
+        "date_ranges": {
+          "ann_date": {
+            "min": "2025-04-08",
+            "max": "2026-05-21",
+            "distinct": 233
+          },
+          "end_date": {
+            "min": "2025-03-31",
+            "max": "2026-03-31",
+            "distinct": 5
+          }
+        }
+      },
+      {
+        "table": "raw_income",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "ann_date",
+            "type": "date"
+          },
+          {
+            "name": "end_date",
+            "type": "date"
+          },
+          {
+            "name": "report_type",
+            "type": "character varying"
+          },
+          {
+            "name": "total_revenue",
+            "type": "numeric"
+          },
+          {
+            "name": "n_income_attr_p",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 19226624,
+        "rows": 98824,
+        "date_ranges": {
+          "ann_date": {
+            "min": "2022-01-01",
+            "max": "2026-05-21",
+            "distinct": 1027
+          },
+          "end_date": {
+            "min": "2018-12-31",
+            "max": "2026-03-31",
+            "distinct": 25
+          }
+        }
+      },
+      {
+        "table": "raw_index_classify",
+        "columns": [
+          {
+            "name": "index_code",
+            "type": "character varying"
+          },
+          {
+            "name": "industry_name",
+            "type": "character varying"
+          },
+          {
+            "name": "level",
+            "type": "character varying"
+          },
+          {
+            "name": "industry_code",
+            "type": "character varying"
+          },
+          {
+            "name": "is_pub",
+            "type": "character varying"
+          },
+          {
+            "name": "parent_code",
+            "type": "character varying"
+          },
+          {
+            "name": "src",
+            "type": "character varying"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 24576,
+        "rows": 31,
+        "date_ranges": {}
+      },
+      {
+        "table": "raw_index_daily",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "open",
+            "type": "numeric"
+          },
+          {
+            "name": "high",
+            "type": "numeric"
+          },
+          {
+            "name": "low",
+            "type": "numeric"
+          },
+          {
+            "name": "close",
+            "type": "numeric"
+          },
+          {
+            "name": "pct_chg",
+            "type": "numeric"
+          },
+          {
+            "name": "vol",
+            "type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 614400,
+        "rows": 3180,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2022-01-04",
+            "max": "2026-05-25",
+            "distinct": 1060
+          }
+        }
+      },
+      {
+        "table": "raw_index_member",
+        "columns": [
+          {
+            "name": "index_code",
+            "type": "character varying"
+          },
+          {
+            "name": "con_code",
+            "type": "character varying"
+          },
+          {
+            "name": "in_date",
+            "type": "date"
+          },
+          {
+            "name": "index_name",
+            "type": "character varying"
+          },
+          {
+            "name": "con_name",
+            "type": "character varying"
+          },
+          {
+            "name": "out_date",
+            "type": "date"
+          },
+          {
+            "name": "is_new",
+            "type": "character varying"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 794624,
+        "rows": 3000,
+        "date_ranges": {}
+      },
+      {
+        "table": "raw_limit_list_d",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "limit",
+            "type": "character varying"
+          },
+          {
+            "name": "industry",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "close",
+            "type": "numeric"
+          },
+          {
+            "name": "pct_chg",
+            "type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "numeric"
+          },
+          {
+            "name": "limit_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "float_mv",
+            "type": "numeric"
+          },
+          {
+            "name": "total_mv",
+            "type": "numeric"
+          },
+          {
+            "name": "turnover_ratio",
+            "type": "numeric"
+          },
+          {
+            "name": "fd_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "first_time",
+            "type": "character varying"
+          },
+          {
+            "name": "last_time",
+            "type": "character varying"
+          },
+          {
+            "name": "open_times",
+            "type": "integer"
+          },
+          {
+            "name": "up_stat",
+            "type": "character varying"
+          },
+          {
+            "name": "limit_times",
+            "type": "integer"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 155648,
+        "rows": 292,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "raw_moneyflow",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "buy_sm_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "sell_sm_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "buy_md_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "sell_md_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "buy_lg_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "sell_lg_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "buy_elg_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "sell_elg_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "net_mf_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 2646016,
+        "rows": 10382,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "raw_stk_auction_o",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "open",
+            "type": "numeric"
+          },
+          {
+            "name": "close",
+            "type": "numeric"
+          },
+          {
+            "name": "high",
+            "type": "numeric"
+          },
+          {
+            "name": "low",
+            "type": "numeric"
+          },
+          {
+            "name": "vol",
+            "type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "numeric"
+          },
+          {
+            "name": "vwap",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 1785856,
+        "rows": 10997,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "raw_stk_factor",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "close",
+            "type": "numeric"
+          },
+          {
+            "name": "open",
+            "type": "numeric"
+          },
+          {
+            "name": "high",
+            "type": "numeric"
+          },
+          {
+            "name": "low",
+            "type": "numeric"
+          },
+          {
+            "name": "pre_close",
+            "type": "numeric"
+          },
+          {
+            "name": "change",
+            "type": "numeric"
+          },
+          {
+            "name": "pct_change",
+            "type": "numeric"
+          },
+          {
+            "name": "vol",
+            "type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "numeric"
+          },
+          {
+            "name": "macd_dif",
+            "type": "numeric"
+          },
+          {
+            "name": "macd_dea",
+            "type": "numeric"
+          },
+          {
+            "name": "macd",
+            "type": "numeric"
+          },
+          {
+            "name": "kdj_k",
+            "type": "numeric"
+          },
+          {
+            "name": "kdj_d",
+            "type": "numeric"
+          },
+          {
+            "name": "kdj_j",
+            "type": "numeric"
+          },
+          {
+            "name": "rsi_6",
+            "type": "numeric"
+          },
+          {
+            "name": "rsi_12",
+            "type": "numeric"
+          },
+          {
+            "name": "rsi_24",
+            "type": "numeric"
+          },
+          {
+            "name": "boll_upper",
+            "type": "numeric"
+          },
+          {
+            "name": "boll_mid",
+            "type": "numeric"
+          },
+          {
+            "name": "boll_lower",
+            "type": "numeric"
+          },
+          {
+            "name": "cci",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 4194304,
+        "rows": 11008,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "raw_stk_limit",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "up_limit",
+            "type": "numeric"
+          },
+          {
+            "name": "down_limit",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 1703936,
+        "rows": 15228,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "raw_stock_basic",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "symbol",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "area",
+            "type": "character varying"
+          },
+          {
+            "name": "industry",
+            "type": "character varying"
+          },
+          {
+            "name": "market",
+            "type": "character varying"
+          },
+          {
+            "name": "exchange",
+            "type": "character varying"
+          },
+          {
+            "name": "list_date",
+            "type": "date"
+          },
+          {
+            "name": "is_hs",
+            "type": "character varying"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 1679360,
+        "rows": 5525,
+        "date_ranges": {}
+      },
+      {
+        "table": "raw_sw_daily",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "open",
+            "type": "numeric"
+          },
+          {
+            "name": "low",
+            "type": "numeric"
+          },
+          {
+            "name": "high",
+            "type": "numeric"
+          },
+          {
+            "name": "close",
+            "type": "numeric"
+          },
+          {
+            "name": "change",
+            "type": "numeric"
+          },
+          {
+            "name": "pct_change",
+            "type": "numeric"
+          },
+          {
+            "name": "vol",
+            "type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 212992,
+        "rows": 878,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "raw_ths_daily",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "open",
+            "type": "numeric"
+          },
+          {
+            "name": "high",
+            "type": "numeric"
+          },
+          {
+            "name": "low",
+            "type": "numeric"
+          },
+          {
+            "name": "close",
+            "type": "numeric"
+          },
+          {
+            "name": "pre_close",
+            "type": "numeric"
+          },
+          {
+            "name": "avg_price",
+            "type": "numeric"
+          },
+          {
+            "name": "change",
+            "type": "numeric"
+          },
+          {
+            "name": "pct_change",
+            "type": "numeric"
+          },
+          {
+            "name": "vol",
+            "type": "numeric"
+          },
+          {
+            "name": "turnover_rate",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 466944,
+        "rows": 2388,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "raw_ths_index",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "count",
+            "type": "integer"
+          },
+          {
+            "name": "exchange",
+            "type": "character varying"
+          },
+          {
+            "name": "list_date",
+            "type": "date"
+          },
+          {
+            "name": "type",
+            "type": "character varying"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 147456,
+        "rows": 409,
+        "date_ranges": {}
+      },
+      {
+        "table": "raw_ths_member",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "con_code",
+            "type": "character varying"
+          },
+          {
+            "name": "con_name",
+            "type": "character varying"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 1531904,
+        "rows": 6000,
+        "date_ranges": {}
+      },
+      {
+        "table": "raw_top_list",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "reason",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "close",
+            "type": "numeric"
+          },
+          {
+            "name": "pct_change",
+            "type": "numeric"
+          },
+          {
+            "name": "turnover_rate",
+            "type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "numeric"
+          },
+          {
+            "name": "l_sell",
+            "type": "numeric"
+          },
+          {
+            "name": "l_buy",
+            "type": "numeric"
+          },
+          {
+            "name": "l_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "net_amount",
+            "type": "numeric"
+          },
+          {
+            "name": "net_rate",
+            "type": "numeric"
+          },
+          {
+            "name": "amount_rate",
+            "type": "numeric"
+          },
+          {
+            "name": "float_values",
+            "type": "numeric"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 139264,
+        "rows": 178,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2026-05-22",
+            "max": "2026-05-25",
+            "distinct": 2
+          }
+        }
+      },
+      {
+        "table": "raw_trade_calendar",
+        "columns": [
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "exchange",
+            "type": "character varying"
+          },
+          {
+            "name": "is_open",
+            "type": "boolean"
+          },
+          {
+            "name": "pretrade_date",
+            "type": "date"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 237568,
+        "rows": 1826,
+        "date_ranges": {
+          "trade_date": {
+            "min": "2022-01-01",
+            "max": "2026-12-31",
+            "distinct": 1826
+          }
+        }
+      },
+      {
+        "table": "research_candidates",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "research_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "rank",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "industry",
+            "type": "character varying"
+          },
+          {
+            "name": "candidate_type",
+            "type": "character varying"
+          },
+          {
+            "name": "decision",
+            "type": "character varying"
+          },
+          {
+            "name": "overall_score",
+            "type": "double precision"
+          },
+          {
+            "name": "stable_score",
+            "type": "double precision"
+          },
+          {
+            "name": "aggressive_score",
+            "type": "double precision"
+          },
+          {
+            "name": "p_hit_5pct_10d",
+            "type": "double precision"
+          },
+          {
+            "name": "expected_net_return_5d",
+            "type": "double precision"
+          },
+          {
+            "name": "expected_mfe_10d",
+            "type": "double precision"
+          },
+          {
+            "name": "expected_mae_10d",
+            "type": "double precision"
+          },
+          {
+            "name": "model_disagreement",
+            "type": "double precision"
+          },
+          {
+            "name": "evidence",
+            "type": "json"
+          },
+          {
+            "name": "risk_tags",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 237568,
+        "rows": 35,
+        "date_ranges": {}
+      },
+      {
+        "table": "research_runs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "character varying"
+          },
+          {
+            "name": "job_id",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "pipeline",
+            "type": "character varying"
+          },
+          {
+            "name": "execution_mode",
+            "type": "character varying"
+          },
+          {
+            "name": "version",
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "decision",
+            "type": "character varying"
+          },
+          {
+            "name": "model_version",
+            "type": "character varying"
+          },
+          {
+            "name": "artifact_sha256",
+            "type": "character varying"
+          },
+          {
+            "name": "diagnostic_only",
+            "type": "boolean"
+          },
+          {
+            "name": "promotion_allowed",
+            "type": "boolean"
+          },
+          {
+            "name": "data_version",
+            "type": "json"
+          },
+          {
+            "name": "audit",
+            "type": "json"
+          },
+          {
+            "name": "market_gate",
+            "type": "json"
+          },
+          {
+            "name": "paper_ledger",
+            "type": "json"
+          },
+          {
+            "name": "result_summary",
+            "type": "json"
+          },
+          {
+            "name": "report_artifact",
+            "type": "json"
+          },
+          {
+            "name": "error",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "started_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "completed_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 278528,
+        "rows": 8,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20260710",
+            "max": "20260716",
+            "distinct": 3
+          }
+        }
+      },
+      {
+        "table": "review_journals",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "category",
+            "type": "character varying"
+          },
+          {
+            "name": "title",
+            "type": "character varying"
+          },
+          {
+            "name": "content",
+            "type": "text"
+          },
+          {
+            "name": "tags",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 40960,
+        "rows": 0,
+        "date_ranges": {
+          "trade_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "selection_results",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "run_id",
+            "type": "integer"
+          },
+          {
+            "name": "rank",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "score",
+            "type": "double precision"
+          },
+          {
+            "name": "action",
+            "type": "character varying"
+          },
+          {
+            "name": "details",
+            "type": "json"
+          }
+        ],
+        "bytes": 40960,
+        "rows": 0,
+        "date_ranges": {}
+      },
+      {
+        "table": "selection_runs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "strategy_type",
+            "type": "character varying"
+          },
+          {
+            "name": "stock_count",
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "metadata_json",
+            "type": "json"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 32768,
+        "rows": 0,
+        "date_ranges": {
+          "trade_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "stock_adj_factors",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "adj_factor",
+            "type": "double precision"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 546783232,
+        "rows": 3017885,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20240401",
+            "max": "20260716",
+            "distinct": 555
+          }
+        },
+        "per_year": [
+          {
+            "year": "2024",
+            "rows": 991433,
+            "trade_dates": 184,
+            "stocks": 5452
+          },
+          {
+            "year": "2025",
+            "rows": 1321761,
+            "trade_dates": 243,
+            "stocks": 5529
+          },
+          {
+            "year": "2026",
+            "rows": 704691,
+            "trade_dates": 128,
+            "stocks": 5553
+          }
+        ]
+      },
+      {
+        "table": "stock_limit_daily",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "up_limit",
+            "type": "double precision"
+          },
+          {
+            "name": "down_limit",
+            "type": "double precision"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 753311744,
+        "rows": 3977271,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20240401",
+            "max": "20260716",
+            "distinct": 555
+          }
+        },
+        "per_year": [
+          {
+            "year": "2024",
+            "rows": 1263949,
+            "trade_dates": 184,
+            "stocks": 7040
+          },
+          {
+            "year": "2025",
+            "rows": 1746811,
+            "trade_dates": 243,
+            "stocks": 7459
+          },
+          {
+            "year": "2026",
+            "rows": 966511,
+            "trade_dates": 128,
+            "stocks": 7717
+          }
+        ]
+      },
+      {
+        "table": "stocks",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "symbol",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "area",
+            "type": "character varying"
+          },
+          {
+            "name": "industry",
+            "type": "character varying"
+          },
+          {
+            "name": "market",
+            "type": "character varying"
+          },
+          {
+            "name": "list_date",
+            "type": "character varying"
+          },
+          {
+            "name": "list_status",
+            "type": "character varying"
+          },
+          {
+            "name": "is_hs",
+            "type": "character varying"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 7643136,
+        "rows": 8124,
+        "date_ranges": {}
+      },
+      {
+        "table": "strategy_candidate_pool",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "version",
+            "type": "character varying"
+          },
+          {
+            "name": "total_score",
+            "type": "numeric"
+          },
+          {
+            "name": "score_rank",
+            "type": "integer"
+          },
+          {
+            "name": "candidate_rank",
+            "type": "integer"
+          },
+          {
+            "name": "pool_level",
+            "type": "character varying"
+          },
+          {
+            "name": "selected_flag",
+            "type": "boolean"
+          },
+          {
+            "name": "risk_filter_result",
+            "type": "character varying"
+          },
+          {
+            "name": "risk_tags",
+            "type": "jsonb"
+          },
+          {
+            "name": "selection_reason",
+            "type": "text"
+          },
+          {
+            "name": "risk_warning",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 16384,
+        "rows": 0,
+        "date_ranges": {
+          "trade_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "strategy_holding_snapshot",
+        "columns": [
+          {
+            "name": "batch_id",
+            "type": "character varying"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "import_time",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "quantity",
+            "type": "integer"
+          },
+          {
+            "name": "cost_price",
+            "type": "numeric"
+          },
+          {
+            "name": "buy_date",
+            "type": "date"
+          },
+          {
+            "name": "latest_close",
+            "type": "numeric"
+          },
+          {
+            "name": "unrealized_return_pct",
+            "type": "numeric"
+          },
+          {
+            "name": "current_score",
+            "type": "numeric"
+          },
+          {
+            "name": "action_suggestion",
+            "type": "character varying"
+          },
+          {
+            "name": "warning_text",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 16384,
+        "rows": 0,
+        "date_ranges": {}
+      },
+      {
+        "table": "strategy_score_snapshot",
+        "columns": [
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "version",
+            "type": "character varying"
+          },
+          {
+            "name": "technical_score",
+            "type": "numeric"
+          },
+          {
+            "name": "capital_score",
+            "type": "numeric"
+          },
+          {
+            "name": "fundamental_score",
+            "type": "numeric"
+          },
+          {
+            "name": "sentiment_score",
+            "type": "numeric"
+          },
+          {
+            "name": "sector_heat_score",
+            "type": "numeric"
+          },
+          {
+            "name": "total_score",
+            "type": "numeric"
+          },
+          {
+            "name": "score_rank",
+            "type": "integer"
+          },
+          {
+            "name": "score_bucket",
+            "type": "character varying"
+          },
+          {
+            "name": "dimension_detail",
+            "type": "jsonb"
+          },
+          {
+            "name": "score_explain",
+            "type": "jsonb"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 16384,
+        "rows": 0,
+        "date_ranges": {
+          "trade_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "trade_logs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "name",
+            "type": "character varying"
+          },
+          {
+            "name": "action",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "date"
+          },
+          {
+            "name": "price",
+            "type": "double precision"
+          },
+          {
+            "name": "quantity",
+            "type": "integer"
+          },
+          {
+            "name": "reason",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 24576,
+        "rows": 0,
+        "date_ranges": {
+          "trade_date": {
+            "min": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      },
+      {
+        "table": "tushare_raw_records",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "name": "endpoint",
+            "type": "character varying"
+          },
+          {
+            "name": "row_key",
+            "type": "character varying"
+          },
+          {
+            "name": "ts_code",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "ann_date",
+            "type": "character varying"
+          },
+          {
+            "name": "f_ann_date",
+            "type": "character varying"
+          },
+          {
+            "name": "end_date",
+            "type": "character varying"
+          },
+          {
+            "name": "period",
+            "type": "character varying"
+          },
+          {
+            "name": "payload",
+            "type": "json"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 2957410304,
+        "rows": 3666628,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20240401",
+            "max": "20260716",
+            "distinct": 555
+          },
+          "ann_date": {
+            "min": "20110519",
+            "max": "20260717",
+            "distinct": 1581
+          },
+          "end_date": {
+            "min": "20201231",
+            "max": "20271231",
+            "distinct": 233
+          }
+        }
+      },
+      {
+        "table": "web_jobs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "character varying"
+          },
+          {
+            "name": "job_type",
+            "type": "character varying"
+          },
+          {
+            "name": "dedupe_key",
+            "type": "character varying"
+          },
+          {
+            "name": "trade_date",
+            "type": "character varying"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "stage",
+            "type": "character varying"
+          },
+          {
+            "name": "progress_current",
+            "type": "integer"
+          },
+          {
+            "name": "progress_total",
+            "type": "integer"
+          },
+          {
+            "name": "message",
+            "type": "text"
+          },
+          {
+            "name": "params",
+            "type": "json"
+          },
+          {
+            "name": "result",
+            "type": "json"
+          },
+          {
+            "name": "error",
+            "type": "json"
+          },
+          {
+            "name": "request_id",
+            "type": "character varying"
+          },
+          {
+            "name": "cancel_requested",
+            "type": "boolean"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "started_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "heartbeat_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "completed_at",
+            "type": "timestamp without time zone"
+          }
+        ],
+        "bytes": 163840,
+        "rows": 2,
+        "date_ranges": {
+          "trade_date": {
+            "min": "20260716",
+            "max": "20260716",
+            "distinct": 1
+          }
+        }
+      }
+    ]
+  },
+  "reports_dir": {
+    "status": "completed",
+    "total_gb": 31.03,
+    "directories": [
+      {
+        "name": "db_backups",
+        "gb": 0.0,
+        "files": 10,
+        "children": [
+          {
+            "name": "20260717T005954Z",
+            "gb": 0.0,
+            "files": 10
+          }
+        ]
+      },
+      {
+        "name": "docx_qa",
+        "gb": 0.0,
+        "files": 3,
+        "children": [
+          {
+            "name": "rendered",
+            "gb": 0.0,
+            "files": 0
+          },
+          {
+            "name": "rendered_post_install",
+            "gb": 0.0,
+            "files": 0
+          }
+        ]
+      },
+      {
+        "name": "factor_lab",
+        "gb": 0.0,
+        "files": 2,
+        "children": []
+      },
+      {
+        "name": "factor_lab_check",
+        "gb": 0.0,
+        "files": 3,
+        "children": []
+      },
+      {
+        "name": "factor_lab_versioned",
+        "gb": 0.0,
+        "files": 3,
+        "children": []
+      },
+      {
+        "name": "ml_lab",
+        "gb": 31.032,
+        "files": 2667,
+        "children": [
+          {
+            "name": "training_frame_v8_events",
+            "gb": 1.639,
+            "files": 524
+          },
+          {
+            "name": "training_frame_v9_events",
+            "gb": 1.623,
+            "files": 524
+          },
+          {
+            "name": "training_frame_v8",
+            "gb": 1.597,
+            "files": 524
+          },
+          {
+            "name": "short_execution_blind_20260602_20260709_v2",
+            "gb": 0.072,
+            "files": 62
+          },
+          {
+            "name": "short_execution_blind_20260602_20260709_v3",
+            "gb": 0.072,
+            "files": 62
+          },
+          {
+            "name": "short_execution_blind_20260602_20260709_v1",
+            "gb": 0.07,
+            "files": 54
+          },
+          {
+            "name": "short_execution_labels_v1",
+            "gb": 0.068,
+            "files": 524
+          },
+          {
+            "name": "v8_research_gpu_full",
+            "gb": 0.005,
+            "files": 4
+          },
+          {
+            "name": "v11_dual_artifact",
+            "gb": 0.003,
+            "files": 11
+          },
+          {
+            "name": "v11_dual_artifact_feature_v2",
+            "gb": 0.003,
+            "files": 11
+          },
+          {
+            "name": "v11_dual_research_gpu_lgb_xgb_full",
+            "gb": 0.003,
+            "files": 6
+          },
+          {
+            "name": "v8_artifact",
+            "gb": 0.003,
+            "files": 11
+          },
+          {
+            "name": "v9_event_snapshots_blind_20260602_20260709_v1",
+            "gb": 0.003,
+            "files": 28
+          },
+          {
+            "name": "v9_event_snapshots_blind_20260602_20260709_v2",
+            "gb": 0.003,
+            "files": 28
+          },
+          {
+            "name": "v9_events_research_gpu_lgb_xgb_full",
+            "gb": 0.003,
+            "files": 6
+          },
+          {
+            "name": "v8_1_research_gpu_full",
+            "gb": 0.002,
+            "files": 4
+          },
+          {
+            "name": "v8_events_research_gpu_full",
+            "gb": 0.002,
+            "files": 4
+          },
+          {
+            "name": "v8_research_gpu_smoke_lgb_xgb",
+            "gb": 0.002,
+            "files": 4
+          },
+          {
+            "name": "market_state_v6_cpu_full",
+            "gb": 0.001,
+            "files": 5
+          },
+          {
+            "name": "models_check",
+            "gb": 0.001,
+            "files": 8
+          },
+          {
+            "name": "models_full",
+            "gb": 0.001,
+            "files": 7
+          },
+          {
+            "name": "models_smoke",
+            "gb": 0.001,
+            "files": 7
+          },
+          {
+            "name": "models_versioned",
+            "gb": 0.001,
+            "files": 9
+          },
+          {
+            "name": "models_versioned_v2",
+            "gb": 0.001,
+            "files": 9
+          },
+          {
+            "name": "research_audit_20260708",
+            "gb": 0.001,
+            "files": 4
+          },
+          {
+            "name": "research_audit_v2_full",
+            "gb": 0.001,
+            "files": 4
+          },
+          {
+            "name": "research_audit_v3_cpu_full_lightgbm",
+            "gb": 0.001,
+            "files": 4
+          },
+          {
+            "name": "research_audit_v4_cpu_full_lightgbm",
+            "gb": 0.001,
+            "files": 4
+          },
+          {
+            "name": "research_audit_v5_cpu_full_lightgbm",
+            "gb": 0.001,
+            "files": 4
+          },
+          {
+            "name": "research_audit_v7_cpu_full_lightgbm",
+            "gb": 0.001,
+            "files": 4
+          },
+          {
+            "name": "research_harness_v2_full",
+            "gb": 0.001,
+            "files": 2
+          },
+          {
+            "name": "research_harness_v3_cpu_full_lightgbm",
+            "gb": 0.001,
+            "files": 2
+          },
+          {
+            "name": "research_harness_v4_cpu_full_lightgbm",
+            "gb": 0.001,
+            "files": 2
+          },
+          {
+            "name": "research_harness_v5_cpu_full_lightgbm",
+            "gb": 0.001,
+            "files": 2
+          },
+          {
+            "name": "research_harness_v5_cpu_full_lightgbm_v6_source",
+            "gb": 0.001,
+            "files": 3
+          },
+          {
+            "name": "research_harness_v7_cpu_full_lightgbm",
+            "gb": 0.001,
+            "files": 3
+          },
+          {
+            "name": "convergence_check",
+            "gb": 0.0,
+            "files": 3
+          },
+          {
+            "name": "convergence_check_latest",
+            "gb": 0.0,
+            "files": 3
+          },
+          {
+            "name": "convergence_ledger_check",
+            "gb": 0.0,
+            "files": 4
+          },
+          {
+            "name": "convergence_versioned_v2",
+            "gb": 0.0,
+            "files": 4
+          }
+        ]
+      },
+      {
+        "name": "web_runtime",
+        "gb": 0.0,
+        "files": 2,
+        "children": []
+      }
+    ]
+  }
+}
