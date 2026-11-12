@@ -97,6 +97,85 @@
 
 这些在对应模块开工前再补。
 
+## 9. 第二轮调研：业界现在在做什么（2026-11 补充）
+
+第一轮偏学术。这一轮看卖方金工团队的在跑模型、头部机构公开的做法、名校工作论文和竞赛方案。
+
+### 9.1 国内卖方：华泰金工的 AI 模型周报（2026 年 4 月与 6 月两期） [全文]
+
+这是能公开看到的、最接近"机构实际在跑什么"的材料。
+
+| 模型 | 做法 | 2017 年以来 | 2026 年以来 |
+| --- | --- | --- | --- |
+| 全频段量价融合因子 | 深度学习处理 27 个高频因子，加上低频量价的多任务端到端学习，两者合成 | 多头年化超额约 28%，5 日 RankIC 均值约 11% | 4 月底超额 4.5%，到 6 月中只剩 0.44% |
+| 中证 1000 增强 | 上述因子选股；成分股权重不低于 80%，个股偏离不超过 0.8%，风格暴露小于 0.3，周换手 30% | 年化超额约 20%，信息比率 3.15 | 超额 −8.0% |
+| 研报文本选股 | 大模型先对研报写"催化剂、言外之意、潜在风险"等解读，再转成文本特征喂给提升树 | 相对中证 500 年化超额约 24% | 超额 −4.1%，但比旧版更稳 |
+| 行业轮动 | 用同一个因子给 32 个行业打分，每周等权持有前 5 | 年化超额约 19.5% | 超额 +9.1% |
+
+同一团队 2026 年 6 月还发布了"基于筹码分层结构的端到端 AI 因子"，正文未能读到。
+
+读出的四点：
+
+1. **"强"的量级**：机构级量价 AI 因子的 5 日 RankIC 在 11% 左右，而且用了高频数据。我们只有日频，基线的合理预期要低于这个数。
+2. **纯量价 AI 因子在 2026 年明显衰减**，和上一轮查到的"7 月量化集体回撤"相互印证。这条路已经拥挤。
+3. **同一个因子用来做行业轮动，今年反而有效。** 截面选股失效时，行业层面的信号仍然成立。
+4. **机构的约束做法**可以直接借鉴：风格暴露上限、个股偏离上限、换手上限。
+
+### 9.2 海外机构
+
+- **Man Group 的 AlphaGPT** [全文]：三段式流程，"提出假设、写代码实现、评估"，由编排器协调。AI 产出的信号必须通过与人工研究相同的统计门槛；速度快带来的主要风险是虚假结果，对策是全程留痕、多阶段一致性检查、人工复核。他们的结论是 AI 放大人的判断而不是替代，优势不在模型而在数据和流程。
+- **《Agentic Quantitative Trading》综述**(2026) [摘要]：多数系统只做信号发现，把组合构建、执行、风控都做成核心环节的极少；评估上的通病是回测高估、收益来自风格暴露而非选股、自进化系统过拟合历史验证期。
+
+我们的设计与 Man 的流程同构：执行代理背后的大模型当"提出者和实现者"，确定性门禁当"评估者"。
+
+### 9.3 名校工作论文
+
+| 来源 | 要点 | 采用 |
+| --- | --- | --- |
+| Chen、Hanauer、Kalsbach《Design choices, machine learning, and the cross-section of stock returns》 [摘要] | 1056 个模型只是设计选择不同，多空月收益从 0.13% 到 1.98% 不等，设计选择带来的差异比抽样误差还大。用相对市场的超额收益做标签、连续型标签、模型集成更好；美股月频下扩展窗口比滚动窗口每月高约 0.20% | 关键设计选择不能只报一种，要报"多种合理设定下的结果分布" |
+| Kelly 等"复杂度的优点"系列，及《The Virtue of Sparsity in Complexity》(2026) [摘要] | 特征数远大于样本数的大模型配合收缩，样本外反而更好；更进一步，在极大的候选集上做稀疏选择略优于稠密模型 | 新增一位专家：随机特征扩展加稀疏选择 |
+| Kim、Muhn、Nikolaev《Financial Statement Analysis with Large Language Models》（芝加哥大学） [摘要] | 把匿名、标准化的财务报表交给大模型判断下期盈利增减，准确率高于分析师，与专门训练的模型相当 | 新增一位专家：大模型财报分析。我们有带公告日的三大报表，执行代理一侧有大模型，条件齐全 |
+| Jiang、Kelly、Xiu《(Re-)Imag(in)ing Price Trends》(JF 2023) [标题，结论凭记忆] | 把 K 线图当图像交给卷积网络，学到的形态信号优于传统动量反转，并能迁移到其他市场 | 之前我把"K 线图像识别"排在最后，是低估了，改为正式候选 |
+| Jensen、Kelly、Malamud、Pedersen《Machine Learning and the Implementable Efficient Frontier》 [标题] | 把交易成本直接放进机器学习的目标函数，而不是先预测再优化 | 作为组合层的进阶方案 |
+| 《Re(Visiting) Time Series Foundation Models in Finance》(2025) [摘要] | 通用时间序列基础模型直接用或微调后预测收益都很差；在金融数据上从头预训练的才有效 | 只考虑金融数据预训练的模型（如 Kronos），不试通用模型 |
+
+### 9.4 竞赛方案：Jane Street 实时预测赛（2025） [全文，他人整理的笔记]
+
+前排方案的共同做法：
+
+- 序列模型（GRU、Transformer，带股票间注意力）加提升树加岭回归的集成。
+- **在线增量更新是最大的提分来源**：每天用最新数据做少量梯度更新；把优化器的有效记忆压到几天；提升树分阶段续训。
+- 只用最近几百天的数据训练，越近越有用。
+- 用其他预测目标做**辅助目标**（多任务），明显提升。
+- 按交易日整批输入模型。
+
+这组经验明确支持"近期数据更重要、持续在线适应"。需要注意它是高频场景，每天样本量极大；与上面美股月频"扩展窗口更好"的结论相反。两者都是事实，说明答案取决于频率和样本量，所以我们的窗口方案必须实测。
+
+### 9.5 Numerai（众包股票排序赛） [标题，做法凭记忆]
+
+特征中性化（把预测对单个特征的线性暴露剔掉）、按"时代"而非按样本评估、惩罚对少数特征的过度依赖。这些与我们的风格中性化和分期评估一致，列入工具箱。
+
+## 10. 复核：我是否过于保守
+
+区分两种"保守"：
+
+- **对论文自报数字的保留**：维持。华泰自己的周报就显示，2017 年以来年化超额 28% 的因子，2026 年接近归零。
+- **对方法本身的排斥**：这是应该避免的。复查蓝图后，有三处我确实排得太靠后或写得太消极，已更正：
+
+| 原判断 | 更正 |
+| --- | --- |
+| K 线图像识别排在"最后" | 升为 M5d 正式候选 |
+| 大模型只用于"文本特征提取" | 新增"大模型财报分析"专家，不依赖文本权限 |
+| 择时只当作风险开关 | 新增行业轮动层，作为独立的收益来源 |
+
+另外新增"快速试验通道"：任何新想法先做一次低成本的初筛，默认是"试"，初筛有苗头再走完整准入。详见 `ALPHA_BLUEPRINT.md` 第 11 节。
+
+## 11. 仍然缺的
+
+- 国内头部量化私募的具体做法：公开报道只有"成立 AI 实验室、投入算力"这一层，没有方法细节。
+- 清华、北大、上交高金近两年关于 A 股的工作论文：检索没有命中正文。如果你能通过学校渠道拿到，发给我最有价值。
+- 华泰"筹码分层端到端因子"、各家"高频因子低频化"系列研报的正文：网站禁止抓取。你手里有 PDF 的话可以直接发给我。
+
 ## 来源
 
 - Leippold 等：https://www.sfi.ch/en/publications/machine-learning-in-the-chinese-stock-market
@@ -119,3 +198,16 @@
 - 回测过拟合验证流程：https://arxiv.org/abs/2603.09219
 - Qlib 时点数据库：https://qlib.readthedocs.io/en/latest/_sources/advanced/PIT.rst.txt
 - 主板 ST 涨跌幅新规：https://finance.sina.com.cn/jjxw/2026-07-06/doc-inifvqsf1879157.shtml
+- 华泰金工 AI 模型周报（2026-06）：https://finance.sina.com.cn/wm/2026-06-22/doc-iniefqrx2351291.shtml
+- 华泰金工 AI 模型周报（2026-04）：https://finance.sina.com.cn/wm/2026-04-27/doc-inhvwwmq9261867.shtml
+- 华泰金工：基于筹码分层结构的端到端 AI 因子（未读到正文）：https://www.nxny.com/report/view_6308253.html
+- Man Group《What AI Can (and Can't Yet) Do for Alpha》：https://www.man.com/insights/what-ai-can-do-for-alpha
+- Agentic Quantitative Trading 综述：https://arxiv.org/abs/2608.31041
+- Design choices in ML（Quantpedia 摘要）：https://quantpedia.com/design-choices-in-ml-and-the-cross-section-of-stock-returns/
+- The Virtue of Sparsity in Complexity：https://arxiv.org/abs/2604.17166
+- Financial Statement Analysis with LLMs：https://arxiv.org/abs/2407.17866v2
+- (Re-)Imag(in)ing Price Trends：https://papers.ssrn.com/abstract=3756587
+- Machine Learning and the Implementable Efficient Frontier：https://papers.ssrn.com/abstract=4187217
+- Re(Visiting) Time Series Foundation Models in Finance：https://ideas.repec.org/p/arx/papers/2511.18578.html
+- Jane Street 竞赛方案整理：https://2kkkkk.github.io/OneNotes/Kaggle/Jane%20street/总结.htm
+- Numerai 特征中性化：https://forum.numer.ai/t/an-introduction-to-feature-neutralization-exposure/4955
