@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "PROTECTED.sha256"
 PROTECTED_GLOBS = (
     "AGENTS.md",
-    "docs/DESIGN.md",
+    "docs/*.md",
     "perq/**/*.py",
     "tests/**/*.py",
     "tools/**/*.py",

@@ -116,6 +116,76 @@ def build_probes(recent: str, previous: str) -> list[dict[str, Any]]:
     add("股东事件", "share_float", "useful", ann_date=previous)
     add("股东事件", "report_rc", "optional", report_date=previous)
     add("股东事件", "anns_d", "uncertain", ann_date=previous)
+
+    # ---- 以下为研究蓝图（docs/ALPHA_BLUEPRINT.md）新增信息族的探测 ----
+    month = previous[:6]
+    dt_start = f"{previous[:4]}-{previous[4:6]}-{previous[6:]} 09:00:00"
+    dt_end = f"{previous[:4]}-{previous[4:6]}-{previous[6:]} 18:00:00"
+
+    # 历史深度：单只股票最早能取到哪一年
+    add("历史深度", "daily", "core", ts_code=SAMPLE_STOCK, start_date="19900101", end_date="20051231")
+    add("历史深度", "daily_basic", "core", ts_code=SAMPLE_STOCK, start_date="19900101", end_date="20101231")
+    add("历史深度", "moneyflow", "useful", ts_code=SAMPLE_STOCK, start_date="20050101", end_date="20141231")
+    add("历史深度", "stk_limit", "core", ts_code=SAMPLE_STOCK, start_date="20050101", end_date="20141231")
+
+    # 集合竞价与筹码
+    add("微观结构", "stk_auction_o", "optional", trade_date=previous)
+    add("微观结构", "stk_auction", "optional", trade_date=previous)
+    add("筹码", "cyq_chips", "useful", ts_code=SAMPLE_STOCK, trade_date=previous)
+    add("筹码", "cyq_perf", "useful", trade_date=OLD_DATES["2019"])
+
+    # 涨停生态与游资
+    add("涨停生态", "limit_step", "useful", trade_date=previous)
+    add("涨停生态", "limit_cpt_list", "useful", trade_date=previous)
+    add("涨停生态", "kpl_list", "optional", trade_date=previous, tag="涨停")
+    add("涨停生态", "kpl_concept", "optional", trade_date=previous)
+    add("涨停生态", "hm_list", "optional")
+    add("涨停生态", "hm_detail", "optional", trade_date=previous)
+    add("涨停生态", "ths_hot", "optional", trade_date=previous, market="热股")
+    add("涨停生态", "dc_hot", "optional", trade_date=previous, market="A股市场")
+
+    # 概念板块与板块资金
+    add("关系网络", "ths_index", "useful", exchange="A", type="N")
+    add("关系网络", "ths_member", "useful", ts_code="885800.TI")
+    add("关系网络", "ths_daily", "useful", trade_date=previous)
+    add("关系网络", "dc_index", "optional", trade_date=previous)
+    add("关系网络", "moneyflow_ths", "optional", trade_date=previous)
+    add("关系网络", "moneyflow_dc", "optional", trade_date=previous)
+    add("关系网络", "moneyflow_ind_ths", "optional", trade_date=previous)
+
+    # 分析师预期与机构行为
+    add("预期与机构", "report_rc", "useful", ts_code=SAMPLE_STOCK)
+    add("预期与机构", "broker_recommend", "useful", month=month)
+    add("预期与机构", "stk_surv", "useful", trade_date=previous)
+    add("预期与机构", "top10_holders", "useful", ts_code=SAMPLE_STOCK)
+    add("预期与机构", "top10_floatholders", "useful", ts_code=SAMPLE_STOCK)
+    add("预期与机构", "fund_portfolio", "optional", ts_code=SAMPLE_STOCK)
+    add("预期与机构", "hsgt_top10", "optional", trade_date=OLD_DATES["2019"])
+    add("预期与机构", "hk_hold", "optional", trade_date=OLD_DATES["2019"])
+    add("预期与机构", "fund_share", "optional", trade_date=previous)
+
+    # 公司事件与财务补充
+    add("公司事件", "pledge_stat", "useful", ts_code=SAMPLE_STOCK)
+    add("公司事件", "fina_mainbz_vip", "optional", period="20251231", type="P")
+    add("公司事件", "fina_audit", "optional", ts_code=SAMPLE_STOCK)
+    add("公司事件", "stk_holdertrade", "useful", ts_code=SAMPLE_STOCK)
+
+    # 宏观与衍生品（只用于市场状态）
+    add("宏观衍生品", "shibor", "useful", start_date=month_start, end_date=recent)
+    add("宏观衍生品", "yc_cb", "optional", ts_code="1001.CB", curve_type="0", trade_date=previous)
+    add("宏观衍生品", "cn_pmi", "optional", start_m="202401", end_m=month)
+    add("宏观衍生品", "cn_m", "optional", start_m="202401", end_m=month)
+    add("宏观衍生品", "sf_month", "optional", start_m="202401", end_m=month)
+    add("宏观衍生品", "fut_daily", "useful", trade_date=previous, exchange="CFFEX")
+    add("宏观衍生品", "opt_daily", "optional", trade_date=previous, exchange="SSE")
+    add("宏观衍生品", "margin", "useful", trade_date=previous)
+
+    # 文本（独立课题，先了解权限）
+    add("文本", "news", "optional", src="sina", start_date=dt_start, end_date=dt_end)
+    add("文本", "major_news", "optional", start_date=dt_start, end_date=dt_end)
+    add("文本", "irm_qa_sz", "uncertain", trade_date=previous)
+    add("文本", "irm_qa_sh", "uncertain", trade_date=previous)
+    add("文本", "research_report", "uncertain", trade_date=previous)
     return probes
 
 

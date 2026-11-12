@@ -4,7 +4,8 @@
 
 当前阶段：**M0（环境、权限探测、数据盘点）**。系统尚无任何可用策略结论。
 
-- 设计文档：[`docs/DESIGN.md`](docs/DESIGN.md)
+- 总体设计（正确性）：[`docs/DESIGN.md`](docs/DESIGN.md)
+- 研究蓝图（有效性）：[`docs/ALPHA_BLUEPRINT.md`](docs/ALPHA_BLUEPRINT.md)
 - 执行代理守则：[`AGENTS.md`](AGENTS.md)
 - 当前任务：[`tasks/`](tasks/)
 - 任务结果：`results/`
