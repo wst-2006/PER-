@@ -20,7 +20,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 MIN_INTERVAL_SECONDS = 0.35          # 两次调用的最小间隔
 RATE_LIMIT_WAIT_SECONDS = 61         # 被限流后的等待
-RATE_LIMIT_MARKERS = ("每分钟最多访问", "每小时最多访问", "每天最多访问", "访问频率")
+RATE_LIMIT_MARKERS = ("每分钟最多访问", "每小时最多访问", "每天最多访问", "访问频率", "频率超限")
 MAX_ERROR_CHARS = 300
 
 _last_call = 0.0

@@ -34,6 +34,23 @@ def test_call_retries_after_rate_limit():
     assert [api for api, _ in pro.calls] == ["daily", "daily"]
 
 
+def test_call_recognizes_real_tushare_rate_limit_text():
+    """T002 实测到的限流文案。"""
+    class LimitedOnce:
+        def __init__(self):
+            self.n = 0
+
+        def query(self, api, **params):
+            self.n += 1
+            if self.n == 1:
+                raise Exception("抱歉，您访问接口(stk_mins)频率超限(1次/分钟)，具体频次详情：https://tushare.pro/document/1?doc_id=108。")
+            return pd.DataFrame({"x": [1]})
+
+    waits = []
+    res = c.call(LimitedOnce(), "stk_mins", sleep=waits.append)
+    assert res["ok"] is True and res["rate_limited_times"] == 1 and c.RATE_LIMIT_WAIT_SECONDS in waits
+
+
 def test_call_gives_up_after_repeated_rate_limit():
     class AlwaysLimited:
         def query(self, api, **params):
@@ -130,3 +147,44 @@ def test_load_env_does_not_override(tmp_path, monkeypatch):
     monkeypatch.delenv("NEW_KEY", raising=False)
     c.load_env()
     assert os.environ["TUSHARE_TOKEN"] == "from_env" and os.environ["NEW_KEY"] == "quoted"
+
+
+def test_probe2_finds_first_date_and_flags_history(monkeypatch):
+    import tushare_probe2
+
+    class Pro(FakePro):
+        def _limit_list_d(self, **params):
+            if params["trade_date"] < "20200101":
+                return pd.DataFrame(columns=["ts_code", "trade_date"])
+            return pd.DataFrame({"ts_code": ["000001.SZ"], "trade_date": [params["trade_date"]]})
+
+        def _index_member_all(self, **params):
+            return pd.DataFrame({"ts_code": ["000001.SZ", "000001.SZ"], "in_date": ["19910403", "20140101"],
+                                 "out_date": ["20131231", None], "is_new": ["N", "Y"]})
+
+    report = tushare_probe2.run(Pro(deny={"hm_detail"}), sleep=NO_SLEEP, with_baostock=False)
+    assert report["status"] == "completed"
+    assert report["first_date_with_data"]["limit_list_d"] == "20200102"
+    assert report["first_date_with_data"]["hm_detail"] is None
+    assert report["first_date_with_data"]["cyq_perf"] == "20150105"
+    member = next(p for p in report["probes"] if p["api"] == "index_member_all")
+    assert member["extras"]["out_date_non_null"] == 1
+    keys = [(p["api"], json.dumps(p["params"], sort_keys=True)) for p in tushare_probe2.build_probes()]
+    assert len(keys) == len(set(keys))
+
+
+def test_probe2_baostock_absent_is_recorded_not_raised(monkeypatch):
+    import builtins
+
+    import tushare_probe2
+
+    real_import = builtins.__import__
+
+    def fake_import(name, *args, **kwargs):
+        if name == "baostock":
+            raise ModuleNotFoundError("No module named 'baostock'")
+        return real_import(name, *args, **kwargs)
+
+    monkeypatch.setattr(builtins, "__import__", fake_import)
+    out = tushare_probe2.probe_baostock()
+    assert out["installed"] is False and "baostock" in out["error"]

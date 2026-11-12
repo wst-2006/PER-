@@ -30,6 +30,6 @@
 
 ## 验收标准
 
-- `verify_integrity` 通过；pytest 全部通过（预期 12 个）。
+- `verify_integrity` 通过；pytest 全部通过。
 - `env.json` 中 `python_ok` 为 true，`duckdb_parquet_selfcheck.ok` 为 true。
 - 任何一项不满足：不要自行修改受保护文件去"修好"，把原始输出贴进报告。

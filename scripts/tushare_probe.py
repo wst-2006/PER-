@@ -159,7 +159,7 @@ def build_probes(recent: str, previous: str) -> list[dict[str, Any]]:
     add("预期与机构", "stk_surv", "useful", trade_date=previous)
     add("预期与机构", "top10_holders", "useful", ts_code=SAMPLE_STOCK)
     add("预期与机构", "top10_floatholders", "useful", ts_code=SAMPLE_STOCK)
-    add("预期与机构", "fund_portfolio", "optional", ts_code=SAMPLE_STOCK)
+    add("预期与机构", "fund_portfolio", "optional", ts_code="510300.SH")
     add("预期与机构", "hsgt_top10", "optional", trade_date=OLD_DATES["2019"])
     add("预期与机构", "hk_hold", "optional", trade_date=OLD_DATES["2019"])
     add("预期与机构", "fund_share", "optional", trade_date=previous)

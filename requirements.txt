@@ -1,5 +1,6 @@
 # Python 3.11 及以上（设计方在 3.13 上测试）
 tushare>=1.4
+six>=1.16          # tushare 1.4.29 运行时需要但未声明
 pandas>=2.2
 numpy>=1.26,<3
 pyarrow>=16
