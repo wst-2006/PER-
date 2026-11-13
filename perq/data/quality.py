@@ -12,7 +12,8 @@ THRESHOLDS = {
     "high_below_low_rows": 0,
     "close_outside_limit_rows": 0,
     "adj_factor_missing_rate": 0.001,
-    "limit_missing_rate": 0.02,
+    "limit_missing_rate": 0.005,
+    "max_yearly_limit_missing_rate": 0.02,
     "ret_mismatch_rate": 0.001,
     "min_yearly_median_coverage": 0.95,
     "fin_avail_before_period_end": 0,
@@ -63,6 +64,17 @@ def run(root: str | Path, memory_limit: str = "2GB", sample_mode: bool = False) 
             FROM {bars} WHERE ret IS NOT NULL AND ret_pc IS NOT NULL AND gap_days = 0""") or 0.0, 6),
             THRESHOLDS["ret_mismatch_rate"])
 
+        info["by_year"] = [
+            {"year": y, "rows": n, "limit_missing_rate": round(lm, 5), "st_share": round(st, 4),
+             "universe_median": int(u), "suspended_resume_rows": int(g), "open_at_up": int(ou), "open_at_down": int(od)}
+            for y, n, lm, st, u, g, ou, od in con.execute(f"""
+                WITH daily AS (SELECT trade_date, sum(CASE WHEN in_universe THEN 1 ELSE 0 END) AS u FROM {bars} GROUP BY 1)
+                SELECT b.year, count(*), avg(CASE WHEN limit_missing THEN 1.0 ELSE 0 END),
+                       avg(CASE WHEN is_st THEN 1.0 ELSE 0 END),
+                       (SELECT median(u) FROM daily d WHERE substr(d.trade_date, 1, 4) = CAST(b.year AS VARCHAR)),
+                       sum(CASE WHEN gap_days > 0 THEN 1 ELSE 0 END),
+                       sum(CASE WHEN open_at_up THEN 1 ELSE 0 END), sum(CASE WHEN open_at_down THEN 1 ELSE 0 END)
+                FROM {bars} b GROUP BY b.year ORDER BY b.year""").fetchall()]
         coverage = con.execute(f"""
             WITH per_day AS (SELECT trade_date, count(*) AS n FROM {bars} GROUP BY 1),
             expected AS (
@@ -77,23 +89,15 @@ def run(root: str | Path, memory_limit: str = "2GB", sample_mode: bool = False) 
         info["coverage_by_year"] = [
             {"year": y, "median": round(m, 4), "worst": round(w, 4), "worst_day": d, "days": n, "median_stocks": int(ms)}
             for y, m, w, d, n, ms in coverage]
+        gates["max_yearly_limit_missing_rate"] = _check(
+            max((row["limit_missing_rate"] for row in info["by_year"]), default=None),
+            THRESHOLDS["max_yearly_limit_missing_rate"])
         min_cov = min((row["median"] for row in info["coverage_by_year"]), default=None)
         if sample_mode:
             info["min_yearly_median_coverage"] = min_cov
         else:
             gates["min_yearly_median_coverage"] = _check(min_cov, THRESHOLDS["min_yearly_median_coverage"], True)
 
-        info["by_year"] = [
-            {"year": y, "rows": n, "limit_missing_rate": round(lm, 5), "st_share": round(st, 4),
-             "universe_median": int(u), "suspended_resume_rows": int(g), "open_at_up": int(ou), "open_at_down": int(od)}
-            for y, n, lm, st, u, g, ou, od in con.execute(f"""
-                WITH daily AS (SELECT trade_date, sum(CASE WHEN in_universe THEN 1 ELSE 0 END) AS u FROM {bars} GROUP BY 1)
-                SELECT b.year, count(*), avg(CASE WHEN limit_missing THEN 1.0 ELSE 0 END),
-                       avg(CASE WHEN is_st THEN 1.0 ELSE 0 END),
-                       (SELECT median(u) FROM daily d WHERE substr(d.trade_date, 1, 4) = CAST(b.year AS VARCHAR)),
-                       sum(CASE WHEN gap_days > 0 THEN 1 ELSE 0 END),
-                       sum(CASE WHEN open_at_up THEN 1 ELSE 0 END), sum(CASE WHEN open_at_down THEN 1 ELSE 0 END)
-                FROM {bars} b GROUP BY b.year ORDER BY b.year""").fetchall()]
         info["extreme_returns"] = {
             "abs_ret_over_31pct": one(f"SELECT count(*) FROM {bars} WHERE abs(ret_pc) > 0.31"),
             "worst": [list(r) for r in con.execute(

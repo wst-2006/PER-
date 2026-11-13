@@ -35,7 +35,7 @@ def main() -> int:
     suffix = "_sample" if args.sample else ""
     c.write_json(result_dir / f"curated_summary{suffix}.json", summary)
     c.write_json(result_dir / f"dq_report{suffix}.json", report)
-    c.write_run_meta(result_dir, started, {"task": args.task})
+    c.write_run_meta(result_dir, started, {"task": args.task}, name=f"run_meta_curated{suffix}.json")
     print(f"日线主表 {summary['bars']['rows']} 行，{summary['bars']['first_date']} 至 {summary['bars']['last_date']}")
     print(f"数据质量门禁：{'通过' if report['pass'] else '未通过'}")
     for name, gate in report["gates"].items():

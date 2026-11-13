@@ -2,19 +2,36 @@
 from __future__ import annotations
 
 import os
+import threading
 import time
 from typing import Any
 
 MIN_INTERVAL_SECONDS = 0.35
 RATE_LIMIT_WAIT_SECONDS = 61
 RATE_LIMIT_MARKERS = ("每分钟最多访问", "每小时最多访问", "每天最多访问", "访问频率", "频率超限")
+# 网络层错误（代理断开、超时）：等待后重试，不当作接口失败
+NETWORK_MARKERS = ("ProxyError", "ConnectionError", "ReadTimeout", "ConnectTimeout", "Max retries exceeded",
+                   "Read timed out", "RemoteDisconnected", "Connection aborted", "ChunkedEncodingError")
+NETWORK_BACKOFF_SECONDS = (10, 30, 60, 120, 300, 600)
 MAX_ERROR_CHARS = 300
 # 接口的单次返回上限都是整数（3000、5000、6000…）。返回行数恰为 PAGE_STEP 的整数倍时，
 # 视为可能被截断，继续向后翻页直到取空。
 PAGE_STEP = 500
 MAX_PAGES = 200
 
-_last_call = 0.0
+_next_slot = 0.0
+_slot_lock = threading.Lock()
+
+
+def _reserve_slot() -> float:
+    """多线程共用的限速器：返回本次调用还需要等待的秒数。"""
+    global _next_slot
+    with _slot_lock:
+        now = time.monotonic()
+        # 排队最多排 8 个间隔：防止（测试里常见的）不真正等待的调用把时间槽无限推后
+        slot = max(now, min(_next_slot, now + 8 * MIN_INTERVAL_SECONDS))
+        _next_slot = slot + MIN_INTERVAL_SECONDS
+        return slot - now
 
 
 def scrub(text: str) -> str:
@@ -25,29 +42,33 @@ def scrub(text: str) -> str:
     return text
 
 
-def call(pro: Any, api: str, *, sleep=time.sleep, max_rate_retries: int = 2, **params: Any) -> dict[str, Any]:
-    """调用一次接口，返回 {ok, df, error, elapsed, rate_limited_times}。"""
-    global _last_call
+def call(pro: Any, api: str, *, sleep=time.sleep, max_rate_retries: int = 2,
+         network_backoff: tuple[int, ...] = NETWORK_BACKOFF_SECONDS, **params: Any) -> dict[str, Any]:
+    """调用一次接口，返回 {ok, df, error, elapsed, rate_limited_times, network_retries}。"""
     rate_hits = 0
+    net_hits = 0
     while True:
-        wait = MIN_INTERVAL_SECONDS - (time.monotonic() - _last_call)
+        wait = _reserve_slot()
         if wait > 0:
             sleep(wait)
         started = time.monotonic()
         try:
             df = pro.query(api, **params)
-            _last_call = time.monotonic()
-            return {"ok": True, "df": df, "error": None,
-                    "elapsed": round(_last_call - started, 3), "rate_limited_times": rate_hits}
+            return {"ok": True, "df": df, "error": None, "elapsed": round(time.monotonic() - started, 3),
+                    "rate_limited_times": rate_hits, "network_retries": net_hits}
         except Exception as exc:  # noqa: BLE001
-            _last_call = time.monotonic()
             message = scrub(str(exc))[:MAX_ERROR_CHARS]
             if any(marker in message for marker in RATE_LIMIT_MARKERS) and rate_hits < max_rate_retries:
                 rate_hits += 1
                 sleep(RATE_LIMIT_WAIT_SECONDS)
                 continue
-            return {"ok": False, "df": None, "error": f"{type(exc).__name__}: {message}",
-                    "elapsed": round(_last_call - started, 3), "rate_limited_times": rate_hits}
+            text = f"{type(exc).__name__}: {message}"
+            if any(marker in text for marker in NETWORK_MARKERS) and net_hits < len(network_backoff):
+                sleep(network_backoff[net_hits])
+                net_hits += 1
+                continue
+            return {"ok": False, "df": None, "error": text, "elapsed": round(time.monotonic() - started, 3),
+                    "rate_limited_times": rate_hits, "network_retries": net_hits}
 
 
 def fetch_all(pro: Any, api: str, params: dict[str, Any], *, sleep=time.sleep) -> dict[str, Any]:

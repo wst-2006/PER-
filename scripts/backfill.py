@@ -28,7 +28,9 @@ def main() -> int:
     parser.add_argument("--tiers", default="1")
     parser.add_argument("--max-calls", type=int)
     parser.add_argument("--trial", type=int, help="试跑：每个数据集只拉最早和最近的 N 个分区")
-    parser.add_argument("--task", default="T006")
+    parser.add_argument("--priority", choices=["A", "B"], help="只拉 A 类（基线必需）或 B 类；不指定则全部，A 类在前")
+    parser.add_argument("--workers", type=int, default=4, help="并行拉取的数据集个数")
+    parser.add_argument("--task", default="T007")
     args = parser.parse_args()
 
     started = c.utc_now()
@@ -39,11 +41,13 @@ def main() -> int:
         only=[n.strip() for n in args.only.split(",")] if args.only else None,
         max_calls=args.max_calls,
         trial=args.trial,
+        priority=args.priority,
+        workers=args.workers,
     )
     result_dir = c.REPO_ROOT / "results" / args.task
-    suffix = "_trial" if (args.max_calls or args.trial) else ""
+    suffix = "_trial" if (args.max_calls or args.trial) else (f"_{args.priority}" if args.priority else "")
     c.write_json(result_dir / f"backfill_summary{suffix}.json", report)
-    c.write_run_meta(result_dir, started, {"task": args.task})
+    c.write_run_meta(result_dir, started, {"task": args.task}, name=f"run_meta_backfill{suffix}.json")
     failed = {k: v for k, v in report["datasets"].items() if v.get("failed") or v.get("skipped_after_failures")}
     print(f"\n完成：{report['calls']} 次调用，用时 {report['elapsed_seconds']} 秒；有失败的数据集 {len(failed)} 个")
     for name, stat in failed.items():

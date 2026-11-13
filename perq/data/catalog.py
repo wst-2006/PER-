@@ -39,6 +39,7 @@ class Dataset:
     check_column: str | None = None      # 返回数据里应当等于分区日期的列；None 表示不校验
     refresh_tail: int = 0                # 最近多少个分区在新的一天里重新拉取
     group: str = "行情"
+    priority: str = "A"                 # A：基线必需，先拉；B：其余，随后拉。两类最终都会拉全
 
 
 def _d(name: str, **kw: Any) -> Dataset:
@@ -109,7 +110,10 @@ def build_catalog() -> list[Dataset]:
     # ---- tier 2：历史太短或可由日线自行计算，暂不拉取 ----
     for name, group, start in (("limit_step", "涨停生态", "20230701"), ("moneyflow_ths", "资金行为", "20200101")):
         out.append(_d(name, mode="date", tier=2, start=start, check_column="trade_date", refresh_tail=3, group=group))
-    return out
+    core = {"daily", "adj_factor", "daily_basic", "stk_limit", "moneyflow", "namechange"}
+    from dataclasses import replace
+    return [d if (d.mode in ("snapshot", "period") or d.name in core or d.name.startswith("index_daily_"))
+            else replace(d, priority="B") for d in out]
 
 
 # ---------- 分区生成 ----------

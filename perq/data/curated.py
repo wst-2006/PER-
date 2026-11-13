@@ -21,6 +21,7 @@ BASIC_COLUMNS = ["turnover_rate", "turnover_rate_f", "volume_ratio", "pe_ttm", "
                  "total_share", "float_share", "free_share", "total_mv", "circ_mv"]
 FIN_TABLES = {"fin_income": "income_vip", "fin_balancesheet": "balancesheet_vip", "fin_cashflow": "cashflow_vip"}
 PRICE_EPS = 0.0005
+BSE_OPEN_DATE = "20211115"            # 北交所开市日；此前是新三板精选层，不是交易所行情
 UNIVERSE_MIN_LISTED_TDAYS = 120
 UNIVERSE_MIN_AMOUNT_MA20 = 3.0e7      # 元
 UNIVERSE_MIN_BARS_IN_20 = 15
@@ -88,7 +89,10 @@ def build_stocks(con: Any, store: RawStore, out: Path) -> int:
     """)
     con.execute("""
         CREATE OR REPLACE TABLE list_idx AS
-        SELECT s.ts_code, min(c.idx) AS list_idx FROM stocks s JOIN cal c ON c.cal_date >= s.list_date GROUP BY 1
+        SELECT s.ts_code, min(c.idx) AS list_idx
+        FROM stocks s JOIN cal c
+          ON c.cal_date >= CASE WHEN s.exchange = 'BSE' AND s.list_date < '20211115' THEN '20211115' ELSE s.list_date END
+        GROUP BY 1
     """)
     con.execute(f"COPY stocks TO '{(out / 'stocks.parquet').as_posix()}' (FORMAT PARQUET)")
     return con.execute("SELECT count(*) FROM stocks").fetchone()[0]
@@ -173,6 +177,7 @@ def build_bars(con: Any, store: RawStore, out: Path) -> dict[str, Any]:
             LEFT JOIN {lim} l USING (ts_code, trade_date)
             {basic_join}
             WHERE d.trade_date >= s.list_date
+              AND NOT (s.exchange = 'BSE' AND d.trade_date < '{BSE_OPEN_DATE}')
         ), w AS (
             SELECT j.*,
                    open * adj_factor AS adj_open, high * adj_factor AS adj_high,

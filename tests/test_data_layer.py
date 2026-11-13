@@ -367,3 +367,92 @@ def test_catalog_covers_industry_history_and_namechange_by_year():
     assert parts == [("2005", {"start_date": "20050101", "end_date": "20051231"}),
                      ("2006", {"start_date": "20060101", "end_date": "20060301"})]
     assert by["stk_surv"].start == "20220101" and by["hk_hold"].tier == 1 and by["limit_step"].tier == 2
+
+
+# ---------------- 第二批：T006 之后补的行为 ----------------
+
+def test_call_waits_out_network_errors_then_succeeds():
+    class Flaky:
+        def __init__(self):
+            self.n = 0
+
+        def query(self, api, **params):
+            self.n += 1
+            if self.n <= 3:
+                raise ConnectionError("HTTPConnectionPool(host='127.0.0.1', port=1): Read timed out.")
+            return pd.DataFrame({"x": [1]})
+
+    waits = []
+    res = client.call(Flaky(), "daily", sleep=waits.append)
+    assert res["ok"] and res["network_retries"] == 3
+    assert [w for w in waits if w >= 10] == [10, 30, 60]
+
+
+def test_call_gives_up_on_network_after_backoff_exhausted_but_not_on_permission_errors():
+    class Down:
+        def query(self, api, **params):
+            raise Exception("ProxyError: Max retries exceeded with url")
+
+    waits = []
+    res = client.call(Down(), "daily", sleep=waits.append, network_backoff=(1, 2))
+    assert not res["ok"] and res["network_retries"] == 2 and "ProxyError" in res["error"]
+
+    class Denied:
+        calls = 0
+
+        def query(self, api, **params):
+            Denied.calls += 1
+            raise Exception("抱歉，您没有接口访问权限")
+
+    assert not client.call(Denied(), "x", sleep=NO_SLEEP)["ok"] and Denied.calls == 1     # 权限错误不重试
+
+
+def test_empty_partition_in_tail_is_refetched_same_day(tmp_path):
+    store = RawStore(tmp_path)
+    ds = next(d for d in cat.build_catalog() if d.name == "daily")
+    days = ["20250106", "20250107", "20250108"]
+    today = pd.Timestamp.now(tz="UTC").strftime("%Y%m%d")
+    store.write("daily", "20250107", pd.DataFrame({"ts_code": ["a"], "trade_date": ["20250107"]}))
+    store.write("daily", "20250108", pd.DataFrame({"ts_code": []}))            # 盘中拉到空表
+    todo = [k for k, _ in backfill.pending(ds, store, days, today)]
+    assert todo == ["20250106", "20250108"]                                    # 今天拉过且有数据的不重拉，空的要重拉
+
+
+def test_backfill_parallel_matches_serial_and_orders_priority(tmp_path):
+    names = ["daily", "adj_factor", "suspend_d"]
+    serial = backfill.run(BackfillPro(), RawStore(tmp_path / "s"), today="20250108", only=names, workers=1,
+                          sleep=NO_SLEEP, log=lambda m: None)
+    parallel = backfill.run(BackfillPro(), RawStore(tmp_path / "p"), today="20250108", only=names, workers=3,
+                            sleep=NO_SLEEP, log=lambda m: None)
+    for name in ("daily", "adj_factor"):
+        assert parallel["datasets"][name]["rows"] == serial["datasets"][name]["rows"] > 0
+        assert RawStore(tmp_path / "p").summary(name)["partitions"] == RawStore(tmp_path / "s").summary(name)["partitions"]
+    by = {d.name: d.priority for d in cat.build_catalog()}
+    assert by["daily"] == "A" and by["income_vip_rt5"] == "A" and by["suspend_d"] == "B" and by["report_rc"] == "B"
+    only_a = backfill.run(BackfillPro(), RawStore(tmp_path / "a"), today="20250108", only=names, priority="A",
+                          sleep=NO_SLEEP, log=lambda m: None)
+    assert "suspend_d" not in only_a["datasets"] and "daily" in only_a["datasets"]
+
+
+def test_bse_rows_before_exchange_opened_are_dropped(tmp_path):
+    store = RawStore(tmp_path)
+    cal = pd.date_range("2021-10-01", "2021-12-31")
+    store.write("trade_cal", "x", pd.DataFrame({"cal_date": cal.strftime("%Y%m%d"), "is_open": [int(d.weekday() < 5) for d in cal]}))
+    store.write("stock_basic_L", "x", pd.DataFrame({"ts_code": ["920000.BJ"], "name": ["x"], "market": ["北交所"], "exchange": ["BSE"],
+                                                    "list_status": ["L"], "list_date": ["20200727"], "delist_date": [None]}))
+    days = [d.strftime("%Y%m%d") for d in pd.bdate_range("2021-11-01", "2021-11-30")]
+    for day in days:
+        store.write("daily", day, pd.DataFrame({"ts_code": ["920000.BJ"], "trade_date": [day], "open": [5.0], "high": [5.0], "low": [5.0],
+                                                "close": [5.0], "pre_close": [5.0], "pct_chg": [0.0], "vol": [1.0], "amount": [1.0]}))
+        store.write("adj_factor", day, pd.DataFrame({"ts_code": ["920000.BJ"], "trade_date": [day], "adj_factor": [1.0]}))
+        if day >= "20211115":                                  # 精选层时期没有涨跌停价
+            store.write("stk_limit", day, pd.DataFrame({"ts_code": ["920000.BJ"], "trade_date": [day], "up_limit": [6.5], "down_limit": [3.5]}))
+    curated.build_all(tmp_path, memory_limit="1GB", threads=2)
+    con = duckdb.connect()
+    first, missing, listed = con.execute(f"""SELECT min(trade_date), sum(limit_missing::INT), min(listed_tdays)
+        FROM read_parquet('{(tmp_path / 'curated' / 'bars').as_posix()}/*/*.parquet', hive_partitioning=true)""").fetchone()
+    assert first == "20211115" and missing == 0 and listed == 0     # 上市天数从北交所开市日算起
+
+
+def test_quality_gate_checks_limit_missing_per_year():
+    assert quality.THRESHOLDS["limit_missing_rate"] == 0.005 and quality.THRESHOLDS["max_yearly_limit_missing_rate"] == 0.02

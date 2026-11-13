@@ -1,43 +1,83 @@
 # T007 全量回填与整理层
 
-**前置**：设计方已确认 T006 的结果，并明确通知可以开始。`git pull` 后 `verify_integrity` 通过。
+**前置**：设计方已确认 T006（确认记录见本文件末尾）。`git pull` 后 `python tools/verify_integrity.py` 通过，`python -m pytest -q` 全部通过。
 
-**目的**：把 2015 年以来的全部数据拉进原始层，重建整理层，跑数据质量检查。
+测试的临时目录问题已修复：现在每次运行使用 `logs/pytest_tmp/` 下一个全新的目录，不再删除旧目录，直接运行 `python -m pytest -q` 即可，不需要额外参数。
 
-## 步骤
+**目的**：把 2015 年以来的全部数据拉进原始层，重建整理层，生成标签，跑数据质量检查。全部数据都要拉，只是分两段：先拉基线必需的 A 类并立即交付，再拉其余的 B 类。
 
-1. 全量回填。预计 6 万到 8 万次调用，需要 8 到 15 小时，建议晚上跑：
-   ```powershell
-   .venv\Scripts\python.exe scripts/backfill.py --task T007
-   ```
-   - 可以随时中断（Ctrl+C 或关机）。重新执行同一条命令会从断点继续，已拉取的分区不会重复拉。
-   - 每 200 个分区打印一行进度。
-   - 某个数据集连续失败 15 次会被跳过，其他数据集继续。
-   - 跑完后**再执行一次**同一条命令，把第一遍里零星失败的分区补上。两次的 `backfill_summary.json` 以最后一次为准。
-2. 运行前关闭不必要的程序，然后重建整理层并做质量检查：
-   ```powershell
-   .venv\Scripts\python.exe scripts/build_curated.py --task T007
-   ```
-   如果报内存不足，改用 `--memory 1500MB --threads 2` 重试。
-3. 生成标签：
-   ```powershell
-   .venv\Scripts\python.exe scripts/build_labels.py --task T007
-   ```
+## 开始前
 
-## 提交
+1. **网络**。T006 中出现过代理中断和单次调用 4 秒以上的情况。Tushare 是国内服务，不需要走代理。请提醒用户在代理软件里给 `api.waditu.com` 和 `tushare.pro` 设置直连规则，或在回填期间关闭代理。这一步由用户操作，你不要修改系统或代理配置。
+2. **时间**。尽量在交易日 18:00 之后开始，这样当天的数据已经生成。盘中开始也可以：空分区会在下次运行时自动重拉。
+3. 关闭不必要的程序。
 
-- `results/T007/` 下的 `backfill_summary.json`、`curated_summary.json`、`dq_report.json`、`labels_summary.json`、`run_meta.json`、`REPORT.md`
-- 提交信息：`T007: 全量回填与数据质量报告`
-- 不提交任何数据文件。
+## 第一段：A 类（日线、复权、每日指标、涨跌停价、资金流、财务报表、指数、行业、曾用名）
+
+约 1.5 万次调用。
+
+```powershell
+.venv\Scripts\python.exe scripts/backfill.py --priority A --workers 4 --task T007
+```
+
+- 可以随时中断，重新执行同一条命令会从断点继续。
+- 网络错误会自动等待重试（10 秒到 10 分钟，逐次加长），不需要人工干预。
+- 跑完后**再执行一次**同一条命令补零星失败，直到输出里"有失败的数据集 0 个"或连续两次结果不变。
+
+然后重建整理层、生成标签、做质量检查：
+
+```powershell
+.venv\Scripts\python.exe scripts/build_curated.py --task T007
+.venv\Scripts\python.exe scripts/build_labels.py --task T007
+```
+
+内存不足时两条命令都加 `--memory 1500MB --threads 2`。
+
+**第一段完成后立即提交推送**（提交信息 `T007a: A 类回填与数据质量报告`），并告诉用户。设计方会据此开始下一阶段，不必等第二段。
+
+## 第二段：B 类（龙虎榜、融资融券、大宗、筹码、涨停榜、公司事件、盈利预测、概念指数、衍生品等）
+
+约 5 万次调用，可以分几个晚上跑。
+
+```powershell
+.venv\Scripts\python.exe scripts/backfill.py --priority B --workers 4 --task T007
+```
+
+同样跑到没有失败为止。完成后提交推送（`T007b: B 类回填`）。B 类不需要重建整理层。
+
+## 提交内容
+
+`results/T007/` 下：
+
+- 第一段：`backfill_summary_A.json`、`curated_summary.json`、`dq_report.json`、`labels_summary.json`、`run_meta_*.json`、`REPORT.md`
+- 第二段：`backfill_summary_B.json`，并在 `REPORT.md` 里追加一节
+
+不提交任何数据文件。
 
 ## 报告中请列出
 
-1. 回填总调用次数、总耗时、中断过几次。
-2. 原始层占用的磁盘空间（`PERQ_DATA_DIR\raw` 目录大小）和整理层大小。
-3. 仍然失败或被跳过的数据集及错误原文。
-4. 八项质量门禁的结果。**门禁不通过不算任务失败**，照实报告，由设计方判断是数据问题还是阈值问题。
+1. 每一段的总调用次数、总耗时、中断次数、平均每次调用耗时。
+2. `PERQ_DATA_DIR\raw` 与 `PERQ_DATA_DIR\curated`、`labels` 各自的磁盘占用。
+3. 仍然失败或被跳过的数据集及错误原文；`truncation_suspected` 不为空的数据集。
+4. 全部质量门禁的结果，以及 `dq_report.json` 里 `info.financials` 的原文。**门禁不通过不算任务失败**，照实报告，由设计方判断。
+5. `curated_summary.json` 里的 `industry_missing_rate` 和 `industry_backfilled_rate`。
 
 ## 严格禁止
 
 - 不要手工删除或修改 `PERQ_DATA_DIR` 下的任何文件。
 - 不要为了让门禁通过而修改阈值或代码。
+
+---
+
+## 设计方对 T006 的确认（2026-11-13）
+
+T006 通过，可以开始 T007。对报告中四个隐患的处理：
+
+1. **测试临时目录**：已修复，见上。
+2. **盘中空分区**：已修复。最近几个分区如果是空的，每次运行都会重拉，不再等到第二天。
+3. **2021 年涨跌停价缺失率超标**：查明原因是北交所 2021-11-15 开市之前的"精选层"行情混了进来，那段时间没有涨跌停价。处理方式是收紧而不是放宽：北交所开市日之前的记录一律剔除；门禁改为全样本阈值 0.5%（原 2%）并**新增按年检查**。样本上修复后各年缺失率均为 0。
+4. **财务可用日**：
+   - "晚于报告期 400 天以上"的记录是财报的修订版本，属于正常数据，系统按它们各自的公布日期使用。
+   - "缺原始版本"的报告期约占 2.3%。现行规则是取公告日与实际公告日中较晚的一个，所以**不会偷看未来**，代价是这部分财报要晚到修订公布才可用。全量回填会同时拉取"调整前"口径，拿到后再决定如何补回原始版本。
+
+另外新增：网络错误自动退避重试、多数据集并行拉取、A 类优先。

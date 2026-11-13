@@ -15,4 +15,3 @@ __pycache__/
 
 # 运行产物
 logs/
-.pytest_tmp/

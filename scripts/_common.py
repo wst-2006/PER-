@@ -62,7 +62,8 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, default=str) + "\n", encoding="utf-8")
 
 
-def write_run_meta(result_dir: Path, started_at: datetime, extra: dict[str, Any] | None = None) -> None:
+def write_run_meta(result_dir: Path, started_at: datetime, extra: dict[str, Any] | None = None,
+                   name: str = "run_meta.json") -> None:
     try:
         import psutil
 
@@ -80,7 +81,7 @@ def write_run_meta(result_dir: Path, started_at: datetime, extra: dict[str, Any]
     }
     if extra:
         meta.update(extra)
-    write_json(result_dir / "run_meta.json", meta)
+    write_json(result_dir / name, meta)
 
 
 def utc_now() -> datetime:
