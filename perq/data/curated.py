@@ -96,16 +96,15 @@ def build_stocks(con: Any, store: RawStore, out: Path) -> int:
 
 def _build_name_flags(con: Any, store: RawStore) -> None:
     """由曾用名记录展开出每个交易日的 ST 与退市整理标记。"""
-    path = _latest_snapshot(store, "namechange")
-    if path is None:
+    if not store.has_data("namechange"):
         con.execute("CREATE OR REPLACE TABLE name_flags (ts_code VARCHAR, trade_date VARCHAR, is_st BOOLEAN, is_delisting BOOLEAN)")
         return
     con.execute(f"""
         CREATE OR REPLACE TABLE name_flags AS
         WITH iv AS (
-            SELECT {_s('ts_code')} AS ts_code, {_s('name')} AS name, {_s('start_date')} AS start_date,
+            SELECT DISTINCT {_s('ts_code')} AS ts_code, {_s('name')} AS name, {_s('start_date')} AS start_date,
                    COALESCE({_s('end_date')}, '99991231') AS end_date
-            FROM read_parquet('{path}')
+            FROM read_parquet('{store.glob('namechange')}', union_by_name=true)
             WHERE {_s('start_date')} IS NOT NULL AND ({_s('name')} LIKE '%ST%' OR {_s('name')} LIKE '%退%')
         )
         SELECT iv.ts_code, c.cal_date AS trade_date,
@@ -113,6 +112,30 @@ def _build_name_flags(con: Any, store: RawStore) -> None:
         FROM iv JOIN cal c ON c.cal_date BETWEEN iv.start_date AND iv.end_date
         GROUP BY 1, 2
     """)
+
+
+def build_industry(con: Any, store: RawStore, out: Path) -> int:
+    """申万行业的历史归属区间。没有任何行业数据时建一张空表。"""
+    files = []
+    for folder in sorted(store.raw.glob("sw_member_*")):
+        key = sorted(k for k, e in store.entries(folder.name).items() if e["status"] == "ok")
+        if key:
+            files.append(store.path(folder.name, key[-1]).as_posix())
+    if not files:
+        con.execute("""CREATE OR REPLACE TABLE industry (ts_code VARCHAR, l1_code VARCHAR, l1_name VARCHAR,
+                       l2_code VARCHAR, l2_name VARCHAR, in_date VARCHAR, out_date VARCHAR)""")
+    else:
+        listing = ", ".join(f"'{f}'" for f in files)
+        con.execute(f"""
+            CREATE OR REPLACE TABLE industry AS
+            SELECT DISTINCT {_s('ts_code')} AS ts_code, {_s('l1_code')} AS l1_code, {_s('l1_name')} AS l1_name,
+                   {_s('l2_code')} AS l2_code, {_s('l2_name')} AS l2_name,
+                   {_s('in_date')} AS in_date, {_s('out_date')} AS out_date
+            FROM read_parquet([{listing}], union_by_name=true)
+            WHERE {_s('ts_code')} IS NOT NULL AND {_s('in_date')} IS NOT NULL
+        """)
+    con.execute(f"COPY industry TO '{(out / 'industry.parquet').as_posix()}' (FORMAT PARQUET)")
+    return con.execute("SELECT count(*) FROM industry").fetchone()[0]
 
 
 def _dedup(store: RawStore, name: str, columns: str) -> str:
@@ -183,6 +206,28 @@ def build_bars(con: Any, store: RawStore, out: Path) -> dict[str, Any]:
                substr(w.trade_date, 1, 4) AS year
         FROM w LEFT JOIN name_flags n USING (ts_code, trade_date)
     """)
+    # 行业：取"纳入日期不晚于当日"的最近一条记录；该记录已在当日之前剔除、或当日早于第一条记录时，
+    # 退回到这只股票最早的一条记录，并打上回填标记（只影响行业归属，不影响价格）。
+    con.execute("""
+        CREATE OR REPLACE TABLE bars AS
+        WITH first_ind AS (
+            SELECT ts_code, arg_min(l1_code, in_date) AS l1_code, arg_min(l1_name, in_date) AS l1_name,
+                   arg_min(l2_code, in_date) AS l2_code FROM industry GROUP BY 1
+        ), hit AS (
+            SELECT b.ts_code, b.trade_date, i.l1_code, i.l1_name, i.l2_code, i.out_date
+            FROM bars b ASOF LEFT JOIN industry i ON b.ts_code = i.ts_code AND b.trade_date >= i.in_date
+        )
+        SELECT b.*,
+               CASE WHEN h.l1_code IS NOT NULL AND (h.out_date IS NULL OR h.out_date > b.trade_date)
+                    THEN h.l1_code ELSE f.l1_code END AS sw_l1,
+               CASE WHEN h.l1_code IS NOT NULL AND (h.out_date IS NULL OR h.out_date > b.trade_date)
+                    THEN h.l1_name ELSE f.l1_name END AS sw_l1_name,
+               CASE WHEN h.l1_code IS NOT NULL AND (h.out_date IS NULL OR h.out_date > b.trade_date)
+                    THEN h.l2_code ELSE f.l2_code END AS sw_l2,
+               NOT (h.l1_code IS NOT NULL AND (h.out_date IS NULL OR h.out_date > b.trade_date))
+                    AND f.l1_code IS NOT NULL AS sw_backfilled
+        FROM bars b LEFT JOIN hit h USING (ts_code, trade_date) LEFT JOIN first_ind f USING (ts_code)
+    """)
     target = out / "bars"
     if target.exists():
         shutil.rmtree(target)
@@ -192,7 +237,9 @@ def build_bars(con: Any, store: RawStore, out: Path) -> dict[str, Any]:
     rows, first, last = con.execute("SELECT count(*), min(trade_date), max(trade_date) FROM bars").fetchone()
     return {"rows": rows, "first_date": first, "last_date": last, "raw_daily_rows": raw_rows,
             "dropped_before_listing_or_off_calendar": raw_rows - orphan - rows, "orphan_rows": orphan,
-            "has_daily_basic": bool(basic_cols), "has_namechange": _latest_snapshot(store, "namechange") is not None}
+            "has_daily_basic": bool(basic_cols), "has_namechange": store.has_data("namechange"),
+            "industry_missing_rate": round(con.execute("SELECT avg((sw_l1 IS NULL)::INT) FROM bars").fetchone()[0] or 0.0, 5),
+            "industry_backfilled_rate": round(con.execute("SELECT avg(sw_backfilled::INT) FROM bars").fetchone()[0] or 0.0, 5)}
 
 
 def build_financials(con: Any, store: RawStore, out: Path) -> dict[str, Any]:
@@ -244,6 +291,7 @@ def build_all(root: str | Path, memory_limit: str = "2GB", threads: int = 4) -> 
     con = connect(root, memory_limit, threads)
     try:
         summary = {"calendar_days": build_calendar(con, store, out), "stocks": build_stocks(con, store, out)}
+        summary["industry_rows"] = build_industry(con, store, out)
         summary["bars"] = build_bars(con, store, out)
         summary["financials"] = build_financials(con, store, out)
     finally:

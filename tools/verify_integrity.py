@@ -23,6 +23,7 @@ PROTECTED_GLOBS = (
     "scripts/**/*.py",
     "tasks/*.md",
     "requirements.txt",
+    "pytest.ini",
     ".gitattributes",
 )
 

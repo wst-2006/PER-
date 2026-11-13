@@ -199,7 +199,14 @@ def market(tmp_path):
     store.write("stock_basic_D", "20250101", pd.DataFrame({
         "ts_code": ["B.BJ"], "name": ["乙退"], "market": [None], "exchange": ["BSE"],
         "list_status": ["D"], "list_date": ["20240201"], "delist_date": ["20241220"]}))
-    store.write("namechange", "20250101", pd.DataFrame({
+    store.write("sw_member_801080_Y", "20250101", pd.DataFrame({
+        "ts_code": ["A.SZ", "B.BJ"], "l1_code": ["801080.SI", "801750.SI"], "l1_name": ["电子", "计算机"],
+        "l2_code": ["801081.SI", "801101.SI"], "l2_name": ["半导体", "软件"], "in_date": ["20240701", "20240201"],
+        "out_date": [None, None], "is_new": ["Y", "Y"]}))
+    store.write("sw_member_801780_N", "20250101", pd.DataFrame({
+        "ts_code": ["A.SZ"], "l1_code": ["801780.SI"], "l1_name": ["银行"], "l2_code": ["801783.SI"], "l2_name": ["股份行"],
+        "in_date": ["20200101"], "out_date": ["20240701"], "is_new": ["N"]}))
+    store.write("namechange", "2024", pd.DataFrame({
         "ts_code": ["B.BJ", "B.BJ", "B.BJ"], "name": ["乙股份", "ST乙", "乙退"],
         "start_date": ["20240201", "20240506", "20241101"], "end_date": ["20240505", "20241031", None]}))
 
@@ -340,3 +347,23 @@ def test_backfill_trial_takes_oldest_and_newest_partitions(tmp_path):
     assert rep["trial"] == 2 and rep["datasets"]["daily"]["fetched"] == 4
     keys = sorted(k for k in store.entries("daily"))
     assert keys == ["20241220", "20241223", "20250107", "20250108"]
+
+
+def test_industry_is_assigned_as_of_date(market):
+    _, summary, con = market
+    q = lambda code, day: con.execute(f"SELECT sw_l1_name, sw_backfilled FROM bars WHERE ts_code='{code}' AND trade_date='{day}'").fetchone()  # noqa: E731
+    assert q("A.SZ", "20240628") == ("银行", False)       # 6 月底还在旧行业
+    assert q("A.SZ", "20240701") == ("电子", False)       # 7 月 1 日起换到新行业
+    assert q("B.BJ", "20240301") == ("计算机", False)
+    assert q("C.SH", "20240301") == (None, False)          # 没有任何行业记录
+    assert summary["industry_rows"] == 3 and 0 < summary["bars"]["industry_missing_rate"] < 1
+
+
+def test_catalog_covers_industry_history_and_namechange_by_year():
+    by = {d.name: d for d in cat.build_catalog()}
+    assert by["sw_member_801780_N"].params == {"l1_code": "801780.SI", "is_new": "N"}
+    assert len([n for n in by if n.startswith("sw_member_")]) == 62
+    parts = cat.partitions(by["namechange"], [], "20060301")
+    assert parts == [("2005", {"start_date": "20050101", "end_date": "20051231"}),
+                     ("2006", {"start_date": "20060101", "end_date": "20060301"})]
+    assert by["stk_surv"].start == "20220101" and by["hk_hold"].tier == 1 and by["limit_step"].tier == 2

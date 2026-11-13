@@ -50,10 +50,11 @@ def load(sample_dir: Path, out: Path, snapshot_key: str = "20260101") -> dict[st
         for status, part in basic.groupby("list_status"):
             store.write(f"stock_basic_{status}", snapshot_key, part.reset_index(drop=True))
         counts["stock_basic"] = len(basic)
-    for source, target in (("trade_cal", "trade_cal"), ("stock_namechange", "namechange")):
+    for source, target, key in (("trade_cal", "trade_cal", snapshot_key), ("stock_namechange", "namechange", "sample"),
+                                ("stock_sw_member", "sw_member_sample_Y", snapshot_key)):
         frame = read(source)
         if frame is not None:
-            store.write(target, snapshot_key, frame)
+            store.write(target, key, frame)
             counts[target] = len(frame)
     return counts
 

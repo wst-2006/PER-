@@ -17,7 +17,7 @@
    .venv\Scripts\python.exe scripts/build_labels.py --data-dir E:\perq_data\_sample --task T006 --suffix _sample
    ```
    路径里的 `E:\perq_data` 换成你实际的 `PERQ_DATA_DIR`。
-3. 采集试跑：每个数据集只拉最早和最近的 2 个分区，约 250 次调用：
+3. 采集试跑：每个数据集只拉最早和最近的 2 个分区，约 400 次调用：
    ```powershell
    .venv\Scripts\python.exe scripts/backfill.py --trial 2 --task T006
    ```
@@ -34,6 +34,8 @@
 2. 第 3 步中 `failed` 大于 0 或 `skipped_after_failures` 为真的数据集，逐个写出数据集名和 `last_error` 原文。
 3. `truncation_suspected` 大于 0 的数据集。
 4. 对每个失败的数据集，如果错误是"参数错误"或"返回日期与请求不一致"，请在 Tushare 官方文档里查到该接口正确的参数写法，抄进报告。不要改代码。
+
+5. 申万一级行业代码是设计方手写的 31 个（见 `perq/data/catalog.py` 的 `SW_L1_CODES`）。请用 `index_classify_SW2021` 这次拉到的一级行业列表核对：有没有写错或漏掉的代码，把差异写进报告。
 
 ## 完成后
 

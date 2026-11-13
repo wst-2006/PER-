@@ -18,6 +18,11 @@ from typing import Any
 BARS_START = "20150101"
 FIN_START_PERIOD = "20121231"
 BASIC_FIELDS = "ts_code,symbol,name,area,industry,market,exchange,list_status,list_date,delist_date,is_hs"
+# 申万 2021 版一级行业。历史成分按"当前成分（Y）+ 已剔除成分（N）"两次拉取后合并。
+SW_L1_CODES = ["801010", "801030", "801040", "801050", "801080", "801110", "801120", "801130", "801140", "801150",
+               "801160", "801170", "801180", "801200", "801210", "801230", "801710", "801720", "801730", "801740",
+               "801750", "801760", "801770", "801780", "801790", "801880", "801890", "801950", "801960", "801970",
+               "801980"]
 INDEX_CODES = ["000001.SH", "000300.SH", "000905.SH", "000852.SH", "932000.CSI", "399001.SZ", "399006.SZ",
                "000688.SH", "899050.BJ", "000016.SH", "399303.SZ"]
 
@@ -48,7 +53,10 @@ def build_catalog() -> list[Dataset]:
     for status in ("L", "D", "P"):
         out.append(_d(f"stock_basic_{status}", api="stock_basic", mode="snapshot",
                       params={"exchange": "", "list_status": status, "fields": BASIC_FIELDS}, group="基础"))
-    out.append(_d("namechange", mode="snapshot", group="基础"))
+    for code in SW_L1_CODES:
+        for is_new in ("Y", "N"):
+            out.append(_d(f"sw_member_{code}_{is_new}", api="index_member_all", mode="snapshot",
+                          params={"l1_code": f"{code}.SI", "is_new": is_new}, group="行业指数"))
     for src in ("SW2021", "SW2014"):
         out.append(_d(f"index_classify_{src}", api="index_classify", mode="snapshot", params={"src": src}, group="行业指数"))
 
@@ -88,11 +96,19 @@ def build_catalog() -> list[Dataset]:
         out.append(_d(f"index_daily_{code.replace('.', '_')}", api="index_daily", mode="year", start="20140101",
                       params={"ts_code": code}, refresh_tail=1, group="行业指数"))
     out.append(_d("shibor", mode="year", refresh_tail=1, group="宏观衍生品"))
+    # 曾用名（ST 与退市整理的历史）：按公告日期区间取，2005 年起，覆盖 2015 年时仍然生效的名称
+    out.append(_d("namechange", mode="year", start="20050101", refresh_tail=1, group="基础"))
 
-    # ---- tier 2：等 T005 确认 ----
-    for name, group in (("ths_daily", "关系网络"), ("stk_surv", "分析师预期"), ("hk_hold", "资金行为"),
-                        ("limit_step", "涨停生态"), ("hm_detail", "涨停生态")):
-        out.append(_d(name, mode="date", tier=2, start="20200101", check_column="trade_date", refresh_tail=3, group=group))
+    # ---- T005 确认了起点的数据 ----
+    for name, group, start in (("ths_daily", "关系网络", "20150101"), ("hk_hold", "资金行为", "20170101"),
+                               ("stk_surv", "分析师预期", "20220101"), ("hm_detail", "涨停生态", "20230101"),
+                               ("stock_st", "基础", "20160101")):
+        out.append(_d(name, mode="date", start=start, check_column="trade_date", refresh_tail=3, group=group))
+    out.append(_d("opt_daily_sse", api="opt_daily", mode="date", start="20150209", params={"exchange": "SSE"},
+                  check_column="trade_date", refresh_tail=3, group="宏观衍生品"))
+    # ---- tier 2：历史太短或可由日线自行计算，暂不拉取 ----
+    for name, group, start in (("limit_step", "涨停生态", "20230701"), ("moneyflow_ths", "资金行为", "20200101")):
+        out.append(_d(name, mode="date", tier=2, start=start, check_column="trade_date", refresh_tail=3, group=group))
     return out
 
 
