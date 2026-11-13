@@ -1,0 +1,25 @@
+{
+  "rows": 75287,
+  "entry_ok_rate": 0.99154,
+  "h5": {
+    "labelled": 74450,
+    "mean_fwd": 0.001818,
+    "exit_delayed_rate": 0.00171,
+    "exit_blocked_rate": 0.00418,
+    "terminal": 18
+  },
+  "h10": {
+    "labelled": 74250,
+    "mean_fwd": 0.003478,
+    "exit_delayed_rate": 0.00257,
+    "exit_blocked_rate": 0.00451,
+    "terminal": 37
+  },
+  "h20": {
+    "labelled": 73851,
+    "mean_fwd": 0.007389,
+    "exit_delayed_rate": 0.00348,
+    "exit_blocked_rate": 0.00454,
+    "terminal": 59
+  }
+}

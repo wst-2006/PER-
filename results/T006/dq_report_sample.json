@@ -1,0 +1,297 @@
+{
+  "pass": true,
+  "sample_mode": true,
+  "gates": {
+    "duplicate_keys": {
+      "value": 0,
+      "threshold": 0,
+      "pass": true
+    },
+    "nonpositive_price_rows": {
+      "value": 0,
+      "threshold": 0,
+      "pass": true
+    },
+    "high_below_low_rows": {
+      "value": 0,
+      "threshold": 0,
+      "pass": true
+    },
+    "close_outside_limit_rows": {
+      "value": 0,
+      "threshold": 0,
+      "pass": true
+    },
+    "adj_factor_missing_rate": {
+      "value": 0.0,
+      "threshold": 0.001,
+      "pass": true
+    },
+    "limit_missing_rate": {
+      "value": 0.002842,
+      "threshold": 0.02,
+      "pass": true
+    },
+    "ret_mismatch_rate": {
+      "value": 0.0,
+      "threshold": 0.001,
+      "pass": true
+    },
+    "fin_avail_before_period_end": {
+      "value": 0,
+      "threshold": 0,
+      "pass": true
+    }
+  },
+  "info": {
+    "rows": 75287,
+    "first_date": "20180102",
+    "last_date": "20261111",
+    "stocks": 44,
+    "coverage_by_year": [
+      {
+        "year": "2018",
+        "median": 0.0074,
+        "worst": 0.007,
+        "worst_day": "20181026",
+        "days": 243,
+        "median_stocks": 26
+      },
+      {
+        "year": "2019",
+        "median": 0.0077,
+        "worst": 0.0069,
+        "worst_day": "20190429",
+        "days": 244,
+        "median_stocks": 28
+      },
+      {
+        "year": "2020",
+        "median": 0.0077,
+        "worst": 0.0069,
+        "worst_day": "20200923",
+        "days": 243,
+        "median_stocks": 30
+      },
+      {
+        "year": "2021",
+        "median": 0.0078,
+        "worst": 0.0075,
+        "worst_day": "20210318",
+        "days": 243,
+        "median_stocks": 35
+      },
+      {
+        "year": "2022",
+        "median": 0.0076,
+        "worst": 0.0073,
+        "worst_day": "20220505",
+        "days": 242,
+        "median_stocks": 36
+      },
+      {
+        "year": "2023",
+        "median": 0.0075,
+        "worst": 0.0073,
+        "worst_day": "20230627",
+        "days": 242,
+        "median_stocks": 39
+      },
+      {
+        "year": "2024",
+        "median": 0.0077,
+        "worst": 0.0075,
+        "worst_day": "20240430",
+        "days": 242,
+        "median_stocks": 41
+      },
+      {
+        "year": "2025",
+        "median": 0.0074,
+        "worst": 0.0071,
+        "worst_day": "20251219",
+        "days": 243,
+        "median_stocks": 40
+      },
+      {
+        "year": "2026",
+        "median": 0.0072,
+        "worst": 0.0069,
+        "worst_day": "20260520",
+        "days": 206,
+        "median_stocks": 40
+      }
+    ],
+    "min_yearly_median_coverage": 0.0072,
+    "by_year": [
+      {
+        "year": 2018,
+        "rows": 6343,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0095,
+        "universe_median": 18,
+        "suspended_resume_rows": 12,
+        "open_at_up": 22,
+        "open_at_down": 17
+      },
+      {
+        "year": 2019,
+        "rows": 6830,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.1075,
+        "universe_median": 19,
+        "suspended_resume_rows": 8,
+        "open_at_up": 51,
+        "open_at_down": 28
+      },
+      {
+        "year": 2020,
+        "rows": 7271,
+        "limit_missing_rate": 0.00096,
+        "st_share": 0.1811,
+        "universe_median": 22,
+        "suspended_resume_rows": 10,
+        "open_at_up": 46,
+        "open_at_down": 65
+      },
+      {
+        "year": 2021,
+        "rows": 8392,
+        "limit_missing_rate": 0.02467,
+        "st_share": 0.114,
+        "universe_median": 24,
+        "suspended_resume_rows": 8,
+        "open_at_up": 57,
+        "open_at_down": 12
+      },
+      {
+        "year": 2022,
+        "rows": 8922,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0912,
+        "universe_median": 27,
+        "suspended_resume_rows": 2,
+        "open_at_up": 15,
+        "open_at_down": 17
+      },
+      {
+        "year": 2023,
+        "rows": 9517,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0687,
+        "universe_median": 30,
+        "suspended_resume_rows": 2,
+        "open_at_up": 25,
+        "open_at_down": 7
+      },
+      {
+        "year": 2024,
+        "rows": 9996,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.052,
+        "universe_median": 31,
+        "suspended_resume_rows": 2,
+        "open_at_up": 59,
+        "open_at_down": 85
+      },
+      {
+        "year": 2025,
+        "rows": 9804,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0562,
+        "universe_median": 36,
+        "suspended_resume_rows": 5,
+        "open_at_up": 34,
+        "open_at_down": 30
+      },
+      {
+        "year": 2026,
+        "rows": 8212,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0905,
+        "universe_median": 33,
+        "suspended_resume_rows": 5,
+        "open_at_up": 31,
+        "open_at_down": 61
+      }
+    ],
+    "extreme_returns": {
+      "abs_ret_over_31pct": 15,
+      "worst": [
+        [
+          "000004.SZ",
+          "20260623",
+          -0.8877,
+          true,
+          "主板"
+        ],
+        [
+          "600462.SH",
+          "20250624",
+          -0.8021,
+          true,
+          "主板"
+        ],
+        [
+          "300309.SZ",
+          "20230509",
+          -0.6429,
+          true,
+          "创业板"
+        ],
+        [
+          "688275.SH",
+          "20220929",
+          -0.2759,
+          false,
+          "科创板"
+        ],
+        [
+          "920000.BJ",
+          "20250407",
+          -0.2703,
+          false,
+          "北交所"
+        ]
+      ]
+    },
+    "financials": {
+      "fin_income": {
+        "present": true,
+        "rows": 2817,
+        "by_report_type": {
+          "1": 2817
+        },
+        "avail_before_period_end": 0,
+        "avail_over_400_days_after_period_end": 202,
+        "stock_periods_with_multiple_versions": 52,
+        "stock_periods": 2763,
+        "stock_periods_original_version_missing": 64
+      },
+      "fin_balancesheet": {
+        "present": true,
+        "rows": 2224,
+        "by_report_type": {
+          "1": 2224
+        },
+        "avail_before_period_end": 0,
+        "avail_over_400_days_after_period_end": 119,
+        "stock_periods_with_multiple_versions": 39,
+        "stock_periods": 2182,
+        "stock_periods_original_version_missing": 43
+      },
+      "fin_cashflow": {
+        "present": true,
+        "rows": 2456,
+        "by_report_type": {
+          "1": 2456
+        },
+        "avail_before_period_end": 0,
+        "avail_over_400_days_after_period_end": 150,
+        "stock_periods_with_multiple_versions": 30,
+        "stock_periods": 2425,
+        "stock_periods_original_version_missing": 41
+      }
+    }
+  }
+}

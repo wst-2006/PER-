@@ -1,0 +1,46 @@
+{
+  "calendar_days": 3126,
+  "stocks": 5923,
+  "industry_rows": 44,
+  "bars": {
+    "rows": 75287,
+    "first_date": "20180102",
+    "last_date": "20261111",
+    "raw_daily_rows": 75638,
+    "dropped_before_listing_or_off_calendar": 351,
+    "orphan_rows": 0,
+    "has_daily_basic": true,
+    "has_namechange": true,
+    "industry_missing_rate": 0.0,
+    "industry_backfilled_rate": 0.14164
+  },
+  "financials": {
+    "fin_income": {
+      "rows": 2817,
+      "stock_periods": 2763,
+      "first_period": "19921231",
+      "last_period": "20260930",
+      "variants": [
+        "income_vip_rt1"
+      ]
+    },
+    "fin_balancesheet": {
+      "rows": 2224,
+      "stock_periods": 2182,
+      "first_period": "20071231",
+      "last_period": "20260930",
+      "variants": [
+        "balancesheet_vip_rt1"
+      ]
+    },
+    "fin_cashflow": {
+      "rows": 2456,
+      "stock_periods": 2425,
+      "first_period": "20051231",
+      "last_period": "20260930",
+      "variants": [
+        "cashflow_vip_rt1"
+      ]
+    }
+  }
+}
