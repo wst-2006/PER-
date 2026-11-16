@@ -1,0 +1,58 @@
+{
+  "calendar_days": 9040,
+  "stocks": 5923,
+  "industry_rows": 7928,
+  "bars": {
+    "rows": 11847540,
+    "first_date": "20150105",
+    "last_date": "20261113",
+    "raw_daily_rows": 11942876,
+    "dropped_before_listing_or_off_calendar": 91071,
+    "orphan_rows": 4265,
+    "limit_inconsistent_rows": 11,
+    "orphan_codes": [
+      "300114.SZ",
+      "000043.SZ",
+      "000022.SZ"
+    ],
+    "has_daily_basic": true,
+    "has_namechange": true,
+    "industry_missing_rate": 0.0,
+    "industry_backfilled_rate": 0.00996
+  },
+  "financials": {
+    "fin_income": {
+      "rows": 515565,
+      "stock_periods": 267521,
+      "first_period": "20121231",
+      "last_period": "20260930",
+      "variants": [
+        "income_vip_rt1",
+        "income_vip_rt4",
+        "income_vip_rt5"
+      ]
+    },
+    "fin_balancesheet": {
+      "rows": 327478,
+      "stock_periods": 258076,
+      "first_period": "20121231",
+      "last_period": "20260930",
+      "variants": [
+        "balancesheet_vip_rt1",
+        "balancesheet_vip_rt4",
+        "balancesheet_vip_rt5"
+      ]
+    },
+    "fin_cashflow": {
+      "rows": 420081,
+      "stock_periods": 249971,
+      "first_period": "20121231",
+      "last_period": "20260930",
+      "variants": [
+        "cashflow_vip_rt1",
+        "cashflow_vip_rt4",
+        "cashflow_vip_rt5"
+      ]
+    }
+  }
+}

@@ -1,0 +1,451 @@
+{
+  "pass": true,
+  "sample_mode": false,
+  "gates": {
+    "duplicate_keys": {
+      "value": 0,
+      "threshold": 0,
+      "pass": true
+    },
+    "nonpositive_price_rows": {
+      "value": 0,
+      "threshold": 0,
+      "pass": true
+    },
+    "high_below_low_rows": {
+      "value": 0,
+      "threshold": 0,
+      "pass": true
+    },
+    "close_outside_limit_rows": {
+      "value": 0,
+      "threshold": 0,
+      "pass": true
+    },
+    "adj_factor_missing_rate": {
+      "value": 0.0,
+      "threshold": 0.001,
+      "pass": true
+    },
+    "limit_missing_rate": {
+      "value": 9.6e-05,
+      "threshold": 0.005,
+      "pass": true
+    },
+    "ret_mismatch_rate": {
+      "value": 0.0,
+      "threshold": 0.001,
+      "pass": true
+    },
+    "max_yearly_limit_missing_rate": {
+      "value": 0.00044,
+      "threshold": 0.02,
+      "pass": true
+    },
+    "limit_inconsistent_rate": {
+      "value": 9.3e-07,
+      "threshold": 1e-05,
+      "pass": true
+    },
+    "min_yearly_median_listing_coverage": {
+      "value": 1.0,
+      "threshold": 0.99,
+      "pass": true
+    },
+    "min_daily_listing_coverage": {
+      "value": 0.9976,
+      "threshold": 0.97,
+      "pass": true
+    },
+    "fin_avail_before_period_end": {
+      "value": 0,
+      "threshold": 0,
+      "pass": true
+    }
+  },
+  "info": {
+    "rows": 11847540,
+    "first_date": "20150105",
+    "last_date": "20261113",
+    "stocks": 5836,
+    "by_year": [
+      {
+        "year": 2015,
+        "rows": 569698,
+        "limit_missing_rate": 0.00044,
+        "st_share": 0.0149,
+        "universe_median": 2061,
+        "suspended_resume_rows": 3493,
+        "open_at_up": 11069,
+        "open_at_down": 6535
+      },
+      {
+        "year": 2016,
+        "rows": 641546,
+        "limit_missing_rate": 0.00027,
+        "st_share": 0.0169,
+        "universe_median": 2408,
+        "suspended_resume_rows": 2068,
+        "open_at_up": 4470,
+        "open_at_down": 885
+      },
+      {
+        "year": 2017,
+        "rows": 743239,
+        "limit_missing_rate": 0.00033,
+        "st_share": 0.0168,
+        "universe_median": 2387,
+        "suspended_resume_rows": 1648,
+        "open_at_up": 5181,
+        "open_at_down": 905
+      },
+      {
+        "year": 2018,
+        "rows": 816988,
+        "limit_missing_rate": 0.0003,
+        "st_share": 0.0204,
+        "universe_median": 2054,
+        "suspended_resume_rows": 1296,
+        "open_at_up": 2878,
+        "open_at_down": 2667
+      },
+      {
+        "year": 2019,
+        "rows": 884867,
+        "limit_missing_rate": 0.00025,
+        "st_share": 0.0311,
+        "universe_median": 2410,
+        "suspended_resume_rows": 561,
+        "open_at_up": 3954,
+        "open_at_down": 2008
+      },
+      {
+        "year": 2020,
+        "rows": 945962,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0449,
+        "universe_median": 2913,
+        "suspended_resume_rows": 542,
+        "open_at_up": 4378,
+        "open_at_down": 6493
+      },
+      {
+        "year": 2021,
+        "rows": 1061606,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.043,
+        "universe_median": 3060,
+        "suspended_resume_rows": 518,
+        "open_at_up": 3496,
+        "open_at_down": 1826
+      },
+      {
+        "year": 2022,
+        "rows": 1171038,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0315,
+        "universe_median": 3676,
+        "suspended_resume_rows": 459,
+        "open_at_up": 3109,
+        "open_at_down": 2002
+      },
+      {
+        "year": 2023,
+        "rows": 1258502,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0239,
+        "universe_median": 3894,
+        "suspended_resume_rows": 310,
+        "open_at_up": 1772,
+        "open_at_down": 1522
+      },
+      {
+        "year": 2024,
+        "rows": 1293651,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0231,
+        "universe_median": 4425,
+        "suspended_resume_rows": 320,
+        "open_at_up": 5708,
+        "open_at_down": 3692
+      },
+      {
+        "year": 2025,
+        "rows": 1313872,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0295,
+        "universe_median": 4960,
+        "suspended_resume_rows": 571,
+        "open_at_up": 3241,
+        "open_at_down": 1997
+      },
+      {
+        "year": 2026,
+        "rows": 1146571,
+        "limit_missing_rate": 0.0,
+        "st_share": 0.0359,
+        "universe_median": 4897,
+        "suspended_resume_rows": 469,
+        "open_at_up": 2252,
+        "open_at_down": 1801
+      }
+    ],
+    "coverage_by_year": [
+      {
+        "year": "2015",
+        "median": 0.8704,
+        "worst": 0.4815,
+        "worst_day": "20150709",
+        "days": 244,
+        "median_stocks": 2341
+      },
+      {
+        "year": "2016",
+        "median": 0.9101,
+        "worst": 0.8849,
+        "worst_day": "20160411",
+        "days": 244,
+        "median_stocks": 2595
+      },
+      {
+        "year": "2017",
+        "median": 0.9297,
+        "worst": 0.9145,
+        "worst_day": "20170606",
+        "days": 244,
+        "median_stocks": 3022
+      },
+      {
+        "year": "2018",
+        "median": 0.947,
+        "worst": 0.9003,
+        "worst_day": "20180208",
+        "days": 243,
+        "median_stocks": 3344
+      },
+      {
+        "year": "2019",
+        "median": 0.9942,
+        "worst": 0.9839,
+        "worst_day": "20190430",
+        "days": 244,
+        "median_stocks": 3609
+      },
+      {
+        "year": "2020",
+        "median": 0.9907,
+        "worst": 0.9831,
+        "worst_day": "20200914",
+        "days": 243,
+        "median_stocks": 3850
+      },
+      {
+        "year": "2021",
+        "median": 0.9843,
+        "worst": 0.9772,
+        "worst_day": "20210430",
+        "days": 243,
+        "median_stocks": 4369
+      },
+      {
+        "year": "2022",
+        "median": 0.9981,
+        "worst": 0.9813,
+        "worst_day": "20220505",
+        "days": 242,
+        "median_stocks": 4814
+      },
+      {
+        "year": "2023",
+        "median": 0.9988,
+        "worst": 0.9864,
+        "worst_day": "20230504",
+        "days": 242,
+        "median_stocks": 5206
+      },
+      {
+        "year": "2024",
+        "median": 0.9979,
+        "worst": 0.9886,
+        "worst_day": "20240430",
+        "days": 242,
+        "median_stocks": 5344
+      },
+      {
+        "year": "2025",
+        "median": 0.9976,
+        "worst": 0.99,
+        "worst_day": "20250429",
+        "days": 243,
+        "median_stocks": 5406
+      },
+      {
+        "year": "2026",
+        "median": 0.998,
+        "worst": 0.9906,
+        "worst_day": "20260430",
+        "days": 208,
+        "median_stocks": 5511
+      }
+    ],
+    "min_yearly_median_trading_coverage": 0.8704,
+    "listing_coverage_by_year": [
+      {
+        "year": "2015",
+        "median": 1.0,
+        "worst": 0.9996,
+        "worst_day": "20150108"
+      },
+      {
+        "year": "2016",
+        "median": 1.0,
+        "worst": 1.0,
+        "worst_day": "20161227"
+      },
+      {
+        "year": "2017",
+        "median": 1.0,
+        "worst": 1.0,
+        "worst_day": "20171229"
+      },
+      {
+        "year": "2018",
+        "median": 1.0,
+        "worst": 0.9997,
+        "worst_day": "20180604"
+      },
+      {
+        "year": "2019",
+        "median": 1.0,
+        "worst": 1.0,
+        "worst_day": "20191231"
+      },
+      {
+        "year": "2020",
+        "median": 1.0,
+        "worst": 1.0,
+        "worst_day": "20201230"
+      },
+      {
+        "year": "2021",
+        "median": 1.0,
+        "worst": 1.0,
+        "worst_day": "20211223"
+      },
+      {
+        "year": "2022",
+        "median": 1.0,
+        "worst": 1.0,
+        "worst_day": "20221229"
+      },
+      {
+        "year": "2023",
+        "median": 1.0,
+        "worst": 1.0,
+        "worst_day": "20231226"
+      },
+      {
+        "year": "2024",
+        "median": 1.0,
+        "worst": 1.0,
+        "worst_day": "20241226"
+      },
+      {
+        "year": "2025",
+        "median": 1.0,
+        "worst": 1.0,
+        "worst_day": "20251230"
+      },
+      {
+        "year": "2026",
+        "median": 1.0,
+        "worst": 0.9976,
+        "worst_day": "20260203"
+      }
+    ],
+    "extreme_returns": {
+      "abs_ret_over_31pct": 2915,
+      "worst": [
+        [
+          "600766.SH",
+          "20240605",
+          -0.9644,
+          true,
+          "主板"
+        ],
+        [
+          "002898.SZ",
+          "20260626",
+          -0.9578,
+          true,
+          "主板"
+        ],
+        [
+          "002808.SZ",
+          "20260623",
+          -0.9293,
+          true,
+          "主板"
+        ],
+        [
+          "300029.SZ",
+          "20260618",
+          -0.9278,
+          true,
+          "创业板"
+        ],
+        [
+          "605081.SH",
+          "20260608",
+          -0.9205,
+          true,
+          "主板"
+        ]
+      ]
+    },
+    "financials": {
+      "fin_income": {
+        "present": true,
+        "rows": 515565,
+        "by_report_type": {
+          "1": 271837,
+          "4": 237067,
+          "5": 6661
+        },
+        "avail_before_period_end": 0,
+        "avail_over_400_days_after_period_end": 144977,
+        "stock_periods_with_multiple_versions": 6017,
+        "stock_periods": 265644,
+        "stock_periods_original_version_missing": 2582
+      },
+      "fin_balancesheet": {
+        "present": true,
+        "rows": 327478,
+        "by_report_type": {
+          "1": 261314,
+          "4": 58724,
+          "5": 7440
+        },
+        "avail_before_period_end": 0,
+        "avail_over_400_days_after_period_end": 73994,
+        "stock_periods_with_multiple_versions": 3081,
+        "stock_periods": 258070,
+        "stock_periods_original_version_missing": 1099
+      },
+      "fin_cashflow": {
+        "present": true,
+        "rows": 420081,
+        "by_report_type": {
+          "1": 242621,
+          "4": 171811,
+          "5": 5649
+        },
+        "avail_before_period_end": 0,
+        "avail_over_400_days_after_period_end": 111869,
+        "stock_periods_with_multiple_versions": 894,
+        "stock_periods": 243513,
+        "stock_periods_original_version_missing": 910
+      }
+    }
+  }
+}
