@@ -215,7 +215,8 @@ def market(tmp_path):
         prev = base
         for i, day in enumerate(DAYS):
             if code == "A.SZ" and "20240311" <= day <= "20240315":
-                continue                                    # 停牌：没有日线
+                adj.append({"ts_code": code, "trade_date": day, "adj_factor": 1.0})
+                continue                                    # 停牌：没有日线，但复权因子表照常有记录
             if code == "B.BJ" and day < "20240125":
                 continue                                    # 上市前只有 5 行脏数据（1 月 25 至 31 日）
             if code == "B.BJ" and day > "20241220":
@@ -323,7 +324,10 @@ def test_quality_gates_pass_on_clean_market_and_catch_corruption(market):
     broken = quality.run(root, memory_limit="1GB")
     assert not broken["pass"]
     failed = {name for name, gate in broken["gates"].items() if not gate["pass"]}
-    assert {"close_outside_limit_rows", "high_below_low_rows", "adj_factor_missing_rate"} <= failed
+    # 成交价越过涨跌停价 → 该行涨跌停价被判为不可信并置空；复权因子缺失同时拉低"应在市股票"的完整性
+    assert {"limit_inconsistent_rate", "high_below_low_rows", "adj_factor_missing_rate",
+            "min_daily_listing_coverage"} <= failed
+    assert broken["gates"]["close_outside_limit_rows"]["pass"]
 
 
 def test_backfill_gives_up_on_a_dataset_after_repeated_failures(tmp_path):
@@ -456,3 +460,26 @@ def test_bse_rows_before_exchange_opened_are_dropped(tmp_path):
 
 def test_quality_gate_checks_limit_missing_per_year():
     assert quality.THRESHOLDS["limit_missing_rate"] == 0.005 and quality.THRESHOLDS["max_yearly_limit_missing_rate"] == 0.02
+
+
+def test_inconsistent_limit_is_nulled_and_blocks_buying(market):
+    root, _, _ = market
+    store = RawStore(root)
+    part = pd.read_parquet(store.path("stk_limit", "20240902")).drop(columns=["_fetched_at"])
+    part.loc[part.ts_code == "A.SZ", ["up_limit", "down_limit"]] = [1.0, 0.8]      # 重组复牌日常见的过期涨跌停价
+    store.write("stk_limit", "20240902", part)
+    summary = curated.build_all(root, memory_limit="1GB", threads=2)
+    con = duckdb.connect()
+    row = con.execute(f"""SELECT limit_inconsistent, limit_missing, up_limit, open_at_up, close_at_up
+        FROM read_parquet('{(root / 'curated' / 'bars').as_posix()}/*/*.parquet', hive_partitioning=true)
+        WHERE ts_code = 'A.SZ' AND trade_date = '20240902'""").fetchone()
+    assert row == (True, True, None, False, False)
+    assert summary["bars"]["limit_inconsistent_rows"] == 1
+
+
+def test_listing_coverage_ignores_suspension(market):
+    root, _, _ = market
+    report = quality.run(root, memory_limit="1GB")
+    listing = report["info"]["listing_coverage_by_year"][0]
+    assert listing["median"] == 1.0 and listing["worst"] == 1.0            # 数据是完整的
+    assert report["info"]["coverage_by_year"][0]["worst"] < 1.0            # 但有交易的比例因停牌低于 1

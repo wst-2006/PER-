@@ -21,6 +21,7 @@ BASIC_COLUMNS = ["turnover_rate", "turnover_rate_f", "volume_ratio", "pe_ttm", "
                  "total_share", "float_share", "free_share", "total_mv", "circ_mv"]
 FIN_TABLES = {"fin_income": "income_vip", "fin_balancesheet": "balancesheet_vip", "fin_cashflow": "cashflow_vip"}
 PRICE_EPS = 0.0005
+LIMIT_TOLERANCE = 0.011            # 成交价越过涨跌停价超过这个幅度，视为涨跌停价不可信
 BSE_OPEN_DATE = "20211115"            # 北交所开市日；此前是新三板精选层，不是交易所行情
 UNIVERSE_MIN_LISTED_TDAYS = 120
 UNIVERSE_MIN_AMOUNT_MA20 = 3.0e7      # 元
@@ -164,10 +165,16 @@ def build_bars(con: Any, store: RawStore, out: Path) -> dict[str, Any]:
     a = _dedup(store, "adj_factor", "ts_code, trade_date, adj_factor")
     lim = _dedup(store, "stk_limit", "ts_code, trade_date, up_limit, down_limit")
     e = PRICE_EPS
+    bad = f"(d.high > l.up_limit + {LIMIT_TOLERANCE} OR d.low < l.down_limit - {LIMIT_TOLERANCE})"
     con.execute(f"""
         CREATE OR REPLACE TABLE bars AS
         WITH j AS (
-            SELECT d.*, a.adj_factor, l.up_limit, l.down_limit {basic_select},
+            SELECT d.*, a.adj_factor,
+                   -- 当日成交价明显越过涨跌停价，说明这条涨跌停价不可信（多见于重组后复牌首日，
+                   -- 当天其实不设涨跌幅限制）。置空后按"涨跌停价缺失"处理：买不进，允许卖出。
+                   CASE WHEN {bad} THEN NULL ELSE l.up_limit END AS up_limit,
+                   CASE WHEN {bad} THEN NULL ELSE l.down_limit END AS down_limit,
+                   COALESCE({bad}, false) AS limit_inconsistent {basic_select},
                    s.board, s.exchange, c.idx AS cal_idx, li.list_idx
             FROM {d} d
             JOIN stocks s USING (ts_code)
@@ -242,6 +249,10 @@ def build_bars(con: Any, store: RawStore, out: Path) -> dict[str, Any]:
     rows, first, last = con.execute("SELECT count(*), min(trade_date), max(trade_date) FROM bars").fetchone()
     return {"rows": rows, "first_date": first, "last_date": last, "raw_daily_rows": raw_rows,
             "dropped_before_listing_or_off_calendar": raw_rows - orphan - rows, "orphan_rows": orphan,
+            "limit_inconsistent_rows": con.execute("SELECT sum(limit_inconsistent::INT) FROM bars").fetchone()[0] or 0,
+            "orphan_codes": [r[0] for r in con.execute(
+                f"SELECT ts_code FROM {d} d WHERE NOT EXISTS (SELECT 1 FROM stocks s WHERE s.ts_code = d.ts_code) "
+                f"GROUP BY 1 ORDER BY count(*) DESC LIMIT 40").fetchall()],
             "has_daily_basic": bool(basic_cols), "has_namechange": store.has_data("namechange"),
             "industry_missing_rate": round(con.execute("SELECT avg((sw_l1 IS NULL)::INT) FROM bars").fetchone()[0] or 0.0, 5),
             "industry_backfilled_rate": round(con.execute("SELECT avg(sw_backfilled::INT) FROM bars").fetchone()[0] or 0.0, 5)}
@@ -306,10 +317,11 @@ def build_all(root: str | Path, memory_limit: str = "2GB", threads: int = 4) -> 
 
 # ---------- 时点查询 ----------
 
-def fin_asof_sql(source: str, asof: str, report_types: tuple[str, ...] = ("1",)) -> str:
+def fin_asof_sql(source: str, asof: str, report_types: tuple[str, ...] = ("1", "4", "5")) -> str:
     """观察日 asof 当天收盘后能看到的、每个（股票，报告期）的最新版本。
 
     只使用可用日期不晚于观察日的版本，因此不会用到观察日之后才公布的修订。
+    报告类型：1 合并报表；4 次年年报里重述的上年同期数；5 发生调整前的原始数。三者按各自的可用日期一起排序。
     """
     types = ", ".join(f"'{t}'" for t in report_types)
     return f"""

@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from .curated import FIN_TABLES, connect
+from .store import RawStore
 
 THRESHOLDS = {
     "duplicate_keys": 0,
@@ -15,7 +16,9 @@ THRESHOLDS = {
     "limit_missing_rate": 0.005,
     "max_yearly_limit_missing_rate": 0.02,
     "ret_mismatch_rate": 0.001,
-    "min_yearly_median_coverage": 0.95,
+    "limit_inconsistent_rate": 0.00001,
+    "min_yearly_median_listing_coverage": 0.99,
+    "min_daily_listing_coverage": 0.97,
     "fin_avail_before_period_end": 0,
 }
 
@@ -92,12 +95,38 @@ def run(root: str | Path, memory_limit: str = "2GB", sample_mode: bool = False) 
         gates["max_yearly_limit_missing_rate"] = _check(
             max((row["limit_missing_rate"] for row in info["by_year"]), default=None),
             THRESHOLDS["max_yearly_limit_missing_rate"])
-        min_cov = min((row["median"] for row in info["coverage_by_year"]), default=None)
-        if sample_mode:
-            info["min_yearly_median_coverage"] = min_cov
-        else:
-            gates["min_yearly_median_coverage"] = _check(min_cov, THRESHOLDS["min_yearly_median_coverage"], True)
+        info["min_yearly_median_trading_coverage"] = min((row["median"] for row in info["coverage_by_year"]), default=None)
+        gates["limit_inconsistent_rate"] = _check(round(one(
+            f"SELECT avg(limit_inconsistent::INT) FROM {bars}") or 0.0, 8), THRESHOLDS["limit_inconsistent_rate"])
 
+        # 数据完整性：复权因子表对停牌股票也有记录，所以"当日有复权因子的在市股票数 ÷ 应在市股票数"
+        # 衡量的是数据有没有缺，不受停牌影响。上面的 coverage_by_year 是"当日有成交的比例"，只作参考。
+        store = RawStore(root)
+        if not sample_mode and store.has_data("adj_factor"):
+            listing = con.execute(f"""
+                WITH a AS (SELECT DISTINCT ts_code, trade_date FROM read_parquet('{store.glob('adj_factor')}', union_by_name=true)),
+                days AS (SELECT DISTINCT trade_date FROM {bars}),
+                have AS (
+                    SELECT a.trade_date, count(*) AS n FROM a JOIN {stocks} s USING (ts_code)
+                    WHERE s.list_date <= a.trade_date AND (s.delist_date IS NULL OR s.delist_date > a.trade_date)
+                      AND NOT (s.exchange = 'BSE' AND a.trade_date < '20211115')
+                    GROUP BY 1),
+                expected AS (
+                    SELECT d.trade_date, count(*) AS n FROM days d JOIN {stocks} s
+                      ON s.list_date <= d.trade_date AND (s.delist_date IS NULL OR s.delist_date > d.trade_date)
+                     AND NOT (s.exchange = 'BSE' AND d.trade_date < '20211115')
+                    GROUP BY 1)
+                SELECT substr(e.trade_date, 1, 4), median(COALESCE(h.n, 0) * 1.0 / e.n), min(COALESCE(h.n, 0) * 1.0 / e.n),
+                       arg_min(e.trade_date, COALESCE(h.n, 0) * 1.0 / e.n)
+                FROM expected e LEFT JOIN have h USING (trade_date) GROUP BY 1 ORDER BY 1""").fetchall()
+            info["listing_coverage_by_year"] = [{"year": y, "median": round(m, 4), "worst": round(w, 4), "worst_day": d}
+                                                for y, m, w, d in listing]
+            gates["min_yearly_median_listing_coverage"] = _check(
+                min((r["median"] for r in info["listing_coverage_by_year"]), default=None),
+                THRESHOLDS["min_yearly_median_listing_coverage"], True)
+            gates["min_daily_listing_coverage"] = _check(
+                min((r["worst"] for r in info["listing_coverage_by_year"]), default=None),
+                THRESHOLDS["min_daily_listing_coverage"], True)
         info["extreme_returns"] = {
             "abs_ret_over_31pct": one(f"SELECT count(*) FROM {bars} WHERE abs(ret_pc) > 0.31"),
             "worst": [list(r) for r in con.execute(
