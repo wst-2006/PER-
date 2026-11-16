@@ -1,0 +1,11 @@
+{
+  "today": "20261116",
+  "trial": null,
+  "workers": 1,
+  "priority": "A",
+  "datasets": {},
+  "calls": 0,
+  "stopped_by_budget": false,
+  "elapsed_seconds": 0,
+  "store_summary": {}
+}
