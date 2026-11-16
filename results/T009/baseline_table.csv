@@ -1,0 +1,4 @@
+﻿scheme,annual_return,benchmark_annual_return,annual_excess,information_ratio,max_drawdown,max_relative_drawdown,years_with_positive_excess,annual_turnover_two_sided,fees_share_of_start_nav_per_year,average_positions
+prior,0.0648,-0.0229,0.0898,0.815,-0.4819,-0.1916,0.778,36.1,0.03184,30.4
+ic,0.0341,-0.0229,0.0583,0.512,-0.4647,-0.2024,0.667,37.13,0.03161,30.8
+icir,0.054,-0.0229,0.0787,0.763,-0.4637,-0.1481,0.889,40.82,0.03633,30.6
