@@ -1,0 +1,62 @@
+"""基线组合：每隔 rebalance 个交易日，持有打分最高的 n 只股票，等金额。
+
+换手缓冲：已持有的股票只要排名仍在前 n × buffer 以内就继续持有，只用新股票补足空位。
+已持有的股票离开股票池（例如戴帽 ST）时，无论排名都卖出。
+不在调仓日时不做任何交易（顺延中的卖单由引擎自动处理）。
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Any
+
+from ..engine.engine import BUY, SELL, Context, Order
+
+
+@dataclass
+class TopN:
+    scores: Any                      # 有 day(date) 方法，返回以代码为索引的打分序列
+    n: int = 30
+    rebalance: int = 5
+    buffer: float = 2.0
+    invest_ratio: float = 0.98       # 留一点现金付费用
+    _count: int = field(default=0, init=False)
+    log: list[dict[str, Any]] = field(default_factory=list, init=False)
+
+    def on_close(self, ctx: Context) -> list[Order]:
+        self._count += 1
+        if (self._count - 1) % self.rebalance != 0 or ctx.bars is None:
+            return []
+        score = self.scores.day(ctx.date)
+        if score is None or len(score) == 0:
+            return []
+        bars = ctx.bars
+        eligible = score.dropna()
+        eligible = eligible[eligible.index.isin(bars.index[bars["in_universe"].astype(bool)])]
+        ranked = eligible.sort_values(ascending=False)
+        rank = {code: i for i, code in enumerate(ranked.index)}
+        keep_limit = int(self.n * self.buffer)
+
+        orders: list[Order] = []
+        kept: list[str] = []
+        for code in ctx.positions:
+            if code in ctx.pending_sells:
+                continue
+            if rank.get(code, 10**9) < keep_limit:
+                kept.append(code)
+            else:
+                orders.append(Order(code, SELL, None, "out_of_rank" if code in rank else "left_universe"))
+        slots = self.n - len(kept)
+        target_value = ctx.nav * self.invest_ratio / self.n
+        added = 0
+        for code in ranked.index:
+            if added >= slots:
+                break
+            if code in ctx.positions or code in ctx.pending_sells:
+                continue
+            close = float(bars.loc[code, "close"])
+            if close > 0:
+                orders.append(Order(code, BUY, target_value / close, "new_top"))
+                added += 1
+        self.log.append({"date": ctx.date, "kept": len(kept), "sells": sum(o.side == SELL for o in orders),
+                         "buys": added, "candidates": len(ranked)})
+        return orders

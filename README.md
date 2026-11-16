@@ -2,11 +2,12 @@
 
 全市场选股、组合与风控、回测、每日指令单、纸面验证。信号在收盘后生成，由人次日手动执行。
 
-当前阶段：**M1 数据层与 M2 引擎、标签已实现，A 类数据已全量回填并验收，第一批因子评估进行中（T008）**。系统尚无任何可用策略结论。
+当前阶段：**M1 数据层与 M2 引擎、标签已实现，第一批因子评估完成（见研究发现 F1），基线闭环回测进行中（T009）**。系统尚无任何可用策略结论。
 
 - 总体设计（正确性）：[`docs/DESIGN.md`](docs/DESIGN.md)
 - 研究蓝图（有效性）：[`docs/ALPHA_BLUEPRINT.md`](docs/ALPHA_BLUEPRINT.md)
 - 文献调研笔记：[`docs/RESEARCH_NOTES.md`](docs/RESEARCH_NOTES.md)
+- 研究发现：[`docs/FINDINGS.md`](docs/FINDINGS.md)
 - 执行代理守则：[`AGENTS.md`](AGENTS.md)
 - 当前任务：[`tasks/`](tasks/)
 - 任务结果：`results/`

@@ -26,11 +26,27 @@ MICRO_CUT = 0.30
 MIN_STOCKS = 200
 
 
-def _year_dirs(base: Path) -> list[str]:
+def prepare_day(part: Any, names: list[str]) -> tuple[np.ndarray, np.ndarray]:
+    """一天的截面：去极值标准化，再对行业和市值中性化。返回（标准化值，中性化值）。"""
+    raw = part[names].to_numpy(dtype=float)
+    mv = part["circ_mv"].to_numpy(dtype=float)
+    ln_mv = np.log(np.where(mv > 0, mv, np.nan))
+    industry = part["sw_l1"].fillna("NA").to_numpy()
+    z = winsorize_zscore(raw)
+    size_z = winsorize_zscore(ln_mv.reshape(-1, 1)).ravel()
+    neu = neutralize(z, industry, size_z)
+    if "ln_mv" in names:                     # 市值因子自身只对行业中性化
+        j = names.index("ln_mv")
+        neu[:, j] = neutralize(z[:, [j]], industry, None).ravel()
+    return z, neu
+
+
+def year_dirs(base: Path) -> list[str]:
     return sorted(p.name.split("=")[1] for p in base.glob("year=*") if p.is_dir())
 
 
-def _load_year(root: Path, year: str, horizons: tuple[int, ...], version: str, labels_version: str) -> Any:
+def load_year(root: Path, year: str, horizons: tuple[int, ...], version: str = VERSION,
+              labels_version: str = "v1") -> Any:
     import pandas as pd
 
     def read(base: Path, columns: list[str]) -> Any:
@@ -67,23 +83,15 @@ def evaluate(root: str | Path, horizons: tuple[int, ...] = (5, 10, 20), version:
     corr_sum, corr_cnt = np.zeros((k, k)), np.zeros((k, k))
     n_stocks: list[int] = []
 
-    for year in _year_dirs(root / "features" / version):
-        frame = _load_year(root, year, horizons, version, labels_version)
+    for year in year_dirs(root / "features" / version):
+        frame = load_year(root, year, horizons, version, labels_version)
         if frame is None or len(frame) == 0:
             continue
         for day, part in frame.groupby("trade_date", sort=True):
             if (start and day < start) or (end and day > end) or len(part) < min_stocks:
                 continue
-            raw = part[names].to_numpy(dtype=float)
+            z, neu = prepare_day(part, names)
             mv = part["circ_mv"].to_numpy(dtype=float)
-            ln_mv = np.log(np.where(mv > 0, mv, np.nan))
-            industry = part["sw_l1"].fillna("NA").to_numpy()
-            z = winsorize_zscore(raw)
-            size_z = winsorize_zscore(ln_mv.reshape(-1, 1)).ravel()
-            neu = neutralize(z, industry, size_z)
-            if "ln_mv" in names:                     # 市值因子自身只对行业中性化
-                j = names.index("ln_mv")
-                neu[:, j] = neutralize(z[:, [j]], industry, None).ravel()
             r_raw, r_neu = rank_columns(z), rank_columns(neu)
             big = mv >= np.nanquantile(mv, MICRO_CUT)
             codes = part["ts_code"].to_numpy()

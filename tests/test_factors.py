@@ -153,3 +153,10 @@ def test_winsorize_and_rank_handle_outliers_and_ties():
     assert np.isnan(z[5]) and z[4] < 3 and np.nanargmax(z) == 4
     r = stats.rank_columns(np.array([[1.0], [1.0], [3.0], [np.nan]])).ravel()
     assert r[0] == r[1] == 1.5 and r[2] == 3 and np.isnan(r[3])
+
+
+def test_winsorize_keeps_sparse_discrete_factor():
+    """多数为 0、少数为 1、2 的因子（涨停次数一类）不能被截尾成常数。"""
+    x = np.array([[0.0]] * 90 + [[1.0]] * 8 + [[2.0]] * 2)
+    z = stats.winsorize_zscore(x).ravel()
+    assert np.nanstd(z) > 0.9 and z[-1] > z[-5] > z[0]

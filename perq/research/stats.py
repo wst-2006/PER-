@@ -31,6 +31,9 @@ def winsorize_zscore(values: np.ndarray, n_mad: float = 5.0) -> np.ndarray:
         warnings.simplefilter("ignore", RuntimeWarning)
         med = np.nanmedian(x, axis=0)
         mad = np.nanmedian(np.abs(x - med), axis=0) * 1.4826
+        # 大多数取值相同的离散因子（如"近 20 日涨停次数"多数为 0）MAD 为 0，这时不截尾，
+        # 否则所有非零值都会被截成中位数，整列变成常数
+        mad = np.where(mad > 0, mad, np.inf)
         lo, hi = med - n_mad * mad, med + n_mad * mad
         x = np.where(x < lo, lo, np.where(x > hi, hi, x))
         mean, std = np.nanmean(x, axis=0), np.nanstd(x, axis=0)
