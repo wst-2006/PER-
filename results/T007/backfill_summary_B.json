@@ -1,0 +1,608 @@
+{
+  "today": "20261119",
+  "trial": null,
+  "workers": 4,
+  "priority": "B",
+  "datasets": {
+    "suspend_d": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 23,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "cyq_perf": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 11146,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "limit_list_d": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 228,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "top_list": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 188,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "top_inst": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 1880,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "margin_detail": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 8982,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "block_trade": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 190,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "margin": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 6,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "fut_daily_cffex": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 192,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_daily": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 878,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_dailybasic": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 45,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "dividend": {
+      "planned": 10,
+      "fetched": 9,
+      "empty": 1,
+      "failed": 0,
+      "rows": 137,
+      "calls": 10,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "repurchase": {
+      "planned": 10,
+      "fetched": 9,
+      "empty": 1,
+      "failed": 0,
+      "rows": 275,
+      "calls": 10,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "share_float": {
+      "planned": 10,
+      "fetched": 9,
+      "empty": 1,
+      "failed": 0,
+      "rows": 42362,
+      "calls": 15,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "stk_holdertrade": {
+      "planned": 10,
+      "fetched": 9,
+      "empty": 1,
+      "failed": 0,
+      "rows": 413,
+      "calls": 10,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "stk_holdernumber": {
+      "planned": 10,
+      "fetched": 10,
+      "empty": 0,
+      "failed": 0,
+      "rows": 1126,
+      "calls": 10,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "report_rc": {
+      "planned": 10,
+      "fetched": 9,
+      "empty": 1,
+      "failed": 0,
+      "rows": 3586,
+      "calls": 10,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "shibor": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 218,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "ths_daily": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 3743,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "hk_hold": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 2052,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "stk_surv": {
+      "planned": 3,
+      "fetched": 1,
+      "empty": 2,
+      "failed": 0,
+      "rows": 141,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "hm_detail": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 647,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "stock_st": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 588,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "opt_daily_sse": {
+      "planned": 3,
+      "fetched": 2,
+      "empty": 1,
+      "failed": 0,
+      "rows": 1424,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "limit_step": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 19,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "moneyflow_ths": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 14582,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    }
+  },
+  "calls": 123,
+  "stopped_by_budget": false,
+  "elapsed_seconds": 60,
+  "store_summary": {
+    "suspend_d": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2886
+      },
+      "rows": 337245,
+      "bytes": 12077046,
+      "first_key": "20150105",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "cyq_perf": {
+      "partitions": 2154,
+      "by_status": {
+        "ok": 2153,
+        "empty": 1
+      },
+      "rows": 9803406,
+      "bytes": 278341332,
+      "first_key": "20180102",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "limit_list_d": {
+      "partitions": 1667,
+      "by_status": {
+        "ok": 1666,
+        "empty": 1
+      },
+      "rows": 168224,
+      "bytes": 33149589,
+      "first_key": "20200102",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "top_list": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2885,
+        "empty": 1
+      },
+      "rows": 202715,
+      "bytes": 49149855,
+      "first_key": "20150105",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "top_inst": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2885,
+        "empty": 1
+      },
+      "rows": 2001206,
+      "bytes": 88859077,
+      "first_key": "20150105",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "margin_detail": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2880,
+        "empty": 6
+      },
+      "rows": 6581232,
+      "bytes": 371371211,
+      "first_key": "20150105",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "block_trade": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2881,
+        "empty": 5
+      },
+      "rows": 608276,
+      "bytes": 36680264,
+      "first_key": "20150105",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "margin": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2881,
+        "empty": 5
+      },
+      "rows": 6672,
+      "bytes": 17738689,
+      "first_key": "20150105",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "fut_daily_cffex": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2884,
+        "empty": 2
+      },
+      "rows": 146198,
+      "bytes": 34173607,
+      "first_key": "20150105",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_daily": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2885,
+        "empty": 1
+      },
+      "rows": 1517607,
+      "bytes": 159811101,
+      "first_key": "20150105",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "index_dailybasic": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2886
+      },
+      "rows": 41428,
+      "bytes": 26190482,
+      "first_key": "20150105",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "dividend": {
+      "partitions": 4341,
+      "by_status": {
+        "empty": 1649,
+        "ok": 2692
+      },
+      "rows": 222031,
+      "bytes": 26262662,
+      "first_key": "20150117",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "repurchase": {
+      "partitions": 4341,
+      "by_status": {
+        "ok": 3374,
+        "empty": 967
+      },
+      "rows": 64387,
+      "bytes": 22556885,
+      "first_key": "20150101",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "share_float": {
+      "partitions": 4341,
+      "by_status": {
+        "ok": 3277,
+        "empty": 1064
+      },
+      "rows": 6880723,
+      "bytes": 130317214,
+      "first_key": "20150101",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "stk_holdertrade": {
+      "partitions": 4341,
+      "by_status": {
+        "ok": 3495,
+        "empty": 846
+      },
+      "rows": 481054,
+      "bytes": 42818919,
+      "first_key": "20150101",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "stk_holdernumber": {
+      "partitions": 4341,
+      "by_status": {
+        "empty": 388,
+        "ok": 3953
+      },
+      "rows": 497135,
+      "bytes": 19604150,
+      "first_key": "20150105",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "report_rc": {
+      "partitions": 4706,
+      "by_status": {
+        "ok": 4606,
+        "empty": 100
+      },
+      "rows": 2335118,
+      "bytes": 209246820,
+      "first_key": "20140101",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "shibor": {
+      "partitions": 12,
+      "by_status": {
+        "ok": 12
+      },
+      "rows": 2941,
+      "bytes": 222161,
+      "first_key": "2015",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "ths_daily": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2885,
+        "empty": 1
+      },
+      "rows": 3039219,
+      "bytes": 276976210,
+      "first_key": "20150105",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "hk_hold": {
+      "partitions": 2398,
+      "by_status": {
+        "ok": 2325,
+        "empty": 73
+      },
+      "rows": 5695043,
+      "bytes": 199073324,
+      "first_key": "20170103",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "stk_surv": {
+      "partitions": 1181,
+      "by_status": {
+        "ok": 1116,
+        "empty": 65
+      },
+      "rows": 369691,
+      "bytes": 18714959,
+      "first_key": "20220104",
+      "last_key": "20261117",
+      "truncation_suspected": []
+    },
+    "hm_detail": {
+      "partitions": 939,
+      "by_status": {
+        "ok": 938,
+        "empty": 1
+      },
+      "rows": 228532,
+      "bytes": 13589909,
+      "first_key": "20230103",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "stock_st": {
+      "partitions": 2642,
+      "by_status": {
+        "ok": 2630,
+        "empty": 12
+      },
+      "rows": 359151,
+      "bytes": 15735140,
+      "first_key": "20160104",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "opt_daily_sse": {
+      "partitions": 2861,
+      "by_status": {
+        "ok": 2853,
+        "empty": 8
+      },
+      "rows": 878194,
+      "bytes": 90477533,
+      "first_key": "20150209",
+      "last_key": "20261118",
+      "truncation_suspected": []
+    },
+    "limit_step": {
+      "partitions": 821,
+      "by_status": {
+        "empty": 302,
+        "ok": 519
+      },
+      "rows": 10856,
+      "bytes": 1945282,
+      "first_key": "20240829",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "moneyflow_ths": {
+      "partitions": 1667,
+      "by_status": {
+        "empty": 1197,
+        "ok": 470
+      },
+      "rows": 2366975,
+      "bytes": 164305407,
+      "first_key": "20200211",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    }
+  }
+}

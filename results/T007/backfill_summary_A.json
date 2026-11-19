@@ -1,11 +1,2158 @@
 {
-  "today": "20261116",
+  "today": "20261119",
   "trial": null,
-  "workers": 1,
+  "workers": 4,
   "priority": "A",
-  "datasets": {},
-  "calls": 0,
+  "datasets": {
+    "trade_cal": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 13527,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "stock_basic_L": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 5580,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "stock_basic_D": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 344,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "stock_basic_P": {
+      "planned": 1,
+      "fetched": 0,
+      "empty": 1,
+      "failed": 0,
+      "rows": 0,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801010_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 124,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801010_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 60,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801030_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 465,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801030_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 313,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801040_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 50,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801040_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 16,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801050_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 160,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801050_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 78,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801080_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 530,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801080_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 174,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801110_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 108,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801110_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 34,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801120_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 129,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801120_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 58,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801130_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 119,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801130_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 55,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801140_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 172,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801140_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 15,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801150_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 530,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801150_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 112,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801160_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 142,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801160_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 49,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801170_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 144,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801170_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 37,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801180_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 115,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801180_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 129,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801200_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 117,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801200_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 71,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801210_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 95,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801210_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 50,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801230_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 40,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801230_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 149,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801710_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 80,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801710_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 56,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801720_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 170,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801720_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 58,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801730_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 434,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801730_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 60,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801740_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 149,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801740_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 45,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801750_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 381,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801750_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 47,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801760_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 153,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801760_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 24,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801770_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 143,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801770_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 15,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801780_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 42,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801780_N": {
+      "planned": 1,
+      "fetched": 0,
+      "empty": 1,
+      "failed": 0,
+      "rows": 0,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801790_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 91,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801790_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 8,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801880_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 337,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801880_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 33,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801890_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 633,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801890_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 229,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801950_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 36,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801950_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 7,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801960_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 54,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801960_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 4,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801970_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 141,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801970_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 21,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801980_Y": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 32,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "sw_member_801980_N": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 5,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_classify_SW2021": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 511,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_classify_SW2014": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 359,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "daily": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 16719,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "adj_factor": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 16755,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "daily_basic": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 16719,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "stk_limit": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 16971,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "moneyflow": {
+      "planned": 3,
+      "fetched": 3,
+      "empty": 0,
+      "failed": 0,
+      "rows": 16740,
+      "calls": 3,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "income_vip_rt1": {
+      "planned": 8,
+      "fetched": 8,
+      "empty": 0,
+      "failed": 0,
+      "rows": 64522,
+      "calls": 9,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "income_vip_rt4": {
+      "planned": 8,
+      "fetched": 4,
+      "empty": 4,
+      "failed": 0,
+      "rows": 31636,
+      "calls": 9,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "income_vip_rt5": {
+      "planned": 8,
+      "fetched": 6,
+      "empty": 2,
+      "failed": 0,
+      "rows": 691,
+      "calls": 8,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "balancesheet_vip_rt1": {
+      "planned": 8,
+      "fetched": 8,
+      "empty": 0,
+      "failed": 0,
+      "rows": 60597,
+      "calls": 12,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "balancesheet_vip_rt4": {
+      "planned": 8,
+      "fetched": 2,
+      "empty": 6,
+      "failed": 0,
+      "rows": 6347,
+      "calls": 8,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "balancesheet_vip_rt5": {
+      "planned": 8,
+      "fetched": 6,
+      "empty": 2,
+      "failed": 0,
+      "rows": 708,
+      "calls": 8,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "cashflow_vip_rt1": {
+      "planned": 8,
+      "fetched": 8,
+      "empty": 0,
+      "failed": 0,
+      "rows": 50409,
+      "calls": 8,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "cashflow_vip_rt4": {
+      "planned": 8,
+      "fetched": 4,
+      "empty": 4,
+      "failed": 0,
+      "rows": 18515,
+      "calls": 8,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "cashflow_vip_rt5": {
+      "planned": 8,
+      "fetched": 7,
+      "empty": 1,
+      "failed": 0,
+      "rows": 549,
+      "calls": 8,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "forecast_vip": {
+      "planned": 8,
+      "fetched": 8,
+      "empty": 0,
+      "failed": 0,
+      "rows": 10629,
+      "calls": 8,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "express_vip": {
+      "planned": 8,
+      "fetched": 8,
+      "empty": 0,
+      "failed": 0,
+      "rows": 2760,
+      "calls": 8,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "disclosure_date": {
+      "planned": 8,
+      "fetched": 8,
+      "empty": 0,
+      "failed": 0,
+      "rows": 43905,
+      "calls": 8,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_000001_SH": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_000300_SH": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_000905_SH": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_000852_SH": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_932000_CSI": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_399001_SZ": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_399006_SZ": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_000688_SH": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_899050_BJ": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_000016_SH": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "index_daily_399303_SZ": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 212,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    },
+    "namechange": {
+      "planned": 1,
+      "fetched": 1,
+      "empty": 0,
+      "failed": 0,
+      "rows": 474,
+      "calls": 1,
+      "truncation_suspected": 0,
+      "skipped_after_failures": false,
+      "last_error": null
+    }
+  },
+  "calls": 197,
   "stopped_by_budget": false,
-  "elapsed_seconds": 0,
-  "store_summary": {}
+  "elapsed_seconds": 196,
+  "store_summary": {
+    "trade_cal": {
+      "partitions": 4,
+      "by_status": {
+        "ok": 4
+      },
+      "rows": 54108,
+      "bytes": 527988,
+      "first_key": "20261113",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "stock_basic_L": {
+      "partitions": 4,
+      "by_status": {
+        "ok": 4
+      },
+      "rows": 22317,
+      "bytes": 654942,
+      "first_key": "20261113",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "stock_basic_D": {
+      "partitions": 4,
+      "by_status": {
+        "ok": 4
+      },
+      "rows": 1376,
+      "bytes": 78852,
+      "first_key": "20261113",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "stock_basic_P": {
+      "partitions": 4,
+      "by_status": {
+        "empty": 4
+      },
+      "rows": 0,
+      "bytes": 0,
+      "first_key": null,
+      "last_key": null,
+      "truncation_suspected": []
+    },
+    "sw_member_801010_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 372,
+      "bytes": 32661,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801010_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 180,
+      "bytes": 28221,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801030_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 1395,
+      "bytes": 56763,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801030_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 939,
+      "bytes": 49341,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801040_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 150,
+      "bytes": 25278,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801040_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 48,
+      "bytes": 22887,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801050_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 480,
+      "bytes": 34296,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801050_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 234,
+      "bytes": 28944,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801080_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 1590,
+      "bytes": 60585,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801080_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 522,
+      "bytes": 37032,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801110_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 324,
+      "bytes": 30738,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801110_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 102,
+      "bytes": 25170,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801120_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 387,
+      "bytes": 32223,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801120_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 174,
+      "bytes": 26877,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801130_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 357,
+      "bytes": 31371,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801130_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 165,
+      "bytes": 26877,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801140_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 516,
+      "bytes": 35766,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801140_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 45,
+      "bytes": 23079,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801150_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 1590,
+      "bytes": 60921,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801150_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 336,
+      "bytes": 32349,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801160_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 426,
+      "bytes": 32064,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801160_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 147,
+      "bytes": 26001,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801170_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 432,
+      "bytes": 33744,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801170_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 111,
+      "bytes": 25860,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801180_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 345,
+      "bytes": 30273,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801180_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 387,
+      "bytes": 32694,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801200_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 351,
+      "bytes": 31350,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801200_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 213,
+      "bytes": 28452,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801210_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 285,
+      "bytes": 29730,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801210_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 150,
+      "bytes": 27201,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801230_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 120,
+      "bytes": 23907,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801230_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 447,
+      "bytes": 33453,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801710_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 240,
+      "bytes": 28200,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801710_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 168,
+      "bytes": 26739,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801720_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 510,
+      "bytes": 35298,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801720_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 174,
+      "bytes": 27306,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801730_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 1302,
+      "bytes": 55104,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801730_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 180,
+      "bytes": 28047,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801740_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 447,
+      "bytes": 33276,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801740_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 135,
+      "bytes": 25698,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801750_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 1143,
+      "bytes": 49641,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801750_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 141,
+      "bytes": 26019,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801760_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 459,
+      "bytes": 34083,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801760_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 72,
+      "bytes": 23592,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801770_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 429,
+      "bytes": 33012,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801770_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 45,
+      "bytes": 23202,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801780_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 126,
+      "bytes": 24300,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801780_N": {
+      "partitions": 3,
+      "by_status": {
+        "empty": 3
+      },
+      "rows": 0,
+      "bytes": 0,
+      "first_key": null,
+      "last_key": null,
+      "truncation_suspected": []
+    },
+    "sw_member_801790_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 273,
+      "bytes": 28815,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801790_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 24,
+      "bytes": 22089,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801880_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 1011,
+      "bytes": 47820,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801880_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 99,
+      "bytes": 25491,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801890_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 1899,
+      "bytes": 68787,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801890_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 687,
+      "bytes": 41949,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801950_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 108,
+      "bytes": 23967,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801950_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 21,
+      "bytes": 21693,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801960_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 162,
+      "bytes": 25767,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801960_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 12,
+      "bytes": 21741,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801970_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 423,
+      "bytes": 32310,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801970_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 63,
+      "bytes": 23490,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801980_Y": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 96,
+      "bytes": 24108,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "sw_member_801980_N": {
+      "partitions": 3,
+      "by_status": {
+        "ok": 3
+      },
+      "rows": 15,
+      "bytes": 21786,
+      "first_key": "20261114",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "index_classify_SW2021": {
+      "partitions": 4,
+      "by_status": {
+        "ok": 4
+      },
+      "rows": 2044,
+      "bytes": 69884,
+      "first_key": "20261113",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "index_classify_SW2014": {
+      "partitions": 4,
+      "by_status": {
+        "ok": 4
+      },
+      "rows": 1436,
+      "bytes": 52452,
+      "first_key": "20261113",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "daily": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2885,
+        "empty": 1
+      },
+      "rows": 11959595,
+      "bytes": 618256068,
+      "first_key": "20150105",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "adj_factor": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2886
+      },
+      "rows": 12463007,
+      "bytes": 148240946,
+      "first_key": "20150105",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "daily_basic": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2885,
+        "empty": 1
+      },
+      "rows": 11869323,
+      "bytes": 1417677714,
+      "first_key": "20150105",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "stk_limit": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2886
+      },
+      "rows": 12249902,
+      "bytes": 181683420,
+      "first_key": "20150105",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "moneyflow": {
+      "partitions": 2886,
+      "by_status": {
+        "ok": 2885,
+        "empty": 1
+      },
+      "rows": 11617693,
+      "bytes": 1418680241,
+      "first_key": "20150105",
+      "last_key": "20261119",
+      "truncation_suspected": []
+    },
+    "income_vip_rt1": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 56
+      },
+      "rows": 351929,
+      "bytes": 70423386,
+      "first_key": "20121231",
+      "last_key": "20260930",
+      "truncation_suspected": []
+    },
+    "income_vip_rt4": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 52,
+        "empty": 4
+      },
+      "rows": 370856,
+      "bytes": 64251634,
+      "first_key": "20121231",
+      "last_key": "20250930",
+      "truncation_suspected": []
+    },
+    "income_vip_rt5": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 54,
+        "empty": 2
+      },
+      "rows": 7512,
+      "bytes": 4086809,
+      "first_key": "20121231",
+      "last_key": "20260331",
+      "truncation_suspected": []
+    },
+    "balancesheet_vip_rt1": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 56
+      },
+      "rows": 365426,
+      "bytes": 125903499,
+      "first_key": "20121231",
+      "last_key": "20260930",
+      "truncation_suspected": []
+    },
+    "balancesheet_vip_rt4": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 14,
+        "empty": 42
+      },
+      "rows": 84652,
+      "bytes": 28963100,
+      "first_key": "20121231",
+      "last_key": "20251231",
+      "truncation_suspected": []
+    },
+    "balancesheet_vip_rt5": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 54,
+        "empty": 2
+      },
+      "rows": 9936,
+      "bytes": 7837587,
+      "first_key": "20121231",
+      "last_key": "20260331",
+      "truncation_suspected": []
+    },
+    "cashflow_vip_rt1": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 56
+      },
+      "rows": 286400,
+      "bytes": 89193359,
+      "first_key": "20121231",
+      "last_key": "20260930",
+      "truncation_suspected": []
+    },
+    "cashflow_vip_rt4": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 52,
+        "empty": 4
+      },
+      "rows": 176128,
+      "bytes": 62194679,
+      "first_key": "20121231",
+      "last_key": "20250930",
+      "truncation_suspected": []
+    },
+    "cashflow_vip_rt5": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 55,
+        "empty": 1
+      },
+      "rows": 6462,
+      "bytes": 5364019,
+      "first_key": "20121231",
+      "last_key": "20260630",
+      "truncation_suspected": []
+    },
+    "forecast_vip": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 56
+      },
+      "rows": 98827,
+      "bytes": 24332687,
+      "first_key": "20121231",
+      "last_key": "20260930",
+      "truncation_suspected": []
+    },
+    "express_vip": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 56
+      },
+      "rows": 24623,
+      "bytes": 2442546,
+      "first_key": "20121231",
+      "last_key": "20260930",
+      "truncation_suspected": []
+    },
+    "disclosure_date": {
+      "partitions": 56,
+      "by_status": {
+        "ok": 56
+      },
+      "rows": 223925,
+      "bytes": 1753631,
+      "first_key": "20121231",
+      "last_key": "20260930",
+      "truncation_suspected": []
+    },
+    "index_daily_000001_SH": {
+      "partitions": 13,
+      "by_status": {
+        "ok": 13
+      },
+      "rows": 3131,
+      "bytes": 356898,
+      "first_key": "2014",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "index_daily_000300_SH": {
+      "partitions": 13,
+      "by_status": {
+        "ok": 13
+      },
+      "rows": 3131,
+      "bytes": 355858,
+      "first_key": "2014",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "index_daily_000905_SH": {
+      "partitions": 13,
+      "by_status": {
+        "ok": 13
+      },
+      "rows": 3131,
+      "bytes": 356411,
+      "first_key": "2014",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "index_daily_000852_SH": {
+      "partitions": 13,
+      "by_status": {
+        "ok": 13
+      },
+      "rows": 3131,
+      "bytes": 357709,
+      "first_key": "2014",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "index_daily_932000_CSI": {
+      "partitions": 13,
+      "by_status": {
+        "ok": 13
+      },
+      "rows": 3131,
+      "bytes": 361799,
+      "first_key": "2014",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "index_daily_399001_SZ": {
+      "partitions": 13,
+      "by_status": {
+        "ok": 13
+      },
+      "rows": 3131,
+      "bytes": 358751,
+      "first_key": "2014",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "index_daily_399006_SZ": {
+      "partitions": 13,
+      "by_status": {
+        "ok": 13
+      },
+      "rows": 3131,
+      "bytes": 356049,
+      "first_key": "2014",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "index_daily_000688_SH": {
+      "partitions": 13,
+      "by_status": {
+        "empty": 5,
+        "ok": 8
+      },
+      "rows": 1668,
+      "bytes": 198560,
+      "first_key": "2019",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "index_daily_899050_BJ": {
+      "partitions": 13,
+      "by_status": {
+        "empty": 8,
+        "ok": 5
+      },
+      "rows": 1105,
+      "bytes": 130236,
+      "first_key": "2022",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "index_daily_000016_SH": {
+      "partitions": 13,
+      "by_status": {
+        "ok": 13
+      },
+      "rows": 3131,
+      "bytes": 356378,
+      "first_key": "2014",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "index_daily_399303_SZ": {
+      "partitions": 13,
+      "by_status": {
+        "ok": 13
+      },
+      "rows": 3131,
+      "bytes": 359265,
+      "first_key": "2014",
+      "last_key": "2026",
+      "truncation_suspected": []
+    },
+    "namechange": {
+      "partitions": 23,
+      "by_status": {
+        "ok": 23
+      },
+      "rows": 26257,
+      "bytes": 677683,
+      "first_key": "2005",
+      "last_key": "20261113",
+      "truncation_suspected": []
+    }
+  }
 }

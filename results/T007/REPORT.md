@@ -203,3 +203,126 @@ fin_cashflow    rows 420081  avail_before_period_end 0  avail_over_400_days 1118
 ...........................................................              [100%]
 59 passed in 460.37s (0:07:40)
 ```
+
+---
+
+# T007b 第二段：B 类回填
+
+- 执行时间：2026-11-17 11:10 至 2026-11-19 17:33
+- 提交基线：`e64a8b5`
+- 运行方式：主跑由用户在自己的 cmd 窗口执行；补拉与清理由执行代理用 PowerShell 执行
+
+## 状态
+
+**完成。** B 类 26 个数据集全部处理，最终 `failed = 0`。原始层共 **87,091 个分区记录**（成功 80,317 / 空表 6,774 / 失败 0）。
+
+## 执行的命令
+
+```powershell
+# 主跑（用户在 cmd 中执行，控制台输出）
+D:\PER\.venv\Scripts\python.exe D:\PER\scripts\backfill.py --priority B --workers 4 --task T007
+
+# 补拉漏掉的 tier 2 数据集
+.venv\Scripts\python.exe scripts\backfill.py --priority B --tiers 1,2 --workers 4 --task T007
+
+# 清理轮（两种优先级各一次）
+.venv\Scripts\python.exe scripts\backfill.py --priority A --tiers 1,2 --workers 4 --task T007
+.venv\Scripts\python.exe scripts\backfill.py --priority B --tiers 1,2 --workers 4 --task T007
+```
+
+## 结果摘要
+
+| 轮次 | 调用 | 用时 | 平均每次 | 失败数据集 | 行数 |
+|---|---|---|---|---|---|
+| **B 主跑** | **24,546** | **13,477 秒**（3 小时 44 分） | 0.549 秒 | **0** | **17,381,333** |
+| tier 2 补拉 | 2,506 | 5,037 秒（1 小时 24 分） | 2.010 秒 | 1（`cyq_perf`） | — |
+| A 清理轮 | 197 | 196 秒 | 0.995 秒 | 0 | — |
+| B 清理轮 | 123 | 60 秒 | 0.488 秒 | 0 | — |
+
+最终核对：全库 87,091 个分区，`ok 80,317`、`empty 6,774`、**`failed 0`**；待办 37 个（均为 2026-11-19 的当日尾部，属正常未发布）。
+
+`truncation_suspected` 在所有轮次中均为空。没有数据集被 `skipped_after_failures`。
+
+### 磁盘占用（B 类跑完后）
+
+| 目录 | 大小 | 文件数 |
+|---|---|---|
+| `E:\perq_data\raw` | **6.34 GB** | 80,943 |
+| `E:\perq_data\curated` | 1.91 GB | 18 |
+| `E:\perq_data\labels` | 0.54 GB | 12 |
+
+### 关于质量门禁与整理层
+
+B 类按任务单要求**不重建整理层**，因此 `dq_report.json`、`curated_summary.json`、`labels_summary.json` 仍是 T007a 那一版（10 项门禁、2 项未过：`close_outside_limit_rows = 8`、`min_yearly_median_coverage = 0.8704`）。这两项已在 T008 中按修正后的规则处理并全部通过（12 项门禁），重建结果在 `results/T008/`。
+
+`info.financials` 原文见本文件第 4.4 节，未变。
+
+## 与预期不符之处
+
+### 1. B 类里有两个第 2 层数据集被默认参数漏掉
+
+`backfill.py` 的 `--tiers` 默认值是 `1`，而目录里 `moneyflow_ths`（1,665 个分区）和 `limit_step`（820 个分区）是 tier 2。主跑的命令没有带 `--tiers`，所以这 **2,485 个分区整轮没被拉过**，而主跑结束时摘要仍显示"有失败的数据集 0 个"——因为它只统计本轮计划内的数据集。
+
+发现方式：主跑结束后我重新算了一遍全部数据集的待办，才看到这两个数据集一个分区都没有。补拉用 `--tiers 1,2` 单独跑了一轮（2,506 次调用、5,037 秒）。
+
+### 2. 当日尾部大面积返回 0 行
+
+2026-11-18 20:15 那一轮，`hk_hold`、`ths_daily`、`dividend`、`report_rc`、`sw_daily`、`index_dailybasic`、`share_float`、`stk_holdertrade`、`opt_daily_sse` 等 20 个数据集的当日分区全部返回 0 行，被记成 `empty`。当天不再重拉。
+
+### 3. `backfill_summary_B.json` 只反映最后一轮
+
+该文件被最后的清理轮覆盖，现在里面是 123 次调用、60 秒、26 个数据集的记录，不是主跑的 24,546 次。主跑数字取自控制台输出与本报告的过程记录。
+
+### 4. 中断次数
+
+B 段累计中断 **4 次**（11-17 09:38 因 `PermissionError`、11-18 11:00 静默停住、以及两次因环境写入异常未能启动），每次都靠重跑同一条命令续上。
+
+### 5. 环境问题原样记录
+
+11-17 至 11-18 期间，Bash 与 PowerShell 启动的 Python 进程反复出现"能建文件、不能改名"和"运行到一半 `PermissionError`"，涉及三个不同位置：
+
+```
+PermissionError: [Win32 Error 5] 'E:\perq_data\raw\trade_cal\20261115.parquet.tmp' -> ...
+PermissionError: [Errno 13] Permission denied: 'E:\\perq_data\\raw\\_manifest\\cyq_perf.jsonl'
+PermissionError: [WinError 5] Failed to open local file 'E:/perq_data/raw/ths_daily/20150105.parquet.tmp'
+```
+
+同一台机器、同一份代码，在用户自己的 cmd 窗口里执行就正常（主跑 3 小时 44 分无中断）。按 AGENTS.md 第 9 条，期间未修改、关闭或绕过任何安全机制。
+
+## 我做了哪些任务单没有要求的事
+
+1. **额外跑了两轮清理**（A 197 次、B 123 次），把残余分区和 1 个失败清到 0。
+2. **补拉了 tier 2 的两个数据集**（2,506 次调用）。任务单没写 tiers，但"全部数据都要拉"是 T007 的目的，我认为漏掉这两个数据集属于未完成，所以补了。
+3. 诊断期间结束过若干卡住的我方进程；未删除任何数据文件。
+
+## 问题与建议
+
+### 1. `--tiers` 的默认值建议改掉
+
+现在默认 `1`，主跑会在"看起来成功"的情况下漏掉整层数据集，而且摘要不会提示。建议默认 `1,2`，或在摘要里列出"本轮未覆盖的 tier"。
+
+### 2. 空分区占比 7.8%，建议区分两类
+
+87,091 个分区里 6,774 个是空的（7.8%）。其中大部分来自两类：`cal` 模式的周末与假期（5 张公告类表各约 4,300 天），以及当日数据未发布。建议把这两类分开记录，否则无法判断"空"是正常还是缺数据。
+
+### 3. 尾部刷新建议排在数据发布之后
+
+2026-11-18 20:15 跑的那一轮，20 个数据集的当日数据全空。Tushare 的日频数据发布时间不稳定，建议把每日增量固定到 21:00 之后，或在脚本里对"当天分区为空"做一次退避重试。
+
+### 4. 建议给 `store.write` 的归档动作加容错
+
+三次 `PermissionError` 都发生在 `store.write` 的收尾：`tmp → 正式文件` 的改名、`_superseded` 的归档、`_manifest` 的追加。这些都不是数据本身的问题，但会整轮崩掉。建议对归档失败降级为警告并继续（保留旧文件即可），不要让一个归档动作终止整轮回填。
+
+## 提交前校验（T007b）
+
+`python tools/verify_integrity.py`：
+
+```
+通过：61 个受保护文件与清单一致。
+```
+
+`python -m pytest -q`：
+
+```
+73 passed, 2644 warnings in 934.97s (0:15:34)
+```
