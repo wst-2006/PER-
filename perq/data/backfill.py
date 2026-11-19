@@ -40,6 +40,19 @@ def pending(ds: cat.Dataset, store: RawStore, open_days: list[str], today: str) 
     return todo
 
 
+def remaining_by_tier(store: RawStore, today: str | None = None) -> dict[str, int]:
+    """不论本次运行选了哪些数据集，统计整个采集清单里每一层还有多少分区没拉。"""
+    today = today or cat.today_str()
+    open_days = load_open_days(store)
+    out: dict[str, int] = {}
+    for ds in cat.build_catalog():
+        if ds.mode != "snapshot" and not open_days:
+            continue
+        key = f"tier{ds.tier}"
+        out[key] = out.get(key, 0) + len(pending(ds, store, open_days, today))
+    return out
+
+
 def _date_mismatch(ds: cat.Dataset, key: str, df: Any) -> str | None:
     """检查返回数据的日期列是否与请求的分区一致，防止接口忽略参数。"""
     if ds.check_column is None or df is None or len(df) == 0 or ds.check_column not in df.columns:

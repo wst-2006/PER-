@@ -46,10 +46,15 @@ def main() -> int:
     )
     result_dir = c.REPO_ROOT / "results" / args.task
     suffix = "_trial" if (args.max_calls or args.trial) else (f"_{args.priority}" if args.priority else "")
+    # 每次运行另存一份带时间的摘要，同名文件只代表最近一次运行（T007 中清理轮覆盖了主跑的摘要）
+    stamp = started.strftime("%Y%m%dT%H%M%SZ")
+    c.write_json(result_dir / "backfill_runs" / f"backfill_summary{suffix}_{stamp}.json", report)
     c.write_json(result_dir / f"backfill_summary{suffix}.json", report)
     c.write_run_meta(result_dir, started, {"task": args.task}, name=f"run_meta_backfill{suffix}.json")
     failed = {k: v for k, v in report["datasets"].items() if v.get("failed") or v.get("skipped_after_failures")}
     print(f"\n完成：{report['calls']} 次调用，用时 {report['elapsed_seconds']} 秒；有失败的数据集 {len(failed)} 个")
+    remaining = backfill.remaining_by_tier(RawStore(root))
+    print(f"全部采集清单中仍待拉取的分区（含未选中的层级）：{remaining}")
     for name, stat in failed.items():
         print(f"  {name}: 失败 {stat.get('failed')} 次，最后错误：{stat.get('last_error')}")
     return 0

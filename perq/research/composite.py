@@ -12,6 +12,7 @@
 from __future__ import annotations
 
 import shutil
+import warnings
 from collections import deque
 from pathlib import Path
 from typing import Any
@@ -71,9 +72,14 @@ def build_scores(root: str | Path, *, horizon: int = 5, window: int = 250, min_h
             weights = {"prior": prior}
             if len(matured) >= min_history:
                 hist = np.array(matured)
-                mean = np.nanmean(hist, axis=0)
-                std = np.nanstd(hist, axis=0)
-                for scheme, w in (("ic", mean), ("icir", np.where(std > 0, mean / std, 0.0))):
+                # 某个因子在整段历史里都没有 IC（例如一年动量在头一年全为空）时，均值为空，权重记 0
+                with np.errstate(invalid="ignore", divide="ignore"), warnings.catch_warnings():
+                    warnings.simplefilter("ignore", RuntimeWarning)
+                    mean = np.nanmean(hist, axis=0)
+                    std = np.nanstd(hist, axis=0)
+                with np.errstate(invalid="ignore", divide="ignore"):
+                    icir = np.where(std > 0, mean / np.where(std > 0, std, 1.0), 0.0)
+                for scheme, w in (("ic", mean), ("icir", icir)):
                     w = np.nan_to_num(w)
                     total = np.abs(w).sum()
                     weights[scheme] = w / total if total else prior
