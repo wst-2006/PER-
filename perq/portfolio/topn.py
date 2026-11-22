@@ -19,6 +19,7 @@ class TopN:
     rebalance: int = 5
     buffer: float = 2.0
     invest_ratio: float = 0.98       # 留一点现金付费用
+    min_size_pct: float = 0.0        # 只在股票池里流通市值高于这个分位数的股票中选（0 表示不限制）
     _count: int = field(default=0, init=False)
     log: list[dict[str, Any]] = field(default_factory=list, init=False)
 
@@ -31,7 +32,10 @@ class TopN:
             return []
         bars = ctx.bars
         eligible = score.dropna()
-        eligible = eligible[eligible.index.isin(bars.index[bars["in_universe"].astype(bool)])]
+        pool = bars[bars["in_universe"].astype(bool)]
+        if self.min_size_pct > 0:
+            pool = pool[pool["circ_mv"] >= pool["circ_mv"].quantile(self.min_size_pct)]
+        eligible = eligible[eligible.index.isin(pool.index)]
         ranked = eligible.sort_values(ascending=False)
         rank = {code: i for i, code in enumerate(ranked.index)}
         keep_limit = int(self.n * self.buffer)

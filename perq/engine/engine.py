@@ -81,6 +81,7 @@ class Strategy(Protocol):
 class Result:
     daily: list[dict[str, Any]] = field(default_factory=list)
     fills: list[Fill] = field(default_factory=list)
+    holdings: list[tuple[str, dict[str, float]]] = field(default_factory=list)   # 每日收盘后的持仓权重
 
     def nav_series(self) -> list[tuple[str, float]]:
         return [(row["date"], row["nav"]) for row in self.daily]
@@ -254,6 +255,8 @@ class Backtester:
                 "pending_sells": len(carried),
             })
             nav_prev = nav
+            if nav > 0:
+                result.holdings.append((date, {code: pos.shares * pos.last_close / nav for code, pos in positions.items()}))
 
             # 5. 策略决策，订单在下一个交易日开盘执行
             ctx = Context(date, cash, nav, positions, bars, dict(carried))

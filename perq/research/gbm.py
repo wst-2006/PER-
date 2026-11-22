@@ -33,11 +33,11 @@ BASE_PARAMS = {
 
 
 def _train(frame: Any, features: list[str], objective: str, horizon: int, rounds: int, rank_bins: int,
-           threads: int) -> Any:
+           threads: int, seed: int = 42) -> Any:
     import lightgbm as lgb
 
     x = frame[features].to_numpy(dtype=np.float32)
-    params = dict(BASE_PARAMS, num_threads=threads)
+    params = dict(BASE_PARAMS, num_threads=threads, seed=seed)
     if objective == "reg":
         params.update(objective="regression")
         data = lgb.Dataset(x, label=daily_rank_target(frame, horizon), free_raw_data=True)
@@ -56,11 +56,12 @@ def _train(frame: Any, features: list[str], objective: str, horizon: int, rounds
 def walk_forward(root: str | Path, name: str, *, objective: str = "reg", horizon: int = 5,
                  window: int | None = 500, retrain_every: int = 21, day_step: int = 2, rounds: int = 300,
                  rank_bins: int = 20, start: str = "20160104", end: str = "20241231",
-                 min_train_days: int = 120, threads: int = 4) -> dict[str, Any]:
+                 min_train_days: int = 120, threads: int = 4, seed: int = 42,
+                 exclude_features: tuple[str, ...] = ()) -> dict[str, Any]:
     import pandas as pd
 
     root = Path(root)
-    features = list(FACTORS)
+    features = [f for f in FACTORS if f not in exclude_features]
     days = panel_days(root)
     if not days:
         raise RuntimeError("没有中性化因子面板，请先运行 build_panel")
@@ -84,7 +85,7 @@ def walk_forward(root: str | Path, name: str, *, objective: str = "reg", horizon
             continue
         train = load_panel(root, train_days[0], train_days[-1])
         train = train[train["trade_date"].isin(set(train_days)) & train[f"y_fwd_{horizon}"].notna()]
-        model = _train(train, features, objective, horizon, rounds, rank_bins, threads)
+        model = _train(train, features, objective, horizon, rounds, rank_bins, threads, seed)
         importance += model.feature_importance("gain") / max(model.feature_importance("gain").sum(), 1e-12)
         retrains.append({"date": block[0], "train_first": train_days[0], "train_last": train_days[-1],
                          "train_days": len(train_days), "train_rows": int(len(train))})
@@ -111,6 +112,7 @@ def walk_forward(root: str | Path, name: str, *, objective: str = "reg", horizon
     total = importance.sum()
     return {
         "name": name, "objective": objective, "horizon": horizon, "window": window, "retrain_every": retrain_every,
+        "seed": seed, "excluded_features": list(exclude_features),
         "day_step": day_step, "rounds": rounds, "retrains": len(retrains), "retrain_log": retrains,
         "score_ic": {"mean": round(float(ok.mean()), 5) if len(ok) else None,
                      "icir": round(float(ok.mean() / ok.std()), 4) if len(ok) > 1 and ok.std() > 0 else None,

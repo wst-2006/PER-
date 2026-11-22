@@ -4,7 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-COLUMNS = ["ts_code", "trade_date", "open", "close", "up_limit", "down_limit", "adj_factor", "vol",
+COLUMNS = ["ts_code", "trade_date", "open", "close", "up_limit", "down_limit", "adj_factor", "vol", "circ_mv",
            "board", "limit_missing", "open_at_up", "open_at_down", "is_st", "is_delisting", "in_universe"]
 
 
@@ -27,7 +27,8 @@ class MarketData:
 
         frame = frame.copy()
         for column, default in (("limit_missing", False), ("is_st", False), ("is_delisting", False),
-                                ("in_universe", True), ("board", "主板"), ("adj_factor", 1.0), ("vol", 1e9)):
+                                ("in_universe", True), ("board", "主板"), ("adj_factor", 1.0), ("vol", 1e9),
+                                ("circ_mv", 1e6)):
             if column not in frame.columns:
                 frame[column] = default
         for column in ("limit_missing", "is_st", "is_delisting", "in_universe"):

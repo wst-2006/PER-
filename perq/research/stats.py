@@ -6,6 +6,20 @@ import warnings
 import numpy as np
 
 
+def newey_west_se(series: np.ndarray, lags: int) -> float:
+    """均值的 Newey-West 标准误（Bartlett 核）。"""
+    x = np.asarray(series, dtype=float)
+    x = x[np.isfinite(x)]
+    n = len(x)
+    if n < 3:
+        return float("nan")
+    d = x - x.mean()
+    var = float(d @ d) / n
+    for lag in range(1, min(lags, n - 1) + 1):
+        var += 2.0 * (1.0 - lag / (lags + 1.0)) * float(d[lag:] @ d[:-lag]) / n
+    return float(np.sqrt(var / n)) if var > 0 else float("nan")
+
+
 def newey_west_tstat(series: np.ndarray, lags: int) -> float:
     """均值的 Newey-West t 值（Bartlett 核）。持有期为 h 的 IC 序列相邻值高度重叠，lags 取 h。"""
     x = np.asarray(series, dtype=float)
@@ -74,3 +88,21 @@ def neutralize(z: np.ndarray, industry: np.ndarray, size: np.ndarray | None) -> 
     resid = filled - design @ beta
     resid[~np.isfinite(z)] = np.nan
     return resid
+
+
+def deflated_sharpe(sr: float, n_obs: int, n_trials: int, sr_var_across_trials: float,
+                    skew: float = 0.0, kurtosis: float = 3.0) -> dict[str, float]:
+    """收缩夏普比率（Bailey 与 López de Prado）。所有夏普比率都按单期（日）计。
+
+    返回 sr0（在 n_trials 次试验里"纯靠运气"能得到的最大夏普的期望）和 dsr（真实夏普大于 sr0 的概率）。
+    """
+    from math import e, sqrt
+
+    from scipy.stats import norm
+
+    gamma = 0.5772156649
+    sr0 = sqrt(max(sr_var_across_trials, 0.0)) * ((1 - gamma) * norm.ppf(1 - 1 / n_trials)
+                                                   + gamma * norm.ppf(1 - 1 / (n_trials * e))) if n_trials > 1 else 0.0
+    denom = sqrt(max(1 - skew * sr + (kurtosis - 1) / 4 * sr * sr, 1e-12))
+    dsr = float(norm.cdf((sr - sr0) * sqrt(n_obs - 1) / denom))
+    return {"sr": sr, "sr0": float(sr0), "dsr": dsr, "n_trials": n_trials, "n_obs": n_obs}

@@ -6,6 +6,7 @@ numpy>=1.26,<3
 pyarrow>=16
 duckdb>=1.0
 lightgbm>=4.3
+scipy>=1.11
 psutil>=5.9
 python-dotenv>=1.0
 pytest>=8
