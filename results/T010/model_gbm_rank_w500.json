@@ -1,0 +1,782 @@
+{
+  "name": "gbm_rank_w500",
+  "objective": "rank",
+  "horizon": 5,
+  "window": 500,
+  "retrain_every": 21,
+  "day_step": 2,
+  "rounds": 300,
+  "retrains": 105,
+  "retrain_log": [
+    {
+      "date": "20160104",
+      "train_first": "20150123",
+      "train_last": "20151224",
+      "train_days": 113,
+      "train_rows": 228421
+    },
+    {
+      "date": "20160202",
+      "train_first": "20150126",
+      "train_last": "20160125",
+      "train_days": 123,
+      "train_rows": 251632
+    },
+    {
+      "date": "20160309",
+      "train_first": "20150123",
+      "train_last": "20160301",
+      "train_days": 134,
+      "train_rows": 278275
+    },
+    {
+      "date": "20160408",
+      "train_first": "20150126",
+      "train_last": "20160330",
+      "train_days": 144,
+      "train_rows": 301375
+    },
+    {
+      "date": "20160510",
+      "train_first": "20150123",
+      "train_last": "20160429",
+      "train_days": 155,
+      "train_rows": 327626
+    },
+    {
+      "date": "20160608",
+      "train_first": "20150126",
+      "train_last": "20160531",
+      "train_days": 165,
+      "train_rows": 350266
+    },
+    {
+      "date": "20160711",
+      "train_first": "20150123",
+      "train_last": "20160701",
+      "train_days": 176,
+      "train_rows": 376395
+    },
+    {
+      "date": "20160809",
+      "train_first": "20150126",
+      "train_last": "20160801",
+      "train_days": 186,
+      "train_rows": 399944
+    },
+    {
+      "date": "20160907",
+      "train_first": "20150123",
+      "train_last": "20160830",
+      "train_days": 197,
+      "train_rows": 427376
+    },
+    {
+      "date": "20161017",
+      "train_first": "20150126",
+      "train_last": "20160930",
+      "train_days": 207,
+      "train_rows": 451385
+    },
+    {
+      "date": "20161115",
+      "train_first": "20150123",
+      "train_last": "20161107",
+      "train_days": 218,
+      "train_rows": 478986
+    },
+    {
+      "date": "20161214",
+      "train_first": "20150126",
+      "train_last": "20161206",
+      "train_days": 228,
+      "train_rows": 503657
+    },
+    {
+      "date": "20170113",
+      "train_first": "20150123",
+      "train_last": "20170105",
+      "train_days": 239,
+      "train_rows": 531686
+    },
+    {
+      "date": "20170220",
+      "train_first": "20150128",
+      "train_last": "20170210",
+      "train_days": 248,
+      "train_rows": 553384
+    },
+    {
+      "date": "20170321",
+      "train_first": "20150305",
+      "train_last": "20170313",
+      "train_days": 248,
+      "train_rows": 558839
+    },
+    {
+      "date": "20170421",
+      "train_first": "20150403",
+      "train_last": "20170413",
+      "train_days": 248,
+      "train_rows": 562734
+    },
+    {
+      "date": "20170523",
+      "train_first": "20150506",
+      "train_last": "20170515",
+      "train_days": 248,
+      "train_rows": 567590
+    },
+    {
+      "date": "20170623",
+      "train_first": "20150604",
+      "train_last": "20170615",
+      "train_days": 248,
+      "train_rows": 568025
+    },
+    {
+      "date": "20170724",
+      "train_first": "20150706",
+      "train_last": "20170714",
+      "train_days": 248,
+      "train_rows": 570712
+    },
+    {
+      "date": "20170822",
+      "train_first": "20150804",
+      "train_last": "20170814",
+      "train_days": 248,
+      "train_rows": 577939
+    },
+    {
+      "date": "20170920",
+      "train_first": "20150902",
+      "train_last": "20170912",
+      "train_days": 248,
+      "train_rows": 582378
+    },
+    {
+      "date": "20171026",
+      "train_first": "20151012",
+      "train_last": "20171018",
+      "train_days": 248,
+      "train_rows": 587697
+    },
+    {
+      "date": "20171124",
+      "train_first": "20151110",
+      "train_last": "20171116",
+      "train_days": 248,
+      "train_rows": 591139
+    },
+    {
+      "date": "20171225",
+      "train_first": "20151209",
+      "train_last": "20171215",
+      "train_days": 248,
+      "train_rows": 590597
+    },
+    {
+      "date": "20180124",
+      "train_first": "20160108",
+      "train_last": "20180116",
+      "train_days": 248,
+      "train_rows": 585772
+    },
+    {
+      "date": "20180301",
+      "train_first": "20160215",
+      "train_last": "20180214",
+      "train_days": 248,
+      "train_rows": 582258
+    },
+    {
+      "date": "20180330",
+      "train_first": "20160315",
+      "train_last": "20180322",
+      "train_days": 248,
+      "train_rows": 578074
+    },
+    {
+      "date": "20180504",
+      "train_first": "20160414",
+      "train_last": "20180424",
+      "train_days": 248,
+      "train_rows": 577922
+    },
+    {
+      "date": "20180604",
+      "train_first": "20160516",
+      "train_last": "20180525",
+      "train_days": 248,
+      "train_rows": 577142
+    },
+    {
+      "date": "20180704",
+      "train_first": "20160616",
+      "train_last": "20180626",
+      "train_days": 248,
+      "train_rows": 576245
+    },
+    {
+      "date": "20180802",
+      "train_first": "20160715",
+      "train_last": "20180725",
+      "train_days": 248,
+      "train_rows": 572050
+    },
+    {
+      "date": "20180831",
+      "train_first": "20160815",
+      "train_last": "20180823",
+      "train_days": 248,
+      "train_rows": 568400
+    },
+    {
+      "date": "20181009",
+      "train_first": "20160913",
+      "train_last": "20180921",
+      "train_days": 248,
+      "train_rows": 560593
+    },
+    {
+      "date": "20181107",
+      "train_first": "20161021",
+      "train_last": "20181030",
+      "train_days": 248,
+      "train_rows": 553055
+    },
+    {
+      "date": "20181206",
+      "train_first": "20161121",
+      "train_last": "20181128",
+      "train_days": 248,
+      "train_rows": 549086
+    },
+    {
+      "date": "20190108",
+      "train_first": "20161220",
+      "train_last": "20181227",
+      "train_days": 248,
+      "train_rows": 546237
+    },
+    {
+      "date": "20190213",
+      "train_first": "20170119",
+      "train_last": "20190129",
+      "train_days": 248,
+      "train_rows": 540834
+    },
+    {
+      "date": "20190314",
+      "train_first": "20170224",
+      "train_last": "20190306",
+      "train_days": 248,
+      "train_rows": 541074
+    },
+    {
+      "date": "20190415",
+      "train_first": "20170327",
+      "train_last": "20190404",
+      "train_days": 248,
+      "train_rows": 549126
+    },
+    {
+      "date": "20190517",
+      "train_first": "20170427",
+      "train_last": "20190509",
+      "train_days": 248,
+      "train_rows": 556524
+    },
+    {
+      "date": "20190618",
+      "train_first": "20170531",
+      "train_last": "20190610",
+      "train_days": 248,
+      "train_rows": 560801
+    },
+    {
+      "date": "20190717",
+      "train_first": "20170629",
+      "train_last": "20190709",
+      "train_days": 248,
+      "train_rows": 564173
+    },
+    {
+      "date": "20190815",
+      "train_first": "20170728",
+      "train_last": "20190807",
+      "train_days": 248,
+      "train_rows": 565457
+    },
+    {
+      "date": "20190916",
+      "train_first": "20170828",
+      "train_last": "20190905",
+      "train_days": 248,
+      "train_rows": 564232
+    },
+    {
+      "date": "20191022",
+      "train_first": "20170926",
+      "train_last": "20191014",
+      "train_days": 248,
+      "train_rows": 565308
+    },
+    {
+      "date": "20191120",
+      "train_first": "20171101",
+      "train_last": "20191112",
+      "train_days": 248,
+      "train_rows": 563792
+    },
+    {
+      "date": "20191219",
+      "train_first": "20171130",
+      "train_last": "20191211",
+      "train_days": 248,
+      "train_rows": 561044
+    },
+    {
+      "date": "20200120",
+      "train_first": "20171229",
+      "train_last": "20200110",
+      "train_days": 248,
+      "train_rows": 565336
+    },
+    {
+      "date": "20200226",
+      "train_first": "20180130",
+      "train_last": "20200218",
+      "train_days": 248,
+      "train_rows": 574456
+    },
+    {
+      "date": "20200326",
+      "train_first": "20180307",
+      "train_last": "20200318",
+      "train_days": 248,
+      "train_rows": 585867
+    },
+    {
+      "date": "20200427",
+      "train_first": "20180409",
+      "train_last": "20200417",
+      "train_days": 248,
+      "train_rows": 595224
+    },
+    {
+      "date": "20200529",
+      "train_first": "20180510",
+      "train_last": "20200521",
+      "train_days": 248,
+      "train_rows": 599485
+    },
+    {
+      "date": "20200701",
+      "train_first": "20180608",
+      "train_last": "20200619",
+      "train_days": 248,
+      "train_rows": 604176
+    },
+    {
+      "date": "20200730",
+      "train_first": "20180710",
+      "train_last": "20200722",
+      "train_days": 248,
+      "train_rows": 613987
+    },
+    {
+      "date": "20200828",
+      "train_first": "20180808",
+      "train_last": "20200820",
+      "train_days": 248,
+      "train_rows": 628304
+    },
+    {
+      "date": "20200928",
+      "train_first": "20180906",
+      "train_last": "20200918",
+      "train_days": 248,
+      "train_rows": 642451
+    },
+    {
+      "date": "20201104",
+      "train_first": "20181015",
+      "train_last": "20201027",
+      "train_days": 248,
+      "train_rows": 655917
+    },
+    {
+      "date": "20201203",
+      "train_first": "20181113",
+      "train_last": "20201125",
+      "train_days": 248,
+      "train_rows": 666748
+    },
+    {
+      "date": "20210104",
+      "train_first": "20181212",
+      "train_last": "20201224",
+      "train_days": 248,
+      "train_rows": 673247
+    },
+    {
+      "date": "20210202",
+      "train_first": "20190114",
+      "train_last": "20210125",
+      "train_days": 248,
+      "train_rows": 681653
+    },
+    {
+      "date": "20210310",
+      "train_first": "20190219",
+      "train_last": "20210302",
+      "train_days": 248,
+      "train_rows": 688938
+    },
+    {
+      "date": "20210409",
+      "train_first": "20190320",
+      "train_last": "20210331",
+      "train_days": 248,
+      "train_rows": 688292
+    },
+    {
+      "date": "20210513",
+      "train_first": "20190419",
+      "train_last": "20210430",
+      "train_days": 248,
+      "train_rows": 683721
+    },
+    {
+      "date": "20210611",
+      "train_first": "20190523",
+      "train_last": "20210603",
+      "train_days": 248,
+      "train_rows": 681489
+    },
+    {
+      "date": "20210713",
+      "train_first": "20190624",
+      "train_last": "20210705",
+      "train_days": 248,
+      "train_rows": 687513
+    },
+    {
+      "date": "20210811",
+      "train_first": "20190723",
+      "train_last": "20210803",
+      "train_days": 248,
+      "train_rows": 693635
+    },
+    {
+      "date": "20210909",
+      "train_first": "20190821",
+      "train_last": "20210901",
+      "train_days": 248,
+      "train_rows": 704624
+    },
+    {
+      "date": "20211019",
+      "train_first": "20190920",
+      "train_last": "20211011",
+      "train_days": 248,
+      "train_rows": 715881
+    },
+    {
+      "date": "20211117",
+      "train_first": "20191028",
+      "train_last": "20211109",
+      "train_days": 248,
+      "train_rows": 722182
+    },
+    {
+      "date": "20211216",
+      "train_first": "20191126",
+      "train_last": "20211208",
+      "train_days": 248,
+      "train_rows": 732044
+    },
+    {
+      "date": "20220117",
+      "train_first": "20191225",
+      "train_last": "20220107",
+      "train_days": 248,
+      "train_rows": 748219
+    },
+    {
+      "date": "20220222",
+      "train_first": "20200203",
+      "train_last": "20220214",
+      "train_days": 248,
+      "train_rows": 759976
+    },
+    {
+      "date": "20220323",
+      "train_first": "20200303",
+      "train_last": "20220315",
+      "train_days": 248,
+      "train_rows": 767210
+    },
+    {
+      "date": "20220425",
+      "train_first": "20200401",
+      "train_last": "20220415",
+      "train_days": 248,
+      "train_rows": 771620
+    },
+    {
+      "date": "20220527",
+      "train_first": "20200506",
+      "train_last": "20220519",
+      "train_days": 248,
+      "train_rows": 778291
+    },
+    {
+      "date": "20220628",
+      "train_first": "20200604",
+      "train_last": "20220620",
+      "train_days": 248,
+      "train_rows": 786749
+    },
+    {
+      "date": "20220727",
+      "train_first": "20200707",
+      "train_last": "20220719",
+      "train_days": 248,
+      "train_rows": 797457
+    },
+    {
+      "date": "20220825",
+      "train_first": "20200805",
+      "train_last": "20220817",
+      "train_days": 248,
+      "train_rows": 802612
+    },
+    {
+      "date": "20220926",
+      "train_first": "20200903",
+      "train_last": "20220916",
+      "train_days": 248,
+      "train_rows": 807894
+    },
+    {
+      "date": "20221101",
+      "train_first": "20201012",
+      "train_last": "20221024",
+      "train_days": 248,
+      "train_rows": 810846
+    },
+    {
+      "date": "20221130",
+      "train_first": "20201110",
+      "train_last": "20221122",
+      "train_days": 248,
+      "train_rows": 819806
+    },
+    {
+      "date": "20221229",
+      "train_first": "20201209",
+      "train_last": "20221221",
+      "train_days": 248,
+      "train_rows": 829581
+    },
+    {
+      "date": "20230206",
+      "train_first": "20210108",
+      "train_last": "20230120",
+      "train_days": 248,
+      "train_rows": 836318
+    },
+    {
+      "date": "20230307",
+      "train_first": "20210208",
+      "train_last": "20230227",
+      "train_days": 248,
+      "train_rows": 846747
+    },
+    {
+      "date": "20230406",
+      "train_first": "20210316",
+      "train_last": "20230328",
+      "train_days": 248,
+      "train_rows": 860310
+    },
+    {
+      "date": "20230510",
+      "train_first": "20210415",
+      "train_last": "20230427",
+      "train_days": 248,
+      "train_rows": 871476
+    },
+    {
+      "date": "20230608",
+      "train_first": "20210519",
+      "train_last": "20230531",
+      "train_days": 248,
+      "train_rows": 880791
+    },
+    {
+      "date": "20230711",
+      "train_first": "20210618",
+      "train_last": "20230703",
+      "train_days": 248,
+      "train_rows": 888939
+    },
+    {
+      "date": "20230809",
+      "train_first": "20210719",
+      "train_last": "20230801",
+      "train_days": 248,
+      "train_rows": 897222
+    },
+    {
+      "date": "20230907",
+      "train_first": "20210817",
+      "train_last": "20230830",
+      "train_days": 248,
+      "train_rows": 905731
+    },
+    {
+      "date": "20231016",
+      "train_first": "20210915",
+      "train_last": "20230928",
+      "train_days": 248,
+      "train_rows": 913227
+    },
+    {
+      "date": "20231114",
+      "train_first": "20211025",
+      "train_last": "20231106",
+      "train_days": 248,
+      "train_rows": 917605
+    },
+    {
+      "date": "20231213",
+      "train_first": "20211123",
+      "train_last": "20231205",
+      "train_days": 248,
+      "train_rows": 928326
+    },
+    {
+      "date": "20240112",
+      "train_first": "20211222",
+      "train_last": "20240104",
+      "train_days": 248,
+      "train_rows": 937613
+    },
+    {
+      "date": "20240220",
+      "train_first": "20220121",
+      "train_last": "20240202",
+      "train_days": 248,
+      "train_rows": 943453
+    },
+    {
+      "date": "20240320",
+      "train_first": "20220228",
+      "train_last": "20240312",
+      "train_days": 248,
+      "train_rows": 953713
+    },
+    {
+      "date": "20240422",
+      "train_first": "20220329",
+      "train_last": "20240412",
+      "train_days": 248,
+      "train_rows": 963218
+    },
+    {
+      "date": "20240524",
+      "train_first": "20220429",
+      "train_last": "20240516",
+      "train_days": 248,
+      "train_rows": 972884
+    },
+    {
+      "date": "20240625",
+      "train_first": "20220602",
+      "train_last": "20240617",
+      "train_days": 248,
+      "train_rows": 980478
+    },
+    {
+      "date": "20240724",
+      "train_first": "20220704",
+      "train_last": "20240716",
+      "train_days": 248,
+      "train_rows": 981101
+    },
+    {
+      "date": "20240822",
+      "train_first": "20220802",
+      "train_last": "20240814",
+      "train_days": 248,
+      "train_rows": 978019
+    },
+    {
+      "date": "20240924",
+      "train_first": "20220831",
+      "train_last": "20240912",
+      "train_days": 248,
+      "train_rows": 974358
+    },
+    {
+      "date": "20241030",
+      "train_first": "20220930",
+      "train_last": "20241022",
+      "train_days": 248,
+      "train_rows": 977907
+    },
+    {
+      "date": "20241128",
+      "train_first": "20221107",
+      "train_last": "20241120",
+      "train_days": 248,
+      "train_rows": 992362
+    },
+    {
+      "date": "20241227",
+      "train_first": "20221206",
+      "train_last": "20241219",
+      "train_days": 248,
+      "train_rows": 1006589
+    }
+  ],
+  "score_ic": {
+    "mean": 0.07338,
+    "icir": 0.739,
+    "t_nw": 18.0,
+    "positive_share": 0.7755
+  },
+  "feature_importance_gain_share": {
+    "ln_mv": 0.1241,
+    "bp": 0.0608,
+    "amihud_20": 0.0599,
+    "ep_ttm": 0.0553,
+    "break_20": 0.05,
+    "dv_ttm": 0.0472,
+    "limitup_20": 0.0398,
+    "sp_ttm": 0.0388,
+    "bias_20": 0.0359,
+    "turn_20": 0.0356,
+    "high_250": 0.0353,
+    "amp_20": 0.0316,
+    "mom_60": 0.031,
+    "mom_250_20": 0.031,
+    "vol_60": 0.031,
+    "pv_corr_20": 0.0307,
+    "amt_cv_20": 0.0303,
+    "max_20": 0.0302,
+    "skew_20": 0.0277,
+    "turn_5_60": 0.0272,
+    "rev_5": 0.0253,
+    "intraday_20": 0.0251,
+    "overnight_20": 0.0248,
+    "rev_20": 0.0241,
+    "vol_20": 0.0237,
+    "downvol_20": 0.0234
+  },
+  "seconds": 4268
+}
