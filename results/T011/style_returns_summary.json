@@ -1,0 +1,60 @@
+{
+  "annual_mean": {
+    "size_small": 0.0092,
+    "value": 0.1446,
+    "illiquidity": 0.1432,
+    "reversal": 0.1867,
+    "low_vol": 0.1959,
+    "low_turnover": 0.303
+  },
+  "correlation": {
+    "size_small": {
+      "size_small": 1.0,
+      "value": -0.231,
+      "illiquidity": 0.888,
+      "reversal": 0.278,
+      "low_vol": -0.6,
+      "low_turnover": -0.705
+    },
+    "value": {
+      "size_small": -0.231,
+      "value": 1.0,
+      "illiquidity": 0.039,
+      "reversal": 0.064,
+      "low_vol": 0.65,
+      "low_turnover": 0.519
+    },
+    "illiquidity": {
+      "size_small": 0.888,
+      "value": 0.039,
+      "illiquidity": 1.0,
+      "reversal": 0.305,
+      "low_vol": -0.321,
+      "low_turnover": -0.393
+    },
+    "reversal": {
+      "size_small": 0.278,
+      "value": 0.064,
+      "illiquidity": 0.305,
+      "reversal": 1.0,
+      "low_vol": 0.103,
+      "low_turnover": 0.08
+    },
+    "low_vol": {
+      "size_small": -0.6,
+      "value": 0.65,
+      "illiquidity": -0.321,
+      "reversal": 0.103,
+      "low_vol": 1.0,
+      "low_turnover": 0.932
+    },
+    "low_turnover": {
+      "size_small": -0.705,
+      "value": 0.519,
+      "illiquidity": -0.393,
+      "reversal": 0.08,
+      "low_vol": 0.932,
+      "low_turnover": 1.0
+    }
+  }
+}

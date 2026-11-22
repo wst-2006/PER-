@@ -1,0 +1,13 @@
+{
+  "sr": 0.07938286555839551,
+  "sr0": 0.04590046110854576,
+  "dsr": 0.9469369018606646,
+  "n_trials": 45,
+  "n_obs": 2187,
+  "best": {
+    "scheme": "gbm_rank_all",
+    "n": 50,
+    "rebalance": 20,
+    "information_ratio": 1.24
+  }
+}
