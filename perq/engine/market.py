@@ -76,8 +76,14 @@ class MarketData:
         folder = self._root / f"year={year}"
         if not folder.is_dir():
             return
-        frame = pd.concat([pd.read_parquet(f, columns=COLUMNS) for f in sorted(folder.glob("*.parquet"))],
-                          ignore_index=True)
+        import pyarrow.parquet as pq
+
+        files = sorted(folder.glob("*.parquet"))
+        present = set(pq.read_schema(files[0]).names) if files else set()
+        columns = [c for c in COLUMNS if c in present]           # 没有每日指标时整理层里没有 circ_mv
+        frame = pd.concat([pd.read_parquet(f, columns=columns) for f in files], ignore_index=True)
+        if "circ_mv" not in frame.columns:
+            frame["circ_mv"] = float("nan")
         self._cache = {day: part.set_index("ts_code") for day, part in frame.groupby("trade_date")}
 
     def day(self, date: str) -> Any:
