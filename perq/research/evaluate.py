@@ -18,7 +18,8 @@ from typing import Any
 
 import numpy as np
 
-from ..features.factors import FACTORS, VERSION
+from ..features import registry
+from ..features.factors import VERSION
 from .stats import column_corr, neutralize, newey_west_tstat, rank_columns, winsorize_zscore
 
 GROUPS = 10
@@ -46,7 +47,8 @@ def year_dirs(base: Path) -> list[str]:
 
 
 def load_year(root: Path, year: str, horizons: tuple[int, ...], version: str = VERSION,
-              labels_version: str = "v1") -> Any:
+              labels_version: str = "v1", versions: tuple[str, ...] | None = None) -> Any:
+    """读取一年的因子与标签。versions 为要合并的因子版本，默认只用 version 一个。"""
     import pandas as pd
 
     def read(base: Path, columns: list[str]) -> Any:
@@ -55,8 +57,7 @@ def load_year(root: Path, year: str, horizons: tuple[int, ...], version: str = V
             return None
         return pd.concat([pd.read_parquet(f, columns=columns) for f in files], ignore_index=True)
 
-    names = list(FACTORS)
-    feats = read(root / "features" / version, ["ts_code", "trade_date", "sw_l1", "circ_mv"] + names)
+    feats = registry.read_year(root, year, versions or (version,))
     labs = read(root / "labels" / labels_version, ["ts_code", "trade_date", "entry_ok"] + [f"fwd_{h}" for h in horizons])
     if feats is None or labs is None:
         return None
@@ -66,9 +67,11 @@ def load_year(root: Path, year: str, horizons: tuple[int, ...], version: str = V
 
 def evaluate(root: str | Path, horizons: tuple[int, ...] = (5, 10, 20), version: str = VERSION,
              labels_version: str = "v1", min_stocks: int = MIN_STOCKS, start: str | None = None,
-             end: str | None = None) -> dict[str, Any]:
+             end: str | None = None, versions: tuple[str, ...] | None = None) -> dict[str, Any]:
     root = Path(root)
-    names = list(FACTORS)
+    versions = versions or (version,)
+    info = registry.meta(versions)
+    names = list(info)
     k = len(names)
     days: list[str] = []
     ic_raw = {h: [] for h in horizons}
@@ -84,7 +87,7 @@ def evaluate(root: str | Path, horizons: tuple[int, ...] = (5, 10, 20), version:
     n_stocks: list[int] = []
 
     for year in year_dirs(root / "features" / version):
-        frame = load_year(root, year, horizons, version, labels_version)
+        frame = load_year(root, year, horizons, version, labels_version, versions)
         if frame is None or len(frame) == 0:
             continue
         for day, part in frame.groupby("trade_date", sort=True):
@@ -151,7 +154,7 @@ def evaluate(root: str | Path, horizons: tuple[int, ...] = (5, 10, 20), version:
         return {"status": "empty", "factors": {}}
     years = np.array([d[:4] for d in days])
     report: dict[str, Any] = {
-        "status": "ok", "version": version, "first_date": days[0], "last_date": days[-1], "days": len(days),
+        "status": "ok", "version": "+".join(versions), "first_date": days[0], "last_date": days[-1], "days": len(days),
         "median_stocks_per_day": int(np.median(n_stocks)), "horizons": list(horizons), "groups": GROUPS,
         "factors": {},
     }
@@ -165,7 +168,7 @@ def evaluate(root: str | Path, horizons: tuple[int, ...] = (5, 10, 20), version:
                 "t_nw": round(newey_west_tstat(series, h), 2), "positive_share": round(float((x > 0).mean()), 4)}
 
     for j, name in enumerate(names):
-        _expr, family, prior, logic = FACTORS[name]
+        family, prior, logic = info[name]
         entry: dict[str, Any] = {"family": family, "prior_sign": prior, "logic": logic,
                                  "top_group_daily_turnover": round(float(turnover_sum[j] / turnover_n[j]), 4) if turnover_n[j] else None,
                                  "horizons": {}}

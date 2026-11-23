@@ -21,7 +21,7 @@ from typing import Any
 
 import numpy as np
 
-from ..features.factors import FACTORS
+from ..features import registry
 from .panel import daily_rank_target, load_panel, panel_days
 from .stats import column_corr, newey_west_tstat, rank_columns
 
@@ -57,12 +57,13 @@ def walk_forward(root: str | Path, name: str, *, objective: str = "reg", horizon
                  window: int | None = 500, retrain_every: int = 21, day_step: int = 2, rounds: int = 300,
                  rank_bins: int = 20, start: str = "20160104", end: str = "20241231",
                  min_train_days: int = 120, threads: int = 4, seed: int = 42,
-                 exclude_features: tuple[str, ...] = ()) -> dict[str, Any]:
+                 exclude_features: tuple[str, ...] = (), version: str = "v1") -> dict[str, Any]:
+    """version：使用哪个中性化面板，"v1" 或 "v1+v2"。"""
     import pandas as pd
 
     root = Path(root)
-    features = [f for f in FACTORS if f not in exclude_features]
-    days = panel_days(root)
+    features = [f for f in registry.meta(tuple(version.split("+"))) if f not in exclude_features]
+    days = panel_days(root, version)
     if not days:
         raise RuntimeError("没有中性化因子面板，请先运行 build_panel")
     target = root / "scores" / name
@@ -83,13 +84,13 @@ def walk_forward(root: str | Path, name: str, *, objective: str = "reg", horizon
         train_days = days[first_train:last_train + 1][::-1][::day_step][::-1]   # 从最近一天往回每隔 day_step 天取一天
         if len(train_days) < min_train_days // day_step:
             continue
-        train = load_panel(root, train_days[0], train_days[-1])
+        train = load_panel(root, train_days[0], train_days[-1], version)
         train = train[train["trade_date"].isin(set(train_days)) & train[f"y_fwd_{horizon}"].notna()]
         model = _train(train, features, objective, horizon, rounds, rank_bins, threads, seed)
         importance += model.feature_importance("gain") / max(model.feature_importance("gain").sum(), 1e-12)
         retrains.append({"date": block[0], "train_first": train_days[0], "train_last": train_days[-1],
                          "train_days": len(train_days), "train_rows": int(len(train))})
-        test = load_panel(root, block[0], block[-1])
+        test = load_panel(root, block[0], block[-1], version)
         if len(test) == 0:
             continue
         test["score"] = model.predict(test[features].to_numpy(dtype=np.float32), num_threads=threads).astype("float32")
@@ -112,7 +113,7 @@ def walk_forward(root: str | Path, name: str, *, objective: str = "reg", horizon
     total = importance.sum()
     return {
         "name": name, "objective": objective, "horizon": horizon, "window": window, "retrain_every": retrain_every,
-        "seed": seed, "excluded_features": list(exclude_features),
+        "seed": seed, "excluded_features": list(exclude_features), "version": version,
         "day_step": day_step, "rounds": rounds, "retrains": len(retrains), "retrain_log": retrains,
         "score_ic": {"mean": round(float(ok.mean()), 5) if len(ok) else None,
                      "icir": round(float(ok.mean() / ok.std()), 4) if len(ok) > 1 and ok.std() > 0 else None,

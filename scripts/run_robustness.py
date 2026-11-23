@@ -53,7 +53,11 @@ def main() -> int:
     market = MarketData.from_curated(root)
     styles = attribution.style_returns(root, args.start, args.end)
     c.write_json(out / "style_returns_summary.json",
-                 {"annual_mean": {k: round(float(v * 244), 4) for k, v in styles.mean().items()},
+                 {"definition": "每个交易日在股票池内按前一日的因子值分五组，取多头一端减空头一端的次日等权收益；"
+                                "年化均值 = 日均值 × 244，未计交易成本",
+                  "styles": {k: {"factor": col, "long_end": "因子值最大的一组" if sign > 0 else "因子值最小的一组"}
+                             for k, (col, sign) in attribution.STYLES.items()},
+                  "annual_mean": {k: round(float(v * 244), 4) for k, v in styles.mean().items()},
                   "correlation": styles.corr().round(3).to_dict()})
 
     def evaluate(scheme: str, **kw):
@@ -104,6 +108,7 @@ def main() -> int:
     dsr = deflated_sharpe(float(best["information_ratio"]) / np.sqrt(244), len(ex) if ex is not None else 2200,
                           len(grid), float(daily_sr.var(ddof=1)),
                           float(ex.skew()) if ex is not None else 0.0, float(ex.kurt() + 3) if ex is not None else 3.0)
+    dsr["units"] = "sr 与 sr0 都是日频夏普（日均超额收益 ÷ 日标准差），乘以 √244 即为年化信息比率"
     dsr.update({"best": {"scheme": best["scheme"], "n": int(best["n"]), "rebalance": int(best["rebalance"]),
                          "information_ratio": float(best["information_ratio"])}})
     c.write_json(out / "deflated_sharpe.json", dsr)

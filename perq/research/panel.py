@@ -11,27 +11,30 @@ from typing import Any
 
 import numpy as np
 
-from ..features.factors import FACTORS, VERSION
+from ..features import registry
+from ..features.factors import VERSION
 from .evaluate import load_year, prepare_day, year_dirs
 
 HORIZONS = (5, 10, 20)
 
 
 def panel_dir(root: str | Path, version: str = VERSION) -> Path:
-    return Path(root) / "features" / f"{version}_neu"
+    """version 可以是 "v1" 或 "v1+v2" 这样的组合。"""
+    return Path(root) / "features" / f"{version.replace('+', '_')}_neu"
 
 
 def build_panel(root: str | Path, *, min_stocks: int = 200, version: str = VERSION) -> dict[str, Any]:
     import pandas as pd
 
     root = Path(root)
-    names = list(FACTORS)
+    versions = tuple(version.split("+"))
+    names = list(registry.meta(versions))
     target = panel_dir(root, version)
     if target.exists():
         shutil.rmtree(target)
     rows = days = 0
-    for year in year_dirs(root / "features" / version):
-        frame = load_year(root, year, HORIZONS, version)
+    for year in year_dirs(root / "features" / "v1"):
+        frame = load_year(root, year, HORIZONS, versions=versions)
         if frame is None or len(frame) == 0:
             continue
         parts = []
