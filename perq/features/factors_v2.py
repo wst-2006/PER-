@@ -406,6 +406,10 @@ def build_factors_v2(root: str | Path, memory_limit: str = "2GB", threads: int =
         for name in FACTORS_V2:
             if name not in present:
                 con.execute(f"ALTER TABLE out1 ADD COLUMN {name} DOUBLE")
+        # 事件类因子：数据源存在时，"这段时间没有发生"记 0，而不是缺失。否则因子只剩一种取值，无法比较
+        for name, source in (("insider_net_90", "f_insider"), ("repurchase_60", "f_repo"), ("unlock_30", "f_unlock")):
+            if source in daily:
+                con.execute(f"UPDATE out1 SET {name} = 0 WHERE {name} IS NULL")
         ordered = ", ".join(f"CAST({n} AS FLOAT) AS {n}" for n in FACTORS_V2)
         if target.exists():
             shutil.rmtree(target)

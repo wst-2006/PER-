@@ -95,12 +95,14 @@ def test_announcements_are_usable_only_after_announcement_day(built):
     _, _, frame, _ = built
     assert np.isnan(at(frame, "20220810", "holder_chg")) and at(frame, "20220811", "holder_chg") == pytest.approx(-0.1)
     assert np.isnan(at(frame, "20220421", "holder_chg"))           # 第一期没有上期可比
-    assert np.isnan(at(frame, "20220915", "insider_net_90")) and at(frame, "20220916", "insider_net_90") == pytest.approx(0.02)
-    assert at(frame, "20221214", "insider_net_90") == pytest.approx(0.02) and np.isnan(at(frame, "20221216", "insider_net_90"))
-    assert np.isnan(at(frame, "20221010", "repurchase_60")) and at(frame, "20221011", "repurchase_60") == 1.0
-    assert np.isnan(at(frame, "20221212", "repurchase_60"))
-    assert np.isnan(at(frame, "20220801", "unlock_30"))
-    assert at(frame, "20220815", "unlock_30") == pytest.approx(0.05) and np.isnan(at(frame, "20220901", "unlock_30"))
+    assert at(frame, "20220915", "insider_net_90") == 0 and at(frame, "20220916", "insider_net_90") == pytest.approx(0.02)
+    assert at(frame, "20221214", "insider_net_90") == pytest.approx(0.02) and at(frame, "20221216", "insider_net_90") == 0
+    assert at(frame, "20221010", "repurchase_60") == 0 and at(frame, "20221011", "repurchase_60") == 1.0
+    assert at(frame, "20221212", "repurchase_60") == 0
+    assert at(frame, "20220801", "unlock_30") == 0
+    assert at(frame, "20220815", "unlock_30") == pytest.approx(0.05) and at(frame, "20220901", "unlock_30") == 0
+    # 事件类因子"没有发生"记 0：其他股票整段都是 0
+    assert at(frame, "20220815", "repurchase_60", code="000001.SZ") == 0
     assert np.isnan(at(frame, "20220715", "fc_pchg")) and at(frame, "20220718", "fc_pchg") == pytest.approx(0.6)
     assert np.isnan(at(frame, "20221125", "fc_pchg"))                                # 超过 120 天作废
 

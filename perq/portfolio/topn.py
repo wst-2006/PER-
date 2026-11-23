@@ -20,6 +20,9 @@ class TopN:
     buffer: float = 2.0
     invest_ratio: float = 0.98       # 留一点现金付费用
     min_size_pct: float = 0.0        # 只在股票池里流通市值高于这个分位数的股票中选（0 表示不限制）
+    max_small_share: float = 1.0     # 市值最小 20% 的股票最多占持股数的比例（1 表示不限制）
+    exposure: Any = None             # 可选：exposure(date) 返回 0 到 1 的目标仓位，只能用到 date 收盘及以前的信息
+    resize_tolerance: float = 0.25   # 已持有股票的市值偏离目标超过这个比例时才调整，减少零碎交易
     _count: int = field(default=0, init=False)
     log: list[dict[str, Any]] = field(default_factory=list, init=False)
 
@@ -33,12 +36,18 @@ class TopN:
         bars = ctx.bars
         eligible = score.dropna()
         pool = bars[bars["in_universe"].astype(bool)]
+        small_cut = pool["circ_mv"].quantile(0.2) if len(pool) else 0.0
         if self.min_size_pct > 0:
             pool = pool[pool["circ_mv"] >= pool["circ_mv"].quantile(self.min_size_pct)]
         eligible = eligible[eligible.index.isin(pool.index)]
         ranked = eligible.sort_values(ascending=False)
         rank = {code: i for i, code in enumerate(ranked.index)}
         keep_limit = int(self.n * self.buffer)
+        weight = 1.0 if self.exposure is None else float(min(max(self.exposure(ctx.date), 0.0), 1.0))
+        target_value = ctx.nav * self.invest_ratio * weight / self.n
+
+        def is_small(code: str) -> bool:
+            return code in bars.index and float(bars.loc[code, "circ_mv"]) < small_cut
 
         orders: list[Order] = []
         kept: list[str] = []
@@ -49,18 +58,38 @@ class TopN:
                 kept.append(code)
             else:
                 orders.append(Order(code, SELL, None, "out_of_rank" if code in rank else "left_universe"))
-        slots = self.n - len(kept)
-        target_value = ctx.nav * self.invest_ratio / self.n
+
+        # 仓位变化：已持有的股票按目标市值增减
+        for code in kept:
+            pos = ctx.positions[code]
+            if code not in bars.index:
+                continue
+            close = float(bars.loc[code, "close"])
+            value = pos.shares * close
+            if target_value <= 0:
+                orders.append(Order(code, SELL, None, "exposure_zero"))
+            elif value > target_value * (1 + self.resize_tolerance):
+                orders.append(Order(code, SELL, (value - target_value) / close, "trim"))
+            elif value < target_value * (1 - self.resize_tolerance) and close > 0:
+                orders.append(Order(code, BUY, (target_value - value) / close, "top_up"))
+
+        slots = self.n - len(kept) if target_value > 0 else 0
+        small_limit = int(self.n * self.max_small_share)
+        small_count = sum(1 for code in kept if is_small(code))
         added = 0
         for code in ranked.index:
             if added >= slots:
                 break
             if code in ctx.positions or code in ctx.pending_sells:
                 continue
+            if is_small(code):
+                if small_count >= small_limit:
+                    continue
+                small_count += 1
             close = float(bars.loc[code, "close"])
             if close > 0:
                 orders.append(Order(code, BUY, target_value / close, "new_top"))
                 added += 1
         self.log.append({"date": ctx.date, "kept": len(kept), "sells": sum(o.side == SELL for o in orders),
-                         "buys": added, "candidates": len(ranked)})
+                         "buys": added, "candidates": len(ranked), "exposure": weight, "small": small_count})
         return orders

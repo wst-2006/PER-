@@ -66,10 +66,16 @@ def relative_metrics(dates: list[str], strat: np.ndarray, bench: np.ndarray) -> 
 
 def run(root: str | Path, scheme: str, start: str, end: str, *, n: int = 30, rebalance: int = 5,
         buffer: float = 2.0, cash: float = 1_000_000.0, costs: CostModel | None = None,
-        market: MarketData | None = None, min_size_pct: float = 0.0, keep_series: bool = False) -> dict[str, Any]:
+        market: MarketData | None = None, min_size_pct: float = 0.0, keep_series: bool = False,
+        max_small_share: float = 1.0, exposure_mode: str = "none") -> dict[str, Any]:
     """keep_series 为真时，结果里附带每日收益、基准收益与持仓（供归因分析用，不写入摘要表）。"""
+    from ..portfolio import exposure as exp
+
     market = market or MarketData.from_curated(root)
-    strategy = TopN(ScoreBook(root, scheme), n=n, rebalance=rebalance, buffer=buffer, min_size_pct=min_size_pct)
+    history_start = "20150101"
+    exposure_fn = exp.build(benchmark_returns(root, history_start, end), exposure_mode) if exposure_mode != "none" else None
+    strategy = TopN(ScoreBook(root, scheme), n=n, rebalance=rebalance, buffer=buffer, min_size_pct=min_size_pct,
+                    max_small_share=max_small_share, exposure=exposure_fn)
     result = Backtester(market, costs or CostModel(), cash=cash).run(strategy, start, end)
     bench = benchmark_returns(root, start, end)
     dates = [row["date"] for row in result.daily if row["date"] in bench]
@@ -85,6 +91,10 @@ def run(root: str | Path, scheme: str, start: str, end: str, *, n: int = 30, reb
         "average_positions": round(float(np.mean([row["positions"] for row in result.daily])), 1) if result.daily else 0,
     })
     metrics["min_size_pct"] = min_size_pct
+    metrics["max_small_share"] = max_small_share
+    metrics["exposure_mode"] = exposure_mode
+    if exposure_fn is not None:
+        metrics["exposure"] = exp.describe(exposure_fn, dates)
     metrics["nav_curve"] = [[row["date"], round(row["nav"], 2)] for row in result.daily[::5]]
     if keep_series:
         metrics["_series"] = {"dates": dates, "strategy": strat.tolist(), "benchmark": [bench[d] for d in dates],
