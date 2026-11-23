@@ -1,0 +1,17 @@
+{
+  "started_at_utc": "2026-11-23T10:14:36.832835+00:00",
+  "finished_at_utc": "2026-11-23T11:16:05.611224+00:00",
+  "git_commit": "c56876bb86ff72a4e94c72df1d6dc1eaa6d87dab",
+  "python": "3.11.2",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "memory": {
+    "total_gb": 15.21,
+    "available_gb": 2.15
+  },
+  "task": "T013",
+  "stage_seconds": {
+    "factors": 253,
+    "panel": 136,
+    "models": 2429
+  }
+}
